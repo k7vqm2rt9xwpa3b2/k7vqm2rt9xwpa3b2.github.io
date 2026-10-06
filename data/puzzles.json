@@ -1,0 +1,2333 @@
+{
+  "puzzles": [
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        ".UP.EAT.C",
+        "RSA.X.HER",
+        "E.P.CVE.O",
+        "F.EWE.M.S",
+        "AEROPRESS",
+        "C.BET.LAW",
+        "TEA.I.EMO",
+        "O.CROSS.R",
+        "R.KEN.SAD"
+      ],
+      "themes": {
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "crosswords": {
+          "label": "Crossword Puzzles",
+          "summary": "[placeholder-theme-summary-crosswords]"
+        },
+        "doughnuts": {
+          "label": "Doughnuts",
+          "summary": "[placeholder-theme-summary-doughnuts]"
+        },
+        "kickboxing": {
+          "label": "Kickboxing and Striking",
+          "summary": "[placeholder-theme-summary-kickboxing]"
+        },
+        "matcha": {
+          "label": "Matcha",
+          "summary": "[placeholder-theme-summary-matcha]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 1,
+          "answer": "UP",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 1,
+          "answer": "US",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "PAPERBACK",
+          "clue": "The cheap edition",
+          "theme": "books"
+        },
+        {
+          "number": 3,
+          "direction": "across",
+          "row": 0,
+          "col": 4,
+          "answer": "EAT",
+          "clue": "What they're for",
+          "theme": "doughnuts"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "EXCEPTION",
+          "clue": "Thrown when something goes wrong",
+          "theme": "programming"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 6,
+          "answer": "THEMELESS",
+          "clue": "Puzzle with no unifying idea",
+          "theme": "crosswords"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "CROSSWORD",
+          "clue": "The thing itself",
+          "theme": "crosswords"
+        },
+        {
+          "number": 6,
+          "direction": "across",
+          "row": 1,
+          "col": 0,
+          "answer": "RSA",
+          "clue": "Public-key algorithm, three initials",
+          "theme": "programming"
+        },
+        {
+          "number": 6,
+          "direction": "down",
+          "row": 1,
+          "col": 0,
+          "answer": "REFACTOR",
+          "clue": "Change the shape, not the behavior",
+          "theme": "programming"
+        },
+        {
+          "number": 7,
+          "direction": "across",
+          "row": 1,
+          "col": 6,
+          "answer": "HER",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 8,
+          "direction": "across",
+          "row": 2,
+          "col": 4,
+          "answer": "CVE",
+          "clue": "Numbered public vulnerability",
+          "theme": "programming"
+        },
+        {
+          "number": 9,
+          "direction": "across",
+          "row": 3,
+          "col": 2,
+          "answer": "EWE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 10,
+          "direction": "down",
+          "row": 3,
+          "col": 3,
+          "answer": "WOE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "AEROPRESS",
+          "clue": "Plunger brewer beloved of campers",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 12,
+          "direction": "down",
+          "row": 4,
+          "col": 7,
+          "answer": "SAM",
+          "clue": "...I am!",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 13,
+          "direction": "across",
+          "row": 5,
+          "col": 2,
+          "answer": "BET",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 14,
+          "direction": "across",
+          "row": 5,
+          "col": 6,
+          "answer": "LAW",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 15,
+          "direction": "across",
+          "row": 6,
+          "col": 0,
+          "answer": "TEA",
+          "clue": "What it is, ground fine",
+          "theme": "matcha"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 6,
+          "col": 6,
+          "answer": "EMO",
+          "clue": "Confessional offshoot of hardcore",
+          "theme": "rock-music"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 7,
+          "col": 2,
+          "answer": "CROSS",
+          "clue": "Rear-hand straight punch",
+          "theme": "kickboxing"
+        },
+        {
+          "number": 18,
+          "direction": "down",
+          "row": 7,
+          "col": 3,
+          "answer": "RE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 19,
+          "direction": "across",
+          "row": 8,
+          "col": 2,
+          "answer": "KEN",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 20,
+          "direction": "across",
+          "row": 8,
+          "col": 6,
+          "answer": "SAD",
+          "clue": "",
+          "theme": "crossword-construction"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 1,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 5
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "number": 6
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "number": 7
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "number": 8
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "number": 10
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 11
+        },
+        {
+          "row": 4,
+          "col": 7,
+          "number": 12
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "number": 13
+        },
+        {
+          "row": 5,
+          "col": 6,
+          "number": 14
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "number": 15
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 16
+        },
+        {
+          "row": 7,
+          "col": 2,
+          "number": 17
+        },
+        {
+          "row": 7,
+          "col": 3,
+          "number": 18
+        },
+        {
+          "row": 8,
+          "col": 2,
+          "number": 19
+        },
+        {
+          "row": 8,
+          "col": 6,
+          "number": 20
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        "I.BOP.CAB",
+        "N.AHA.L.R",
+        "T.S.PIECE",
+        "EVE.ETA.A",
+        "RAM.R.R.K",
+        "FRETBOARD",
+        "A.N.A.N.O",
+        "COT.CRC.W",
+        "EX.OK.EON"
+      ],
+      "themes": {
+        "board-games": {
+          "label": "Board Games",
+          "summary": "[placeholder-theme-summary-board-games]"
+        },
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "crosswords": {
+          "label": "Crossword Puzzles",
+          "summary": "[placeholder-theme-summary-crosswords]"
+        },
+        "guitar": {
+          "label": "Guitar",
+          "summary": "[placeholder-theme-summary-guitar]"
+        },
+        "jeeps": {
+          "label": "Jeeps",
+          "summary": "[placeholder-theme-summary-jeeps]"
+        },
+        "off-roading": {
+          "label": "Off-Roading",
+          "summary": "[placeholder-theme-summary-off-roading]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "swing-dancing": {
+          "label": "Swing Dancing",
+          "summary": "[placeholder-theme-summary-swing-dancing]"
+        },
+        "travel": {
+          "label": "Traveling",
+          "summary": "[placeholder-theme-summary-travel]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 0,
+          "answer": "INTERFACE",
+          "clue": "The contract, not the implementation",
+          "theme": "programming"
+        },
+        {
+          "number": 2,
+          "direction": "across",
+          "row": 0,
+          "col": 2,
+          "answer": "BOP",
+          "clue": "Bebop, for short",
+          "theme": "swing-dancing"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "BASEMENT",
+          "clue": "Where the show is",
+          "theme": "rock-music"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 3,
+          "answer": "OH",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "PAPERBACK",
+          "clue": "The cheap edition",
+          "theme": "books"
+        },
+        {
+          "number": 5,
+          "direction": "across",
+          "row": 0,
+          "col": 6,
+          "answer": "CAB",
+          "clue": "Where you sit",
+          "theme": "jeeps"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 6,
+          "answer": "CLEARANCE",
+          "clue": "Air between axle and obstacle",
+          "theme": "off-roading"
+        },
+        {
+          "number": 6,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "BREAKDOWN",
+          "clue": "Half-time part the pit waits for",
+          "theme": "rock-music"
+        },
+        {
+          "number": 7,
+          "direction": "across",
+          "row": 1,
+          "col": 2,
+          "answer": "AHA",
+          "clue": "The moment the clue gives way",
+          "theme": "crosswords"
+        },
+        {
+          "number": 8,
+          "direction": "across",
+          "row": 2,
+          "col": 4,
+          "answer": "PIECE",
+          "clue": "What you move",
+          "theme": "board-games"
+        },
+        {
+          "number": 9,
+          "direction": "down",
+          "row": 2,
+          "col": 5,
+          "answer": "IT",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 10,
+          "direction": "across",
+          "row": 3,
+          "col": 0,
+          "answer": "EVE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 3,
+          "col": 1,
+          "answer": "VAR",
+          "clue": "Declare one",
+          "theme": "programming"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 3,
+          "col": 4,
+          "answer": "ETA",
+          "clue": "When you'll land, briefly",
+          "theme": "travel"
+        },
+        {
+          "number": 13,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "RAM",
+          "clue": "Memory that forgets on reboot",
+          "theme": "programming"
+        },
+        {
+          "number": 14,
+          "direction": "across",
+          "row": 5,
+          "col": 0,
+          "answer": "FRETBOARD",
+          "clue": "Where the left hand lives",
+          "theme": "guitar"
+        },
+        {
+          "number": 15,
+          "direction": "across",
+          "row": 7,
+          "col": 0,
+          "answer": "COT",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "down",
+          "row": 7,
+          "col": 1,
+          "answer": "OX",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 7,
+          "col": 4,
+          "answer": "CRC",
+          "clue": "Checksum that catches a flipped bit, in three letters",
+          "theme": "programming"
+        },
+        {
+          "number": 18,
+          "direction": "across",
+          "row": 8,
+          "col": 0,
+          "answer": "EX",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 19,
+          "direction": "across",
+          "row": 8,
+          "col": 3,
+          "answer": "OK",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 20,
+          "direction": "across",
+          "row": 8,
+          "col": 6,
+          "answer": "EON",
+          "clue": "",
+          "theme": "crossword-construction"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 0,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "number": 5
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 6
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "number": 7
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "number": 10
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "number": 11
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "number": 12
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 13
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "number": 14
+        },
+        {
+          "row": 7,
+          "col": 0,
+          "number": 15
+        },
+        {
+          "row": 7,
+          "col": 1,
+          "number": 16
+        },
+        {
+          "row": 7,
+          "col": 4,
+          "number": 17
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "number": 18
+        },
+        {
+          "row": 8,
+          "col": 3,
+          "number": 19
+        },
+        {
+          "row": 8,
+          "col": 6,
+          "number": 20
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        "CREDIT.H.",
+        ".ER.N.DIP",
+        "START.A.O",
+        ".E..E.T.S",
+        "INVARIANT",
+        ".T..F.BAR",
+        "VISTA.AGO",
+        ".OK.C.S.C",
+        "SNARE.ELK"
+      ],
+      "themes": {
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "guitar": {
+          "label": "Guitar",
+          "summary": "[placeholder-theme-summary-guitar]"
+        },
+        "national-parks": {
+          "label": "National Parks",
+          "summary": "[placeholder-theme-summary-national-parks]"
+        },
+        "pinball": {
+          "label": "Pinball",
+          "summary": "[placeholder-theme-summary-pinball]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        },
+        "swing-dancing": {
+          "label": "Swing Dancing",
+          "summary": "[placeholder-theme-summary-swing-dancing]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 0,
+          "answer": "CREDIT",
+          "clue": "One game paid for",
+          "theme": "pinball"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 1,
+          "answer": "RETENTION",
+          "clue": "Grounds the grinder keeps for itself",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "ERA",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "INTERFACE",
+          "clue": "The contract, not the implementation",
+          "theme": "programming"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 7,
+          "answer": "HI",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 6,
+          "direction": "across",
+          "row": 1,
+          "col": 1,
+          "answer": "ER",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 7,
+          "direction": "across",
+          "row": 1,
+          "col": 6,
+          "answer": "DIP",
+          "clue": "Lean your partner back at the end",
+          "theme": "swing-dancing"
+        },
+        {
+          "number": 7,
+          "direction": "down",
+          "row": 1,
+          "col": 6,
+          "answer": "DATABASE",
+          "clue": "Where the data persists",
+          "theme": "programming"
+        },
+        {
+          "number": 8,
+          "direction": "down",
+          "row": 1,
+          "col": 8,
+          "answer": "POSTROCK",
+          "clue": "Instrumental, slow-building",
+          "theme": "rock-music"
+        },
+        {
+          "number": 9,
+          "direction": "across",
+          "row": 2,
+          "col": 0,
+          "answer": "START",
+          "clue": "Button that begins the game",
+          "theme": "pinball"
+        },
+        {
+          "number": 10,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "INVARIANT",
+          "clue": "What stays true through the loop",
+          "theme": "programming"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 4,
+          "col": 7,
+          "answer": "NAG",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 5,
+          "col": 6,
+          "answer": "BAR",
+          "clue": "___ chord, one finger across the neck",
+          "theme": "guitar"
+        },
+        {
+          "number": 13,
+          "direction": "across",
+          "row": 6,
+          "col": 0,
+          "answer": "VISTA",
+          "clue": "What the pull-off is for",
+          "theme": "national-parks"
+        },
+        {
+          "number": 14,
+          "direction": "down",
+          "row": 6,
+          "col": 2,
+          "answer": "SKA",
+          "clue": "Upstroke guitar and horns",
+          "theme": "rock-music"
+        },
+        {
+          "number": 15,
+          "direction": "across",
+          "row": 6,
+          "col": 6,
+          "answer": "AGO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 7,
+          "col": 1,
+          "answer": "OK",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 8,
+          "col": 0,
+          "answer": "SNARE",
+          "clue": "Drum on the backbeat",
+          "theme": "rock-music"
+        },
+        {
+          "number": 18,
+          "direction": "across",
+          "row": 8,
+          "col": 6,
+          "answer": "ELK",
+          "clue": "Big deer in the meadow",
+          "theme": "national-parks"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 0,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 5
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "number": 6
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "number": 7
+        },
+        {
+          "row": 1,
+          "col": 8,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "number": 9
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 10
+        },
+        {
+          "row": 4,
+          "col": 7,
+          "number": 11
+        },
+        {
+          "row": 5,
+          "col": 6,
+          "number": 12
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "number": 13
+        },
+        {
+          "row": 6,
+          "col": 2,
+          "number": 14
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 15
+        },
+        {
+          "row": 7,
+          "col": 1,
+          "number": 16
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "number": 17
+        },
+        {
+          "row": 8,
+          "col": 6,
+          "number": 18
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        ".CIPHER.C",
+        "M.M.IRE.L",
+        "A.M.L.CVE",
+        "THE.L.O.A",
+        "HARDCOVER",
+        "RSS.L.E.A",
+        "O.I.I.RUN",
+        "COO.MAY.C",
+        "K.NIB..BE"
+      ],
+      "themes": {
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "juggling": {
+          "label": "Juggling",
+          "summary": "[placeholder-theme-summary-juggling]"
+        },
+        "off-roading": {
+          "label": "Off-Roading",
+          "summary": "[placeholder-theme-summary-off-roading]"
+        },
+        "pens-pencils": {
+          "label": "Pens and Pencils",
+          "summary": "[placeholder-theme-summary-pens-pencils]"
+        },
+        "podcasts": {
+          "label": "Podcasts",
+          "summary": "[placeholder-theme-summary-podcasts]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 1,
+          "answer": "CIPHER",
+          "clue": "Encryption algorithm",
+          "theme": "programming"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "IMMERSION",
+          "clue": "Brewing by steeping rather than dripping",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "HILLCLIMB",
+          "clue": "The event, and the challenge",
+          "theme": "off-roading"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 5,
+          "answer": "ER",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 6,
+          "answer": "RECOVERY",
+          "clue": "Getting a stuck truck out",
+          "theme": "off-roading"
+        },
+        {
+          "number": 6,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "CLEARANCE",
+          "clue": "Air between axle and obstacle",
+          "theme": "off-roading"
+        },
+        {
+          "number": 7,
+          "direction": "down",
+          "row": 1,
+          "col": 0,
+          "answer": "MATHROCK",
+          "clue": "Odd time signatures, by design",
+          "theme": "rock-music"
+        },
+        {
+          "number": 8,
+          "direction": "across",
+          "row": 1,
+          "col": 4,
+          "answer": "IRE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 9,
+          "direction": "across",
+          "row": 2,
+          "col": 6,
+          "answer": "CVE",
+          "clue": "Numbered public vulnerability",
+          "theme": "programming"
+        },
+        {
+          "number": 10,
+          "direction": "across",
+          "row": 3,
+          "col": 0,
+          "answer": "THE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 3,
+          "col": 1,
+          "answer": "HAS",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "HARDCOVER",
+          "clue": "The American word for hardback",
+          "theme": "books"
+        },
+        {
+          "number": 13,
+          "direction": "across",
+          "row": 5,
+          "col": 0,
+          "answer": "RSS",
+          "clue": "What a feed actually is",
+          "theme": "podcasts"
+        },
+        {
+          "number": 14,
+          "direction": "across",
+          "row": 6,
+          "col": 6,
+          "answer": "RUN",
+          "clue": "Keep a pattern going",
+          "theme": "juggling"
+        },
+        {
+          "number": 15,
+          "direction": "across",
+          "row": 7,
+          "col": 0,
+          "answer": "COO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 7,
+          "col": 4,
+          "answer": "MAY",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 8,
+          "col": 2,
+          "answer": "NIB",
+          "clue": "Business end of a fountain pen",
+          "theme": "pens-pencils"
+        },
+        {
+          "number": 18,
+          "direction": "across",
+          "row": 8,
+          "col": 7,
+          "answer": "BE",
+          "clue": "",
+          "theme": "crossword-construction"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 1,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "number": 5
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 6
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "number": 7
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 6,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "number": 10
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "number": 11
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 12
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "number": 13
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 14
+        },
+        {
+          "row": 7,
+          "col": 0,
+          "number": 15
+        },
+        {
+          "row": 7,
+          "col": 4,
+          "number": 16
+        },
+        {
+          "row": 8,
+          "col": 2,
+          "number": 17
+        },
+        {
+          "row": 8,
+          "col": 7,
+          "number": 18
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        ".LINDYHOP",
+        "PA..O..HA",
+        ".BOOTCAMP",
+        "S..R.R..E",
+        "HUMBUCKER",
+        "A.......B",
+        ".CUYAHOGA",
+        ".O..YEN.C",
+        "GOOSENECK"
+      ],
+      "themes": {
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "guitar": {
+          "label": "Guitar",
+          "summary": "[placeholder-theme-summary-guitar]"
+        },
+        "gym-fitness": {
+          "label": "Gym & Fitness",
+          "summary": "[placeholder-theme-summary-gym-fitness]"
+        },
+        "national-parks": {
+          "label": "National Parks",
+          "summary": "[placeholder-theme-summary-national-parks]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "space": {
+          "label": "Space and Astronomy",
+          "summary": "[placeholder-theme-summary-space]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        },
+        "swing-dancing": {
+          "label": "Swing Dancing",
+          "summary": "[placeholder-theme-summary-swing-dancing]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 1,
+          "answer": "LINDYHOP",
+          "clue": "The original swing dance",
+          "theme": "swing-dancing"
+        },
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 1,
+          "answer": "LAB",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "DOT",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 7,
+          "answer": "OHM",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "PAPERBACK",
+          "clue": "The cheap edition",
+          "theme": "books"
+        },
+        {
+          "number": 5,
+          "direction": "across",
+          "row": 1,
+          "col": 0,
+          "answer": "PA",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 6,
+          "direction": "across",
+          "row": 1,
+          "col": 7,
+          "answer": "HA",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 7,
+          "direction": "across",
+          "row": 2,
+          "col": 1,
+          "answer": "BOOTCAMP",
+          "clue": "Drill-style class",
+          "theme": "gym-fitness"
+        },
+        {
+          "number": 8,
+          "direction": "down",
+          "row": 2,
+          "col": 3,
+          "answer": "ORB",
+          "clue": "A planet, poetically",
+          "theme": "space"
+        },
+        {
+          "number": 9,
+          "direction": "down",
+          "row": 2,
+          "col": 5,
+          "answer": "CRC",
+          "clue": "Checksum that catches a flipped bit, in three letters",
+          "theme": "programming"
+        },
+        {
+          "number": 10,
+          "direction": "down",
+          "row": 3,
+          "col": 0,
+          "answer": "SHA",
+          "clue": "Hash family, three letters",
+          "theme": "programming"
+        },
+        {
+          "number": 11,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "HUMBUCKER",
+          "clue": "Twin-coil pickup that cancels hum",
+          "theme": "guitar"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 6,
+          "col": 1,
+          "answer": "CUYAHOGA",
+          "clue": "Ohio's river-valley park",
+          "theme": "national-parks"
+        },
+        {
+          "number": 12,
+          "direction": "down",
+          "row": 6,
+          "col": 1,
+          "answer": "COO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 13,
+          "direction": "down",
+          "row": 6,
+          "col": 4,
+          "answer": "AYE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 14,
+          "direction": "down",
+          "row": 6,
+          "col": 5,
+          "answer": "HEN",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 15,
+          "direction": "down",
+          "row": 6,
+          "col": 6,
+          "answer": "ONE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 7,
+          "col": 4,
+          "answer": "YEN",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 8,
+          "col": 0,
+          "answer": "GOOSENECK",
+          "clue": "Kettle spout built for control",
+          "theme": "specialty-coffee"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 1,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 4
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "number": 5
+        },
+        {
+          "row": 1,
+          "col": 7,
+          "number": 6
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "number": 7
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "number": 10
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 11
+        },
+        {
+          "row": 6,
+          "col": 1,
+          "number": 12
+        },
+        {
+          "row": 6,
+          "col": 4,
+          "number": 13
+        },
+        {
+          "row": 6,
+          "col": 5,
+          "number": 14
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 15
+        },
+        {
+          "row": 7,
+          "col": 4,
+          "number": 16
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "number": 17
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        "S.V.CHIME",
+        "HEADLINER",
+        "A.U.EM...",
+        "..L.A.T.F",
+        "INTERFACE",
+        ".E..A.X.R",
+        "RETENTION",
+        "I.W.C..R.",
+        "GOOSENECK"
+      ],
+      "themes": {
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "hiking": {
+          "label": "Hiking and Nature",
+          "summary": "[placeholder-theme-summary-hiking]"
+        },
+        "jeeps": {
+          "label": "Jeeps",
+          "summary": "[placeholder-theme-summary-jeeps]"
+        },
+        "off-roading": {
+          "label": "Off-Roading",
+          "summary": "[placeholder-theme-summary-off-roading]"
+        },
+        "pinball": {
+          "label": "Pinball",
+          "summary": "[placeholder-theme-summary-pinball]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        },
+        "travel": {
+          "label": "Traveling",
+          "summary": "[placeholder-theme-summary-travel]"
+        },
+        "watch-collecting": {
+          "label": "Watch Collecting",
+          "summary": "[placeholder-theme-summary-watch-collecting]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 0,
+          "answer": "SHA",
+          "clue": "Hash family, three letters",
+          "theme": "programming"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "VAULT",
+          "clue": "Where the secrets are kept",
+          "theme": "programming"
+        },
+        {
+          "number": 3,
+          "direction": "across",
+          "row": 0,
+          "col": 4,
+          "answer": "CHIME",
+          "clue": "What a mantel clock does on the hour",
+          "theme": "watch-collecting"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 4,
+          "answer": "CLEARANCE",
+          "clue": "Air between axle and obstacle",
+          "theme": "off-roading"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 5,
+          "answer": "HIM",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 6,
+          "answer": "IN",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 6,
+          "direction": "down",
+          "row": 0,
+          "col": 7,
+          "answer": "ME",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 7,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "ER",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 8,
+          "direction": "across",
+          "row": 1,
+          "col": 0,
+          "answer": "HEADLINER",
+          "clue": "The band everyone stayed for",
+          "theme": "rock-music"
+        },
+        {
+          "number": 9,
+          "direction": "across",
+          "row": 2,
+          "col": 4,
+          "answer": "EM",
+          "clue": "Pre-solid-state machine, briefly",
+          "theme": "pinball"
+        },
+        {
+          "number": 10,
+          "direction": "down",
+          "row": 3,
+          "col": 6,
+          "answer": "TAXI",
+          "clue": "Ride from the airport",
+          "theme": "travel"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 3,
+          "col": 8,
+          "answer": "FERN",
+          "clue": "Undergrowth in the shade",
+          "theme": "hiking"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "INTERFACE",
+          "clue": "The contract, not the implementation",
+          "theme": "programming"
+        },
+        {
+          "number": 13,
+          "direction": "down",
+          "row": 4,
+          "col": 1,
+          "answer": "NEE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 14,
+          "direction": "across",
+          "row": 6,
+          "col": 0,
+          "answer": "RETENTION",
+          "clue": "Grounds the grinder keeps for itself",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 14,
+          "direction": "down",
+          "row": 6,
+          "col": 0,
+          "answer": "RIG",
+          "clue": "What owners call theirs",
+          "theme": "jeeps"
+        },
+        {
+          "number": 15,
+          "direction": "down",
+          "row": 6,
+          "col": 2,
+          "answer": "TWO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "down",
+          "row": 6,
+          "col": 7,
+          "answer": "ORC",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 8,
+          "col": 0,
+          "answer": "GOOSENECK",
+          "clue": "Kettle spout built for control",
+          "theme": "specialty-coffee"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 0,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "number": 5
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 6
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 7
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 6,
+          "number": 10
+        },
+        {
+          "row": 3,
+          "col": 8,
+          "number": 11
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 12
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "number": 13
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "number": 14
+        },
+        {
+          "row": 6,
+          "col": 2,
+          "number": 15
+        },
+        {
+          "row": 6,
+          "col": 7,
+          "number": 16
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "number": 17
+        }
+      ]
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        "RETENTION",
+        "O.H..EN..",
+        "CLEARANCE",
+        "..MY....Y",
+        "WHEELBASE",
+        "EEL..EGO.",
+        "BREAKDOWN",
+        "..S.....O",
+        "YOSEMITE."
+      ],
+      "themes": {
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "crosswords": {
+          "label": "Crossword Puzzles",
+          "summary": "[placeholder-theme-summary-crosswords]"
+        },
+        "jeeps": {
+          "label": "Jeeps",
+          "summary": "[placeholder-theme-summary-jeeps]"
+        },
+        "matcha": {
+          "label": "Matcha",
+          "summary": "[placeholder-theme-summary-matcha]"
+        },
+        "national-parks": {
+          "label": "National Parks",
+          "summary": "[placeholder-theme-summary-national-parks]"
+        },
+        "off-roading": {
+          "label": "Off-Roading",
+          "summary": "[placeholder-theme-summary-off-roading]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "reading": {
+          "label": "Reading",
+          "summary": "[placeholder-theme-summary-reading]"
+        },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        },
+        "travel": {
+          "label": "Traveling",
+          "summary": "[placeholder-theme-summary-travel]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 0,
+          "answer": "RETENTION",
+          "clue": "Grounds the grinder keeps for itself",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 0,
+          "answer": "ROC",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 2,
+          "answer": "THEMELESS",
+          "clue": "Puzzle with no unifying idea",
+          "theme": "crosswords"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 5,
+          "answer": "TEA",
+          "clue": "What it is, ground fine",
+          "theme": "matcha"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 6,
+          "answer": "INN",
+          "clue": "Small hotel",
+          "theme": "travel"
+        },
+        {
+          "number": 5,
+          "direction": "across",
+          "row": 1,
+          "col": 5,
+          "answer": "EN",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 6,
+          "direction": "across",
+          "row": 2,
+          "col": 0,
+          "answer": "CLEARANCE",
+          "clue": "Air between axle and obstacle",
+          "theme": "off-roading"
+        },
+        {
+          "number": 7,
+          "direction": "down",
+          "row": 2,
+          "col": 3,
+          "answer": "AYE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 8,
+          "direction": "down",
+          "row": 2,
+          "col": 8,
+          "answer": "EYE",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 9,
+          "direction": "across",
+          "row": 3,
+          "col": 2,
+          "answer": "MY",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 10,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "WHEELBASE",
+          "clue": "Axle to axle",
+          "theme": "jeeps"
+        },
+        {
+          "number": 10,
+          "direction": "down",
+          "row": 4,
+          "col": 0,
+          "answer": "WEB",
+          "clue": "Spider's creation, or the internet",
+          "theme": "programming"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 4,
+          "col": 1,
+          "answer": "HER",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 12,
+          "direction": "down",
+          "row": 4,
+          "col": 5,
+          "answer": "BED",
+          "clue": "Where the last chapter happens",
+          "theme": "reading"
+        },
+        {
+          "number": 13,
+          "direction": "down",
+          "row": 4,
+          "col": 6,
+          "answer": "AGO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 14,
+          "direction": "down",
+          "row": 4,
+          "col": 7,
+          "answer": "SOW",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 15,
+          "direction": "across",
+          "row": 5,
+          "col": 0,
+          "answer": "EEL",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 5,
+          "col": 5,
+          "answer": "EGO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 6,
+          "col": 0,
+          "answer": "BREAKDOWN",
+          "clue": "Half-time part the pit waits for",
+          "theme": "rock-music"
+        },
+        {
+          "number": 18,
+          "direction": "down",
+          "row": 6,
+          "col": 8,
+          "answer": "NO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 19,
+          "direction": "across",
+          "row": 8,
+          "col": 0,
+          "answer": "YOSEMITE",
+          "clue": "Granite valley in California",
+          "theme": "national-parks"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 0,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "number": 4
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "number": 5
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "number": 6
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "number": 7
+        },
+        {
+          "row": 2,
+          "col": 8,
+          "number": 8
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "number": 9
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 10
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "number": 11
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "number": 12
+        },
+        {
+          "row": 4,
+          "col": 6,
+          "number": 13
+        },
+        {
+          "row": 4,
+          "col": 7,
+          "number": 14
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "number": 15
+        },
+        {
+          "row": 5,
+          "col": 5,
+          "number": 16
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "number": 17
+        },
+        {
+          "row": 6,
+          "col": 8,
+          "number": 18
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "number": 19
+        }
+      ]
+    }
+  ]
+}

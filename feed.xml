@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Billy Ella — Now</title>
+  <id>tag:williamella.com,2026:now</id>
+  <link rel="self" href="https://williamella.com/feed.xml"/>
+  <link rel="alternate" href="https://williamella.com/"/>
+  <updated>2026-08-01T12:00:00Z</updated>
+  <author>
+    <name>Billy Ella</name>
+  </author>
+  <entry>
+    <title>August 2026</title>
+    <id>tag:williamella.com,2026:now-1</id>
+    <link rel="alternate" href="https://williamella.com/#now-1"/>
+    <updated>2026-08-01T12:00:00Z</updated>
+    <summary type="text">3 updates, 1 picture</summary>
+  </entry>
+</feed>

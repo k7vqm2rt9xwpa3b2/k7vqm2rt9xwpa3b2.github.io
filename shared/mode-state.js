@@ -1,0 +1,88 @@
+const STORAGE_KEY="mode";
+const OS_DARK="(prefers-color-scheme: dark)";
+const SHIPPED_COLOR_SCHEME="light dark";
+function remember(window,mode){
+try{
+window.localStorage.setItem(STORAGE_KEY,mode);
+}catch{
+return;
+}
+}
+function unremember(window){
+try{
+window.localStorage.removeItem(STORAGE_KEY);
+}catch{
+return;
+}
+}
+function storedMode(window){
+let saved;
+try{
+saved=window.localStorage.getItem(STORAGE_KEY);
+}catch{
+return null;
+}
+return saved==="light"||saved==="dark"?saved:null;
+}
+export function activeMode(window){
+const chosen=window.document.documentElement.getAttribute("data-mode");
+if(chosen){
+return chosen;
+}
+return window.matchMedia(OS_DARK).matches?"dark":"light";
+}
+export function paintChrome(window){
+const document=window.document;
+const chosen=document.documentElement.getAttribute("data-mode");
+if(chosen!=="light"&&chosen!=="dark"){
+return;
+}
+const source=document.querySelector(
+`meta[name="theme-color"][media="(prefers-color-scheme: ${chosen})"]`,
+);
+if(!source){
+return;
+}
+let override=document.querySelector(
+'meta[name="theme-color"]:not([media])',
+);
+if(!override){
+override=document.createElement("meta");
+override.setAttribute("name","theme-color");
+document.head.insertBefore(
+override,
+document.querySelector('meta[name="theme-color"]'),
+);
+}
+override.setAttribute("content",source.getAttribute("content"));
+}
+export function setMode(window,mode){
+window.document.documentElement.setAttribute("data-mode",mode);
+remember(window,mode);
+paintChrome(window);
+}
+function followDevice(window){
+const document=window.document;
+document.documentElement.removeAttribute("data-mode");
+document
+.querySelector('meta[name="color-scheme"]')
+?.setAttribute("content",SHIPPED_COLOR_SCHEME);
+document.querySelector('meta[name="theme-color"]:not([media])')?.remove();
+}
+export function forgetMode(window){
+unremember(window);
+followDevice(window);
+}
+export function restoreStoredMode(window){
+const saved=storedMode(window);
+if(!saved){
+followDevice(window);
+return;
+}
+const document=window.document;
+document.documentElement.setAttribute("data-mode",saved);
+document
+.querySelector('meta[name="color-scheme"]')
+?.setAttribute("content",saved);
+paintChrome(window);
+}

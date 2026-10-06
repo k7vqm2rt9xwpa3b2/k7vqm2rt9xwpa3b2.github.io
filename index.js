@@ -1,0 +1,48 @@
+import{initDisclosures}from"./shared/disclosure.js";
+import{initNoteCarousel}from"./shared/now-notes.js";
+import{initPhotoCarousel}from"./shared/now-photo.js";
+import{initMode}from"./shared/mode.js";
+import{rememberedPuzzle,rememberPuzzle}from"./shared/puzzle-memory.js";
+function fetchViaWindow(url){
+return window.fetch(url);
+}
+initMode(window);
+initDisclosures(document);
+initPhotoCarousel(window,window.IntersectionObserver);
+initNoteCarousel(window);
+const crosswordOptions={
+search:window.location.search,
+random:Math.random,
+remembered:rememberedPuzzle(window),
+remember:(index)=>rememberPuzzle(window,index),
+};
+export const ready=Promise.all([
+Promise.all([
+import("./crossword/crossword-set.js"),
+import("./crossword/crossword-controls.js"),
+import("./shared/magic-word-hook.js"),
+]).then(
+([{renderCrossword},{buildCrosswordControls},{magicWordHook}])=>{
+buildCrosswordControls(document);
+const{magicWords,onMagicWord,onMalformedAddress,opened}=
+magicWordHook(window);
+return renderCrossword(document,fetchViaWindow,{
+...crosswordOptions,
+magicWords,
+onMagicWord,
+onMalformedAddress,
+}).then(opened);
+},
+),
+import("./shared/cards.js").then(({renderCards})=>
+renderCards(
+document,
+fetchViaWindow,
+undefined,
+window.IntersectionObserver,
+),
+),
+import("./shared/contact.js").then(({initContact})=>
+initContact(document),
+),
+]);

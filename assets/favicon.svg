@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  
+  <style>.ring{fill:#405645;}.lines{fill:#655e50;}.block{fill:#16130f;}.name{fill:#fffdf7;}.second{fill:#dfe4dc;}.rest{fill:#a9baad;}.name-letter{fill:#405645;}.second-letter{fill:#405645;}.rest-letter{fill:#405645;}@media (prefers-color-scheme: dark){.ring{fill:#405645;}.lines{fill:#a49a88;}.block{fill:#1c1a17;}.name{fill:#2c2925;}.second{fill:#2c342b;}.rest{fill:#435a4a;}.name-letter{fill:#eae3d7;}.second-letter{fill:#eae3d7;}.rest-letter{fill:#a49a88;}}</style>
+
+  <rect class="ring" width="16" height="16" fill="#405645" />
+  <rect class="lines" x="1" y="1" width="14" height="14" fill="#655e50" />
+
+  
+  <g class="block" fill="#16130f">
+    <rect x="1" y="1" width="4" height="4" />
+    <rect x="11" y="1" width="4" height="4" />
+    <rect x="11" y="11" width="4" height="4" />
+  </g>
+
+  
+  <g class="name" fill="#fffdf7">
+    <rect x="6" y="1" width="4" height="4" />
+    <rect x="6" y="6" width="4" height="4" />
+    <rect x="6" y="11" width="4" height="4" />
+  </g>
+
+  
+  <g class="second" fill="#dfe4dc">
+    <rect x="1" y="11" width="4" height="4" />
+  </g>
+
+  
+  <g class="rest" fill="#a9baad">
+    <rect x="1" y="6" width="4" height="4" />
+    <rect x="11" y="6" width="4" height="4" />
+  </g>
+
+  
+  <g
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-weight="700"
+    font-size="4"
+    text-anchor="middle"
+  >
+    <g class="name-letter" fill="#405645">
+      <text x="8" y="4.48">W</text>
+      <text x="8" y="9.48">M</text>
+      <text x="8" y="14.48">E</text>
+    </g>
+    <g class="second-letter" fill="#405645">
+      <text x="3" y="14.48">B</text>
+    </g>
+    <g class="rest-letter" fill="#405645">
+      <text x="3" y="9.48">A</text>
+      <text x="13" y="9.48">P</text>
+    </g>
+  </g>
+</svg>
