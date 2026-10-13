@@ -1,5 +1,13 @@
 [
   {
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "year": "1987",
+    "rating": 3,
+    "read": "2026-10-10",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1722944318l/6149._SY475_.jpg"
+  },
+  {
     "title": "Zen Computer",
     "author": "Philip Toshio Sudo",
     "year": "1999",
@@ -14,13 +22,5 @@
     "rating": 3,
     "read": "2026-08-01",
     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386923108l/81903.jpg"
-  },
-  {
-    "title": "An Arsonist's Guide to Writers' Homes in New England",
-    "author": "Brock Clarke",
-    "year": "2007",
-    "rating": 4,
-    "read": "2026-07-14",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438731936l/733462._SY475_.jpg"
   }
 ]

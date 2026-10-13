@@ -1,29 +1,29 @@
 [
   {
-    "title": "Nine to Five",
-    "year": "1980",
-    "rating": 2.5,
-    "watched": "2026-09-03",
-    "rewatch": false,
-    "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/1/1/39611-nine-to-five-0-400-0-600-crop.jpg?v=585e6eeb9e",
-    "director": "Colin Higgins"
-  },
-  {
-    "title": "Finding Nemo",
-    "year": "2003",
+    "title": "Black Panther",
+    "year": "2018",
     "rating": 3.5,
-    "watched": "2026-08-31",
+    "watched": "2026-10-09",
     "rewatch": false,
-    "poster": "https://a.ltrbxd.com/resized/film-poster/2/7/0/5/2705-finding-nemo-0-400-0-600-crop.jpg?v=b329bc5740",
-    "director": "Andrew Stanton & Lee Unkrich"
+    "poster": "https://a.ltrbxd.com/resized/film-poster/2/0/9/3/8/3/209383-black-panther-0-400-0-600-crop.jpg?v=d6e7e2c7a4",
+    "director": "Ryan Coogler"
   },
   {
-    "title": "Speak No Evil",
-    "year": "2024",
-    "rating": 4.0,
-    "watched": "2026-08-28",
+    "title": "Women on the Verge of a Nervous Breakdown",
+    "year": "1988",
+    "rating": 2.0,
+    "watched": "2026-10-06",
     "rewatch": false,
-    "poster": "https://a.ltrbxd.com/resized/film-poster/1/0/0/4/5/3/1/1004531-speak-no-evil-0-600-0-900-crop.jpg?v=2c01632a58",
-    "director": "James Watkins"
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/9/4/6/8/49468-women-on-the-verge-of-a-nervous-breakdown-0-400-0-600-crop.jpg?v=62abc94559",
+    "director": "Pedro Almod\u00f3var"
+  },
+  {
+    "title": "Body Heat",
+    "year": "1981",
+    "rating": 4.0,
+    "watched": "2026-10-06",
+    "rewatch": false,
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/3/1/1/4/43114-body-heat-0-400-0-600-crop.jpg?v=5724935efb",
+    "director": "Lawrence Kasdan"
   }
 ]

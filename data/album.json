@@ -1,5 +1,23 @@
 [
   {
+    "artist": "Jimmy Montague",
+    "album": "Tomorrow's Coffee",
+    "added": "2026-09-30",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1a/3b/f4/1a3bf484-1904-015c-6b69-b4e89c382082/artwork.jpg/400x400bb.webp",
+    "tracks": 10,
+    "favorited": 0,
+    "year": "2024"
+  },
+  {
+    "artist": "Testament",
+    "album": "The New Order",
+    "added": "2026-09-17",
+    "artwork": null,
+    "tracks": 10,
+    "favorited": 0,
+    "year": "1988"
+  },
+  {
     "artist": "Angine de Poitrine",
     "album": "Vol.II",
     "added": "2026-09-03",
@@ -7,23 +25,5 @@
     "tracks": 6,
     "favorited": 0,
     "year": "2026"
-  },
-  {
-    "artist": "Weezer",
-    "album": "Weezer (Gold)",
-    "added": "2026-08-27",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7b/4f/c6/7b4fc6dc-bb2a-4b73-0c58-fb1bd3e21102/093624819394.jpg/400x400bb.webp",
-    "tracks": 10,
-    "favorited": 3,
-    "year": "2026"
-  },
-  {
-    "artist": "My Chemical Romance",
-    "album": "Danger Days: The True Lives Of The Fabulous Killjoys",
-    "added": "2026-08-04",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/71/1e/b9/mzi.abvgmgsk.jpg/400x400bb.webp",
-    "tracks": 15,
-    "favorited": 2,
-    "year": "2010"
   }
 ]

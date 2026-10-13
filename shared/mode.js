@@ -114,10 +114,11 @@ setMode(window,activeMode(window)==="dark"?"light":"dark");
 initModeNoteForget(window);
 }
 export const PRINT_DARK_ATTRIBUTE="data-print-dark";
-function saveButton(document,mode,word){
+export const PRINT_CREAM_ATTRIBUTE="data-print-cream";
+function saveButton(document,copy,word){
 const button=part(document,"button","save-note__save");
 button.setAttribute("type","button");
-button.id=`save-note-${mode}`;
+button.id=`save-note-${copy}`;
 button.setAttribute("aria-labelledby",`save-note-lead ${button.id}`);
 button.append(worded(document,"save-note__word",word));
 return button;
@@ -129,43 +130,61 @@ document.querySelector(".save-note")
 if(!note||note.hasChildNodes()){
 return null;
 }
-const{saveLead,saveLight,saveDark,saveJoiner}=note.dataset;
-if(!saveLead||!saveLight||!saveDark||!saveJoiner){
+const{saveLead,savePaper,saveLight,saveDark,saveJoiner}=note.dataset;
+if(!saveLead||!savePaper||!saveLight||!saveDark||!saveJoiner){
 return null;
 }
 const lead=document.createElement("span");
 lead.id="save-note-lead";
 lead.setAttribute("aria-hidden","true");
 lead.textContent=saveLead;
-const joiner=worded(document,"save-note__joiner",saveJoiner);
-joiner.setAttribute("aria-hidden","true");
+const joiner=()=>{
+const one=worded(document,"save-note__joiner",saveJoiner);
+one.setAttribute("aria-hidden","true");
+return one;
+};
 const pair=part(document,"span","save-note__pair");
 pair.append(
+saveButton(document,"paper",savePaper),
+joiner(),
 saveButton(document,"light",saveLight),
-joiner,
+joiner(),
 saveButton(document,"dark",saveDark),
 );
 note.append(lead," ",pair);
 return note;
 }
+const SAVE_MARKS=Object.freeze([
+null,
+PRINT_CREAM_ATTRIBUTE,
+PRINT_DARK_ATTRIBUTE,
+]);
 function initSaveNote(window){
 const note=buildSaveNote(window.document);
 if(!note){
 return;
 }
 const root=window.document.documentElement;
-const[light,dark]=note.querySelectorAll("button");
-light.addEventListener("click",function(){
+const clearMarks=function(){
+root.removeAttribute(PRINT_CREAM_ATTRIBUTE);
 root.removeAttribute(PRINT_DARK_ATTRIBUTE);
+};
+note.querySelectorAll("button").forEach(function(button,index){
+const mark=SAVE_MARKS[index];
+button.addEventListener("click",function(){
+clearMarks();
+if(mark){
+root.setAttribute(mark,"");
+}
+try{
 window.print();
+}catch(error){
+clearMarks();
+throw error;
+}
 });
-dark.addEventListener("click",function(){
-root.setAttribute(PRINT_DARK_ATTRIBUTE,"");
-window.print();
 });
-window.addEventListener("afterprint",function(){
-root.removeAttribute(PRINT_DARK_ATTRIBUTE);
-});
+window.addEventListener("afterprint",clearMarks);
 }
 export const HOME_APP_ATTRIBUTE="data-home-app";
 function initSaveLine(window){
