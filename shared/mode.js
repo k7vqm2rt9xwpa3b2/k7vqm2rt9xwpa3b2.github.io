@@ -167,13 +167,24 @@ window.addEventListener("afterprint",function(){
 root.removeAttribute(PRINT_DARK_ATTRIBUTE);
 });
 }
+export const HOME_APP_ATTRIBUTE="data-home-app";
+function initSaveLine(window){
+if(window.document.documentElement.hasAttribute(HOME_APP_ATTRIBUTE)){
+return import("./home-app.js").then(function(homeApp){
+homeApp.initHomeApp(window);
+});
+}
+initSaveNote(window);
+return Promise.resolve();
+}
 export function initMode(window){
 initModeNote(window);
-initSaveNote(window);
+const saveLine=initSaveLine(window);
 paintChrome(window);
 window.addEventListener("pageshow",function(event){
 if(event.persisted){
 restoreStoredMode(window);
 }
 });
+return saveLine;
 }

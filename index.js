@@ -1,3 +1,4 @@
+import{fitNewestSlides}from"./shared/text-reveal.js";
 import{initDisclosures}from"./shared/disclosure.js";
 import{initNoteCarousel}from"./shared/now-notes.js";
 import{initPhotoCarousel}from"./shared/now-photo.js";
@@ -8,6 +9,7 @@ return window.fetch(url);
 }
 initMode(window);
 initDisclosures(document);
+fitNewestSlides(document);
 initPhotoCarousel(window,window.IntersectionObserver);
 initNoteCarousel(window);
 const crosswordOptions={
@@ -34,15 +36,13 @@ onMalformedAddress,
 }).then(opened);
 },
 ),
-import("./shared/cards.js").then(({renderCards})=>
-renderCards(
-document,
-fetchViaWindow,
-undefined,
-window.IntersectionObserver,
-),
+import("./shared/cards.js").then(({wireCards})=>
+wireCards(document,undefined,window.IntersectionObserver),
 ),
 import("./shared/contact.js").then(({initContact})=>
 initContact(document),
+),
+import("./shared/masthead-menu.js").then(({initMastheadMenu})=>
+initMastheadMenu(document),
 ),
 ]);

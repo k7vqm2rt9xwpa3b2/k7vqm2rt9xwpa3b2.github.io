@@ -28,9 +28,6 @@ if(!showing){
 img.setAttribute("loading","lazy");
 }
 img.setAttribute("referrerpolicy","no-referrer");
-img.addEventListener("error",function(){
-img.remove();
-});
 img.setAttribute("src",url);
 return img;
 }
@@ -68,6 +65,11 @@ glyphs.setAttribute("role","img");
 const gloss=source.gloss(record,now);
 glyphs.setAttribute("aria-label",gloss);
 glyphs.setAttribute("title",gloss);
+const inputs=source.clockInputs?.(record);
+if(inputs){
+glyphs.setAttribute("data-added",inputs.added);
+glyphs.setAttribute("data-tracks",inputs.tracks);
+}
 glyphs.textContent=signal;
 row.appendChild(glyphs);
 slide.appendChild(row);

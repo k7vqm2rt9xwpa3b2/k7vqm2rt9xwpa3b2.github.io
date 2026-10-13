@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-dGTg2+ib6JHAV008RNIxBKHwSEVmolam/6RiEijAIOg='; style-src 'self'; img-src 'self' data: https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-yyrSW1XrdRA8QZo1et8oJelBC72v9rWXMej8Cs5g7JI='; style-src 'self'; img-src 'self' data: https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Billy Ella — Now archive</title>
     <meta name="description" content="Past now entries — what changed month to month, newest first." />
@@ -27,7 +27,10 @@
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
     <link rel="manifest" href="../manifest.webmanifest" />
     <meta name="color-scheme" content="light dark" />
-    <script>try{
+    <script>if(navigator.standalone===true){
+document.documentElement.setAttribute("data-home-app","");
+}
+try{
 const saved=localStorage.getItem("mode");
 if(saved==="light"||saved==="dark"){
 document.documentElement.setAttribute("data-mode",saved);
@@ -82,10 +85,14 @@ document.querySelector("meta[name=color-scheme]").content=saved;
       </p>
       <p
         class="save-note"
+        id="save"
         data-save-lead="Like what you see? Save a copy in your favorite mode:"
         data-save-light="light"
         data-save-dark="dark"
         data-save-joiner=" · "
+        data-app-lead="Like what you see? Click"
+        data-app-word="save"
+        data-app-tail=", pick open in Safari, and then choose your favorite mode"
       ></p>
       <p>No analytics, no tracking, no frameworks — a handful of hand-written files and one small script.</p>
       <div class="colophon__sign">

@@ -28,6 +28,9 @@ const PENDING_LABEL="(pending)";
 const PENDING_DAYS=7;
 const MS_PER_DAY=24*60*60*1000;
 function isWithinPendingWindow(added,now){
+if(now===null){
+return false;
+}
 const addedAt=Date.parse(added);
 if(Number.isNaN(addedAt)){
 return false;
@@ -42,6 +45,12 @@ if(record.favorited===0&&isWithinPendingWindow(record.added,now)){
 return FAVORITED_GLYPH+" "+PENDING_LABEL;
 }
 return FAVORITED_GLYPH+" "+record.favorited+"/"+record.tracks;
+}
+export function favoritedClockInputs(record){
+if(record.favorited!==0){
+return null;
+}
+return{added:String(record.added),tracks:String(record.tracks)};
 }
 export function favoritedGloss(record,now){
 if(!present(record.tracks)||!present(record.favorited)){

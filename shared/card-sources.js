@@ -2,6 +2,7 @@ import{ALBUM_MARK,BOOK_MARK,FILM_MARK}from"./card-placeholder.js";
 import{
 bookGloss,
 bookSignal,
+favoritedClockInputs,
 favoritedGloss,
 favoritedSignal,
 filmGloss,
@@ -38,6 +39,7 @@ return cardLine(r.year);
 },
 signal:favoritedSignal,
 gloss:favoritedGloss,
+clockInputs:favoritedClockInputs,
 mark:ALBUM_MARK,
 markLabel:"No album yet",
 coverHosts:[
