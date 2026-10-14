@@ -9,7 +9,7 @@
         ".A.CREDIT",
         "LIE..L.N.",
         "ANTHOLOGY",
-        "....U..S.",
+        "....U..SU",
         "ALGORITHM",
         "D..L.LEO.",
         "SKIDPLATE"
@@ -232,6 +232,24 @@
         },
         {
           "number": 15,
+          "direction": "down",
+          "row": 4,
+          "col": 8,
+          "answer": "YUM",
+          "clue": "Review in three letters",
+          "theme": "doughnuts"
+        },
+        {
+          "number": 16,
+          "direction": "across",
+          "row": 5,
+          "col": 7,
+          "answer": "SU",
+          "clue": "Become root, briefly",
+          "theme": "programming"
+        },
+        {
+          "number": 17,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -240,7 +258,7 @@
           "theme": "programming"
         },
         {
-          "number": 15,
+          "number": 17,
           "direction": "down",
           "row": 6,
           "col": 0,
@@ -249,7 +267,7 @@
           "theme": "podcasts"
         },
         {
-          "number": 16,
+          "number": 18,
           "direction": "down",
           "row": 6,
           "col": 3,
@@ -258,7 +276,7 @@
           "theme": "doughnuts"
         },
         {
-          "number": 17,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 5,
@@ -267,7 +285,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 20,
           "direction": "down",
           "row": 6,
           "col": 6,
@@ -276,7 +294,7 @@
           "theme": "matcha"
         },
         {
-          "number": 19,
+          "number": 21,
           "direction": "across",
           "row": 7,
           "col": 5,
@@ -285,7 +303,7 @@
           "theme": "space"
         },
         {
-          "number": 20,
+          "number": 22,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -366,35 +384,53 @@
           "number": 14
         },
         {
-          "row": 6,
-          "col": 0,
+          "row": 4,
+          "col": 8,
           "number": 15
         },
         {
-          "row": 6,
-          "col": 3,
+          "row": 5,
+          "col": 7,
           "number": 16
         },
         {
           "row": 6,
-          "col": 5,
+          "col": 0,
           "number": 17
         },
         {
           "row": 6,
-          "col": 6,
+          "col": 3,
           "number": 18
         },
         {
-          "row": 7,
+          "row": 6,
           "col": 5,
           "number": 19
         },
         {
+          "row": 6,
+          "col": 6,
+          "number": 20
+        },
+        {
+          "row": 7,
+          "col": 5,
+          "number": 21
+        },
+        {
           "row": 8,
           "col": 0,
-          "number": 20
+          "number": 22
         }
+      ],
+      "circled": [
+        [0, 1],
+        [4, 4],
+        [5, 7],
+        [6, 8],
+        [7, 7],
+        [8, 0]
       ]
     },
     {
@@ -406,7 +442,7 @@
         "R.AES.Y.A",
         "UI...T..S",
         "MOONPHASE",
-        "M....I.W.",
+        "M..O.I.W.",
         "IMAGINARY",
         "NAP.N.C.I",
         "GREENBEAN"
@@ -443,6 +479,10 @@
         "hiking": {
           "label": "Hiking and Nature",
           "summary": "[placeholder-theme-summary-hiking]"
+        },
+        "jeeps": {
+          "label": "Jeeps",
+          "summary": "[placeholder-theme-summary-jeeps]"
         },
         "off-roading": {
           "label": "Off-Roading",
@@ -517,8 +557,8 @@
           "row": 0,
           "col": 4,
           "answer": "ESS",
-          "clue": "",
-          "theme": "crossword-construction"
+          "clue": "Why the engine naps at red lights",
+          "theme": "jeeps"
         },
         {
           "number": 6,
@@ -614,13 +654,22 @@
           "number": 16,
           "direction": "down",
           "row": 4,
+          "col": 3,
+          "answer": "NOG",
+          "clue": "Egg ___",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "down",
+          "row": 4,
           "col": 7,
           "answer": "SWR",
           "clue": "Antenna-match reading, briefly",
           "theme": "amateur-radio"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -629,7 +678,7 @@
           "theme": "programming"
         },
         {
-          "number": 18,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 1,
@@ -638,7 +687,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 19,
+          "number": 20,
           "direction": "down",
           "row": 6,
           "col": 2,
@@ -647,7 +696,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 20,
+          "number": 21,
           "direction": "down",
           "row": 6,
           "col": 4,
@@ -656,7 +705,7 @@
           "theme": "travel"
         },
         {
-          "number": 21,
+          "number": 22,
           "direction": "down",
           "row": 6,
           "col": 6,
@@ -665,7 +714,7 @@
           "theme": "disc-golf"
         },
         {
-          "number": 22,
+          "number": 23,
           "direction": "down",
           "row": 6,
           "col": 8,
@@ -674,7 +723,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 23,
+          "number": 24,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -683,7 +732,7 @@
           "theme": "dogs"
         },
         {
-          "number": 24,
+          "number": 25,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -770,49 +819,62 @@
         },
         {
           "row": 4,
-          "col": 7,
+          "col": 3,
           "number": 16
         },
         {
-          "row": 6,
-          "col": 0,
+          "row": 4,
+          "col": 7,
           "number": 17
         },
         {
           "row": 6,
-          "col": 1,
+          "col": 0,
           "number": 18
         },
         {
           "row": 6,
-          "col": 2,
+          "col": 1,
           "number": 19
         },
         {
           "row": 6,
-          "col": 4,
+          "col": 2,
           "number": 20
         },
         {
           "row": 6,
-          "col": 6,
+          "col": 4,
           "number": 21
         },
         {
           "row": 6,
-          "col": 8,
+          "col": 6,
           "number": 22
+        },
+        {
+          "row": 6,
+          "col": 8,
+          "number": 23
         },
         {
           "row": 7,
           "col": 0,
-          "number": 23
+          "number": 24
         },
         {
           "row": 8,
           "col": 0,
-          "number": 24
+          "number": 25
         }
+      ],
+      "circled": [
+        [0, 1],
+        [1, 8],
+        [3, 1],
+        [6, 3],
+        [7, 8],
+        [8, 4]
       ]
     },
     {
@@ -822,7 +884,7 @@
         "BENCH.J.G",
         "EXTRABALL",
         "A.HOT.M.A",
-        "N..W.F.ED",
+        "NO.W.F.ED",
         "SKIDPLATE",
         "...S.O.AS",
         "NATURAL..",
@@ -980,6 +1042,24 @@
         },
         {
           "number": 10,
+          "direction": "across",
+          "row": 3,
+          "col": 0,
+          "answer": "NO",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
+          "direction": "down",
+          "row": 3,
+          "col": 1,
+          "answer": "OK",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 12,
           "direction": "down",
           "row": 3,
           "col": 5,
@@ -988,7 +1068,7 @@
           "theme": "programming"
         },
         {
-          "number": 11,
+          "number": 13,
           "direction": "across",
           "row": 3,
           "col": 7,
@@ -997,7 +1077,7 @@
           "theme": "books"
         },
         {
-          "number": 11,
+          "number": 13,
           "direction": "down",
           "row": 3,
           "col": 7,
@@ -1006,7 +1086,7 @@
           "theme": "travel"
         },
         {
-          "number": 12,
+          "number": 14,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -1015,7 +1095,7 @@
           "theme": "jeeps"
         },
         {
-          "number": 13,
+          "number": 15,
           "direction": "across",
           "row": 5,
           "col": 7,
@@ -1024,7 +1104,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 14,
+          "number": 16,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -1033,7 +1113,7 @@
           "theme": "barefoot-shoes"
         },
         {
-          "number": 14,
+          "number": 16,
           "direction": "down",
           "row": 6,
           "col": 0,
@@ -1042,7 +1122,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 15,
+          "number": 17,
           "direction": "down",
           "row": 6,
           "col": 1,
@@ -1051,7 +1131,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 16,
+          "number": 18,
           "direction": "down",
           "row": 6,
           "col": 2,
@@ -1060,7 +1140,7 @@
           "theme": "matcha"
         },
         {
-          "number": 17,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 4,
@@ -1069,7 +1149,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 20,
           "direction": "down",
           "row": 6,
           "col": 6,
@@ -1078,7 +1158,7 @@
           "theme": "pinball"
         },
         {
-          "number": 19,
+          "number": 21,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -1087,7 +1167,7 @@
           "theme": "programming"
         },
         {
-          "number": 20,
+          "number": 22,
           "direction": "down",
           "row": 7,
           "col": 8,
@@ -1096,7 +1176,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 21,
+          "number": 23,
           "direction": "across",
           "row": 8,
           "col": 2,
@@ -1153,64 +1233,81 @@
         },
         {
           "row": 3,
-          "col": 5,
+          "col": 0,
           "number": 10
         },
         {
           "row": 3,
-          "col": 7,
+          "col": 1,
           "number": 11
         },
         {
-          "row": 4,
-          "col": 0,
+          "row": 3,
+          "col": 5,
           "number": 12
         },
         {
-          "row": 5,
+          "row": 3,
           "col": 7,
           "number": 13
         },
         {
-          "row": 6,
+          "row": 4,
           "col": 0,
           "number": 14
         },
         {
-          "row": 6,
-          "col": 1,
+          "row": 5,
+          "col": 7,
           "number": 15
         },
         {
           "row": 6,
-          "col": 2,
+          "col": 0,
           "number": 16
         },
         {
           "row": 6,
-          "col": 4,
+          "col": 1,
           "number": 17
         },
         {
           "row": 6,
-          "col": 6,
+          "col": 2,
           "number": 18
+        },
+        {
+          "row": 6,
+          "col": 4,
+          "number": 19
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 20
         },
         {
           "row": 7,
           "col": 0,
-          "number": 19
+          "number": 21
         },
         {
           "row": 7,
           "col": 8,
-          "number": 20
+          "number": 22
         },
         {
           "row": 8,
           "col": 2,
-          "number": 21
+          "number": 23
         }
+      ],
+      "circled": [
+        [0, 0],
+        [1, 3],
+        [2, 0],
+        [4, 0],
+        [5, 3]
       ]
     },
     {
@@ -1611,6 +1708,13 @@
           "col": 0,
           "number": 22
         }
+      ],
+      "circled": [
+        [0, 2],
+        [3, 4],
+        [4, 6],
+        [6, 6],
+        [7, 8]
       ]
     },
     {
@@ -1618,16 +1722,20 @@
       "height": 9,
       "rows": [
         "CLEARANCE",
-        "A.X..N..A",
+        "A.X..N.VA",
         "TREESAVER",
         ".S.NEE...",
         "HANDWRAPS",
-        "T....O.UH",
+        "T..S.O.UH",
         "TAM.OB.LA",
         "PLAYFIELD",
         "STRETCH.E"
       ],
       "themes": {
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
         "crossword-construction": {
           "label": "Crossword construction",
           "summary": "Two- and three-letter fillers let the long answers cross and complete."
@@ -1651,6 +1759,10 @@
         "matcha": {
           "label": "Matcha",
           "summary": "[placeholder-theme-summary-matcha]"
+        },
+        "national-parks": {
+          "label": "National Parks",
+          "summary": "[placeholder-theme-summary-national-parks]"
         },
         "off-roading": {
           "label": "Off-Roading",
@@ -1722,13 +1834,31 @@
           "number": 4,
           "direction": "down",
           "row": 0,
+          "col": 7,
+          "answer": "CVE",
+          "clue": "Numbered public vulnerability",
+          "theme": "programming"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
           "col": 8,
           "answer": "EAR",
           "clue": "Where the bud goes",
           "theme": "podcasts"
         },
         {
-          "number": 5,
+          "number": 6,
+          "direction": "across",
+          "row": 1,
+          "col": 7,
+          "answer": "VA",
+          "clue": "Shenandoah's state, abbr.",
+          "theme": "national-parks"
+        },
+        {
+          "number": 7,
           "direction": "across",
           "row": 2,
           "col": 0,
@@ -1737,7 +1867,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 6,
+          "number": 8,
           "direction": "down",
           "row": 2,
           "col": 1,
@@ -1746,16 +1876,16 @@
           "theme": "programming"
         },
         {
-          "number": 7,
+          "number": 9,
           "direction": "down",
           "row": 2,
           "col": 3,
-          "answer": "END",
-          "clue": "Last word, sometimes",
-          "theme": "reading"
+          "answer": "ENDS",
+          "clue": "Book ___ (shelf holders)",
+          "theme": "books"
         },
         {
-          "number": 8,
+          "number": 10,
           "direction": "down",
           "row": 2,
           "col": 4,
@@ -1764,7 +1894,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 9,
+          "number": 11,
           "direction": "across",
           "row": 3,
           "col": 3,
@@ -1773,7 +1903,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 10,
+          "number": 12,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -1782,7 +1912,7 @@
           "theme": "kickboxing"
         },
         {
-          "number": 10,
+          "number": 12,
           "direction": "down",
           "row": 4,
           "col": 0,
@@ -1791,7 +1921,7 @@
           "theme": "programming"
         },
         {
-          "number": 11,
+          "number": 13,
           "direction": "down",
           "row": 4,
           "col": 7,
@@ -1800,7 +1930,7 @@
           "theme": "guitar"
         },
         {
-          "number": 12,
+          "number": 14,
           "direction": "down",
           "row": 4,
           "col": 8,
@@ -1809,7 +1939,7 @@
           "theme": "matcha"
         },
         {
-          "number": 13,
+          "number": 15,
           "direction": "across",
           "row": 5,
           "col": 7,
@@ -1818,7 +1948,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 14,
+          "number": 16,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -1827,7 +1957,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 15,
+          "number": 17,
           "direction": "down",
           "row": 6,
           "col": 1,
@@ -1836,7 +1966,7 @@
           "theme": "rock-music"
         },
         {
-          "number": 16,
+          "number": 18,
           "direction": "down",
           "row": 6,
           "col": 2,
@@ -1845,7 +1975,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 17,
+          "number": 19,
           "direction": "across",
           "row": 6,
           "col": 4,
@@ -1854,7 +1984,7 @@
           "theme": "disc-golf"
         },
         {
-          "number": 17,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 4,
@@ -1863,7 +1993,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 20,
           "direction": "across",
           "row": 6,
           "col": 7,
@@ -1872,7 +2002,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 19,
+          "number": 21,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -1881,7 +2011,7 @@
           "theme": "pinball"
         },
         {
-          "number": 20,
+          "number": 22,
           "direction": "down",
           "row": 7,
           "col": 3,
@@ -1890,7 +2020,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 21,
+          "number": 23,
           "direction": "down",
           "row": 7,
           "col": 6,
@@ -1899,7 +2029,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 22,
+          "number": 24,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -1926,99 +2056,117 @@
         },
         {
           "row": 0,
-          "col": 8,
+          "col": 7,
           "number": 4
         },
         {
-          "row": 2,
-          "col": 0,
+          "row": 0,
+          "col": 8,
           "number": 5
         },
         {
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 7,
           "number": 6
         },
         {
           "row": 2,
-          "col": 3,
+          "col": 0,
           "number": 7
         },
         {
           "row": 2,
-          "col": 4,
+          "col": 1,
           "number": 8
         },
         {
-          "row": 3,
+          "row": 2,
           "col": 3,
           "number": 9
         },
         {
-          "row": 4,
-          "col": 0,
+          "row": 2,
+          "col": 4,
           "number": 10
         },
         {
-          "row": 4,
-          "col": 7,
+          "row": 3,
+          "col": 3,
           "number": 11
         },
         {
           "row": 4,
-          "col": 8,
+          "col": 0,
           "number": 12
         },
         {
-          "row": 5,
+          "row": 4,
           "col": 7,
           "number": 13
         },
         {
-          "row": 6,
-          "col": 0,
+          "row": 4,
+          "col": 8,
           "number": 14
         },
         {
-          "row": 6,
-          "col": 1,
+          "row": 5,
+          "col": 7,
           "number": 15
         },
         {
           "row": 6,
-          "col": 2,
+          "col": 0,
           "number": 16
         },
         {
           "row": 6,
-          "col": 4,
+          "col": 1,
           "number": 17
         },
         {
           "row": 6,
-          "col": 7,
+          "col": 2,
           "number": 18
         },
         {
-          "row": 7,
-          "col": 0,
+          "row": 6,
+          "col": 4,
           "number": 19
         },
         {
-          "row": 7,
-          "col": 3,
+          "row": 6,
+          "col": 7,
           "number": 20
         },
         {
           "row": 7,
-          "col": 6,
+          "col": 0,
           "number": 21
+        },
+        {
+          "row": 7,
+          "col": 3,
+          "number": 22
+        },
+        {
+          "row": 7,
+          "col": 6,
+          "number": 23
         },
         {
           "row": 8,
           "col": 0,
-          "number": 22
+          "number": 24
         }
+      ],
+      "circled": [
+        [0, 7],
+        [1, 0],
+        [2, 1],
+        [4, 1],
+        [7, 4],
+        [8, 3]
       ]
     },
     {
@@ -2026,13 +2174,13 @@
       "height": 9,
       "rows": [
         "BACKCROSS",
-        "O.....VIE",
+        "OH.O..VIE",
         "O.CASCADE",
         "K.U.A..E.",
         "SPRINGBAR",
         "HALFDOORS",
         "ED..S.GMT",
-        "L..M.O...",
+        "L.AM.O...",
         "FACTORIAL"
       ],
       "themes": {
@@ -2055,6 +2203,10 @@
         "gym-fitness": {
           "label": "Gym & Fitness",
           "summary": "[placeholder-theme-summary-gym-fitness]"
+        },
+        "hiking": {
+          "label": "Hiking and Nature",
+          "summary": "[placeholder-theme-summary-hiking]"
         },
         "jeeps": {
           "label": "Jeeps",
@@ -2108,13 +2260,31 @@
           "number": 2,
           "direction": "down",
           "row": 0,
+          "col": 1,
+          "answer": "AH",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 3,
+          "answer": "KOA",
+          "clue": "Campground with a yellow sign",
+          "theme": "hiking"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
           "col": 6,
           "answer": "OVA",
           "clue": "",
           "theme": "crossword-construction"
         },
         {
-          "number": 3,
+          "number": 5,
           "direction": "down",
           "row": 0,
           "col": 7,
@@ -2123,7 +2293,7 @@
           "theme": "disc-golf"
         },
         {
-          "number": 4,
+          "number": 6,
           "direction": "down",
           "row": 0,
           "col": 8,
@@ -2132,7 +2302,16 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 5,
+          "number": 7,
+          "direction": "across",
+          "row": 1,
+          "col": 0,
+          "answer": "OH",
+          "clue": "Cuyahoga Valley's state",
+          "theme": "national-parks"
+        },
+        {
+          "number": 8,
           "direction": "across",
           "row": 1,
           "col": 6,
@@ -2141,7 +2320,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 6,
+          "number": 9,
           "direction": "across",
           "row": 2,
           "col": 2,
@@ -2150,7 +2329,7 @@
           "theme": "juggling"
         },
         {
-          "number": 6,
+          "number": 9,
           "direction": "down",
           "row": 2,
           "col": 2,
@@ -2159,7 +2338,7 @@
           "theme": "gym-fitness"
         },
         {
-          "number": 7,
+          "number": 10,
           "direction": "down",
           "row": 2,
           "col": 4,
@@ -2168,7 +2347,7 @@
           "theme": "national-parks"
         },
         {
-          "number": 8,
+          "number": 11,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -2177,7 +2356,7 @@
           "theme": "watch-collecting"
         },
         {
-          "number": 9,
+          "number": 12,
           "direction": "down",
           "row": 4,
           "col": 1,
@@ -2186,7 +2365,7 @@
           "theme": "kickboxing"
         },
         {
-          "number": 10,
+          "number": 13,
           "direction": "down",
           "row": 4,
           "col": 3,
@@ -2195,7 +2374,7 @@
           "theme": "programming"
         },
         {
-          "number": 11,
+          "number": 14,
           "direction": "down",
           "row": 4,
           "col": 5,
@@ -2204,7 +2383,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 12,
+          "number": 15,
           "direction": "down",
           "row": 4,
           "col": 6,
@@ -2213,7 +2392,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 13,
+          "number": 16,
           "direction": "down",
           "row": 4,
           "col": 8,
@@ -2222,7 +2401,7 @@
           "theme": "amateur-radio"
         },
         {
-          "number": 14,
+          "number": 17,
           "direction": "across",
           "row": 5,
           "col": 0,
@@ -2231,7 +2410,7 @@
           "theme": "jeeps"
         },
         {
-          "number": 15,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -2240,7 +2419,7 @@
           "theme": "books"
         },
         {
-          "number": 16,
+          "number": 19,
           "direction": "across",
           "row": 6,
           "col": 6,
@@ -2249,7 +2428,25 @@
           "theme": "watch-collecting"
         },
         {
-          "number": 17,
+          "number": 20,
+          "direction": "across",
+          "row": 7,
+          "col": 2,
+          "answer": "AM",
+          "clue": "Before noon, on a 12-hour dial",
+          "theme": "watch-collecting"
+        },
+        {
+          "number": 20,
+          "direction": "down",
+          "row": 7,
+          "col": 2,
+          "answer": "AC",
+          "clue": "Hard to find in a European hotel",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 21,
           "direction": "down",
           "row": 7,
           "col": 3,
@@ -2258,7 +2455,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 18,
+          "number": 22,
           "direction": "down",
           "row": 7,
           "col": 5,
@@ -2267,7 +2464,7 @@
           "theme": "programming"
         },
         {
-          "number": 19,
+          "number": 23,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -2284,101 +2481,128 @@
         },
         {
           "row": 0,
-          "col": 6,
+          "col": 1,
           "number": 2
         },
         {
           "row": 0,
-          "col": 7,
+          "col": 3,
           "number": 3
         },
         {
           "row": 0,
-          "col": 8,
+          "col": 6,
           "number": 4
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 5
+        },
+        {
+          "row": 0,
+          "col": 8,
+          "number": 6
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "number": 7
         },
         {
           "row": 1,
           "col": 6,
-          "number": 5
+          "number": 8
         },
         {
           "row": 2,
           "col": 2,
-          "number": 6
+          "number": 9
         },
         {
           "row": 2,
           "col": 4,
-          "number": 7
-        },
-        {
-          "row": 4,
-          "col": 0,
-          "number": 8
-        },
-        {
-          "row": 4,
-          "col": 1,
-          "number": 9
-        },
-        {
-          "row": 4,
-          "col": 3,
           "number": 10
         },
         {
           "row": 4,
-          "col": 5,
+          "col": 0,
           "number": 11
         },
         {
           "row": 4,
-          "col": 6,
+          "col": 1,
           "number": 12
         },
         {
           "row": 4,
-          "col": 8,
+          "col": 3,
           "number": 13
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "number": 14
+        },
+        {
+          "row": 4,
+          "col": 6,
+          "number": 15
+        },
+        {
+          "row": 4,
+          "col": 8,
+          "number": 16
         },
         {
           "row": 5,
           "col": 0,
-          "number": 14
+          "number": 17
         },
         {
           "row": 6,
           "col": 0,
-          "number": 15
+          "number": 18
         },
         {
           "row": 6,
           "col": 6,
-          "number": 16
+          "number": 19
+        },
+        {
+          "row": 7,
+          "col": 2,
+          "number": 20
         },
         {
           "row": 7,
           "col": 3,
-          "number": 17
+          "number": 21
         },
         {
           "row": 7,
           "col": 5,
-          "number": 18
+          "number": 22
         },
         {
           "row": 8,
           "col": 0,
-          "number": 19
+          "number": 23
         }
+      ],
+      "circled": [
+        [0, 1],
+        [1, 7],
+        [2, 4],
+        [5, 2],
+        [6, 0]
       ]
     },
     {
       "width": 9,
       "height": 9,
       "rows": [
-        "..D.D.S.K",
+        "..DAD.S.K",
         "STAGEDIVE",
         "ART.BOX.Y",
         "WYE.U.S.L",
@@ -2437,6 +2661,15 @@
       "entries": [
         {
           "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 2,
+          "answer": "DAD",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 1,
           "direction": "down",
           "row": 0,
           "col": 2,
@@ -2448,13 +2681,22 @@
           "number": 2,
           "direction": "down",
           "row": 0,
+          "col": 3,
+          "answer": "AG",
+          "clue": "Sterling element",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
           "col": 4,
           "answer": "DEBUGGING",
           "clue": "Hunting the defect down",
           "theme": "programming"
         },
         {
-          "number": 3,
+          "number": 4,
           "direction": "down",
           "row": 0,
           "col": 6,
@@ -2463,7 +2705,7 @@
           "theme": "guitar"
         },
         {
-          "number": 4,
+          "number": 5,
           "direction": "down",
           "row": 0,
           "col": 8,
@@ -2472,7 +2714,7 @@
           "theme": "programming"
         },
         {
-          "number": 5,
+          "number": 6,
           "direction": "across",
           "row": 1,
           "col": 0,
@@ -2481,7 +2723,7 @@
           "theme": "rock-music"
         },
         {
-          "number": 5,
+          "number": 6,
           "direction": "down",
           "row": 1,
           "col": 0,
@@ -2490,7 +2732,7 @@
           "theme": "national-parks"
         },
         {
-          "number": 6,
+          "number": 7,
           "direction": "down",
           "row": 1,
           "col": 1,
@@ -2499,7 +2741,7 @@
           "theme": "programming"
         },
         {
-          "number": 7,
+          "number": 8,
           "direction": "down",
           "row": 1,
           "col": 5,
@@ -2508,7 +2750,7 @@
           "theme": "programming"
         },
         {
-          "number": 8,
+          "number": 9,
           "direction": "across",
           "row": 2,
           "col": 0,
@@ -2517,7 +2759,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 9,
+          "number": 10,
           "direction": "across",
           "row": 2,
           "col": 4,
@@ -2526,7 +2768,7 @@
           "theme": "juggling"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "across",
           "row": 3,
           "col": 0,
@@ -2535,7 +2777,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 11,
+          "number": 12,
           "direction": "across",
           "row": 4,
           "col": 2,
@@ -2544,7 +2786,7 @@
           "theme": "dogs"
         },
         {
-          "number": 12,
+          "number": 13,
           "direction": "down",
           "row": 4,
           "col": 3,
@@ -2553,7 +2795,7 @@
           "theme": "space"
         },
         {
-          "number": 13,
+          "number": 14,
           "direction": "across",
           "row": 4,
           "col": 6,
@@ -2562,7 +2804,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 14,
+          "number": 15,
           "direction": "down",
           "row": 4,
           "col": 7,
@@ -2571,7 +2813,7 @@
           "theme": "space"
         },
         {
-          "number": 15,
+          "number": 16,
           "direction": "across",
           "row": 5,
           "col": 2,
@@ -2580,7 +2822,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 16,
+          "number": 17,
           "direction": "across",
           "row": 5,
           "col": 6,
@@ -2589,7 +2831,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -2598,7 +2840,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 1,
@@ -2607,7 +2849,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 19,
+          "number": 20,
           "direction": "across",
           "row": 6,
           "col": 4,
@@ -2616,7 +2858,7 @@
           "theme": "doughnuts"
         },
         {
-          "number": 20,
+          "number": 21,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -2625,7 +2867,7 @@
           "theme": "pens-pencils"
         },
         {
-          "number": 21,
+          "number": 22,
           "direction": "across",
           "row": 7,
           "col": 6,
@@ -2634,7 +2876,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 22,
+          "number": 23,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -2643,7 +2885,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 23,
+          "number": 24,
           "direction": "across",
           "row": 8,
           "col": 4,
@@ -2660,121 +2902,134 @@
         },
         {
           "row": 0,
-          "col": 4,
+          "col": 3,
           "number": 2
         },
         {
           "row": 0,
-          "col": 6,
+          "col": 4,
           "number": 3
         },
         {
           "row": 0,
-          "col": 8,
+          "col": 6,
           "number": 4
         },
         {
-          "row": 1,
-          "col": 0,
+          "row": 0,
+          "col": 8,
           "number": 5
         },
         {
           "row": 1,
-          "col": 1,
+          "col": 0,
           "number": 6
         },
         {
           "row": 1,
-          "col": 5,
+          "col": 1,
           "number": 7
         },
         {
-          "row": 2,
-          "col": 0,
+          "row": 1,
+          "col": 5,
           "number": 8
         },
         {
           "row": 2,
-          "col": 4,
+          "col": 0,
           "number": 9
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "number": 10
         },
         {
           "row": 3,
           "col": 0,
-          "number": 10
-        },
-        {
-          "row": 4,
-          "col": 2,
           "number": 11
         },
         {
           "row": 4,
-          "col": 3,
+          "col": 2,
           "number": 12
         },
         {
           "row": 4,
-          "col": 6,
+          "col": 3,
           "number": 13
         },
         {
           "row": 4,
-          "col": 7,
+          "col": 6,
           "number": 14
         },
         {
-          "row": 5,
-          "col": 2,
+          "row": 4,
+          "col": 7,
           "number": 15
         },
         {
           "row": 5,
-          "col": 6,
+          "col": 2,
           "number": 16
         },
         {
-          "row": 6,
-          "col": 0,
+          "row": 5,
+          "col": 6,
           "number": 17
         },
         {
           "row": 6,
-          "col": 1,
+          "col": 0,
           "number": 18
         },
         {
           "row": 6,
-          "col": 4,
+          "col": 1,
           "number": 19
         },
         {
-          "row": 7,
-          "col": 0,
+          "row": 6,
+          "col": 4,
           "number": 20
         },
         {
           "row": 7,
-          "col": 6,
+          "col": 0,
           "number": 21
         },
         {
-          "row": 8,
-          "col": 0,
+          "row": 7,
+          "col": 6,
           "number": 22
         },
         {
           "row": 8,
-          "col": 4,
+          "col": 0,
           "number": 23
+        },
+        {
+          "row": 8,
+          "col": 4,
+          "number": 24
         }
+      ],
+      "circled": [
+        [0, 6],
+        [1, 2],
+        [3, 4],
+        [6, 5],
+        [7, 2],
+        [8, 8]
       ]
     },
     {
       "width": 9,
       "height": 9,
       "rows": [
-        ".P.BOW.WE",
+        "LP.BOW.WE",
         "ALGORITHM",
         ".U.GENRE.",
         "AT...CUE.",
@@ -2821,6 +3076,10 @@
           "label": "Reading",
           "summary": "[placeholder-theme-summary-reading]"
         },
+        "rock-music": {
+          "label": "Rock Music",
+          "summary": "[placeholder-theme-summary-rock-music]"
+        },
         "space": {
           "label": "Space and Astronomy",
           "summary": "[placeholder-theme-summary-space]"
@@ -2837,6 +3096,24 @@
       "entries": [
         {
           "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 0,
+          "answer": "LP",
+          "clue": "Full-length on vinyl",
+          "theme": "rock-music"
+        },
+        {
+          "number": 1,
+          "direction": "down",
+          "row": 0,
+          "col": 0,
+          "answer": "LA",
+          "clue": "Fa-la-la-la ___",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 2,
           "direction": "down",
           "row": 0,
           "col": 1,
@@ -2845,7 +3122,7 @@
           "theme": "space"
         },
         {
-          "number": 2,
+          "number": 3,
           "direction": "across",
           "row": 0,
           "col": 3,
@@ -2854,7 +3131,7 @@
           "theme": "swing-dancing"
         },
         {
-          "number": 2,
+          "number": 3,
           "direction": "down",
           "row": 0,
           "col": 3,
@@ -2863,7 +3140,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 3,
+          "number": 4,
           "direction": "down",
           "row": 0,
           "col": 4,
@@ -2872,7 +3149,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 4,
+          "number": 5,
           "direction": "down",
           "row": 0,
           "col": 5,
@@ -2881,7 +3158,7 @@
           "theme": "jeeps"
         },
         {
-          "number": 5,
+          "number": 6,
           "direction": "across",
           "row": 0,
           "col": 7,
@@ -2890,7 +3167,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 5,
+          "number": 6,
           "direction": "down",
           "row": 0,
           "col": 7,
@@ -2899,7 +3176,7 @@
           "theme": "jeeps"
         },
         {
-          "number": 6,
+          "number": 7,
           "direction": "down",
           "row": 0,
           "col": 8,
@@ -2908,7 +3185,7 @@
           "theme": "pinball"
         },
         {
-          "number": 7,
+          "number": 8,
           "direction": "across",
           "row": 1,
           "col": 0,
@@ -2917,7 +3194,7 @@
           "theme": "programming"
         },
         {
-          "number": 8,
+          "number": 9,
           "direction": "down",
           "row": 1,
           "col": 6,
@@ -2926,7 +3203,7 @@
           "theme": "programming"
         },
         {
-          "number": 9,
+          "number": 10,
           "direction": "across",
           "row": 2,
           "col": 3,
@@ -2935,7 +3212,7 @@
           "theme": "reading"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "across",
           "row": 3,
           "col": 0,
@@ -2944,7 +3221,7 @@
           "theme": "off-roading"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "down",
           "row": 3,
           "col": 0,
@@ -2953,7 +3230,7 @@
           "theme": "gym-fitness"
         },
         {
-          "number": 11,
+          "number": 12,
           "direction": "across",
           "row": 3,
           "col": 5,
@@ -2962,7 +3239,7 @@
           "theme": "swing-dancing"
         },
         {
-          "number": 12,
+          "number": 13,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -2971,7 +3248,7 @@
           "theme": "books"
         },
         {
-          "number": 13,
+          "number": 14,
           "direction": "down",
           "row": 4,
           "col": 2,
@@ -2980,7 +3257,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 14,
+          "number": 15,
           "direction": "down",
           "row": 4,
           "col": 4,
@@ -2989,7 +3266,7 @@
           "theme": "programming"
         },
         {
-          "number": 15,
+          "number": 16,
           "direction": "down",
           "row": 4,
           "col": 8,
@@ -2998,7 +3275,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 16,
+          "number": 17,
           "direction": "across",
           "row": 5,
           "col": 7,
@@ -3007,7 +3284,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 1,
@@ -3016,7 +3293,7 @@
           "theme": "national-parks"
         },
         {
-          "number": 18,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 3,
@@ -3025,7 +3302,7 @@
           "theme": "watermelon"
         },
         {
-          "number": 19,
+          "number": 20,
           "direction": "down",
           "row": 7,
           "col": 0,
@@ -3034,7 +3311,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 20,
+          "number": 21,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -3046,104 +3323,117 @@
       "numbers": [
         {
           "row": 0,
-          "col": 1,
+          "col": 0,
           "number": 1
         },
         {
           "row": 0,
-          "col": 3,
+          "col": 1,
           "number": 2
         },
         {
           "row": 0,
-          "col": 4,
+          "col": 3,
           "number": 3
         },
         {
           "row": 0,
-          "col": 5,
+          "col": 4,
           "number": 4
         },
         {
           "row": 0,
-          "col": 7,
+          "col": 5,
           "number": 5
         },
         {
           "row": 0,
-          "col": 8,
+          "col": 7,
           "number": 6
         },
         {
-          "row": 1,
-          "col": 0,
+          "row": 0,
+          "col": 8,
           "number": 7
         },
         {
           "row": 1,
-          "col": 6,
+          "col": 0,
           "number": 8
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "number": 9
         },
         {
           "row": 2,
           "col": 3,
-          "number": 9
-        },
-        {
-          "row": 3,
-          "col": 0,
           "number": 10
         },
         {
           "row": 3,
-          "col": 5,
+          "col": 0,
           "number": 11
         },
         {
-          "row": 4,
-          "col": 0,
+          "row": 3,
+          "col": 5,
           "number": 12
         },
         {
           "row": 4,
-          "col": 2,
+          "col": 0,
           "number": 13
         },
         {
           "row": 4,
-          "col": 4,
+          "col": 2,
           "number": 14
         },
         {
           "row": 4,
-          "col": 8,
+          "col": 4,
           "number": 15
+        },
+        {
+          "row": 4,
+          "col": 8,
+          "number": 16
         },
         {
           "row": 5,
           "col": 7,
-          "number": 16
-        },
-        {
-          "row": 6,
-          "col": 1,
           "number": 17
         },
         {
           "row": 6,
-          "col": 3,
+          "col": 1,
           "number": 18
+        },
+        {
+          "row": 6,
+          "col": 3,
+          "number": 19
         },
         {
           "row": 7,
           "col": 0,
-          "number": 19
+          "number": 20
         },
         {
           "row": 8,
           "col": 0,
-          "number": 20
+          "number": 21
         }
+      ],
+      "circled": [
+        [0, 3],
+        [2, 1],
+        [3, 5],
+        [4, 3],
+        [6, 4],
+        [7, 3]
       ]
     },
     {
@@ -3152,7 +3442,7 @@
       "rows": [
         ".PUTT.GET",
         "AMPLITUDE",
-        "...STANCE",
+        "T..STANCE",
         ".OH.L....",
         "DRIVELINE",
         "O.NAP..I.",
@@ -3188,6 +3478,14 @@
         "kickboxing": {
           "label": "Kickboxing and Striking",
           "summary": "[placeholder-theme-summary-kickboxing]"
+        },
+        "national-parks": {
+          "label": "National Parks",
+          "summary": "[placeholder-theme-summary-national-parks]"
+        },
+        "off-roading": {
+          "label": "Off-Roading",
+          "summary": "[placeholder-theme-summary-off-roading]"
         },
         "pens-pencils": {
           "label": "Pens and Pencils",
@@ -3302,6 +3600,15 @@
           "theme": "watch-collecting"
         },
         {
+          "number": 8,
+          "direction": "down",
+          "row": 1,
+          "col": 0,
+          "answer": "AT",
+          "clue": "All-terrain tire, briefly",
+          "theme": "off-roading"
+        },
+        {
           "number": 9,
           "direction": "down",
           "row": 1,
@@ -3325,8 +3632,8 @@
           "row": 3,
           "col": 1,
           "answer": "OH",
-          "clue": "",
-          "theme": "crossword-construction"
+          "clue": "Cuyahoga Valley's state",
+          "theme": "national-parks"
         },
         {
           "number": 11,
@@ -3543,6 +3850,14 @@
           "col": 0,
           "number": 21
         }
+      ],
+      "circled": [
+        [1, 1],
+        [2, 8],
+        [4, 8],
+        [5, 4],
+        [6, 7],
+        [8, 4]
       ]
     },
     {
@@ -3550,7 +3865,7 @@
       "height": 9,
       "rows": [
         "INVARIANT",
-        "M.....HI.",
+        "M.O...HI.",
         "MULTIBALL",
         "E..EN....",
         "RETENTION",
@@ -3640,13 +3955,22 @@
           "number": 2,
           "direction": "down",
           "row": 0,
+          "col": 2,
+          "answer": "VOL",
+          "clue": "One of a series, abbr.",
+          "theme": "books"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
           "col": 6,
           "answer": "AHA",
           "clue": "The moment the clue gives way",
           "theme": "crosswords"
         },
         {
-          "number": 3,
+          "number": 4,
           "direction": "down",
           "row": 0,
           "col": 7,
@@ -3655,7 +3979,7 @@
           "theme": "programming"
         },
         {
-          "number": 4,
+          "number": 5,
           "direction": "across",
           "row": 1,
           "col": 6,
@@ -3664,7 +3988,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 5,
+          "number": 6,
           "direction": "across",
           "row": 2,
           "col": 0,
@@ -3673,7 +3997,7 @@
           "theme": "pinball"
         },
         {
-          "number": 6,
+          "number": 7,
           "direction": "down",
           "row": 2,
           "col": 3,
@@ -3682,7 +4006,7 @@
           "theme": "kickboxing"
         },
         {
-          "number": 7,
+          "number": 8,
           "direction": "down",
           "row": 2,
           "col": 4,
@@ -3691,7 +4015,7 @@
           "theme": "travel"
         },
         {
-          "number": 8,
+          "number": 9,
           "direction": "across",
           "row": 3,
           "col": 3,
@@ -3700,7 +4024,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 9,
+          "number": 10,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -3709,7 +4033,7 @@
           "theme": "specialty-coffee"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "down",
           "row": 4,
           "col": 1,
@@ -3718,7 +4042,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 11,
+          "number": 12,
           "direction": "down",
           "row": 4,
           "col": 2,
@@ -3727,7 +4051,7 @@
           "theme": "gym-fitness"
         },
         {
-          "number": 12,
+          "number": 13,
           "direction": "down",
           "row": 4,
           "col": 5,
@@ -3736,7 +4060,7 @@
           "theme": "swing-dancing"
         },
         {
-          "number": 13,
+          "number": 14,
           "direction": "down",
           "row": 4,
           "col": 7,
@@ -3745,7 +4069,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 14,
+          "number": 15,
           "direction": "down",
           "row": 4,
           "col": 8,
@@ -3754,7 +4078,7 @@
           "theme": "books"
         },
         {
-          "number": 15,
+          "number": 16,
           "direction": "across",
           "row": 5,
           "col": 0,
@@ -3763,7 +4087,7 @@
           "theme": "jeeps"
         },
         {
-          "number": 16,
+          "number": 17,
           "direction": "across",
           "row": 5,
           "col": 7,
@@ -3772,7 +4096,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 4,
@@ -3781,7 +4105,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "down",
           "row": 6,
           "col": 4,
@@ -3790,7 +4114,7 @@
           "theme": "podcasts"
         },
         {
-          "number": 18,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 6,
@@ -3799,7 +4123,7 @@
           "theme": "rock-music"
         },
         {
-          "number": 19,
+          "number": 20,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -3808,7 +4132,7 @@
           "theme": "guitar"
         },
         {
-          "number": 20,
+          "number": 21,
           "direction": "across",
           "row": 8,
           "col": 4,
@@ -3825,99 +4149,112 @@
         },
         {
           "row": 0,
-          "col": 6,
+          "col": 2,
           "number": 2
         },
         {
           "row": 0,
-          "col": 7,
+          "col": 6,
           "number": 3
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 4
         },
         {
           "row": 1,
           "col": 6,
-          "number": 4
-        },
-        {
-          "row": 2,
-          "col": 0,
           "number": 5
         },
         {
           "row": 2,
-          "col": 3,
+          "col": 0,
           "number": 6
         },
         {
           "row": 2,
-          "col": 4,
+          "col": 3,
           "number": 7
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "number": 8
         },
         {
           "row": 3,
           "col": 3,
-          "number": 8
-        },
-        {
-          "row": 4,
-          "col": 0,
           "number": 9
         },
         {
           "row": 4,
-          "col": 1,
+          "col": 0,
           "number": 10
         },
         {
           "row": 4,
-          "col": 2,
+          "col": 1,
           "number": 11
         },
         {
           "row": 4,
-          "col": 5,
+          "col": 2,
           "number": 12
         },
         {
           "row": 4,
-          "col": 7,
+          "col": 5,
           "number": 13
         },
         {
           "row": 4,
-          "col": 8,
+          "col": 7,
           "number": 14
         },
         {
-          "row": 5,
-          "col": 0,
+          "row": 4,
+          "col": 8,
           "number": 15
         },
         {
           "row": 5,
-          "col": 7,
+          "col": 0,
           "number": 16
         },
         {
-          "row": 6,
-          "col": 4,
+          "row": 5,
+          "col": 7,
           "number": 17
         },
         {
           "row": 6,
-          "col": 6,
+          "col": 4,
           "number": 18
+        },
+        {
+          "row": 6,
+          "col": 6,
+          "number": 19
         },
         {
           "row": 7,
           "col": 0,
-          "number": 19
+          "number": 20
         },
         {
           "row": 8,
           "col": 4,
-          "number": 20
+          "number": 21
         }
+      ],
+      "circled": [
+        [0, 8],
+        [3, 0],
+        [4, 4],
+        [5, 7],
+        [6, 0],
+        [8, 4]
       ]
     },
     {
@@ -4270,20 +4607,27 @@
           "col": 6,
           "number": 18
         }
+      ],
+      "circled": [
+        [0, 2],
+        [1, 4],
+        [2, 8],
+        [6, 8],
+        [8, 0]
       ]
     },
     {
       "width": 9,
       "height": 9,
       "rows": [
-        ".ED.HP..W",
+        ".ED.HP.AW",
         "ORE.AID.H",
-        "V.P.B.RHO",
+        "V.PUB.RHO",
         "ETA.ICE.L",
         "R.R.TRADE",
         "FIT.ROM.B",
         "L.U.APP.E",
-        "OAR.I.O.A",
+        "OAR.I.OVA",
         "WHEELSPIN"
       ],
       "themes": {
@@ -4397,6 +4741,15 @@
         },
         {
           "number": 5,
+          "direction": "across",
+          "row": 0,
+          "col": 7,
+          "answer": "AW",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 6,
           "direction": "down",
           "row": 0,
           "col": 8,
@@ -4405,7 +4758,7 @@
           "theme": "specialty-coffee"
         },
         {
-          "number": 6,
+          "number": 7,
           "direction": "across",
           "row": 1,
           "col": 0,
@@ -4414,7 +4767,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 6,
+          "number": 7,
           "direction": "down",
           "row": 1,
           "col": 0,
@@ -4423,7 +4776,7 @@
           "theme": "programming"
         },
         {
-          "number": 7,
+          "number": 8,
           "direction": "across",
           "row": 1,
           "col": 4,
@@ -4432,7 +4785,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 8,
+          "number": 9,
           "direction": "down",
           "row": 1,
           "col": 6,
@@ -4441,7 +4794,16 @@
           "theme": "rock-music"
         },
         {
-          "number": 9,
+          "number": 10,
+          "direction": "across",
+          "row": 2,
+          "col": 2,
+          "answer": "PUB",
+          "clue": "Trivia night venue",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
           "direction": "across",
           "row": 2,
           "col": 6,
@@ -4450,7 +4812,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 10,
+          "number": 12,
           "direction": "across",
           "row": 3,
           "col": 0,
@@ -4459,7 +4821,7 @@
           "theme": "travel"
         },
         {
-          "number": 11,
+          "number": 13,
           "direction": "across",
           "row": 3,
           "col": 4,
@@ -4468,7 +4830,7 @@
           "theme": "matcha"
         },
         {
-          "number": 12,
+          "number": 14,
           "direction": "down",
           "row": 3,
           "col": 5,
@@ -4477,7 +4839,7 @@
           "theme": "specialty-coffee"
         },
         {
-          "number": 13,
+          "number": 15,
           "direction": "across",
           "row": 4,
           "col": 4,
@@ -4486,7 +4848,7 @@
           "theme": "board-games"
         },
         {
-          "number": 14,
+          "number": 16,
           "direction": "across",
           "row": 5,
           "col": 0,
@@ -4495,7 +4857,7 @@
           "theme": "barefoot-shoes"
         },
         {
-          "number": 15,
+          "number": 17,
           "direction": "across",
           "row": 5,
           "col": 4,
@@ -4504,7 +4866,7 @@
           "theme": "programming"
         },
         {
-          "number": 16,
+          "number": 18,
           "direction": "across",
           "row": 6,
           "col": 4,
@@ -4513,7 +4875,7 @@
           "theme": "crosswords"
         },
         {
-          "number": 17,
+          "number": 19,
           "direction": "across",
           "row": 7,
           "col": 0,
@@ -4522,7 +4884,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 20,
           "direction": "down",
           "row": 7,
           "col": 1,
@@ -4531,7 +4893,25 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 19,
+          "number": 21,
+          "direction": "across",
+          "row": 7,
+          "col": 6,
+          "answer": "OVA",
+          "clue": "",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 22,
+          "direction": "down",
+          "row": 7,
+          "col": 7,
+          "answer": "VI",
+          "clue": "Emacs rival",
+          "theme": "programming"
+        },
+        {
+          "number": 23,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -4563,86 +4943,115 @@
         },
         {
           "row": 0,
-          "col": 8,
+          "col": 7,
           "number": 5
         },
         {
-          "row": 1,
-          "col": 0,
+          "row": 0,
+          "col": 8,
           "number": 6
         },
         {
           "row": 1,
-          "col": 4,
+          "col": 0,
           "number": 7
         },
         {
           "row": 1,
-          "col": 6,
+          "col": 4,
           "number": 8
         },
         {
-          "row": 2,
+          "row": 1,
           "col": 6,
           "number": 9
         },
         {
-          "row": 3,
-          "col": 0,
+          "row": 2,
+          "col": 2,
           "number": 10
         },
         {
-          "row": 3,
-          "col": 4,
+          "row": 2,
+          "col": 6,
           "number": 11
         },
         {
           "row": 3,
-          "col": 5,
+          "col": 0,
           "number": 12
         },
         {
-          "row": 4,
+          "row": 3,
           "col": 4,
           "number": 13
         },
         {
-          "row": 5,
-          "col": 0,
+          "row": 3,
+          "col": 5,
           "number": 14
         },
         {
-          "row": 5,
+          "row": 4,
           "col": 4,
           "number": 15
         },
         {
+          "row": 5,
+          "col": 0,
+          "number": 16
+        },
+        {
+          "row": 5,
+          "col": 4,
+          "number": 17
+        },
+        {
           "row": 6,
           "col": 4,
-          "number": 16
+          "number": 18
         },
         {
           "row": 7,
           "col": 0,
-          "number": 17
+          "number": 19
         },
         {
           "row": 7,
           "col": 1,
-          "number": 18
+          "number": 20
+        },
+        {
+          "row": 7,
+          "col": 6,
+          "number": 21
+        },
+        {
+          "row": 7,
+          "col": 7,
+          "number": 22
         },
         {
           "row": 8,
           "col": 0,
-          "number": 19
+          "number": 23
         }
+      ],
+      "circled": [
+        [0, 5],
+        [1, 1],
+        [2, 8],
+        [3, 1],
+        [4, 8],
+        [5, 1],
+        [8, 8]
       ]
     },
     {
       "width": 9,
       "height": 9,
       "rows": [
-        "A.H.IT.E.",
+        "A.H.IT.ET",
         "CROSSWORD",
         "E.MEMOIR.",
         ".PEN....E",
@@ -4692,6 +5101,10 @@
         "rock-music": {
           "label": "Rock Music",
           "summary": "[placeholder-theme-summary-rock-music]"
+        },
+        "space": {
+          "label": "Space and Astronomy",
+          "summary": "[placeholder-theme-summary-space]"
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
@@ -4754,6 +5167,15 @@
         },
         {
           "number": 5,
+          "direction": "across",
+          "row": 0,
+          "col": 7,
+          "answer": "ET",
+          "clue": "Spielberg's visitor",
+          "theme": "space"
+        },
+        {
+          "number": 5,
           "direction": "down",
           "row": 0,
           "col": 7,
@@ -4763,6 +5185,15 @@
         },
         {
           "number": 6,
+          "direction": "down",
+          "row": 0,
+          "col": 8,
+          "answer": "TD",
+          "clue": "Six-pointer, briefly",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 7,
           "direction": "across",
           "row": 1,
           "col": 0,
@@ -4771,7 +5202,7 @@
           "theme": "crosswords"
         },
         {
-          "number": 7,
+          "number": 8,
           "direction": "down",
           "row": 1,
           "col": 3,
@@ -4780,7 +5211,7 @@
           "theme": "swing-dancing"
         },
         {
-          "number": 8,
+          "number": 9,
           "direction": "down",
           "row": 1,
           "col": 6,
@@ -4789,7 +5220,7 @@
           "theme": "rock-music"
         },
         {
-          "number": 9,
+          "number": 10,
           "direction": "across",
           "row": 2,
           "col": 2,
@@ -4798,7 +5229,7 @@
           "theme": "reading"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "across",
           "row": 3,
           "col": 1,
@@ -4807,7 +5238,7 @@
           "theme": "pens-pencils"
         },
         {
-          "number": 10,
+          "number": 11,
           "direction": "down",
           "row": 3,
           "col": 1,
@@ -4816,7 +5247,7 @@
           "theme": "hiking"
         },
         {
-          "number": 11,
+          "number": 12,
           "direction": "down",
           "row": 3,
           "col": 8,
@@ -4825,7 +5256,7 @@
           "theme": "books"
         },
         {
-          "number": 12,
+          "number": 13,
           "direction": "across",
           "row": 4,
           "col": 0,
@@ -4834,7 +5265,7 @@
           "theme": "books"
         },
         {
-          "number": 13,
+          "number": 14,
           "direction": "down",
           "row": 4,
           "col": 4,
@@ -4843,7 +5274,7 @@
           "theme": "swing-dancing"
         },
         {
-          "number": 14,
+          "number": 15,
           "direction": "down",
           "row": 4,
           "col": 6,
@@ -4852,7 +5283,7 @@
           "theme": "programming"
         },
         {
-          "number": 15,
+          "number": 16,
           "direction": "across",
           "row": 5,
           "col": 1,
@@ -4861,7 +5292,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 16,
+          "number": 17,
           "direction": "across",
           "row": 6,
           "col": 0,
@@ -4870,7 +5301,7 @@
           "theme": "guitar"
         },
         {
-          "number": 17,
+          "number": 18,
           "direction": "down",
           "row": 6,
           "col": 3,
@@ -4879,7 +5310,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 18,
+          "number": 19,
           "direction": "down",
           "row": 6,
           "col": 5,
@@ -4888,7 +5319,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 19,
+          "number": 20,
           "direction": "down",
           "row": 6,
           "col": 7,
@@ -4897,7 +5328,7 @@
           "theme": "programming"
         },
         {
-          "number": 20,
+          "number": 21,
           "direction": "across",
           "row": 7,
           "col": 2,
@@ -4906,7 +5337,7 @@
           "theme": "crossword-construction"
         },
         {
-          "number": 21,
+          "number": 22,
           "direction": "across",
           "row": 8,
           "col": 0,
@@ -4942,85 +5373,98 @@
           "number": 5
         },
         {
-          "row": 1,
-          "col": 0,
+          "row": 0,
+          "col": 8,
           "number": 6
         },
         {
           "row": 1,
-          "col": 3,
+          "col": 0,
           "number": 7
         },
         {
           "row": 1,
-          "col": 6,
+          "col": 3,
           "number": 8
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "number": 9
         },
         {
           "row": 2,
           "col": 2,
-          "number": 9
-        },
-        {
-          "row": 3,
-          "col": 1,
           "number": 10
         },
         {
           "row": 3,
-          "col": 8,
+          "col": 1,
           "number": 11
         },
         {
-          "row": 4,
-          "col": 0,
+          "row": 3,
+          "col": 8,
           "number": 12
         },
         {
           "row": 4,
-          "col": 4,
+          "col": 0,
           "number": 13
         },
         {
           "row": 4,
-          "col": 6,
+          "col": 4,
           "number": 14
+        },
+        {
+          "row": 4,
+          "col": 6,
+          "number": 15
         },
         {
           "row": 5,
           "col": 1,
-          "number": 15
-        },
-        {
-          "row": 6,
-          "col": 0,
           "number": 16
         },
         {
           "row": 6,
-          "col": 3,
+          "col": 0,
           "number": 17
         },
         {
           "row": 6,
-          "col": 5,
+          "col": 3,
           "number": 18
         },
         {
           "row": 6,
-          "col": 7,
+          "col": 5,
           "number": 19
+        },
+        {
+          "row": 6,
+          "col": 7,
+          "number": 20
         },
         {
           "row": 7,
           "col": 2,
-          "number": 20
+          "number": 21
         },
         {
           "row": 8,
           "col": 0,
-          "number": 21
+          "number": 22
         }
+      ],
+      "circled": [
+        [0, 2],
+        [1, 6],
+        [2, 5],
+        [4, 3],
+        [5, 2],
+        [7, 3]
       ]
     }
   ]
