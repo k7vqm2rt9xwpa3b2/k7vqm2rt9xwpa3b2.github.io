@@ -110,7 +110,7 @@
           "row": 0,
           "col": 3,
           "answer": "SEC",
-          "clue": "",
+          "clue": "\"Just a ___!\"",
           "theme": "crossword-construction"
         },
         {
@@ -128,7 +128,7 @@
           "row": 0,
           "col": 6,
           "answer": "TAD",
-          "clue": "",
+          "clue": "Little bit",
           "theme": "crossword-construction"
         },
         {
@@ -164,7 +164,7 @@
           "row": 1,
           "col": 4,
           "answer": "ER",
-          "clue": "",
+          "clue": "Hospital wing, briefly",
           "theme": "crossword-construction"
         },
         {
@@ -200,7 +200,7 @@
           "row": 3,
           "col": 0,
           "answer": "LA",
-          "clue": "",
+          "clue": "Ooh-la-___",
           "theme": "crossword-construction"
         },
         {
@@ -227,7 +227,7 @@
           "row": 4,
           "col": 4,
           "answer": "OUR",
-          "clue": "",
+          "clue": "Belonging to us",
           "theme": "crossword-construction"
         },
         {
@@ -281,7 +281,7 @@
           "row": 6,
           "col": 5,
           "answer": "ILL",
-          "clue": "",
+          "clue": "Sick",
           "theme": "crossword-construction"
         },
         {
@@ -539,8 +539,8 @@
           "row": 0,
           "col": 2,
           "answer": "LEA",
-          "clue": "",
-          "theme": "crossword-construction"
+          "clue": "Address-computing x86 opcode",
+          "theme": "programming"
         },
         {
           "number": 4,
@@ -548,7 +548,7 @@
           "row": 0,
           "col": 3,
           "answer": "VEE",
-          "clue": "",
+          "clue": "Geese formation",
           "theme": "crossword-construction"
         },
         {
@@ -566,7 +566,7 @@
           "row": 0,
           "col": 5,
           "answer": "TA",
-          "clue": "",
+          "clue": "Grading helper, briefly",
           "theme": "crossword-construction"
         },
         {
@@ -584,7 +584,7 @@
           "row": 0,
           "col": 7,
           "answer": "ME",
-          "clue": "",
+          "clue": "Selfie subject",
           "theme": "crossword-construction"
         },
         {
@@ -683,7 +683,7 @@
           "row": 6,
           "col": 1,
           "answer": "MAR",
-          "clue": "",
+          "clue": "Scratch",
           "theme": "crossword-construction"
         },
         {
@@ -692,7 +692,7 @@
           "row": 6,
           "col": 2,
           "answer": "APE",
-          "clue": "",
+          "clue": "Mimic",
           "theme": "crossword-construction"
         },
         {
@@ -719,7 +719,7 @@
           "row": 6,
           "col": 8,
           "answer": "YIN",
-          "clue": "",
+          "clue": "Yang's partner",
           "theme": "crossword-construction"
         },
         {
@@ -974,7 +974,7 @@
           "row": 0,
           "col": 1,
           "answer": "EX",
-          "clue": "",
+          "clue": "Former partner",
           "theme": "crossword-construction"
         },
         {
@@ -1001,7 +1001,7 @@
           "row": 0,
           "col": 4,
           "answer": "HAT",
-          "clue": "",
+          "clue": "Thinking cap?",
           "theme": "crossword-construction"
         },
         {
@@ -1046,7 +1046,7 @@
           "row": 3,
           "col": 0,
           "answer": "NO",
-          "clue": "",
+          "clue": "\"Dr. ___\" (Bond film)",
           "theme": "crossword-construction"
         },
         {
@@ -1055,7 +1055,7 @@
           "row": 3,
           "col": 1,
           "answer": "OK",
-          "clue": "",
+          "clue": "Sooner State, abbr.",
           "theme": "crossword-construction"
         },
         {
@@ -1100,7 +1100,7 @@
           "row": 5,
           "col": 7,
           "answer": "AS",
-          "clue": "",
+          "clue": "\"___ you wish\"",
           "theme": "crossword-construction"
         },
         {
@@ -1118,7 +1118,7 @@
           "row": 6,
           "col": 0,
           "answer": "NIT",
-          "clue": "",
+          "clue": "Tiny criticism",
           "theme": "crossword-construction"
         },
         {
@@ -1145,7 +1145,7 @@
           "row": 6,
           "col": 4,
           "answer": "RAT",
-          "clue": "",
+          "clue": "Lab animal",
           "theme": "crossword-construction"
         },
         {
@@ -1172,7 +1172,7 @@
           "row": 7,
           "col": 8,
           "answer": "NU",
-          "clue": "",
+          "clue": "Letter after mu",
           "theme": "crossword-construction"
         },
         {
@@ -1181,7 +1181,7 @@
           "row": 8,
           "col": 2,
           "answer": "AFT",
-          "clue": "",
+          "clue": "Toward the stern",
           "theme": "crossword-construction"
         }
       ],
@@ -1422,7 +1422,7 @@
           "row": 0,
           "col": 6,
           "answer": "IS",
-          "clue": "",
+          "clue": "\"That ___ the question\"",
           "theme": "crossword-construction"
         },
         {
@@ -1449,7 +1449,7 @@
           "row": 1,
           "col": 2,
           "answer": "ASK",
-          "clue": "",
+          "clue": "Inquire",
           "theme": "crossword-construction"
         },
         {
@@ -1458,7 +1458,7 @@
           "row": 1,
           "col": 3,
           "answer": "SH",
-          "clue": "",
+          "clue": "\"Quiet in the library!\"",
           "theme": "crossword-construction"
         },
         {
@@ -1485,7 +1485,7 @@
           "row": 4,
           "col": 2,
           "answer": "GAL",
-          "clue": "",
+          "clue": "Guy's counterpart",
           "theme": "crossword-construction"
         },
         {
@@ -1503,7 +1503,7 @@
           "row": 4,
           "col": 6,
           "answer": "OPT",
-          "clue": "",
+          "clue": "___ out",
           "theme": "crossword-construction"
         },
         {
@@ -1530,7 +1530,7 @@
           "row": 5,
           "col": 7,
           "answer": "EH",
-          "clue": "",
+          "clue": "Canadian tag word",
           "theme": "crossword-construction"
         },
         {
@@ -1548,7 +1548,7 @@
           "row": 6,
           "col": 6,
           "answer": "ODE",
-          "clue": "",
+          "clue": "Poem of praise",
           "theme": "crossword-construction"
         },
         {
@@ -1575,7 +1575,7 @@
           "row": 7,
           "col": 1,
           "answer": "LA",
-          "clue": "",
+          "clue": "Note after sol",
           "theme": "crossword-construction"
         },
         {
@@ -1809,7 +1809,7 @@
           "row": 0,
           "col": 0,
           "answer": "CAT",
-          "clue": "",
+          "clue": "Internet video star, often",
           "theme": "crossword-construction"
         },
         {
@@ -1890,7 +1890,7 @@
           "row": 2,
           "col": 4,
           "answer": "SEW",
-          "clue": "",
+          "clue": "Hem",
           "theme": "crossword-construction"
         },
         {
@@ -1899,7 +1899,7 @@
           "row": 3,
           "col": 3,
           "answer": "NEE",
-          "clue": "",
+          "clue": "Maiden-name indicator",
           "theme": "crossword-construction"
         },
         {
@@ -1944,7 +1944,7 @@
           "row": 5,
           "col": 7,
           "answer": "UH",
-          "clue": "",
+          "clue": "Speech filler",
           "theme": "crossword-construction"
         },
         {
@@ -1953,7 +1953,7 @@
           "row": 6,
           "col": 0,
           "answer": "TAM",
-          "clue": "",
+          "clue": "Scottish cap",
           "theme": "crossword-construction"
         },
         {
@@ -1971,7 +1971,7 @@
           "row": 6,
           "col": 2,
           "answer": "MAR",
-          "clue": "",
+          "clue": "Ding",
           "theme": "crossword-construction"
         },
         {
@@ -1989,7 +1989,7 @@
           "row": 6,
           "col": 4,
           "answer": "OFT",
-          "clue": "",
+          "clue": "Frequently, in verse",
           "theme": "crossword-construction"
         },
         {
@@ -1998,7 +1998,7 @@
           "row": 6,
           "col": 7,
           "answer": "LA",
-          "clue": "",
+          "clue": "City of Angels, briefly",
           "theme": "crossword-construction"
         },
         {
@@ -2016,7 +2016,7 @@
           "row": 7,
           "col": 3,
           "answer": "YE",
-          "clue": "",
+          "clue": "\"___ Olde Shoppe\"",
           "theme": "crossword-construction"
         },
         {
@@ -2025,7 +2025,7 @@
           "row": 7,
           "col": 6,
           "answer": "EH",
-          "clue": "",
+          "clue": "\"Sorry, what was that?\"",
           "theme": "crossword-construction"
         },
         {
@@ -2262,7 +2262,7 @@
           "row": 0,
           "col": 1,
           "answer": "AH",
-          "clue": "",
+          "clue": "\"Now I get it!\"",
           "theme": "crossword-construction"
         },
         {
@@ -2280,7 +2280,7 @@
           "row": 0,
           "col": 6,
           "answer": "OVA",
-          "clue": "",
+          "clue": "Egg cells",
           "theme": "crossword-construction"
         },
         {
@@ -2298,7 +2298,7 @@
           "row": 0,
           "col": 8,
           "answer": "SEE",
-          "clue": "",
+          "clue": "Understand",
           "theme": "crossword-construction"
         },
         {
@@ -2316,7 +2316,7 @@
           "row": 1,
           "col": 6,
           "answer": "VIE",
-          "clue": "",
+          "clue": "Compete",
           "theme": "crossword-construction"
         },
         {
@@ -2379,7 +2379,7 @@
           "row": 4,
           "col": 5,
           "answer": "GO",
-          "clue": "",
+          "clue": "Board game with stones",
           "theme": "crossword-construction"
         },
         {
@@ -2665,7 +2665,7 @@
           "row": 0,
           "col": 2,
           "answer": "DAD",
-          "clue": "",
+          "clue": "Teller of groaners, stereotypically",
           "theme": "crossword-construction"
         },
         {
@@ -2755,7 +2755,7 @@
           "row": 2,
           "col": 0,
           "answer": "ART",
-          "clue": "",
+          "clue": "\"State of the ___\"",
           "theme": "crossword-construction"
         },
         {
@@ -2773,7 +2773,7 @@
           "row": 3,
           "col": 0,
           "answer": "WYE",
-          "clue": "",
+          "clue": "Pipe fitting shape",
           "theme": "crossword-construction"
         },
         {
@@ -2800,7 +2800,7 @@
           "row": 4,
           "col": 6,
           "answer": "TWO",
-          "clue": "",
+          "clue": "Tea for ___",
           "theme": "crossword-construction"
         },
         {
@@ -2818,7 +2818,7 @@
           "row": 5,
           "col": 2,
           "answer": "HUG",
-          "clue": "",
+          "clue": "Bear ___",
           "theme": "crossword-construction"
         },
         {
@@ -2827,7 +2827,7 @@
           "row": 5,
           "col": 6,
           "answer": "RAG",
-          "clue": "",
+          "clue": "Dust cloth",
           "theme": "crossword-construction"
         },
         {
@@ -2836,7 +2836,7 @@
           "row": 6,
           "col": 0,
           "answer": "AWE",
-          "clue": "",
+          "clue": "Shock and ___",
           "theme": "crossword-construction"
         },
         {
@@ -2845,7 +2845,7 @@
           "row": 6,
           "col": 1,
           "answer": "WHO",
-          "clue": "",
+          "clue": "Owl's question",
           "theme": "crossword-construction"
         },
         {
@@ -2872,7 +2872,7 @@
           "row": 7,
           "col": 6,
           "answer": "NEE",
-          "clue": "",
+          "clue": "Formerly known as, in wedding notices",
           "theme": "crossword-construction"
         },
         {
@@ -2881,7 +2881,7 @@
           "row": 8,
           "col": 0,
           "answer": "SOL",
-          "clue": "",
+          "clue": "Sun, to Romans",
           "theme": "crossword-construction"
         },
         {
@@ -3145,7 +3145,7 @@
           "row": 0,
           "col": 4,
           "answer": "ORE",
-          "clue": "",
+          "clue": "Mined rock",
           "theme": "crossword-construction"
         },
         {
@@ -3163,7 +3163,7 @@
           "row": 0,
           "col": 7,
           "answer": "WE",
-          "clue": "",
+          "clue": "First word of the Constitution's preamble",
           "theme": "crossword-construction"
         },
         {
@@ -3253,7 +3253,7 @@
           "row": 4,
           "col": 2,
           "answer": "OVA",
-          "clue": "",
+          "clue": "Reproductive cells",
           "theme": "crossword-construction"
         },
         {
@@ -3271,7 +3271,7 @@
           "row": 4,
           "col": 8,
           "answer": "FED",
-          "clue": "",
+          "clue": "Government agent, informally",
           "theme": "crossword-construction"
         },
         {
@@ -3280,7 +3280,7 @@
           "row": 5,
           "col": 7,
           "answer": "BE",
-          "clue": "",
+          "clue": "Word said twice in Hamlet's question",
           "theme": "crossword-construction"
         },
         {
@@ -3307,7 +3307,7 @@
           "row": 7,
           "col": 0,
           "answer": "SH",
-          "clue": "",
+          "clue": "Hushing sound",
           "theme": "crossword-construction"
         },
         {
@@ -3533,7 +3533,7 @@
           "row": 0,
           "col": 2,
           "answer": "UP",
-          "clue": "",
+          "clue": "Elevator button",
           "theme": "crossword-construction"
         },
         {
@@ -3560,7 +3560,7 @@
           "row": 0,
           "col": 6,
           "answer": "GET",
-          "clue": "",
+          "clue": "\"I don't ___ it\"",
           "theme": "crossword-construction"
         },
         {
@@ -3569,7 +3569,7 @@
           "row": 0,
           "col": 6,
           "answer": "GUN",
-          "clue": "",
+          "clue": "Rev, as an engine",
           "theme": "crossword-construction"
         },
         {
@@ -3614,7 +3614,7 @@
           "row": 1,
           "col": 5,
           "answer": "TA",
-          "clue": "",
+          "clue": "Lab section leader, for short",
           "theme": "crossword-construction"
         },
         {
@@ -3668,7 +3668,7 @@
           "row": 4,
           "col": 0,
           "answer": "DOE",
-          "clue": "",
+          "clue": "Jane or John ___",
           "theme": "crossword-construction"
         },
         {
@@ -3713,7 +3713,7 @@
           "row": 6,
           "col": 5,
           "answer": "BIN",
-          "clue": "",
+          "clue": "Recycling container",
           "theme": "crossword-construction"
         },
         {
@@ -3722,7 +3722,7 @@
           "row": 6,
           "col": 6,
           "answer": "ATE",
-          "clue": "",
+          "clue": "Had dinner",
           "theme": "crossword-construction"
         },
         {
@@ -3984,7 +3984,7 @@
           "row": 1,
           "col": 6,
           "answer": "HI",
-          "clue": "",
+          "clue": "Casual greeting",
           "theme": "crossword-construction"
         },
         {
@@ -4020,7 +4020,7 @@
           "row": 3,
           "col": 3,
           "answer": "EN",
-          "clue": "",
+          "clue": "Half an em",
           "theme": "crossword-construction"
         },
         {
@@ -4038,7 +4038,7 @@
           "row": 4,
           "col": 1,
           "answer": "EH",
-          "clue": "",
+          "clue": "\"So-so,\" with a shrug",
           "theme": "crossword-construction"
         },
         {
@@ -4065,7 +4065,7 @@
           "row": 4,
           "col": 7,
           "answer": "ON",
-          "clue": "",
+          "clue": "Switch position",
           "theme": "crossword-construction"
         },
         {
@@ -4092,7 +4092,7 @@
           "row": 5,
           "col": 7,
           "answer": "NO",
-          "clue": "",
+          "clue": "Two-letter refusal",
           "theme": "crossword-construction"
         },
         {
@@ -4101,7 +4101,7 @@
           "row": 6,
           "col": 4,
           "answer": "AID",
-          "clue": "",
+          "clue": "First ___ kit",
           "theme": "crossword-construction"
         },
         {
@@ -4137,7 +4137,7 @@
           "row": 8,
           "col": 4,
           "answer": "SLY",
-          "clue": "",
+          "clue": "Foxlike",
           "theme": "crossword-construction"
         }
       ],
@@ -4386,7 +4386,7 @@
           "row": 1,
           "col": 6,
           "answer": "TOT",
-          "clue": "",
+          "clue": "Little one",
           "theme": "crossword-construction"
         },
         {
@@ -4449,7 +4449,7 @@
           "row": 5,
           "col": 2,
           "answer": "DAB",
-          "clue": "",
+          "clue": "Touch lightly",
           "theme": "crossword-construction"
         },
         {
@@ -4485,7 +4485,7 @@
           "row": 6,
           "col": 6,
           "answer": "NAG",
-          "clue": "",
+          "clue": "Badger",
           "theme": "crossword-construction"
         },
         {
@@ -4503,7 +4503,7 @@
           "row": 8,
           "col": 0,
           "answer": "EON",
-          "clue": "",
+          "clue": "Geologic span",
           "theme": "crossword-construction"
         },
         {
@@ -4512,7 +4512,7 @@
           "row": 8,
           "col": 6,
           "answer": "LEG",
-          "clue": "",
+          "clue": "Shake a ___",
           "theme": "crossword-construction"
         }
       ],
@@ -4700,7 +4700,7 @@
           "row": 0,
           "col": 1,
           "answer": "ER",
-          "clue": "",
+          "clue": "Triage spot, for short",
           "theme": "crossword-construction"
         },
         {
@@ -4745,7 +4745,7 @@
           "row": 0,
           "col": 7,
           "answer": "AW",
-          "clue": "",
+          "clue": "Sound at a puppy video",
           "theme": "crossword-construction"
         },
         {
@@ -4763,7 +4763,7 @@
           "row": 1,
           "col": 0,
           "answer": "ORE",
-          "clue": "",
+          "clue": "Iron source",
           "theme": "crossword-construction"
         },
         {
@@ -4781,7 +4781,7 @@
           "row": 1,
           "col": 4,
           "answer": "AID",
-          "clue": "",
+          "clue": "Band-___",
           "theme": "crossword-construction"
         },
         {
@@ -4808,7 +4808,7 @@
           "row": 2,
           "col": 6,
           "answer": "RHO",
-          "clue": "",
+          "clue": "Letter before sigma",
           "theme": "crossword-construction"
         },
         {
@@ -4880,7 +4880,7 @@
           "row": 7,
           "col": 0,
           "answer": "OAR",
-          "clue": "",
+          "clue": "Rowing need",
           "theme": "crossword-construction"
         },
         {
@@ -4889,7 +4889,7 @@
           "row": 7,
           "col": 1,
           "answer": "AH",
-          "clue": "",
+          "clue": "Sound at the dentist's",
           "theme": "crossword-construction"
         },
         {
@@ -4898,7 +4898,7 @@
           "row": 7,
           "col": 6,
           "answer": "OVA",
-          "clue": "",
+          "clue": "Eggs",
           "theme": "crossword-construction"
         },
         {
@@ -5144,7 +5144,7 @@
           "row": 0,
           "col": 4,
           "answer": "IT",
-          "clue": "",
+          "clue": "Tag player who chases",
           "theme": "crossword-construction"
         },
         {
@@ -5153,7 +5153,7 @@
           "row": 0,
           "col": 4,
           "answer": "ISM",
-          "clue": "",
+          "clue": "Philosophy suffix",
           "theme": "crossword-construction"
         },
         {
@@ -5162,7 +5162,7 @@
           "row": 0,
           "col": 5,
           "answer": "TWO",
-          "clue": "",
+          "clue": "Pair",
           "theme": "crossword-construction"
         },
         {
@@ -5288,7 +5288,7 @@
           "row": 5,
           "col": 1,
           "answer": "TO",
-          "clue": "",
+          "clue": "Opposite of from",
           "theme": "crossword-construction"
         },
         {
@@ -5306,7 +5306,7 @@
           "row": 6,
           "col": 3,
           "answer": "MOO",
-          "clue": "",
+          "clue": "Cow's comment",
           "theme": "crossword-construction"
         },
         {
@@ -5315,7 +5315,7 @@
           "row": 6,
           "col": 5,
           "answer": "YEA",
-          "clue": "",
+          "clue": "Vote in favor",
           "theme": "crossword-construction"
         },
         {
@@ -5333,7 +5333,7 @@
           "row": 7,
           "col": 2,
           "answer": "SO",
-          "clue": "",
+          "clue": "\"___ what?\"",
           "theme": "crossword-construction"
         },
         {
