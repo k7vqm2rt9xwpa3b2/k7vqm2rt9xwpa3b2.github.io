@@ -4,14 +4,21 @@
   <id>tag:williamella.com,2026:now</id>
   <link rel="self" href="https://williamella.com/feed.xml"/>
   <link rel="alternate" href="https://williamella.com/"/>
-  <updated>2026-08-31T12:00:00Z</updated>
+  <updated>2026-09-30T12:00:00Z</updated>
   <author>
     <name>Billy Ella</name>
   </author>
   <entry>
+    <title>September 30, 2026</title>
+    <id>tag:williamella.com,2026:now-2</id>
+    <link rel="alternate" href="https://williamella.com/#now-2"/>
+    <updated>2026-09-30T12:00:00Z</updated>
+    <summary type="text">8 updates, 9 pictures</summary>
+  </entry>
+  <entry>
     <title>August 31, 2026</title>
     <id>tag:williamella.com,2026:now-1</id>
-    <link rel="alternate" href="https://williamella.com/#now-1"/>
+    <link rel="alternate" href="https://williamella.com/then/2026/#now-1"/>
     <updated>2026-08-31T12:00:00Z</updated>
     <summary type="text">5 updates, 5 pictures</summary>
   </entry>
