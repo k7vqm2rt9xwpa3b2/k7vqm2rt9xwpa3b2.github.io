@@ -102,7 +102,7 @@ writeReadout(doc,[]);
 export function resetReadout(doc){
 writeReadout(doc,[]);
 }
-function squareOf(element){
+export function squareOf(element){
 return(
 element.getAttribute("data-row")+","+element.getAttribute("data-col")
 );

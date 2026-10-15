@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.2
+                       v0.5.3
 
   Curious what comes after /then and /now? See /future
   Or perhaps a <placeholder-zeroth-puzzle-nod>
@@ -85,6 +85,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <link rel="stylesheet" href="shared/tokens.css" />
     <link rel="stylesheet" href="shared/measures.css" />
     <link rel="stylesheet" href="shared/base.css" />
+    <link rel="stylesheet" href="shared/projects-teaser.css" />
     <link rel="stylesheet" href="shared/contact.css" />
     <link rel="stylesheet" href="shared/masthead.css" />
     <link rel="stylesheet" href="shared/now.css" />
@@ -513,9 +514,26 @@ document.querySelector("meta[name=color-scheme]").content=saved;
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
+                        alt="The Bourne Identity poster"
+                        width="600"
+                        height="900"
+                        referrerpolicy="no-referrer"
+                        src="https://a.ltrbxd.com/resized/film-poster/5/0/2/2/5/50225-the-bourne-identity-0-400-0-600-crop.jpg?v=84a1e28f00"
+                      />
+                      <div class="reveal__line"><p class="card__title">The Bourne Identity</p></div>
+                      <div class="reveal__line"><p class="card__meta card__meta--maker">Doug Liman</p></div>
+                      <p class="card__meta">2002</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
                         alt="Black Panther poster"
                         width="600"
                         height="900"
+                        loading="lazy"
                         referrerpolicy="no-referrer"
                         src="https://a.ltrbxd.com/resized/film-poster/2/0/9/3/8/3/209383-black-panther-0-400-0-600-crop.jpg?v=d6e7e2c7a4"
                       />
@@ -543,23 +561,6 @@ document.querySelector("meta[name=color-scheme]").content=saved;
                       <p class="card__meta">1988</p>
                       <p class="card__signal">
                         <span role="img" aria-label="Rated 2 of 5" title="Rated 2 of 5">★★☆☆☆</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="Body Heat poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="https://a.ltrbxd.com/resized/film-poster/4/3/1/1/4/43114-body-heat-0-400-0-600-crop.jpg?v=5724935efb"
-                      />
-                      <div class="reveal__line"><p class="card__title">Body Heat</p></div>
-                      <div class="reveal__line"><p class="card__meta card__meta--maker">Lawrence Kasdan</p></div>
-                      <p class="card__meta">1981</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 4 of 5" title="Rated 4 of 5">★★★★☆</span>
                       </p>
                     </div>
                   </div>
@@ -650,18 +651,27 @@ document.querySelector("meta[name=color-scheme]").content=saved;
             
           </div>
         </section>
-        
         <section id="projects">
+          
           <h2>Projects</h2>
           <p>Filler standing in for one sentence about the projects below.</p>
-          <h3>&lt;placeholder-project-1-name&gt;</h3>
-          <p>&lt;placeholder-project-1-summary&gt;</p>
-          <h3>&lt;placeholder-project-2-name&gt;</h3>
-          <p>&lt;placeholder-project-2-summary&gt;</p>
-          <h3>&lt;placeholder-project-3-name&gt;</h3>
-          <p>&lt;placeholder-project-3-summary&gt;</p>
+          
+          
+          <h3>&lt;placeholder-projects-group-1&gt;</h3>
+          <ul class="projects-teaser">
+            <li>&lt;placeholder-project-1-name&gt;</li>
+            <li>&lt;placeholder-project-2-name&gt;</li>
+            <li>&lt;placeholder-project-3-name&gt;</li>
+          </ul>
+          <h3>&lt;placeholder-projects-group-2&gt;</h3>
+          <ul class="projects-teaser">
+            <li>&lt;placeholder-project-4-name&gt;</li>
+            <li>&lt;placeholder-project-5-name&gt;</li>
+            <li>&lt;placeholder-project-6-name&gt;</li>
+          </ul>
+          <p><a href="projects/">&lt;placeholder-projects-more-detail&gt;</a></p>
+          
         </section>
-        
         
         <section id="professional">
           <h2>Professional</h2>
@@ -714,6 +724,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
         data-app-word="save"
         data-app-tail=", pick open in Safari, and then choose your favorite mode"
       ></p>
+      <p class="colophon__debug"><a href="debug/">&lt;placeholder-debug-link-text&gt;</a></p>
       <p>No analytics, no tracking, no frameworks — a handful of hand-written files and one small script.</p>
       <div class="colophon__sign">
         <a class="colophon__sign-link" href="">

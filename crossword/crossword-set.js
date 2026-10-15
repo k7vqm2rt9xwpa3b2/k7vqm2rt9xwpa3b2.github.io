@@ -69,7 +69,7 @@ function show(doc,puzzles,index,showTheme){
 const data=renderGrid(doc,puzzles[index]);
 resetReadout(doc);
 const drawn=data!==null;
-showTheme(drawn?puzzles[index].theme:"",drawn);
+showTheme(drawn?puzzles[index]:null,drawn);
 return data;
 }
 function stampPuzzleNumber(doc,index){
@@ -153,7 +153,7 @@ if(button){
 button.hidden=false;
 button.disabled=true;
 }
-showTheme("",true);
+showTheme(null,true);
 return null;
 }
 const start=drawnGridStart(doc);

@@ -425,13 +425,16 @@
         }
       ],
       "circled": [
-        [0, 1],
-        [4, 4],
-        [5, 7],
-        [6, 8],
-        [7, 7],
+        [0, 8],
+        [1, 7],
+        [3, 5],
+        [4, 0],
+        [6, 2],
+        [7, 6],
         [8, 0]
-      ]
+      ],
+      "theme": "Rock Music: [placeholder-theme-1]",
+      "linked": "ALT"
     },
     {
       "width": 9,
@@ -875,7 +878,9 @@
         [6, 3],
         [7, 8],
         [8, 4]
-      ]
+      ],
+      "theme": "Specialty Coffee: [placeholder-theme-2]",
+      "linked": "GREENBEAN"
     },
     {
       "width": 9,
@@ -1303,12 +1308,14 @@
         }
       ],
       "circled": [
-        [0, 0],
-        [1, 3],
-        [2, 0],
-        [4, 0],
-        [5, 3]
-      ]
+        [2, 6],
+        [3, 1],
+        [4, 4],
+        [5, 7],
+        [6, 4]
+      ],
+      "theme": "Jeeps: [placeholder-theme-3]",
+      "linked": "SKIDPLATE"
     },
     {
       "width": 9,
@@ -1710,12 +1717,14 @@
         }
       ],
       "circled": [
-        [0, 2],
-        [3, 4],
-        [4, 6],
-        [6, 6],
-        [7, 8]
-      ]
+        [0, 5],
+        [1, 7],
+        [3, 0],
+        [4, 2],
+        [5, 3]
+      ],
+      "theme": "Pinball: [placeholder-theme-4]",
+      "linked": "SKILLSHOT"
     },
     {
       "width": 9,
@@ -2161,13 +2170,14 @@
         }
       ],
       "circled": [
-        [0, 7],
-        [1, 0],
-        [2, 1],
-        [4, 1],
-        [7, 4],
-        [8, 3]
-      ]
+        [1, 7],
+        [2, 5],
+        [5, 7],
+        [7, 7],
+        [8, 1]
+      ],
+      "theme": "Programming and Math: [placeholder-theme-5]",
+      "linked": "RSA"
     },
     {
       "width": 9,
@@ -2591,12 +2601,14 @@
         }
       ],
       "circled": [
-        [0, 1],
-        [1, 7],
-        [2, 4],
-        [5, 2],
-        [6, 0]
-      ]
+        [0, 2],
+        [1, 1],
+        [2, 0],
+        [4, 1],
+        [5, 8]
+      ],
+      "theme": "Juggling: [placeholder-theme-6]",
+      "linked": "CASCADE"
     },
     {
       "width": 9,
@@ -3017,13 +3029,14 @@
         }
       ],
       "circled": [
-        [0, 6],
-        [1, 2],
+        [1, 1],
         [3, 4],
-        [6, 5],
+        [6, 7],
         [7, 2],
         [8, 8]
-      ]
+      ],
+      "theme": "Guitar: [placeholder-theme-7]",
+      "linked": "SIXSTRING"
     },
     {
       "width": 9,
@@ -3428,13 +3441,15 @@
         }
       ],
       "circled": [
-        [0, 3],
-        [2, 1],
+        [0, 0],
+        [1, 3],
         [3, 5],
         [4, 3],
-        [6, 4],
-        [7, 3]
-      ]
+        [5, 8],
+        [6, 3]
+      ],
+      "theme": "Off-Roading: [placeholder-theme-8]",
+      "linked": "BOG"
     },
     {
       "width": 9,
@@ -3852,13 +3867,14 @@
         }
       ],
       "circled": [
-        [1, 1],
-        [2, 8],
-        [4, 8],
-        [5, 4],
-        [6, 7],
-        [8, 4]
-      ]
+        [0, 6],
+        [1, 3],
+        [3, 1],
+        [4, 3],
+        [6, 0]
+      ],
+      "theme": "Kickboxing and Striking: [placeholder-theme-9]",
+      "linked": "STANCE"
     },
     {
       "width": 9,
@@ -4249,13 +4265,14 @@
         }
       ],
       "circled": [
-        [0, 8],
-        [3, 0],
-        [4, 4],
+        [2, 2],
+        [4, 6],
         [5, 7],
-        [6, 0],
-        [8, 4]
-      ]
+        [6, 6],
+        [8, 6]
+      ],
+      "theme": "Swing Dancing: [placeholder-theme-10]",
+      "linked": "TWIRL"
     },
     {
       "width": 9,
@@ -4609,12 +4626,14 @@
         }
       ],
       "circled": [
-        [0, 2],
-        [1, 4],
-        [2, 8],
-        [6, 8],
-        [8, 0]
-      ]
+        [0, 4],
+        [1, 2],
+        [2, 1],
+        [3, 7],
+        [4, 0]
+      ],
+      "theme": "Books: [placeholder-theme-11]",
+      "linked": "PAPERBACK"
     },
     {
       "width": 9,
@@ -5038,14 +5057,14 @@
         }
       ],
       "circled": [
-        [0, 5],
         [1, 1],
-        [2, 8],
-        [3, 1],
-        [4, 8],
-        [5, 1],
-        [8, 8]
-      ]
+        [3, 0],
+        [5, 8],
+        [6, 2],
+        [8, 5]
+      ],
+      "theme": "Crossword Puzzles: [placeholder-theme-12]",
+      "linked": "APP"
     },
     {
       "width": 9,
@@ -5459,13 +5478,401 @@
         }
       ],
       "circled": [
-        [0, 2],
-        [1, 6],
-        [2, 5],
-        [4, 3],
-        [5, 2],
-        [7, 3]
-      ]
+        [1, 8],
+        [2, 7],
+        [3, 2],
+        [5, 6],
+        [7, 2]
+      ],
+      "theme": "Watch Collecting: [placeholder-theme-13]",
+      "linked": "AUTOMATIC"
+    },
+    {
+      "width": 9,
+      "height": 9,
+      "rows": [
+        "INTERFACE",
+        ".M.D.O.O.",
+        "CITYROAST",
+        "A.U..TS.O",
+        "RECURSION",
+        "D.K..HF.E",
+        ".O.TSA.A.",
+        "TITLEPAGE",
+        ".LISTENER"
+      ],
+      "themes": {
+        "amateur-radio": {
+          "label": "Amateur Radio",
+          "summary": "[placeholder-theme-summary-amateur-radio]"
+        },
+        "barefoot-shoes": {
+          "label": "Zero-Drop and Barefoot Shoes",
+          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+        },
+        "board-games": {
+          "label": "Board Games",
+          "summary": "[placeholder-theme-summary-board-games]"
+        },
+        "books": {
+          "label": "Books",
+          "summary": "[placeholder-theme-summary-books]"
+        },
+        "crossword-construction": {
+          "label": "Crossword construction",
+          "summary": "Two- and three-letter fillers let the long answers cross and complete."
+        },
+        "guitar": {
+          "label": "Guitar",
+          "summary": "[placeholder-theme-summary-guitar]"
+        },
+        "podcasts": {
+          "label": "Podcasts",
+          "summary": "[placeholder-theme-summary-podcasts]"
+        },
+        "programming": {
+          "label": "Programming and Math",
+          "summary": "[placeholder-theme-summary-programming]"
+        },
+        "specialty-coffee": {
+          "label": "Specialty Coffee",
+          "summary": "[placeholder-theme-summary-specialty-coffee]"
+        },
+        "swing-dancing": {
+          "label": "Swing Dancing",
+          "summary": "[placeholder-theme-summary-swing-dancing]"
+        },
+        "travel": {
+          "label": "Traveling",
+          "summary": "[placeholder-theme-summary-travel]"
+        }
+      },
+      "entries": [
+        {
+          "number": 1,
+          "direction": "across",
+          "row": 0,
+          "col": 0,
+          "answer": "INTERFACE",
+          "clue": "The contract, not the implementation",
+          "theme": "programming"
+        },
+        {
+          "number": 2,
+          "direction": "down",
+          "row": 0,
+          "col": 1,
+          "answer": "NMI",
+          "clue": "Interrupt the CPU can't ignore, briefly",
+          "theme": "programming"
+        },
+        {
+          "number": 3,
+          "direction": "down",
+          "row": 0,
+          "col": 3,
+          "answer": "EDY",
+          "clue": "___'s (ice cream brand)",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 4,
+          "direction": "down",
+          "row": 0,
+          "col": 5,
+          "answer": "FOOTSHAPE",
+          "clue": "Outline the shoe should follow, not a point",
+          "theme": "barefoot-shoes"
+        },
+        {
+          "number": 5,
+          "direction": "down",
+          "row": 0,
+          "col": 7,
+          "answer": "COS",
+          "clue": "Sine's partner, briefly",
+          "theme": "programming"
+        },
+        {
+          "number": 6,
+          "direction": "across",
+          "row": 2,
+          "col": 0,
+          "answer": "CITYROAST",
+          "clue": "Roast level just past first crack",
+          "theme": "specialty-coffee"
+        },
+        {
+          "number": 6,
+          "direction": "down",
+          "row": 2,
+          "col": 0,
+          "answer": "CARD",
+          "clue": "Draw one",
+          "theme": "board-games"
+        },
+        {
+          "number": 7,
+          "direction": "down",
+          "row": 2,
+          "col": 2,
+          "answer": "TUCK",
+          "clue": "Turn that starts with a tuck",
+          "theme": "swing-dancing"
+        },
+        {
+          "number": 8,
+          "direction": "down",
+          "row": 2,
+          "col": 6,
+          "answer": "ASIF",
+          "clue": "\"Yeah, right!\"",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 9,
+          "direction": "down",
+          "row": 2,
+          "col": 8,
+          "answer": "TONE",
+          "clue": "What every knob is chasing",
+          "theme": "guitar"
+        },
+        {
+          "number": 10,
+          "direction": "across",
+          "row": 3,
+          "col": 5,
+          "answer": "TS",
+          "clue": "Element 117's symbol",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 11,
+          "direction": "across",
+          "row": 4,
+          "col": 0,
+          "answer": "RECURSION",
+          "clue": "See: recursion",
+          "theme": "programming"
+        },
+        {
+          "number": 12,
+          "direction": "across",
+          "row": 5,
+          "col": 5,
+          "answer": "HF",
+          "clue": "Shortwave bands, briefly",
+          "theme": "amateur-radio"
+        },
+        {
+          "number": 13,
+          "direction": "down",
+          "row": 6,
+          "col": 1,
+          "answer": "OIL",
+          "clue": "Change it every few thousand miles",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 14,
+          "direction": "across",
+          "row": 6,
+          "col": 3,
+          "answer": "TSA",
+          "clue": "Airport screeners, briefly",
+          "theme": "travel"
+        },
+        {
+          "number": 14,
+          "direction": "down",
+          "row": 6,
+          "col": 3,
+          "answer": "TLS",
+          "clue": "What the S in HTTPS stands on",
+          "theme": "programming"
+        },
+        {
+          "number": 15,
+          "direction": "down",
+          "row": 6,
+          "col": 4,
+          "answer": "SET",
+          "clue": "Collection with no duplicates",
+          "theme": "programming"
+        },
+        {
+          "number": 16,
+          "direction": "down",
+          "row": 6,
+          "col": 7,
+          "answer": "AGE",
+          "clue": "Stone or Bronze follower",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 17,
+          "direction": "across",
+          "row": 7,
+          "col": 0,
+          "answer": "TITLEPAGE",
+          "clue": "Leaf with the name, author and publisher",
+          "theme": "books"
+        },
+        {
+          "number": 18,
+          "direction": "down",
+          "row": 7,
+          "col": 2,
+          "answer": "TI",
+          "clue": "Graphing-calculator maker, initially",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 19,
+          "direction": "down",
+          "row": 7,
+          "col": 6,
+          "answer": "AN",
+          "clue": "\"___ apple a day...\"",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 20,
+          "direction": "down",
+          "row": 7,
+          "col": 8,
+          "answer": "ER",
+          "clue": "\"Um\" relative",
+          "theme": "crossword-construction"
+        },
+        {
+          "number": 21,
+          "direction": "across",
+          "row": 8,
+          "col": 1,
+          "answer": "LISTENER",
+          "clue": "One of the audience, ears only",
+          "theme": "podcasts"
+        }
+      ],
+      "numbers": [
+        {
+          "row": 0,
+          "col": 0,
+          "number": 1
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "number": 2
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "number": 3
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "number": 4
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "number": 5
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "number": 6
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "number": 7
+        },
+        {
+          "row": 2,
+          "col": 6,
+          "number": 8
+        },
+        {
+          "row": 2,
+          "col": 8,
+          "number": 9
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "number": 10
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "number": 11
+        },
+        {
+          "row": 5,
+          "col": 5,
+          "number": 12
+        },
+        {
+          "row": 6,
+          "col": 1,
+          "number": 13
+        },
+        {
+          "row": 6,
+          "col": 3,
+          "number": 14
+        },
+        {
+          "row": 6,
+          "col": 4,
+          "number": 15
+        },
+        {
+          "row": 6,
+          "col": 7,
+          "number": 16
+        },
+        {
+          "row": 7,
+          "col": 0,
+          "number": 17
+        },
+        {
+          "row": 7,
+          "col": 2,
+          "number": 18
+        },
+        {
+          "row": 7,
+          "col": 6,
+          "number": 19
+        },
+        {
+          "row": 7,
+          "col": 8,
+          "number": 20
+        },
+        {
+          "row": 8,
+          "col": 1,
+          "number": 21
+        }
+      ],
+      "circled": [
+        [0, 5],
+        [1, 7],
+        [2, 4],
+        [4, 1],
+        [6, 4],
+        [7, 0]
+      ],
+      "theme": "Zero-Drop and Barefoot Shoes: [placeholder-theme-14]",
+      "linked": "FOOTSHAPE"
     }
   ]
 }

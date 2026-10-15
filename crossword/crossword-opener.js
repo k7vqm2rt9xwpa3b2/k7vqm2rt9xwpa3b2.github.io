@@ -52,7 +52,7 @@ start?.focus(focusOptions);
 function closePuzzle(hero,start,exit){
 const{doc,button}=hero;
 deselect(doc);
-hero.showTheme("",false);
+hero.showTheme(null,false);
 if(button){
 button.hidden=true;
 }
