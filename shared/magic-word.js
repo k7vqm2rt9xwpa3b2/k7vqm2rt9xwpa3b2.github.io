@@ -1,4 +1,5 @@
 import{drawFigure}from"./magic-word-figure.js";
+import{drawLettering}from"./magic-word-lettering.js";
 import{drawOldSite}from"./magic-word-old-site.js";
 import{
 aboveGrid,
@@ -27,6 +28,7 @@ const CARRIER=Object.values(WORDS)
 .join(", ");
 const DIALOG_ID="magic-word";
 const SAYS_ID="magic-word-says";
+const VISUALLY_HIDDEN="visually-hidden";
 const CLOSE_FACE="×";
 const STILL_ADDRESS="?still#still";
 const REDUCED_MOTION="(prefers-reduced-motion: reduce)";
@@ -52,7 +54,15 @@ line.className="magic-word__says";
 if(sentence!==undefined){
 line.dataset.grid=sentence;
 }
+const lettering=drawLettering(doc,says);
+if(lettering===null){
 line.textContent=says;
+return line;
+}
+const words=doc.createElement("span");
+words.className=VISUALLY_HIDDEN;
+words.textContent=says;
+line.append(words,lettering);
 return line;
 }
 export function buildMagicWordDialog(doc,line=TRAP_LINE){

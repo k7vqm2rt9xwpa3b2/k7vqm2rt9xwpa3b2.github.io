@@ -1,118 +1,104 @@
+import{
+BADGE,
+BADGE_DEFINITIONS,
+PAPER,
+scaledAbout,
+}from"./magic-word-badge.js";
+import{FACE}from"./magic-word-face.js";
 const SVG_NS="http://www.w3.org/2000/svg";
 export const ELBOW=Object.freeze({x:146,y:142});
+const CHIN=Object.freeze({x:68,y:104});
+const HEAD_SCALE=1.07;
+const WRIST=Object.freeze({x:147,y:112});
+const HAND_SCALE=0.92;
 const TORSO=
-"M8 164 C10 128 26 108 54 102 L68 116 L82 102 C100 105 112 112 118 124 L122 164";
-const PAPER="magic-word__paper";
-const LEAVES=[
-[18,132,-20],
-[88,124,15],
-[34,156,10],
-[96,152,-35],
-[58,142,160],
-[104,120,60],
-];
-const FLOWERS=[
-[30,120,1],
-[100,136,1],
-[52,156,1],
-[80,154,0.8],
-[18,152,0.8],
-[44,134,0.7],
-];
-const SHIRT=[
-["path",{class:"magic-word__shirt",stroke:"none",d:`${TORSO} Z`}],
-[
-"g",
-{"clip-path":"url(#magic-word-torso)","stroke-width":1.4},
-[
-[
-"g",
-{class:"magic-word__leaf"},
-LEAVES.map(([x,y,turn])=>[
+"M2 164 C2 128 16 106 46 100 L68 110 L90 100 C110 104 120 114 124 130 L128 164";
+const SHIRT_FRONT=
+"M46 100 L68 110 L90 100 C95 120 97 142 98 164 L38 164 C40 142 42 120 46 100 Z";
+const PRINT=Object.freeze({
+top:106,
+bottom:166,
+row:9,
+left:36,
+right:102,
+column:10,
+halfDrop:5,
+});
+function diamondPrint(){
+const diamonds=[];
+for(let row=0;PRINT.top+row*PRINT.row<PRINT.bottom;row+=1){
+const y=PRINT.top+row*PRINT.row;
+const drop=row%2===1?PRINT.halfDrop:0;
+for(let x=PRINT.left;x<PRINT.right;x+=PRINT.column){
+diamonds.push([
 "use",
 {
-href:"#magic-word-leaf",
-transform:`translate(${x} ${y}) rotate(${turn})`,
+href:"#magic-word-diamond",
+transform:`translate(${x+drop} ${y})`,
 },
-]),
-],
+]);
+}
+}
+return diamonds;
+}
+const BODY=[
+["path",{class:"magic-word__jacket",stroke:"none",d:`${TORSO} Z`}],
+["path",{class:"magic-word__shirt",stroke:"none",d:SHIRT_FRONT}],
 [
 "g",
-{class:"magic-word__flower"},
-FLOWERS.map(([x,y,scale])=>[
-"use",
 {
-href:"#magic-word-flower",
-transform:`translate(${x} ${y})${scale===1?"":` scale(${scale})`}`,
+"clip-path":"url(#magic-word-front)",
+class:"magic-word__print",
+stroke:"none",
 },
-]),
-],
-],
+diamondPrint(),
 ],
 ["path",{d:TORSO}],
-["path",{class:PAPER,d:"M54 102 L60 122 L68 116 L76 122 L82 102"}],
-["path",{d:"M68 116 V164","stroke-width":1.6}],
-["circle",{cx:68,cy:130,r:1.4}],
-["circle",{cx:68,cy:146,r:1.4}],
-];
-const HEAD=[
-["path",{d:"M59 102 V95 M77 102 V95"}],
 [
 "path",
 {
-class:PAPER,
-d:"M42 66 C42 48 54 40 68 40 C82 40 94 48 94 66 C94 84 84 96 68 96 C52 96 42 84 42 66 Z",
-},
-],
-["path",{d:"M59 99 C64 102 72 102 77 99","stroke-width":1.8}],
-[
-"path",
-{
-d:"M42 66 C38 66 37 74 42 76 M94 66 C98 66 99 74 94 76",
+d:"M46 100 C42 118 40 140 38 164 M90 100 C95 120 97 142 98 164",
 "stroke-width":2,
 },
 ],
 [
 "path",
 {
-class:"magic-word__hair",
-"stroke-width":1.6,
-d:"M41 66 C38 46 50 34 68 33 C88 32 99 44 96 64 C94 57 91 52 86 49 C80 52 71 52 63 49 C57 47 55 44 55 44 C51 50 46 56 44 66 Z",
+class:"magic-word__jacket",
+d:"M46 100 L36 106 L44 128 L47 112 Z M90 100 L100 106 L93 128 L89 112 Z",
+"stroke-width":1.8,
 },
 ],
-["rect",{class:PAPER,x:50,y:61,width:15,height:11,rx:3}],
-["rect",{class:PAPER,x:71,y:61,width:15,height:11,rx:3}],
-["path",{d:"M65 66 H71 M50 64 L44 63 M86 64 L92 63"}],
-["circle",{cx:58,cy:67,r:1.5,fill:"currentColor",stroke:"none"}],
-["circle",{cx:79,cy:67,r:1.5,fill:"currentColor",stroke:"none"}],
 [
 "path",
 {
-class:PAPER,
-"stroke-width":2,
-d:"M56 80 C62 82 74 82 82 78 C80 87 74 91 68 91 C61 91 57 86 56 80 Z",
+class:"magic-word__shirt",
+d:"M50 101 L56 116 L68 110 L80 116 L86 101",
+"stroke-width":1.8,
 },
 ],
-["path",{d:"M57 82.5 C63 84 73 84 81 80.5","stroke-width":1.2}],
-[
-"path",
-{d:"M63 81.6 V84.3 M69 81.8 V84.4 M75 81 V83.8","stroke-width":1},
-],
+...BADGE,
 ];
-const FOREARM=[
-["path",{d:`M${ELBOW.x} ${ELBOW.y} L148 108`}],
+const CAN_HAND=[
 [
-"path",
+"rect",
 {
-class:PAPER,
-d:"M136 98 C135 90 138 86 144 86 L158 86 C163 86 165 90 165 95 L165 102 C165 107 161 110 156 110 L144 110 C139 110 136 106 136 98 Z",
+class:"magic-word__can",
+x:23.5,
+y:130,
+width:14,
+height:25,
+rx:2.5,
+"stroke-width":2,
 },
 ],
+["path",{d:"M24 134 H37","stroke-width":1.2}],
 [
 "path",
 {
-"stroke-width":1.6,
-d:"M147 92 C152 91 158 91 165 92 M147 98 C152 97 158 97 165 98 M147 104 C152 103 158 103 164 104",
+class:"magic-word__jacket",
+d:"M3 138 C9 133 17 131 22 133 C25 139 26 147 24.5 153 C18 156 10 158 6 158 Z",
+"stroke-width":2,
 },
 ],
 [
@@ -120,33 +106,73 @@ d:"M147 92 C152 91 158 91 165 92 M147 98 C152 97 158 97 165 98 M147 104 C152 103
 {
 class:PAPER,
 "stroke-width":1.8,
-d:"M137 99 C141 95 147 95 151 98 C153 100 152 103 148 103 L140 104",
+d:"M20 140 C17.5 146 18.5 153 24 155.8 L34.5 155.8 C37.5 155.8 39 153.5 37.8 151.5 C39.4 149.6 38.8 147 36.8 146.3 C38.6 144.6 38 141.6 35.4 141 L25 139.8 Z",
 },
 ],
 [
 "path",
-{class:PAPER,d:"M138 90 L138 62 C138 57 146 57 146 62 L146 87"},
+{
+d:"M26 146.2 C29.5 146.8 33 146.8 36.8 146.3 M26 151.2 C29.5 151.8 33 151.8 37.8 151.5",
+"stroke-width":1.1,
+},
 ],
-["path",{d:"M139.6 64 C140 60.6 144 60.6 144.4 64","stroke-width":1.2}],
-["path",{d:"M138 74 H146","stroke-width":1.1}],
 ];
-const DEFINITIONS=[
-["clipPath",{id:"magic-word-torso"},[["path",{d:`${TORSO} Z`}]]],
+const UPPER_ARM=
+"M106 110 C118 106 128 110 136 118 C143 125 150 131 154 137 C157 143 153 149 146.5 149 C140 149 130 143.5 120 137.5 C114 134 110 130 108 124 Z";
+const HAND=[
 [
-"g",
-{id:"magic-word-flower"},
-[
-[0,-4.2],
-[4,-1.3],
-[2.5,3.4],
-[-2.5,3.4],
-[-4,-1.3],
-].map(([cx,cy])=>["circle",{cx,cy,r:3}]),
+"path",
+{
+class:PAPER,
+d:"M129.5 97 C128.5 88 133 83.5 139.5 83.5 L155.5 83.5 C162 83.5 165 88.5 165 95 L165 102 C165 109 160.5 113.5 154 113.5 L139.5 113.5 C133.5 113.5 129.5 108.5 129.5 97 Z",
+},
 ],
 [
 "path",
-{id:"magic-word-leaf",d:"M0 0 C4 -6 12 -7 16 -4 C12 0 5 2 0 0 Z"},
+{
+"stroke-width":1.6,
+d:"M144.5 91.5 C150.5 90.5 157.5 90.5 164.9 91.8 M144.5 98.5 C150.5 97.5 157.5 97.5 164.9 98.6 M144.5 105.5 C150.5 104.5 157 104.5 163.5 105.6",
+},
 ],
+[
+"path",
+{
+class:PAPER,
+"stroke-width":1.8,
+d:"M130.5 99.5 C135 94.5 142.5 94.5 147.5 98 C150.5 100.5 149 104.5 144.5 104.5 L135.5 105.5",
+},
+],
+[
+"path",
+{class:PAPER,d:"M133 89 L133 61 C133 53.5 144 53.5 144 61 L144 86"},
+],
+[
+"path",
+{d:"M135.3 62.5 C135.8 58.2 141.2 58.2 141.7 62.5","stroke-width":1.2},
+],
+[
+"path",
+{d:"M133.5 73.5 C137 74.6 140 74.6 143.5 73.5","stroke-width":1.1},
+],
+];
+const FOREARM=[
+[
+"path",
+{
+class:"magic-word__jacket",
+d:`M${ELBOW.x} ${ELBOW.y} C138.5 142 137 137.5 137.6 132 C138.4 124 139 117 139 110 L155 110 C155.5 117 157.5 124 156 132 C155 138 153 142 ${ELBOW.x} ${ELBOW.y} Z`,
+},
+],
+[
+"path",
+{d:"M139.2 114.5 C145 116 150 116 155.3 114.5","stroke-width":1.4},
+],
+["g",{transform:scaledAbout(WRIST,HAND_SCALE)},HAND],
+];
+const DEFINITIONS=[
+["clipPath",{id:"magic-word-front"},[["path",{d:SHIRT_FRONT}]]],
+["path",{id:"magic-word-diamond",d:"M0 -2.6 L2.4 0 L0 2.6 L-2.4 0 Z"}],
+...BADGE_DEFINITIONS,
 ];
 export function drawFigure(doc){
 const svg=(
@@ -169,16 +195,17 @@ stroke:"currentColor",
 "stroke-linejoin":"round",
 },
 [
-...SHIRT,
-...HEAD,
+...BODY,
+...CAN_HAND,
 [
-"path",
+"g",
 {
-class:"magic-word__shirt",
-d:"M110 114 L128 110 L134 128 L118 134 Z",
+class:"magic-word__head",
+transform:scaledAbout(CHIN,HEAD_SCALE),
 },
+FACE,
 ],
-["path",{d:`M130 130 L${ELBOW.x} ${ELBOW.y}`}],
+["path",{class:"magic-word__jacket",d:UPPER_ARM}],
 ["g",{class:"magic-word__arm"},FOREARM],
 ],
 ],
