@@ -2,7 +2,7 @@ import{initSlideCarousel,MIN_SLIDES}from"./now-carousel.js";
 import{buildLiveRegion}from"./now-pager-controls.js";
 import{createReveal,fitReveal,wrapLine}from"./text-reveal.js";
 const FETCHING_ATTRIBUTES=(["srcset","sizes","src"]);
-const DEFERRED_ATTRIBUTES=new Set([...FETCHING_ATTRIBUTES,"loading"]);
+const COPIED_ATTRIBUTES=new Set(["class","alt","data-tag"]);
 function deferredSlideFrom(doc,noscript){
 const view=(doc.defaultView);
 const parsed=new view.DOMParser().parseFromString(
@@ -15,7 +15,7 @@ return null;
 }
 const slide=doc.createElement("img");
 [...source.attributes]
-.filter((attribute)=>!DEFERRED_ATTRIBUTES.has(attribute.name))
+.filter((attribute)=>COPIED_ATTRIBUTES.has(attribute.name))
 .forEach((attribute)=>
 slide.setAttribute(attribute.name,attribute.value),
 );

@@ -1,4 +1,4 @@
-const REFUSED_ANYWHERE=/[\s\\]/;
+const REFUSED_ANYWHERE=/[\s\\\p{Cc}\p{Cf}\p{Cs}]/u;
 const ANOTHER_HOST="//";
 const PLACEHOLDER_BASE="https://invalid.invalid/";
 const FIELD_ATTRIBUTES=Object.freeze({
