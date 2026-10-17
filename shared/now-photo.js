@@ -1,6 +1,15 @@
-import{initSlideCarousel,MIN_SLIDES}from"./now-carousel.js";
+import{
+initSlideCarousel,
+MIN_SLIDES,
+whenTextMayRewrap,
+}from"./now-carousel.js";
 import{buildLiveRegion}from"./now-pager-controls.js";
-import{createReveal,fitReveal,wrapLine}from"./text-reveal.js";
+import{
+createReveal,
+fitReveal,
+refitReveal,
+wrapLine,
+}from"./text-reveal.js";
 const FETCHING_ATTRIBUTES=(["srcset","sizes","src"]);
 const COPIED_ATTRIBUTES=new Set(["class","alt","data-tag"]);
 function deferredSlideFrom(doc,noscript){
@@ -115,6 +124,7 @@ showPosition(state,index,total);
 followPosition(deferred,index);
 },
 });
+whenTextMayRewrap(window,()=>refitReveal(state));
 }
 function slidesOf(frame){
 return([

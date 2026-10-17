@@ -59,14 +59,17 @@ export function buildPlaceholderCard(doc,source){
 const li=doc.createElement("li");
 li.className="card";
 li.id=source.id;
+const box=doc.createElement("div");
+box.className="card__box";
+li.appendChild(box);
 const label=doc.createElement("p");
 label.className="card__label";
 label.textContent=source.label;
-li.appendChild(label);
-li.appendChild(buildMark(doc,source.mark,source.markLabel));
+box.appendChild(label);
+box.appendChild(buildMark(doc,source.mark,source.markLabel));
 const title=doc.createElement("p");
 title.className="card__title";
 title.textContent="Coming soon";
-li.appendChild(title);
+box.appendChild(title);
 return li;
 }

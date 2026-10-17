@@ -52,6 +52,7 @@ return Number.isFinite(ceiling)?ceiling:null;
 function rebuild(state){
 state.pager.style.height="";
 if(state.pager.clientHeight<=0){
+markUnpaged(state);
 return;
 }
 const ceiling=ceilingOf(state.window,state.pager);
@@ -60,19 +61,28 @@ state.pages=paginate(heights,gap,ceiling??room);
 if(ceiling!==null){
 state.pager.style.height=`${tallestPage(heights,gap,state.pages)}px`;
 }
-state.at=Math.min(state.at,state.pages.length-1);
+state.at=clampPage(state,state.at);
+show(state);
+}
+function markUnpaged(state){
+if(state.pages.length>0){
+return;
+}
+for(const arrow of[state.prev,state.next]){
+arrow.setAttribute("aria-disabled","true");
+}
+}
+function clampPage(state,at){
+return Math.max(0,Math.min(at,state.pages.length-1));
+}
+function step(state,delta){
+state.at=clampPage(state,state.at+delta);
 show(state);
 }
 function wire(state){
 const{window,prev,next}=state;
-prev.addEventListener("click",()=>{
-state.at=Math.max(0,state.at-1);
-show(state);
-});
-next.addEventListener("click",()=>{
-state.at=Math.min(state.pages.length-1,state.at+1);
-show(state);
-});
+prev.addEventListener("click",()=>step(state,-1));
+next.addEventListener("click",()=>step(state,1));
 let settle;
 window.addEventListener("resize",()=>{
 window.clearTimeout(settle);

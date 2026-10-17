@@ -1,7 +1,7 @@
 import{favoritedGloss,favoritedSignal}from"./card-signals.js";
 import{moveAnnouncement}from"./card-slides.js";
 import{CARD_SOURCES}from"./card-sources.js";
-import{initSlideCarousel}from"./now-carousel.js";
+import{initSlideCarousel,whenTextMayRewrap}from"./now-carousel.js";
 import{buildLiveRegion}from"./now-pager-controls.js";
 import{
 bindReveal,
@@ -9,6 +9,7 @@ clearLineClamps,
 createCardLines,
 createReveal,
 fitCardText,
+refitCardText,
 }from"./text-reveal.js";
 function committedNote(doc,source){
 const noscript=doc.querySelector(".media + noscript");
@@ -92,12 +93,9 @@ fitCardText(lines,slides[index]);
 live.textContent=moveAnnouncement(source,slides,index,total);
 },
 });
-(doc.defaultView).addEventListener(
-"resize",
-function(){
-fitCardText(lines,slides[shown]);
-},
-);
+whenTextMayRewrap((doc.defaultView),function(){
+refitCardText(lines,slides[shown]);
+});
 }
 function wireCard(doc,li,source,now,observerCtor){
 refreshClockSignals(li,now);

@@ -13,7 +13,8 @@ function cardLine(value){
 if(!present(value)){
 return null;
 }
-return String(value);
+const text=String(value);
+return text.trim()===""?null:text;
 }
 export const CARD_SOURCES=[
 {

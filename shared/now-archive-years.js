@@ -31,7 +31,13 @@ return;
 }
 const{wrapper,select}=buildPicker(doc,links);
 const current=currentIndexOf(links);
-select.selectedIndex=current===-1?0:current;
+const opening=current===-1?0:current;
+select.selectedIndex=opening;
+window.addEventListener("pageshow",(event)=>{
+if(event.persisted){
+select.selectedIndex=opening;
+}
+});
 select.addEventListener("change",()=>{
 window.location.href=links[select.selectedIndex].href;
 });

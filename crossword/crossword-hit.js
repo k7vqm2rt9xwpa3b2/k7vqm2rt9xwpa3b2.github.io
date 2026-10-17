@@ -4,6 +4,7 @@ gridHeld,
 lockEntry,
 lockedEntryKey,
 selectEntry,
+selectedEntryKey,
 }from"./crossword-interact.js";
 import{
 hideSpotlight,
@@ -17,18 +18,24 @@ return;
 }
 lockEntry(doc,data,key);
 }
+function previewEntry(doc,data,key){
+if(selectedEntryKey(doc)===key){
+return;
+}
+selectEntry(doc,data,key);
+}
 export function wireHit(doc,rect,key,data){
 rect.addEventListener("pointerenter",function(event){
 if(event.pointerType==="touch"||gridHeld(doc)){
 return;
 }
-selectEntry(doc,data,key);
+previewEntry(doc,data,key);
 });
 rect.addEventListener("focus",function(){
 if(gridHeld(doc)){
 return;
 }
-selectEntry(doc,data,key);
+previewEntry(doc,data,key);
 });
 rect.addEventListener("click",function(){
 pressEntry(doc,data,key);

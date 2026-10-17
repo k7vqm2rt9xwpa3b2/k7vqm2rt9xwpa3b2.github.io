@@ -63,9 +63,25 @@ revealsOf(doc).push(state);
 return state;
 }
 export function fitReveal(state){
-const{doc,text,panel,line}=state;
-panel.textContent=text.textContent;
-closeAllReveals(doc);
+state.panel.textContent=state.text.textContent;
+closeAllReveals(state.doc);
+offerControlIfClipped(state);
+}
+export function refitReveal(state){
+if(state.text===null){
+return;
+}
+const focused=state.more!==null&&state.more===state.doc.activeElement;
+state.panel.textContent=state.text.textContent;
+offerControlIfClipped(state);
+if(focused&&state.more===null){
+const row=(state.line);
+row.setAttribute("tabindex","-1");
+row.focus({preventScroll:true});
+}
+}
+function offerControlIfClipped(state){
+const{doc,text,line}=state;
 const clipped=text.scrollHeight>text.clientHeight;
 if(clipped&&state.more===null){
 const more=doc.createElement("button");
@@ -74,6 +90,7 @@ more.className="reveal__more";
 line.appendChild(more);
 bindReveal(state,more);
 }else if(!clipped&&state.more!==null){
+state.panel.hidden=true;
 state.more.remove();
 state.more=null;
 }
@@ -117,14 +134,14 @@ function clampSlide(slide){
 const title=(
 slide.querySelector(".card__title")
 );
-const maker=(
-slide.querySelector(".card__meta--maker")
-);
+const maker=makerLineOf(slide);
 const needed={
 title:linesNeeded(title),
 maker:maker===null?0:linesNeeded(maker),
 };
-if(needed.title!==null&&needed.maker!==null){
+if(needed.title===null||needed.maker===null){
+clearLineClamps(slide);
+}else{
 const shown=allocateLines(needed.title,needed.maker);
 title.style.setProperty(LINES_PROPERTY,String(shown.title));
 if(maker!==null){
@@ -132,6 +149,12 @@ maker.style.setProperty(LINES_PROPERTY,String(shown.maker));
 }
 }
 return{title,maker};
+}
+function makerLineOf(slide){
+const maker=(
+slide.querySelector(".card__meta--maker")
+);
+return maker===null||maker.textContent.trim()===""?null:maker;
 }
 export function fitNewestSlides(root){
 root.querySelectorAll(".media .card__frame").forEach(function(frame){
@@ -156,4 +179,9 @@ aim(lines.maker,maker);
 if(maker!==null){
 fitReveal(lines.maker);
 }
+}
+export function refitCardText(lines,slide){
+clampSlide(slide);
+refitReveal(lines.title);
+refitReveal(lines.maker);
 }

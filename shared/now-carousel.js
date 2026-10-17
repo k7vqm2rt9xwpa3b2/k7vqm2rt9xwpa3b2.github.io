@@ -62,6 +62,22 @@ settle=window.setTimeout(()=>refit(state),RESIZE_SETTLE_MS);
 });
 doc.fonts?.ready.then(()=>refit(state));
 }
+export function whenTextMayRewrap(window,refit){
+const root=window.document.documentElement;
+let fittedWidth=root.clientWidth;
+let settle;
+window.addEventListener("resize",()=>{
+window.clearTimeout(settle);
+settle=window.setTimeout(()=>{
+const width=root.clientWidth;
+if(width!==fittedWidth){
+fittedWidth=width;
+refit();
+}
+},RESIZE_SETTLE_MS);
+});
+window.document.fonts?.ready.then(refit);
+}
 export function initSlideCarousel({
 doc,
 frame,
