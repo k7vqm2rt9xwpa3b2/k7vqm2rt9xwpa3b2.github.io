@@ -1,3 +1,4 @@
+import{wordOn}from"./dom-words.js";
 import{drawFigure}from"./magic-word-figure.js";
 import{drawLettering}from"./magic-word-lettering.js";
 import{drawOldSite}from"./magic-word-old-site.js";
@@ -32,13 +33,7 @@ const VISUALLY_HIDDEN="visually-hidden";
 const CLOSE_FACE="×";
 const STILL_ADDRESS="?still#still";
 const REDUCED_MOTION="(prefers-reduced-motion: reduce)";
-function wordOn(carrier,name){
-const word=carrier.getAttribute(name);
-if(word===null){
-throw new Error(`magic-word.js: the pop-up's carrier has no ${name}`);
-}
-return word;
-}
+const CARRIER_NAME="magic-word.js: the pop-up's carrier";
 function buildClose(doc,name){
 const close=doc.createElement("button");
 close.type="button";
@@ -73,10 +68,10 @@ return(built);
 const carrier=(doc.querySelector(CARRIER));
 const says=buildLine(
 doc,
-wordOn(carrier,line.says),
-line.sentence&&wordOn(carrier,line.sentence),
+wordOn(carrier,line.says,CARRIER_NAME),
+line.sentence&&wordOn(carrier,line.sentence,CARRIER_NAME),
 );
-const close=buildClose(doc,wordOn(carrier,WORDS.close));
+const close=buildClose(doc,wordOn(carrier,WORDS.close,CARRIER_NAME));
 const dialog=doc.createElement("dialog");
 dialog.id=DIALOG_ID;
 dialog.className="magic-word";
@@ -105,14 +100,14 @@ const doc=win.document;
 const dialog=buildMagicWordDialog(doc,REWARD_LINE);
 dialog.classList.add("magic-word--reward");
 const carrier=(dialog.parentElement);
-const alt=wordOn(carrier,REWARD_WORDS.graphicAlt);
+const alt=wordOn(carrier,REWARD_WORDS.graphicAlt,CARRIER_NAME);
 const graphic=drawing
 ?buildDrawing(doc,drawing,alt,win.matchMedia(REDUCED_MOTION).matches)
 :buildGraphicWords(doc,alt);
 const oldSite=drawOldSite(
 doc,
-wordOn(carrier,REWARD_WORDS.oldSiteName),
-wordOn(carrier,REWARD_WORDS.oldSiteStatus),
+wordOn(carrier,REWARD_WORDS.oldSiteName,CARRIER_NAME),
+wordOn(carrier,REWARD_WORDS.oldSiteStatus,CARRIER_NAME),
 );
 openBesideGrid(win,back,dialog,oldSite,graphic);
 }
@@ -130,13 +125,16 @@ image.setAttribute("alt",alt);
 image.setAttribute("width",String(drawing.width));
 image.setAttribute("height",String(drawing.height));
 image.setAttribute(PAPER_SRC,stillAddress);
-image.addEventListener(
-"error",
-()=>image.replaceWith(buildGraphicWords(doc,alt)),
-{once:true},
-);
+giveWayToWords(doc,image);
 image.setAttribute("src",still?stillAddress:drawing.src);
 return image;
+}
+function giveWayToWords(doc,image){
+image.addEventListener(
+"error",
+()=>image.replaceWith(buildGraphicWords(doc,image.alt)),
+{once:true},
+);
 }
 function openBesideGrid(win,back,dialog,square,panelContent){
 const doc=win.document;
@@ -156,6 +154,9 @@ panel.className="magic-word__panel";
 panel.append(panelContent);
 says.before(panel);
 const paper=buildPaperCopy(doc,dialog);
+for(const image of paper.querySelectorAll("img")){
+giveWayToWords(doc,image);
+}
 grid.before(paper);
 dialog.showModal();
 dialog.focus();

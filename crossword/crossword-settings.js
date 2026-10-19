@@ -21,6 +21,27 @@ throw new Error("crossword-settings.js: "+what+" must be a record");
 }
 return{...given};
 }
+const NULLABLE=Object.freeze(["queryKey"]);
+function checkLeaf(fallback,value,name){
+const fallbackIsRecord=
+fallback!==null&&
+typeof fallback==="object"&&
+!Array.isArray(fallback);
+if(fallbackIsRecord||typeof value===typeof fallback){
+return;
+}
+const nullable=NULLABLE.includes(name);
+if(nullable&&value===null){
+return;
+}
+throw new Error(
+"crossword-settings.js: setting "+
+name+
+" must be a "+
+typeof fallback+
+(nullable?" or null":""),
+);
+}
 function over(defaults,given,prefix){
 const merged={...defaults};
 for(const[key,value]of Object.entries(given)){
@@ -28,6 +49,7 @@ if(!Object.hasOwn(defaults,key)){
 throw new Error("crossword-settings.js: unknown setting "+prefix+key);
 }
 if(value!==undefined){
+checkLeaf(defaults[key],value,prefix+key);
 merged[key]=value;
 }
 }

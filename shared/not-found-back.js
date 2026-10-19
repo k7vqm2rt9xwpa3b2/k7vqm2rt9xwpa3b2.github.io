@@ -1,3 +1,4 @@
+import{FIRST_SPACE,namingRun,wordOn}from"./dom-words.js";
 const WORDS=Object.freeze({
 lead:"data-back-lead",
 word:"data-back-word",
@@ -7,27 +8,13 @@ const BUTTON_ID="not-found-back-button";
 const LEAD_ID="not-found-back-lead";
 const MARK_ID="not-found-back-mark";
 const TAIL_ID="not-found-back-tail";
-const FIRST_SPACE=/\s|$/;
-function wordOn(carrier,name){
-const word=carrier.getAttribute(name);
-if(word===null){
-throw new Error(`not-found-back.js: the carrier has no ${name}`);
-}
-return word;
-}
+const CARRIER_NAME="not-found-back.js: the carrier";
 function backWordsOn(carrier){
 return{
-lead:wordOn(carrier,WORDS.lead),
-word:wordOn(carrier,WORDS.word),
-tail:wordOn(carrier,WORDS.tail),
+lead:wordOn(carrier,WORDS.lead,CARRIER_NAME),
+word:wordOn(carrier,WORDS.word,CARRIER_NAME),
+tail:wordOn(carrier,WORDS.tail,CARRIER_NAME),
 };
-}
-function namingRun(document,id,words){
-const span=document.createElement("span");
-span.id=id;
-span.setAttribute("aria-hidden","true");
-span.textContent=words;
-return span;
 }
 function backButton(view,word){
 const document=view.document;

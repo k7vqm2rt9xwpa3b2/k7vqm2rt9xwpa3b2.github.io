@@ -1,6 +1,15 @@
 export function entryId(entry){
 return entry.number+entry.direction;
 }
+export function entryIdsValue(ids){
+return ids.join(" ");
+}
+export function entryIdsIn(value){
+return(value||"").split(" ");
+}
+export function squareKey(row,col){
+return row+","+col;
+}
 export function entryCellsFromMap(cellEntryMap){
 const result=new Map();
 cellEntryMap.forEach(function(ids,cellKey){

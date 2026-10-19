@@ -12,9 +12,9 @@ return total;
 }
 return clamp(Math.floor(spare/unit),1,total);
 }
-function everyPage(at,total,caps){
+function everyPage(at,total){
 return Array.from({length:total},(unused,index)=>
-dot(caps&&(index===0||index===total-1),index===at),
+dot(index===0||index===total-1,index===at),
 );
 }
 function travelingMiddle(at,total,slots,caps){
@@ -33,11 +33,10 @@ dot(false,inMiddle&&index===marked),
 }
 export function placeDots(at,total,shown){
 const slots=clamp(shown,1,total);
-const windowed=slots<total;
-const caps=!windowed||slots>=MIN_CAPPED_SLOTS;
-if(!windowed){
-return everyPage(at,total,caps);
+if(slots>=total){
+return everyPage(at,total);
 }
+const caps=slots>=MIN_CAPPED_SLOTS;
 const middle=travelingMiddle(at,total,slots,caps);
 if(!caps){
 return middle;

@@ -56,10 +56,17 @@ document.querySelector('meta[name="theme-color"]'),
 }
 override.setAttribute("content",source.getAttribute("content"));
 }
-export function setMode(window,mode){
-window.document.documentElement.setAttribute("data-mode",mode);
-remember(window,mode);
+function showChoice(window,mode){
+const document=window.document;
+document.documentElement.setAttribute("data-mode",mode);
+document
+.querySelector('meta[name="color-scheme"]')
+?.setAttribute("content",mode);
 paintChrome(window);
+}
+export function setMode(window,mode){
+remember(window,mode);
+showChoice(window,mode);
 }
 function followDevice(window){
 const document=window.document;
@@ -79,10 +86,5 @@ if(!saved){
 followDevice(window);
 return;
 }
-const document=window.document;
-document.documentElement.setAttribute("data-mode",saved);
-document
-.querySelector('meta[name="color-scheme"]')
-?.setAttribute("content",saved);
-paintChrome(window);
+showChoice(window,saved);
 }

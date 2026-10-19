@@ -3,6 +3,13 @@ const CAROUSEL_CLASS="is-carousel";
 export const SHOWING_CLASS="is-showing";
 export const CAROUSEL_ROLE="group";
 export const CAROUSEL_ROLEDESCRIPTION="carousel";
+export function entryLabel(band,noun){
+const heading=band===null?null:band.querySelector(".now-entry h3");
+if(heading===null||heading.textContent.trim()===""){
+return`${noun} from this month`;
+}
+return`${noun} from ${heading.textContent.trim()}`;
+}
 export const MIN_SLIDES=1;
 export const RESIZE_SETTLE_MS=120;
 const VISIBLE_ENOUGH=0.6;
@@ -54,15 +61,9 @@ function refit(state){
 renderControlRow(state,state.index,state.slides.length);
 }
 function refitWhenStale(state){
-const{window,doc}=state;
-let settle;
-window.addEventListener("resize",()=>{
-window.clearTimeout(settle);
-settle=window.setTimeout(()=>refit(state),RESIZE_SETTLE_MS);
-});
-doc.fonts?.ready.then(()=>refit(state));
+whenLayoutMayGoStale(state.window,()=>refit(state),{widthOnly:false});
 }
-export function whenTextMayRewrap(window,refit){
+export function whenLayoutMayGoStale(window,refit,{widthOnly}){
 const root=window.document.documentElement;
 let fittedWidth=root.clientWidth;
 let settle;
@@ -70,13 +71,17 @@ window.addEventListener("resize",()=>{
 window.clearTimeout(settle);
 settle=window.setTimeout(()=>{
 const width=root.clientWidth;
-if(width!==fittedWidth){
+if(widthOnly&&width===fittedWidth){
+return;
+}
 fittedWidth=width;
 refit();
-}
 },RESIZE_SETTLE_MS);
 });
-window.document.fonts?.ready.then(refit);
+window.document.fonts?.ready.then(()=>refit());
+}
+export function whenTextMayRewrap(window,refit){
+whenLayoutMayGoStale(window,refit,{widthOnly:true});
 }
 export function initSlideCarousel({
 doc,

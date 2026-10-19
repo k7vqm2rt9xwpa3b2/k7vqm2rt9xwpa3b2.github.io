@@ -1,4 +1,4 @@
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 export const SQUARE=212;
 export const FRAME=2;
 export const CLIP_ID="nf-screen-clip";
@@ -81,11 +81,4 @@ function textOf(doc,words,attributes){
 const text=svgElement(doc,"text",attributes);
 text.textContent=words;
 return text;
-}
-function svgElement(doc,name,attributes){
-const element=(doc.createElementNS(SVG_NS,name));
-for(const[key,value]of Object.entries(attributes)){
-element.setAttribute(key,String(value));
-}
-return element;
 }

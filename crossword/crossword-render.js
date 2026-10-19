@@ -2,6 +2,8 @@ import{
 computeAnchorCells,
 entryCellsFromMap,
 entryId,
+entryIdsValue,
+squareKey,
 }from"./crossword-anchor.js";
 import{wireCircleHit,wireHit}from"./crossword-hit.js";
 import{CELL,numberPlace,ringPath}from"./crossword-ring.js";
@@ -29,14 +31,14 @@ const y=row*CELL;
 if(letter===BLOCK){
 return;
 }
-const key=row+","+col;
+const key=squareKey(row,col);
 const coveringEntries=pass.cellEntries.get(key)||[];
 svg.appendChild(
 svgEl(doc,"rect",{
 class:"cw-cell",
 "data-row":row,
 "data-col":col,
-"data-entries":coveringEntries.join(" "),
+"data-entries":entryIdsValue(coveringEntries),
 x:x,
 y:y,
 width:CELL,
@@ -114,7 +116,7 @@ const id=entryId(entry);
 for(let offset=0;offset<entry.answer.length;offset++){
 const row=entry.row+offset*step.row;
 const col=entry.col+offset*step.col;
-const key=row+","+col;
+const key=squareKey(row,col);
 const covering=map.get(key)||[];
 covering.push(id);
 map.set(key,covering);
@@ -125,7 +127,7 @@ return map;
 function numberDigits(numbers){
 return new Map(
 numbers.map(function({row,col,number}){
-return[row+","+col,String(number).length];
+return[squareKey(row,col),String(number).length];
 }),
 );
 }
@@ -133,7 +135,7 @@ function renderCircles(doc,svg,data){
 const digits=numberDigits(data.numbers);
 (data.circled||[]).forEach(function(cell){
 const[row,col]=cell;
-const width=digits.get(row+","+col)||0;
+const width=digits.get(squareKey(row,col))||0;
 svg.appendChild(
 svgEl(doc,"path",{
 class:"cw-circle",
@@ -161,6 +163,7 @@ height:height,
 tabindex:0,
 role:"button",
 "aria-label":entry.clue||entry.answer,
+"aria-pressed":"false",
 });
 wireHit(doc,hit,key,data);
 svg.appendChild(hit);
@@ -220,7 +223,7 @@ data.height*CELL+FRAME_STROKE,
 });
 const cellEntryMap=buildCellEntryMap(data.entries);
 const circledKeys=new Set(
-(data.circled||[]).map(([row,col])=>row+","+col),
+(data.circled||[]).map(([row,col])=>squareKey(row,col)),
 );
 const pass={
 cellEntries:cellEntryMap,

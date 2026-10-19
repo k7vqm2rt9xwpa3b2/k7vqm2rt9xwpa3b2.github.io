@@ -4,8 +4,8 @@ import{initNoteCarousel}from"./shared/now-notes.js";
 import{initPhotoCarousel}from"./shared/now-photo.js";
 import{initMode}from"./shared/mode.js";
 import{rememberedPuzzle,rememberPuzzle}from"./shared/puzzle-memory.js";
-function fetchViaWindow(url){
-return window.fetch(url);
+export function fetchViaWindow(timedFetch){
+return(url,init)=>timedFetch(window,url,init);
 }
 initMode(window);
 initDisclosures(document);
@@ -23,12 +23,18 @@ Promise.all([
 import("./crossword/crossword-set.js"),
 import("./crossword/crossword-controls.js"),
 import("./shared/magic-word-hook.js"),
+import("./shared/timed-fetch.js"),
 ]).then(
-([{renderCrossword},{buildCrosswordControls},{magicWordHook}])=>{
+([
+{renderCrossword},
+{buildCrosswordControls},
+{magicWordHook},
+{timedFetch},
+])=>{
 buildCrosswordControls(document);
 const{magicWords,onMagicWord,onMalformedAddress,opened}=
 magicWordHook(window);
-return renderCrossword(document,fetchViaWindow,{
+return renderCrossword(document,fetchViaWindow(timedFetch),{
 ...crosswordOptions,
 magicWords,
 onMagicWord,

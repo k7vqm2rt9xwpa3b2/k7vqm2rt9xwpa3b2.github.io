@@ -1,4 +1,4 @@
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 export const OLD_PAGE_WINDOW=640;
 export const TITLE_CENTER_X=320;
 export const TITLE_BASELINE_Y=261;
@@ -38,11 +38,4 @@ height:OLD_PAGE_WINDOW,
 });
 svg.append(page,title,frame);
 return svg;
-}
-function svgElement(doc,name,attributes){
-const element=(doc.createElementNS(SVG_NS,name));
-for(const[key,value]of Object.entries(attributes)){
-element.setAttribute(key,String(value));
-}
-return element;
 }

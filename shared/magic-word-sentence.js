@@ -1,5 +1,5 @@
 import{CELL}from"../crossword/crossword-ring.js";
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 export const SENTENCE_COLUMNS=9;
 const NOT_A_LETTER=/\P{L}/gu;
 export function sentenceCells(words){
@@ -65,11 +65,4 @@ return[
 svgElement(doc,"rect",{class:"magic-sentence__cell",...at}),
 text,
 ];
-}
-function svgElement(doc,name,attributes){
-const element=doc.createElementNS(SVG_NS,name);
-for(const[key,value]of Object.entries(attributes)){
-element.setAttribute(key,String(value));
-}
-return element;
 }

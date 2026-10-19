@@ -1,5 +1,5 @@
-import{entryId}from"./crossword-anchor.js";
-import{elementFor,settingsFor}from"./crossword-settings.js";
+import{entryId,entryIdsIn,squareKey}from"./crossword-anchor.js";
+import{elementFor}from"./crossword-settings.js";
 import{SPOTLIGHT_CLASSES,spotlightHeld}from"./crossword-spotlight.js";
 const SELECTION_CLASSES=[
 "is-selected",
@@ -7,6 +7,8 @@ const SELECTION_CLASSES=[
 "is-locked",
 ...SPOTLIGHT_CLASSES,
 ];
+const LOCKED_RECT=".cw-hit:not(.cw-hit-anchor).is-locked";
+const PRESSED_RECT='.cw-hit[aria-pressed="true"]';
 function clearSelection(doc){
 const selector=SELECTION_CLASSES.map((name)=>"."+name).join(", ");
 doc.querySelectorAll(selector).forEach(function(element){
@@ -14,12 +16,15 @@ SELECTION_CLASSES.forEach(function(name){
 element.classList.remove(name);
 });
 });
+doc.querySelectorAll(PRESSED_RECT).forEach(function(rect){
+rect.setAttribute("aria-pressed","false");
+});
 }
 function cellsForEntry(doc,entryKey){
 const cells=doc.querySelectorAll(".cw-cell");
 const covering=[];
 cells.forEach(function(cell){
-const ids=(cell.getAttribute("data-entries")||"").split(" ");
+const ids=entryIdsIn(cell.getAttribute("data-entries"));
 if(ids.indexOf(entryKey)!==-1){
 covering.push(cell);
 }
@@ -77,7 +82,7 @@ const rect=doc.querySelector(".cw-hit:not(.cw-hit-anchor).is-selected");
 return rect?rect.dataset.entry:null;
 }
 export function lockedEntryKey(doc){
-const rect=doc.querySelector(".cw-hit:not(.cw-hit-anchor).is-locked");
+const rect=doc.querySelector(LOCKED_RECT);
 return rect?rect.dataset.entry:null;
 }
 export function lockEntry(doc,data,entryKey){
@@ -87,6 +92,8 @@ return null;
 }
 }
 markEntry(doc,entryKey,"is-locked");
+const rect=(doc.querySelector(LOCKED_RECT));
+rect.setAttribute("aria-pressed","true");
 return entryKey;
 }
 export function gridHeld(doc){
@@ -103,8 +110,9 @@ export function resetReadout(doc){
 writeReadout(doc,[]);
 }
 export function squareOf(element){
-return(
-element.getAttribute("data-row")+","+element.getAttribute("data-col")
+return squareKey(
+element.getAttribute("data-row"),
+element.getAttribute("data-col"),
 );
 }
 function markEntry(doc,entryKey,className){
@@ -148,43 +156,4 @@ markEntry(doc,entryId(sibling),"is-sibling");
 });
 writeReadout(doc,lines);
 return entry;
-}
-export function wireDismissal(doc){
-const mount=elementFor(doc,"mount");
-const figure=mount?mount.closest("figure"):null;
-if(!figure){
-console.warn(
-"crossword-interact.js: no <figure> around #"+
-settingsFor(doc).ids.mount+
-" -- selection cannot be dismissed",
-);
-return;
-}
-figure.addEventListener("pointerleave",function(){
-if(gridHeld(doc)){
-return;
-}
-deselect(doc);
-});
-figure.addEventListener("focusout",function(event){
-if(
-figure.contains((event.relatedTarget))||
-gridHeld(doc)
-){
-return;
-}
-deselect(doc);
-});
-doc.addEventListener("click",function(event){
-if(figure.contains(event.target)){
-return;
-}
-deselect(doc);
-});
-doc.addEventListener("keydown",function(event){
-if(event.key!=="Escape"){
-return;
-}
-deselect(doc);
-});
 }

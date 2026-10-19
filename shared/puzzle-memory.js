@@ -9,7 +9,8 @@ return null;
 }
 try{
 const raw=view.sessionStorage.getItem(STORAGE_KEY);
-return raw===null?null:Number(raw);
+const index=raw===null?null:Number(raw);
+return Number.isFinite(index)?index:null;
 }catch{
 return null;
 }

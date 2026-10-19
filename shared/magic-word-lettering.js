@@ -1,4 +1,4 @@
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 const CAP=24;
 const GAP=2.2;
 const MARGIN=3.5;
@@ -41,19 +41,24 @@ return{glyph,at};
 return{placed,end:pen};
 }
 function drawLayer(doc,layer,placed){
-const group=(doc.createElementNS(SVG_NS,"g"));
-group.setAttribute("class",layer.name);
-group.setAttribute("fill","none");
-group.setAttribute("stroke-width",String(layer.width));
-group.setAttribute("stroke-linejoin","miter");
+const group=(
+svgElement(doc,"g",{
+class:layer.name,
+fill:"none",
+"stroke-width":layer.width,
+"stroke-linejoin":"miter",
+})
+);
 for(const{glyph,at}of placed){
 if(glyph.d===""){
 continue;
 }
-const path=doc.createElementNS(SVG_NS,"path");
-path.setAttribute("d",layer.inline?glyph.inline:glyph.d);
-path.setAttribute("transform",`translate(${at} 0)`);
-group.append(path);
+group.append(
+svgElement(doc,"path",{
+d:layer.inline?glyph.inline:glyph.d,
+transform:`translate(${at} 0)`,
+}),
+);
 }
 return group;
 }
@@ -67,13 +72,13 @@ return null;
 }
 const{placed,end}=placeGlyphs(chars.map((char)=>GLYPHS[char]));
 const width=end-GAP;
-const svg=(doc.createElementNS(SVG_NS,"svg"));
-svg.setAttribute("class","magic-word__lettering");
-svg.setAttribute(
-"viewBox",
-`${-MARGIN} ${-MARGIN} ${width+2*MARGIN} ${CAP+2*MARGIN}`,
+const svg=(
+svgElement(doc,"svg",{
+class:"magic-word__lettering",
+viewBox:`${-MARGIN} ${-MARGIN} ${width+2*MARGIN} ${CAP+2*MARGIN}`,
+"aria-hidden":"true",
+})
 );
-svg.setAttribute("aria-hidden","true");
 svg.append(...LAYERS.map((layer)=>drawLayer(doc,layer,placed)));
 return svg;
 }

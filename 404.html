@@ -43,7 +43,21 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <header class="masthead">
       
       <div class="masthead__brand">
-        <a class="masthead__name" href="index.html">Billy Ella</a>
+        <a class="masthead__name" href="index.html" data-name="Billy Ella">Billy Ella</a>
+        <svg class="masthead__filters" width="0" height="0" aria-hidden="true" focusable="false">
+          <filter id="masthead-bevel" x="-5%" y="-20%" width="110%" height="140%" color-interpolation-filters="sRGB">
+            <feOffset in="SourceAlpha" dx="1.1" dy="1.1" result="o" />
+            <feComposite in="SourceAlpha" in2="o" operator="out" result="rim" />
+            <feMorphology in="SourceAlpha" operator="erode" radius="0.5" result="inner" />
+            <feComposite in="rim" in2="inner" operator="in" result="rim2" />
+            <feFlood flood-color="#ffffff" flood-opacity="0.85" />
+            <feComposite in2="rim2" operator="in" result="hi" />
+            <feMerge>
+              <feMergeNode in="SourceGraphic" />
+              <feMergeNode in="hi" />
+            </feMerge>
+          </filter>
+        </svg>
       </div>
       <details class="masthead__menu">
         <summary aria-controls="masthead-sections">Menu</summary>
@@ -225,6 +239,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     </main>
     
     <footer class="colophon">
+      <p class="reader-note">&lt;placeholder-reader-note&gt;</p>
       <p
         class="mode-note"
         data-action-lead="Switch to"

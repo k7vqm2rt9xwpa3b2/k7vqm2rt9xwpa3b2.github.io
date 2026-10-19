@@ -1,3 +1,4 @@
+import{timedFetch}from"./timed-fetch.js";
 export const CONTACT_SOURCE="data/contact.json";
 export const MAIL_SUBJECT="Best site ever!";
 const SENTINEL=String.fromCharCode(1);
@@ -118,7 +119,7 @@ if(!button||button.disabled){
 return Promise.resolve();
 }
 const view=document.defaultView;
-const fetchOrDefault=options.fetchImpl||((url)=>view.fetch(url));
+const fetchOrDefault=options.fetchImpl||((url)=>timedFetch(view,url));
 const navigateOrDefault=
 options.navigate||((url)=>navigateTo(view,url));
 const reportOrDefault=

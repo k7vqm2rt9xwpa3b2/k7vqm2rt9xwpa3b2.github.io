@@ -5,7 +5,7 @@ PAPER,
 scaledAbout,
 }from"./magic-word-badge.js";
 import{FACE}from"./magic-word-face.js";
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 export const ELBOW=Object.freeze({x:146,y:142});
 const CHIN=Object.freeze({x:68,y:104});
 const HEAD_SCALE=1.07;
@@ -219,10 +219,7 @@ arm.style.transformOrigin=`${ELBOW.x}px ${ELBOW.y}px`;
 return svg;
 }
 function build(doc,[tag,attributes,parts=[]]){
-const element=doc.createElementNS(SVG_NS,tag);
-for(const[name,value]of Object.entries(attributes)){
-element.setAttribute(name,String(value));
-}
+const element=svgElement(doc,tag,attributes);
 element.append(...parts.map((part)=>build(doc,part)));
-return(element);
+return element;
 }

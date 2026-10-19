@@ -1,4 +1,4 @@
-const SVG_NS="http://www.w3.org/2000/svg";
+import{svgElement}from"./svg.js";
 const inkLine=(width)=>({
 fill:"none",
 stroke:"var(--ink-muted)",
@@ -41,17 +41,14 @@ export const BOOK_MARK=[
 ["line",{x1:55,y1:49,x2:75,y2:49,...hairLine(0.8)}],
 ];
 function buildMark(doc,mark,label){
-const svg=doc.createElementNS(SVG_NS,"svg");
-svg.setAttribute("viewBox","0 0 100 100");
-svg.setAttribute("class","card__cover");
-svg.setAttribute("role","img");
-svg.setAttribute("aria-label",label);
-mark.forEach(function([tag,attributes]){
-const shape=doc.createElementNS(SVG_NS,tag);
-Object.entries(attributes).forEach(function([name,value]){
-shape.setAttribute(name,String(value));
+const svg=svgElement(doc,"svg",{
+viewBox:"0 0 100 100",
+class:"card__cover",
+role:"img",
+"aria-label":label,
 });
-svg.appendChild(shape);
+mark.forEach(function([tag,attributes]){
+svg.appendChild(svgElement(doc,tag,attributes));
 });
 return svg;
 }

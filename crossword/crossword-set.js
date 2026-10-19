@@ -1,7 +1,9 @@
 import{addressReaction,addressedPuzzle}from"./crossword-address.js";
 import{drawRefreshArrow}from"./crossword-arrow.js";
 import{drawFromDeck}from"./crossword-deck.js";
-import{resetReadout,wireDismissal}from"./crossword-interact.js";
+import{wireDismissal}from"./crossword-dismiss.js";
+import{resetReadout}from"./crossword-interact.js";
+import{loadPuzzles}from"./crossword-load.js";
 import{settlePuzzleNumber}from"./crossword-number.js";
 import{
 drawnGridStart,
@@ -18,23 +20,6 @@ elementFor,
 settingsFor,
 }from"./crossword-settings.js";
 import{initThemeControl}from"./crossword-theme.js";
-export async function loadPuzzles(
-fetchImpl,
-url=DEFAULT_SETTINGS.puzzlesUrl,
-){
-try{
-const response=await fetchImpl(url);
-if(!response.ok){
-return null;
-}
-const body=await response.json();
-return Array.isArray(body.puzzles)&&body.puzzles.length>0
-?body.puzzles
-:null;
-}catch{
-return null;
-}
-}
 export function reopenedPuzzle(
 count,
 search,

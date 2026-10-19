@@ -1,15 +1,8 @@
+import{FIRST_SPACE,namingRun}from"./dom-words.js";
 const SAVE_ID="save-note-app";
 const LEAD_ID="save-note-app-lead";
 const MARK_ID="save-note-app-mark";
 const TAIL_ID="save-note-app-tail";
-const FIRST_SPACE=/\s|$/;
-function namingRun(document,id,words){
-const span=document.createElement("span");
-span.id=id;
-span.setAttribute("aria-hidden","true");
-span.textContent=words;
-return span;
-}
 function saveButton(document,word){
 const button=document.createElement("button");
 button.className="save-note__save";

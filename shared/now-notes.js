@@ -1,7 +1,8 @@
 import{
 CAROUSEL_ROLE,
 CAROUSEL_ROLEDESCRIPTION,
-RESIZE_SETTLE_MS,
+entryLabel,
+whenLayoutMayGoStale,
 }from"./now-carousel.js";
 import{paginate,tallestPage}from"./now-notes-paging.js";
 import{
@@ -11,13 +12,6 @@ renderControlRow,
 }from"./now-pager-controls.js";
 const PAGED_CLASS="is-paged";
 const MIN_NOTES=1;
-function carouselLabel(band){
-const heading=band.querySelector(".now-entry h3");
-if(heading===null||heading.textContent.trim()===""){
-return"Notes from this month";
-}
-return`Notes from ${heading.textContent.trim()}`;
-}
 function measureGap(list,notes){
 if(notes.length<2){
 return 0;
@@ -83,12 +77,7 @@ function wire(state){
 const{window,prev,next}=state;
 prev.addEventListener("click",()=>step(state,-1));
 next.addEventListener("click",()=>step(state,1));
-let settle;
-window.addEventListener("resize",()=>{
-window.clearTimeout(settle);
-settle=window.setTimeout(()=>rebuild(state),RESIZE_SETTLE_MS);
-});
-window.document.fonts?.ready.then(()=>rebuild(state));
+whenLayoutMayGoStale(window,()=>rebuild(state),{widthOnly:false});
 }
 function initOneCarousel(window,band,list,notes){
 const doc=window.document;
@@ -96,7 +85,7 @@ const pager=doc.createElement("div");
 pager.className="now-pager";
 pager.setAttribute("role",CAROUSEL_ROLE);
 pager.setAttribute("aria-roledescription",CAROUSEL_ROLEDESCRIPTION);
-pager.setAttribute("aria-label",carouselLabel(band));
+pager.setAttribute("aria-label",entryLabel(band,"Notes"));
 list.replaceWith(pager);
 pager.append(list);
 const{controls,prev,next,strip,count}=buildControlRow(doc,{
@@ -109,7 +98,6 @@ band.classList.add(PAGED_CLASS);
 const state={
 window,
 doc,
-band,
 pager,
 list,
 notes,

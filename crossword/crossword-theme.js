@@ -1,7 +1,7 @@
-import{entryId}from"./crossword-anchor.js";
+import{entryId,entryIdsIn,squareKey}from"./crossword-anchor.js";
 import{squareOf}from"./crossword-interact.js";
 import{elementFor}from"./crossword-settings.js";
-export const THEME_LIT="is-theme-lit";
+const THEME_LIT="is-theme-lit";
 export const PANEL_ID="crossword-theme-panel";
 function buildPanel(doc,button){
 const panel=doc.createElement("p");
@@ -19,7 +19,7 @@ function squaresOfEntries(mount,entries){
 const ids=entries.map(entryId);
 const squares=new Set();
 mount.querySelectorAll(".cw-cell").forEach(function(cell){
-const tokens=(cell.getAttribute("data-entries")||"").split(" ");
+const tokens=entryIdsIn(cell.getAttribute("data-entries"));
 if(tokens.some((token)=>ids.includes(token))){
 squares.add(squareOf(cell));
 }
@@ -44,7 +44,7 @@ element.classList.add(THEME_LIT);
 function lightTheme(doc,block){
 const mount=(elementFor(doc,"mount"));
 const circled=new Set(
-(block.circled||[]).map(([row,col])=>row+","+col),
+(block.circled||[]).map(([row,col])=>squareKey(row,col)),
 );
 lightSquares(mount,".cw-cell, .cw-letter, .cw-circle",circled);
 const entries=linkedEntries(block);

@@ -20,25 +20,25 @@ function closeAllReveals(doc){
 revealsOf(doc).forEach((state)=>{
 state.panel.hidden=true;
 if(state.more!==null){
-markRevealControl(state,false);
+markRevealControl(state.more,state.labels,false);
 }
 });
 }
-function markRevealControl(state,open){
-state.more.setAttribute("aria-expanded",String(open));
-if(state.labels!==null){
-state.more.textContent=open?state.labels.open:state.labels.shut;
+function markRevealControl(more,labels,open){
+more.setAttribute("aria-expanded",String(open));
+if(labels!==null){
+more.textContent=open?labels.open:labels.shut;
 }
 }
 export function bindReveal(state,more){
 state.more=more;
-markRevealControl(state,!state.panel.hidden);
+markRevealControl(more,state.labels,!state.panel.hidden);
 more.addEventListener("click",(event)=>{
 event.stopPropagation();
-const opening=state.panel.hidden;
+const opening=state.panel.hidden!==false;
 closeAllReveals(state.doc);
 state.panel.hidden=!opening;
-markRevealControl(state,opening);
+markRevealControl(more,state.labels,opening);
 });
 }
 export function wrapLine(doc,text){
@@ -63,7 +63,8 @@ revealsOf(doc).push(state);
 return state;
 }
 export function fitReveal(state){
-state.panel.textContent=state.text.textContent;
+const text=(state.text);
+state.panel.textContent=text.textContent;
 closeAllReveals(state.doc);
 offerControlIfClipped(state);
 }
@@ -81,7 +82,9 @@ row.focus({preventScroll:true});
 }
 }
 function offerControlIfClipped(state){
-const{doc,text,line}=state;
+const text=(state.text);
+const line=(state.line);
+const{doc}=state;
 const clipped=text.scrollHeight>text.clientHeight;
 if(clipped&&state.more===null){
 const more=doc.createElement("button");

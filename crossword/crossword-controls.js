@@ -51,7 +51,7 @@ return;
 }
 for(const control of CONTROLS){
 const words=row.dataset[control.words];
-if(words!==undefined){
+if(words!==undefined&&words.trim()!==""){
 row.append(buildControl(doc,control,ids[control.name],words));
 }
 }

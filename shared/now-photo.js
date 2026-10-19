@@ -1,4 +1,5 @@
 import{
+entryLabel,
 initSlideCarousel,
 MIN_SLIDES,
 whenTextMayRewrap,
@@ -85,14 +86,6 @@ text.textContent=caption;
 fitReveal(state);
 live.textContent=`Photo ${index+1} of ${total}: ${caption}`;
 }
-function carouselLabel(frame){
-const band=frame.closest(".now-body");
-const heading=band===null?null:band.querySelector(".now-entry h3");
-if(heading===null||heading.textContent.trim()===""){
-return"Photographs from this month";
-}
-return`Photographs from ${heading.textContent.trim()}`;
-}
 function initOneCarousel(window,frame,slides,ObserverCtor){
 const doc=window.document;
 const figure=(frame.closest(".now-photo"));
@@ -113,7 +106,7 @@ doc,
 frame,
 slides,
 labels:{
-carousel:carouselLabel(frame),
+carousel:entryLabel(frame.closest(".now-body"),"Photographs"),
 previous:"Previous photo",
 next:"Next photo",
 },
