@@ -2,15 +2,10 @@ import{deselect}from"./crossword-interact.js";
 import{settlePuzzleNumber}from"./crossword-number.js";
 import{elementFor,settingsFor}from"./crossword-settings.js";
 export function openerGrid(doc){
-const noscript=elementFor(doc,"mount")
+const drawing=elementFor(doc,"mount")
 ?.closest("figure")
-?.querySelector("noscript");
-if(!noscript){
-return null;
-}
-const holder=doc.createElement("template");
-holder.innerHTML=(noscript.textContent);
-return holder.content.querySelector("svg.crossword__drawn");
+?.querySelector(".crossword__fallback svg.crossword__drawn");
+return drawing?(drawing.cloneNode(true)):null;
 }
 export function drawnGridStart(doc){
 const start=elementFor(doc,"start");

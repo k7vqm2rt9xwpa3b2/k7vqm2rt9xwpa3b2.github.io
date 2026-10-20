@@ -1,5 +1,6 @@
 const STORAGE_KEY="mode";
 const OS_DARK="(prefers-color-scheme: dark)";
+const SOURCE_ATTRIBUTE="data-mode-source";
 const SHIPPED_COLOR_SCHEME="light dark";
 function remember(window,mode){
 try{
@@ -59,6 +60,7 @@ override.setAttribute("content",source.getAttribute("content"));
 function showChoice(window,mode){
 const document=window.document;
 document.documentElement.setAttribute("data-mode",mode);
+document.documentElement.removeAttribute(SOURCE_ATTRIBUTE);
 document
 .querySelector('meta[name="color-scheme"]')
 ?.setAttribute("content",mode);
@@ -70,7 +72,13 @@ showChoice(window,mode);
 }
 function followDevice(window){
 const document=window.document;
+if(document.querySelector('meta[name="darkreader-lock"]')){
+showChoice(window,"dark");
+document.documentElement.setAttribute(SOURCE_ATTRIBUTE,"extension");
+return;
+}
 document.documentElement.removeAttribute("data-mode");
+document.documentElement.removeAttribute(SOURCE_ATTRIBUTE);
 document
 .querySelector('meta[name="color-scheme"]')
 ?.setAttribute("content",SHIPPED_COLOR_SCHEME);
@@ -83,7 +91,9 @@ followDevice(window);
 export function restoreStoredMode(window){
 const saved=storedMode(window);
 if(!saved){
+if(!window.document.documentElement.hasAttribute(SOURCE_ATTRIBUTE)){
 followDevice(window);
+}
 return;
 }
 showChoice(window,saved);

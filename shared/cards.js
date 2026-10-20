@@ -1,6 +1,7 @@
 import{favoritedGloss,favoritedSignal}from"./card-signals.js";
 import{moveAnnouncement}from"./card-slides.js";
 import{CARD_SOURCES}from"./card-sources.js";
+import{whenImageFails}from"./image-failure.js";
 import{initSlideCarousel,whenTextMayRewrap}from"./now-carousel.js";
 import{buildLiveRegion}from"./now-pager-controls.js";
 import{
@@ -56,13 +57,7 @@ glyphs.textContent=favoritedSignal(record,now);
 }
 function guardCovers(card){
 card.querySelectorAll("img").forEach(function(img){
-if(img.complete&&img.naturalWidth===0&&img.currentSrc!==""){
-img.remove();
-return;
-}
-img.addEventListener("error",function(){
-img.remove();
-});
+whenImageFails(img,()=>img.remove());
 });
 }
 function wireCarousel(doc,li,source,observerCtor){

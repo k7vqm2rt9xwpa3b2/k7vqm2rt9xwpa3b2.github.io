@@ -25,3 +25,18 @@ view.sessionStorage.setItem(STORAGE_KEY,String(index));
 }catch{
 }
 }
+const recordNothing=()=>false;
+export function recordingVisits(view,remember,load){
+let recorder;
+return(index)=>{
+remember(index);
+const visit=
+index===null?{page:"home"}:{page:"home",number:index+1};
+const now=Date.now();
+recorder??=load().then(
+({recordVisit})=>recordVisit,
+()=>recordNothing,
+);
+recorder.then((record)=>record(view,visit,now));
+};
+}

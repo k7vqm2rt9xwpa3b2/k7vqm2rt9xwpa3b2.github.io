@@ -11,7 +11,7 @@ status.textContent=status.getAttribute("data-words");
 }
 }
 export function showPageSource(doc,fetchImpl,address){
-const box=doc.querySelector("#page-source .page-source__text");
+const box=doc.querySelector("#page-source .debug-box__text");
 if(!box){
 return Promise.resolve();
 }

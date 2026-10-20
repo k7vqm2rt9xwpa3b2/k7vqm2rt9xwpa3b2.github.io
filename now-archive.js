@@ -9,3 +9,7 @@ initArchiveYears(window);
 export const ready=import("./shared/masthead-menu.js").then(
 ({initMastheadMenu})=>initMastheadMenu(window.document),
 );
+export const recorded=import("./shared/visit-list.js").then(
+({recordVisit,yearPageVisit})=>
+recordVisit(window,yearPageVisit(window.document),Date.now()),
+);

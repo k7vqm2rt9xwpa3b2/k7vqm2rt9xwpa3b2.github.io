@@ -1,21 +1,18 @@
-const HOST_WORD=/^[a-z]+$/;
+const HOST_DIGEST=/^[0-9a-f]{64}$/;
+const DIGEST_BITS=256;
+const HOST_SALT=/^[0-9a-f]{32}$/;
+const MAX_ITERATIONS=10_000_000;
 const ASCII_LETTERS=/^[A-Za-z]+$/;
-export function addressedPuzzle(count,search,queryKey,words=[]){
-const misspelled=words.findIndex(
-(word)=>typeof word!=="string"||!HOST_WORD.test(word),
-);
-if(misspelled!==-1){
-const word=words[misspelled];
-throw new TypeError(
-"crossword-address.js: a host's word is lowercase ASCII letters, not "+
-(typeof word==="string"?JSON.stringify(word):String(word)),
-);
-}
+function addressValue(search,queryKey){
 if(queryKey===null){
 return null;
 }
 const raw=new URLSearchParams(search).get(queryKey);
-if(raw===null||raw===""){
+return raw===""?null:raw;
+}
+export function addressedPuzzle(count,search,queryKey){
+const raw=addressValue(search,queryKey);
+if(raw===null){
 return null;
 }
 if(/^[1-9][0-9]*$/.test(raw)){
@@ -28,23 +25,105 @@ return"zero";
 if(/^-[0-9]+$/.test(raw)){
 return"negative";
 }
-return ASCII_LETTERS.test(raw)&&words.includes(raw.toLowerCase())
-?"magic-word"
-:"not-a-number";
+return"not-a-number";
 }
-export function addressReaction(count,search,queryKey,hooks){
-const{magicWords=[],onMagicWord,onMalformedAddress}=hooks;
-const addressed=addressedPuzzle(
+function namedValue(value){
+return typeof value==="string"?JSON.stringify(value):String(value);
+}
+function assertHostKey(digests,salt,iterations){
+const misspelled=digests.findIndex(
+(digest)=>typeof digest!=="string"||!HOST_DIGEST.test(digest),
+);
+if(misspelled!==-1){
+throw new TypeError(
+"crossword-address.js: a host's word digest is 64 lowercase hex digits, not "+
+namedValue(digests[misspelled]),
+);
+}
+if(typeof salt!=="string"||!HOST_SALT.test(salt)){
+throw new TypeError(
+"crossword-address.js: a host's word salt is 32 lowercase hex digits, not "+
+namedValue(salt),
+);
+}
+if(
+!Number.isInteger(iterations)||
+(iterations)<1||
+(iterations)>MAX_ITERATIONS
+){
+throw new TypeError(
+`crossword-address.js: a host's word iteration count is a whole number from 1 to ${MAX_ITERATIONS}, not `+
+namedValue(iterations),
+);
+}
+}
+function bytesOfHex(hex){
+const bytes=new Uint8Array(hex.length/2);
+for(let at=0;at<bytes.length;at+=1){
+bytes[at]=Number.parseInt(hex.slice(2*at,2*at+2),16);
+}
+return bytes;
+}
+async function isHostWord(raw,{digests,salt,iterations},subtle){
+if(!ASCII_LETTERS.test(raw)||digests.length===0||!subtle){
+return false;
+}
+try{
+const word=await subtle.importKey(
+"raw",
+new TextEncoder().encode(raw.toLowerCase()),
+"PBKDF2",
+false,
+["deriveBits"],
+);
+const bytes=await subtle.deriveBits(
+{name:"PBKDF2",hash:"SHA-256",salt:bytesOfHex(salt),iterations},
+word,
+DIGEST_BITS,
+);
+const hex=Array.from(new Uint8Array(bytes),(byte)=>
+byte.toString(16).padStart(2,"0"),
+).join("");
+return digests.includes(hex);
+}catch{
+return false;
+}
+}
+export async function addressReaction(
 count,
 search,
 queryKey,
-onMagicWord?magicWords:[],
-);
-if(onMagicWord&&addressed==="magic-word"){
+hooks,
+subtle=globalThis.crypto?.subtle,
+){
+const{
+magicWordDigests=[],
+magicWordSalt,
+magicWordIterations,
+onMagicWord,
+onMalformedAddress,
+}=hooks;
+if(onMagicWord){
+assertHostKey(magicWordDigests,magicWordSalt,magicWordIterations);
+}
+const addressed=addressedPuzzle(count,search,queryKey);
+if(
+onMagicWord&&
+addressed==="not-a-number"&&
+(await isHostWord(
+(addressValue(search,queryKey)),
+{
+digests:magicWordDigests,
+salt:(magicWordSalt),
+iterations:(magicWordIterations),
+},
+subtle,
+))
+){
 return onMagicWord;
 }
 if(typeof addressed==="string"&&onMalformedAddress){
-const kind=(addressed);
+const kind=addressed;
 return(back)=>onMalformedAddress(kind,back);
 }
 return null;

@@ -5,14 +5,14 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.7
+                       v0.5.8
 
   Curious what comes after /then and /now? See /future
   Or perhaps a <placeholder-zeroth-puzzle-nod>
 -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-yyrSW1XrdRA8QZo1et8oJelBC72v9rWXMej8Cs5g7JI='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     
@@ -79,6 +79,28 @@ document.documentElement.setAttribute("data-mode",saved);
 document.querySelector("meta[name=color-scheme]").content=saved;
 }
 }catch{
+}
+{
+const root=document.documentElement;
+const handOff=()=>{
+if(!document.querySelector('meta[name="darkreader"]')){
+return false;
+}
+if(!root.hasAttribute("data-mode")){
+root.setAttribute("data-mode","dark");
+root.setAttribute("data-mode-source","extension");
+document.querySelector("meta[name=color-scheme]").content="dark";
+}
+const lock=document.createElement("meta");
+lock.name="darkreader-lock";
+document.head.append(lock);
+return true;
+};
+if(!handOff()){
+const watch=new MutationObserver(()=>handOff()&&watch.disconnect());
+watch.observe(document.head,{childList:true});
+addEventListener("load",()=>watch.disconnect());
+}
 }</script>
     
     <link rel="stylesheet" href="shared/fonts.css" />
@@ -102,6 +124,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <link rel="stylesheet" href="shared/magic-word.css" />
     
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/disclosure.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="shared/image-failure.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/mode-state.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/mode.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-carousel.js" />
@@ -109,8 +132,10 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-notes.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-pager-controls.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-pager-dots.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-photo-unavailable.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-photo.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/puzzle-memory.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="shared/svg.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/text-reveal.js" />
     <script type="module" blocking="render" src="index.js"></script>
   <meta name="robots" content="noindex" /></head>
@@ -195,7 +220,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
               data-resting="Select an answer to read about it."
             ></p>
           </div>
-          <noscript>
+          <div class="crossword__fallback">
             <svg class="crossword__drawn" viewBox="0 0 338 338" role="img" aria-label="A five-by-five crossword grid">
               <rect x="0" y="0" width="338" height="338" class="hg-lattice" />
               <rect x="2" y="2" width="66" height="66" class="hg-soft" />
@@ -252,7 +277,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
               Each visit builds a different small puzzle out of things I like — coffee, books, guitar, jeeps, national
               parks, rock music — and says a bit about each one as you solve it.
             </p>
-          </noscript>
+          </div>
         </figure>
         <p
           id="crossword-status"
@@ -469,13 +494,8 @@ document.querySelector("meta[name=color-scheme]").content=saved;
                       <div class="reveal__line"><p class="card__meta card__meta--maker">Jimmy Montague</p></div>
                       <p class="card__meta">2024</p>
                       <p class="card__signal">
-                        <span
-                          role="img"
-                          aria-label="0 of 10 tracks favorited"
-                          title="0 of 10 tracks favorited"
-                          data-added="2026-09-30"
-                          data-tracks="10"
-                          >♥ 0/10</span
+                        <span role="img" aria-label="1 of 10 tracks favorited" title="1 of 10 tracks favorited"
+                          >♥ 1/10</span
                         >
                       </p>
                     </div>
@@ -523,9 +543,26 @@ document.querySelector("meta[name=color-scheme]").content=saved;
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
+                        alt="Rosemary's Baby poster"
+                        width="600"
+                        height="900"
+                        referrerpolicy="no-referrer"
+                        src="https://a.ltrbxd.com/resized/sm/upload/ea/vc/su/y2/fdLOXB8AysEGRL44I1RvoKiWDcW-0-400-0-600-crop.jpg?v=8e18e4f70c"
+                      />
+                      <div class="reveal__line"><p class="card__title">Rosemary's Baby</p></div>
+                      <div class="reveal__line"><p class="card__meta card__meta--maker">Roman Polanski</p></div>
+                      <p class="card__meta">1968</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
                         alt="The Bourne Identity poster"
                         width="600"
                         height="900"
+                        loading="lazy"
                         referrerpolicy="no-referrer"
                         src="https://a.ltrbxd.com/resized/film-poster/5/0/2/2/5/50225-the-bourne-identity-0-400-0-600-crop.jpg?v=84a1e28f00"
                       />
@@ -551,25 +588,6 @@ document.querySelector("meta[name=color-scheme]").content=saved;
                       <p class="card__meta">2018</p>
                       <p class="card__signal">
                         <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="Women on the Verge of a Nervous Breakdown poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="https://a.ltrbxd.com/resized/film-poster/4/9/4/6/8/49468-women-on-the-verge-of-a-nervous-breakdown-0-400-0-600-crop.jpg?v=62abc94559"
-                      />
-                      <div class="reveal__line">
-                        <p class="card__title">Women on the Verge of a Nervous Breakdown</p>
-                      </div>
-                      <div class="reveal__line"><p class="card__meta card__meta--maker">Pedro Almodóvar</p></div>
-                      <p class="card__meta">1988</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 2 of 5" title="Rated 2 of 5">★★☆☆☆</span>
                       </p>
                     </div>
                   </div>

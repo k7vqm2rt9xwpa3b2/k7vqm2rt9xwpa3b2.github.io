@@ -5,6 +5,7 @@ MIN_SLIDES,
 whenTextMayRewrap,
 }from"./now-carousel.js";
 import{buildLiveRegion}from"./now-pager-controls.js";
+import{mirrorShowing,watchForFailures}from"./now-photo-unavailable.js";
 import{
 createReveal,
 fitReveal,
@@ -115,8 +116,10 @@ place:(controls)=>figure.append(controls),
 onMove:(index,total)=>{
 showPosition(state,index,total);
 followPosition(deferred,index);
+mirrorShowing(frame);
 },
 });
+watchForFailures(slides);
 whenTextMayRewrap(window,()=>refitReveal(state));
 }
 function slidesOf(frame){

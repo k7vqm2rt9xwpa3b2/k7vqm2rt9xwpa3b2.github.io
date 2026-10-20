@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-yyrSW1XrdRA8QZo1et8oJelBC72v9rWXMej8Cs5g7JI='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Billy Ella — Debug</title>
     
@@ -25,6 +25,28 @@ document.documentElement.setAttribute("data-mode",saved);
 document.querySelector("meta[name=color-scheme]").content=saved;
 }
 }catch{
+}
+{
+const root=document.documentElement;
+const handOff=()=>{
+if(!document.querySelector('meta[name="darkreader"]')){
+return false;
+}
+if(!root.hasAttribute("data-mode")){
+root.setAttribute("data-mode","dark");
+root.setAttribute("data-mode-source","extension");
+document.querySelector("meta[name=color-scheme]").content="dark";
+}
+const lock=document.createElement("meta");
+lock.name="darkreader-lock";
+document.head.append(lock);
+return true;
+};
+if(!handOff()){
+const watch=new MutationObserver(()=>handOff()&&watch.disconnect());
+watch.observe(document.head,{childList:true});
+addEventListener("load",()=>watch.disconnect());
+}
 }</script>
     
     <link rel="stylesheet" href="../shared/fonts.css" />
@@ -81,7 +103,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
       <section>
         <h2 id="location-heading">Location</h2>
         <p>Filler standing in for one sentence about the field below.</p>
-        <div id="location-field" class="location-field" data-prefix="williamella.com" data-go="Go →"></div>
+        <div id="location-field" class="location-field" data-prefix="williamella.com/" data-go="Go →"></div>
         <p
           id="location-status"
           class="debug__status"
@@ -98,8 +120,23 @@ document.querySelector("meta[name=color-scheme]").content=saved;
           role="status"
           data-words="Filler standing in for one sentence on why the source did not load."
         ></p>
-        <div id="page-source" class="disclosure__panel page-source" data-disclosure-label="View" hidden>
-          <pre class="page-source__text" tabindex="0" role="group" aria-labelledby="source-name" translate="no"></pre>
+        <div id="page-source" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
+          <pre class="debug-box__text" tabindex="0" role="group" aria-labelledby="source-name" translate="no"></pre>
+        </div>
+      </section>
+      <section>
+        <h2 id="visits-heading"><span id="visits-name">&lt;placeholder-debug-visits-heading&gt;</span></h2>
+        <p>Filler standing in for one sentence about this list.</p>
+        <p id="visit-blocked">Filler standing in for one sentence saying this browser keeps no list.</p>
+        <p
+          id="visit-empty"
+          class="debug__status"
+          role="status"
+          data-words="Filler standing in for one sentence saying nothing has been visited yet."
+        ></p>
+        <div id="visit-box" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
+          <p id="visit-site" class="visit-site" data-words="williamella.com/" translate="no"></p>
+          <ol id="visit-list" class="debug-box__text visit-list" aria-labelledby="visits-name" translate="no"></ol>
         </div>
       </section>
       

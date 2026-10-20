@@ -141,6 +141,8 @@ button.disabled=true;
 showTheme(null,true);
 return null;
 }
+const count=puzzles.length;
+const heard=await addressReaction(count,options.search,queryKey,options);
 const start=drawnGridStart(doc);
 const hero={
 doc,
@@ -160,8 +162,6 @@ wireOpener(hero,start,function(){
 startPuzzle(hero);
 });
 }
-const count=puzzles.length;
-const heard=addressReaction(count,options.search,queryKey,options);
 const arrival=heard?{search:"",remembered:null}:options;
 let data=null;
 if(

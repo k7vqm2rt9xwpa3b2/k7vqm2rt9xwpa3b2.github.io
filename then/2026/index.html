@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-yyrSW1XrdRA8QZo1et8oJelBC72v9rWXMej8Cs5g7JI='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Billy Ella — Now archive: 2026</title>
     <meta name="description" content="Past now entries from 2026 — what changed month to month, newest first." />
@@ -42,6 +42,28 @@ document.documentElement.setAttribute("data-mode",saved);
 document.querySelector("meta[name=color-scheme]").content=saved;
 }
 }catch{
+}
+{
+const root=document.documentElement;
+const handOff=()=>{
+if(!document.querySelector('meta[name="darkreader"]')){
+return false;
+}
+if(!root.hasAttribute("data-mode")){
+root.setAttribute("data-mode","dark");
+root.setAttribute("data-mode-source","extension");
+document.querySelector("meta[name=color-scheme]").content="dark";
+}
+const lock=document.createElement("meta");
+lock.name="darkreader-lock";
+document.head.append(lock);
+return true;
+};
+if(!handOff()){
+const watch=new MutationObserver(()=>handOff()&&watch.disconnect());
+watch.observe(document.head,{childList:true});
+addEventListener("load",()=>watch.disconnect());
+}
 }</script>
     
     <link rel="stylesheet" href="../../shared/fonts.css" />
@@ -56,6 +78,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <link rel="stylesheet" href="../../shared/now-archive.css" />
     <link rel="stylesheet" href="../../shared/mode-control.css" />
     <link rel="stylesheet" href="../../shared/site-mark.css" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/image-failure.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/mode-state.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/mode.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-archive-years.js" />
@@ -64,7 +87,9 @@ document.querySelector("meta[name=color-scheme]").content=saved;
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-notes.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-pager-controls.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-pager-dots.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-photo-unavailable.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-photo.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/svg.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/text-reveal.js" />
     <script type="module" blocking="render" src="../../now-archive.js"></script>
   <meta name="robots" content="noindex" /></head>
@@ -105,7 +130,7 @@ document.querySelector("meta[name=color-scheme]").content=saved;
       </nav>
       
     </header>
-    <main class="shell" id="main">
+    <main class="shell" id="main" data-year="2026">
       <h1>Now — archive</h1>
       
       <section class="archive__year">
