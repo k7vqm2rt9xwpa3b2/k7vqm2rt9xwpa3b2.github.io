@@ -21,9 +21,9 @@ const FALLBACK_LABEL="Show the address";
 function failureNoticeNaming(sectionName){
 return`The address could not be loaded. Try the LinkedIn link in ${sectionName} above.`;
 }
-function professionalHeading(document){
+function whereaboutsHeading(document){
 const heading=(
-document.querySelector("#professional h2")
+document.getElementById("whereabouts")
 );
 return heading.textContent.trim();
 }
@@ -140,7 +140,7 @@ reportOrDefault(error);
 export function initContact(document,options={}){
 const button=document.getElementById("contact-reveal");
 if(button){
-const failureNotice=failureNoticeNaming(professionalHeading(document));
+const failureNotice=failureNoticeNaming(whereaboutsHeading(document));
 button.addEventListener("click",function(){
 revealEmail(document,options,failureNotice);
 });

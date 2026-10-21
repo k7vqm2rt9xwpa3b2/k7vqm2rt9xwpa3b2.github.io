@@ -1,1 +1,1 @@
-.projects-teaser{margin-bottom:var(--space-4);}.projects-teaser > li + li{margin-top:var(--space-2);}
+.projects-teaser, .profile-links{margin-bottom:var(--space-3);}.projects-teaser > li + li, .profile-links > li + li{margin-top:var(--space-2);}

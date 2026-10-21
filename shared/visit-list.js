@@ -4,6 +4,13 @@ return{next:1,visits:[]};
 }
 export const VISIT_LIMIT=50;
 export const VISIT_LIFETIME_MS=30*24*60*60*1000;
+export const VISIT_ADDRESS_MAX=200;
+const MISSED_PAGE="not-found";
+const UNIT=String.raw`(?:[A-Za-z0-9._-]|%[0-9A-Fa-f]{2})`;
+const PLAIN_PATH=new RegExp(`^/(?:${UNIT}+/)*${UNIT}*$`);
+const DOTS_ONLY_SEGMENT=/(?:^|\/)(?:\.|%2e)+(?:\/|$)/i;
+const PLAIN_QUERY=new RegExp(`^(?:\\?(?:${UNIT}|[=&])*)?$`);
+const PLAIN_FRAGMENT=new RegExp(`^#(?:${UNIT}|[=&])*$`);
 export const VISIT_NUMBER_MAX=2**31-1;
 const PUZZLE_MAX=9999;
 const YEAR_MIN=1000;
@@ -47,7 +54,52 @@ const rule=PAGES.get(page);
 if(!rule||!rule.accepts(number)){
 return null;
 }
-return number===undefined?{page}:{page,number};
+const visit=number===undefined?{page}:{page,number};
+const fragment=ownField(candidate,"fragment");
+return page===MISSED_PAGE
+?withPlainMiss(visit,ownField(candidate,"missed"),fragment)
+:withPlainFragment(visit,fragment);
+}
+function ownField(candidate,name){
+return Object.hasOwn(candidate,name)?candidate[name]:undefined;
+}
+function isPlainMissed(missed){
+if(typeof missed!=="string"||missed.length>VISIT_ADDRESS_MAX){
+return false;
+}
+const cut=missed.indexOf("?");
+const path=cut===-1?missed:missed.slice(0,cut);
+const query=cut===-1?"":missed.slice(cut);
+return(
+PLAIN_PATH.test(path)&&
+!DOTS_ONLY_SEGMENT.test(path)&&
+PLAIN_QUERY.test(query)
+);
+}
+function isPlainFragment(fragment){
+return(
+typeof fragment==="string"&&
+fragment.length<=VISIT_ADDRESS_MAX&&
+PLAIN_FRAGMENT.test(fragment)
+);
+}
+function withPlainMiss(visit,missed,fragment){
+const plain=
+isPlainMissed(missed)&&
+(fragment===undefined||isPlainFragment(fragment))&&
+missed.length+(fragment?.length??0)<=VISIT_ADDRESS_MAX;
+if(!plain){
+return visit;
+}
+return fragment===undefined
+?{...visit,missed}
+:{...visit,missed,fragment};
+}
+function withPlainFragment(visit,fragment){
+const fits=
+isPlainFragment(fragment)&&
+visitAddress(visit).length+fragment.length<=VISIT_ADDRESS_MAX;
+return fits?{...visit,fragment}:visit;
 }
 function isKept(time,now){
 return(
@@ -75,7 +127,8 @@ const rule=PAGES.get(visit.page);
 if(!rule){
 throw new TypeError("not a recorded page");
 }
-return rule.address(visit.number);
+const base=visit.missed??rule.address(visit.number);
+return base+(visit.fragment??"");
 }
 export function visitHref(visit){
 return`..${visitAddress(visit)}`;
@@ -129,11 +182,22 @@ const fresh={...visit,time:now,n:log.next};
 const kept=log.visits.filter((v)=>isKept(v.time,now));
 return{next,visits:normalized([...kept,fresh])};
 }
+function addressedVisit(location,visit){
+const missed=
+visit.page===MISSED_PAGE
+?{missed:location.pathname+location.search}
+:{};
+const fragment=location.hash===""?{}:{fragment:location.hash};
+return{...visit,...missed,...fragment};
+}
 export function recordVisit(window,visit,now){
-const accepted=acceptedVisit(visit);
-if(!accepted){
+const named=acceptedVisit(visit);
+if(!named){
 return false;
 }
+const accepted=(
+acceptedVisit(addressedVisit(window.location,named))
+);
 try{
 const storage=window.localStorage;
 const log=withVisit(

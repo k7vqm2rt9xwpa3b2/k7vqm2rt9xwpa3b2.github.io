@@ -17,9 +17,14 @@ return null;
 }
 return{box,list,blocked,empty,emptyWords,site,siteWords};
 }
+export const VISIT_ROW_TEXT_MAX=40;
+const CUT_MARK="...";
 function rowText(visit){
 const address=visitAddress(visit);
-return address==="/"?address:address.slice(1);
+const text=address==="/"?address:address.slice(1);
+return text.length>VISIT_ROW_TEXT_MAX
+?`${text.slice(0,VISIT_ROW_TEXT_MAX)}${CUT_MARK}`
+:text;
 }
 function visitRow(document,visit){
 const n=(visit.n);

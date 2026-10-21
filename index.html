@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.8
+                       v0.5.9
 
   Curious what comes after /then and /now? See /future
   Or perhaps a <placeholder-zeroth-puzzle-nod>
@@ -108,6 +108,7 @@ addEventListener("load",()=>watch.disconnect());
     <link rel="stylesheet" href="shared/measures.css" />
     <link rel="stylesheet" href="shared/base.css" />
     <link rel="stylesheet" href="shared/projects-teaser.css" />
+    <link rel="stylesheet" href="shared/subheadings.css" />
     <link rel="stylesheet" href="shared/contact.css" />
     <link rel="stylesheet" href="shared/masthead.css" />
     <link rel="stylesheet" href="shared/now.css" />
@@ -121,6 +122,7 @@ addEventListener("load",()=>watch.disconnect());
     <link rel="stylesheet" href="crossword/crossword.css" />
     <link rel="stylesheet" href="crossword/crossword-readout.css" />
     <link rel="stylesheet" href="crossword/crossword-grid.css" />
+    <link rel="stylesheet" href="shared/hero-crossword.css" />
     <link rel="stylesheet" href="shared/magic-word.css" />
     
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/disclosure.js" />
@@ -171,12 +173,20 @@ addEventListener("load",()=>watch.disconnect());
         <a href="#about">About</a>
         <a href="#now">Now</a>
         <a href="#projects">Projects</a>
-        <a href="#professional">Professional</a>
         <a href="#contact">Contact</a>
       </nav>
       
     </header>
     <main id="main">
+      
+      <pre class="reader-note">
+╔══════════════════════════╗
+║ HEY YOU! YES YOU! Get    ║
+║ out of reader mode, this ║
+║ site isn't designed to   ║
+║ be used that way.        ║
+╚══════════════════════════╝</pre>
+      
       
       <h1 class="visually-hidden">Billy Ella</h1>
       
@@ -211,7 +221,7 @@ addEventListener("load",()=>watch.disconnect());
             data-theme-label="Theme?"
           ></div>
           <div class="crossword__slot">
-            <p class="crossword__hint">&lt;placeholder-crossword-hint&gt;</p>
+            <p class="crossword__hint">Have fun exploring my interests!</p>
             <p
               id="clue-readout"
               class="crossword__readout"
@@ -221,7 +231,12 @@ addEventListener("load",()=>watch.disconnect());
             ></p>
           </div>
           <div class="crossword__fallback">
-            <svg class="crossword__drawn" viewBox="0 0 338 338" role="img" aria-label="A five-by-five crossword grid">
+            <svg
+              class="crossword__drawn"
+              viewBox="0 0 338 338"
+              role="img"
+              aria-label="My personal five-by-five crossword grid"
+            >
               <rect x="0" y="0" width="338" height="338" class="hg-lattice" />
               <rect x="2" y="2" width="66" height="66" class="hg-soft" />
               <rect x="69" y="2" width="66" height="66" class="hg-block" />
@@ -274,8 +289,8 @@ addEventListener("load",()=>watch.disconnect());
               />
             </svg>
             <p class="crossword__notice">
-              Each visit builds a different small puzzle out of things I like — coffee, books, guitar, jeeps, national
-              parks, rock music — and says a bit about each one as you solve it.
+              Each visit builds a different small puzzle out of things I like, e.g. specialty coffee, pinball, swing
+              dancing, jeeps, and rock music. Turn scripts on to see more.
             </p>
           </div>
         </figure>
@@ -664,14 +679,17 @@ addEventListener("load",()=>watch.disconnect());
               <p class="media__notice">Where those entries come from:</p>
               <ul class="media__sources">
                 <li data-source="album-card">
-                  <b>Listened.</b> My own Apple Music library, read by a tool I wrote: it counts the tracks I have
-                  favorited on each album I added. Nothing here comes from a streaming service.
+                  <b>Listened.</b> These are the most recent albums in my personal music library, read by a custom tool
+                  I created for this site. And yes, that means I'm old school and nothing here comes from a streaming
+                  service.
                 </li>
                 <li data-source="film-card">
-                  <b>Watched.</b> My Letterboxd diary, read by a tool I wrote from the feed Letterboxd publishes for it.
+                  <b>Watched.</b> These are the most recent films from my Letterboxd diary, read by a custom tool I
+                  created for this site.
                 </li>
                 <li data-source="book-card">
-                  <b>Read.</b> My Goodreads shelves, read by a tool I wrote from the feed Goodreads publishes for them.
+                  <b>Read.</b> These are the most recent books from my Goodreads shelves, read by a custom tool I
+                  created for this site.
                 </li>
               </ul>
             </noscript>
@@ -685,12 +703,14 @@ addEventListener("load",()=>watch.disconnect());
           
           
           <h3>&lt;placeholder-projects-group-1&gt;</h3>
+          <p>&lt;placeholder-projects-group-1-sentence&gt;</p>
           <ul class="projects-teaser">
             <li>&lt;placeholder-project-1-name&gt;</li>
             <li>&lt;placeholder-project-2-name&gt;</li>
             <li>&lt;placeholder-project-3-name&gt;</li>
           </ul>
           <h3>&lt;placeholder-projects-group-2&gt;</h3>
+          <p>&lt;placeholder-projects-group-2-sentence&gt;</p>
           <ul class="projects-teaser">
             <li>&lt;placeholder-project-4-name&gt;</li>
             <li>&lt;placeholder-project-5-name&gt;</li>
@@ -700,25 +720,31 @@ addEventListener("load",()=>watch.disconnect());
           
         </section>
         
-        <section id="professional">
-          <h2>Professional</h2>
-          <p>Filler standing in for one sentence about the links below.</p>
-          <p><a href="https://www.linkedin.com/in/williamella/">LinkedIn</a></p>
-          <p><a href="https://www.researchgate.net/profile/William-Ella">ResearchGate</a></p>
-          <p><a href="https://github.com/blink9cd">GitHub</a></p>
-        </section>
-        
-        
         <section id="contact">
           <h2>Contact</h2>
           <p>Filler standing in for one sentence on how to get in touch.</p>
+          <h3 id="whereabouts">Whereabouts</h3>
+          <p>Filler standing in for one sentence about the links below.</p>
+          <ul class="profile-links">
+            <li>
+              <a href="https://www.linkedin.com/in/williamella/">LinkedIn</a>:
+              &lt;placeholder-professional-linkedin-note&gt;
+            </li>
+            <li><a href="https://github.com/blink9cd">GitHub</a>: &lt;placeholder-professional-github-note&gt;</li>
+            <li>
+              <a href="https://www.researchgate.net/profile/William-Ella">ResearchGate</a>:
+              &lt;placeholder-professional-researchgate-note&gt;
+            </li>
+          </ul>
+          <h3 id="email">Email</h3>
+          <p>&lt;placeholder-contact-email-sentence&gt;</p>
           <p id="contact-mail">
-            <button type="button" id="contact-reveal">Email me</button>
+            <button type="button" id="contact-reveal">Message me</button>
           </p>
           <noscript>
             <p class="contact__notice">
               This button needs JavaScript to reveal an address. With scripts off, reach out via the LinkedIn link in
-              Professional above instead.
+              Whereabouts above instead.
             </p>
           </noscript>
         </section>
@@ -727,7 +753,6 @@ addEventListener("load",()=>watch.disconnect());
     </main>
     
     <footer class="colophon">
-      <p class="reader-note">&lt;placeholder-reader-note&gt;</p>
       <p
         class="mode-note"
         data-action-lead="Switch to"

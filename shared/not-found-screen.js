@@ -6,7 +6,7 @@ export const LAYOUT=Object.freeze({
 bar:Object.freeze({x:46,y:30,width:120,height:14}),
 titleBaseline:40,
 lineX:14,
-lineBaselines:Object.freeze([70,84,98,128]),
+lineBaselines:Object.freeze([70,84,114,128]),
 promptBaseline:170,
 });
 const CURSOR="_";
@@ -72,7 +72,10 @@ x:SQUARE/2,
 y:LAYOUT.promptBaseline,
 "text-anchor":"middle",
 });
-const cursor=svgElement(doc,"tspan",{class:"nf-screen__cursor"});
+const cursor=svgElement(doc,"tspan",{
+class:"nf-screen__cursor",
+"aria-hidden":"true",
+});
 cursor.textContent=CURSOR;
 line.append(CURSOR_GAP,cursor);
 return line;

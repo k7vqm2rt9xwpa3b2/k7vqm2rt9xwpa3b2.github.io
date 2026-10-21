@@ -1,4 +1,5 @@
 import{wordOn}from"./dom-words.js";
+import{offerReboot}from"./not-found-reboot.js";
 import{drawCrashScreen}from"./not-found-screen.js";
 const FUTURE_ADDRESS=/^\/future\/?$/i;
 const MOTION="(prefers-reduced-motion: no-preference)";
@@ -8,6 +9,8 @@ const WORDS=Object.freeze({
 code:"data-future-code",
 headingName:"data-future-heading-name",
 gridName:"data-future-grid-name",
+rebootedGridName:"data-future-rebooted-grid-name",
+lead:"data-future-lead",
 title:"data-future-screen-title",
 lines:Object.freeze([
 "data-future-screen-line-1",
@@ -31,13 +34,17 @@ const words=jokeWordsOn(
 (doc.getElementById("not-found-words")),
 );
 const heading=(doc.querySelector("h1"));
+const lead=(
+doc.querySelector("p.not-found__lead")
+);
 const grid=(
 doc.querySelector("svg.not-found__grid")
 );
 swapCode(doc,words.code);
 heading.setAttribute("aria-label",words.headingName);
 grid.setAttribute("aria-label",words.gridName);
-crashOnFirstLanding(win,grid,words.screen);
+lead.textContent=words.lead;
+crashOnFirstLanding(win,grid,words);
 }
 const CARRIER_NAME="not-found-future.js: the carrier";
 function jokeWordsOn(carrier){
@@ -45,6 +52,8 @@ return{
 code:wordOn(carrier,WORDS.code,CARRIER_NAME),
 headingName:wordOn(carrier,WORDS.headingName,CARRIER_NAME),
 gridName:wordOn(carrier,WORDS.gridName,CARRIER_NAME),
+rebootedGridName:wordOn(carrier,WORDS.rebootedGridName,CARRIER_NAME),
+lead:wordOn(carrier,WORDS.lead,CARRIER_NAME),
 screen:{
 title:wordOn(carrier,WORDS.title,CARRIER_NAME),
 lines:WORDS.lines.map((name)=>wordOn(carrier,name,CARRIER_NAME)),
@@ -89,7 +98,9 @@ falls.length===0||falls.some((fall)=>fall.playState!=="finished")
 }
 function crashGrid(win,grid,words){
 freezeLetters(win,grid);
-grid.append(drawCrashScreen(win.document,words));
+const screen=drawCrashScreen(win.document,words.screen);
+grid.append(screen);
+offerReboot(win,grid,screen,{rebootedGridName:words.rebootedGridName});
 }
 function freezeLetters(win,grid){
 const letters=(

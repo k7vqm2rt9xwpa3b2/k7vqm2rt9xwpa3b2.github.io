@@ -92,58 +92,77 @@ addEventListener("load",()=>watch.disconnect());
         <a href="../index.html#about">About</a>
         <a href="../index.html#now">Now</a>
         <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#professional">Professional</a>
         <a href="../index.html#contact">Contact</a>
       </nav>
       
     </header>
     <main class="shell" id="main">
       
+      <pre class="reader-note">
+╔══════════════════════════╗
+║ HEY YOU! YES YOU! Get    ║
+║ out of reader mode, this ║
+║ site isn't designed to   ║
+║ be used that way.        ║
+╚══════════════════════════╝</pre>
+      
+      
       <h1>Debug</h1>
+      <p>
+        A page for the curious, especially if you're on a phone. Make sure to check every area out so you don't miss
+        anything!
+      </p>
+      <noscript>
+        <p>
+          Unfortunately for you, your scripts are off so this page is currently non-functional. Please enable scripts if
+          you're still curious and want to explore.
+        </p>
+      </noscript>
       <section>
-        <h2 id="location-heading">Location</h2>
-        <p>Filler standing in for one sentence about the field below.</p>
-        <div id="location-field" class="location-field" data-prefix="williamella.com/" data-go="Go →"></div>
+        <h2 id="location-heading"><span id="location-name">Location</span></h2>
+        <p>A helper so you can browse to the tucked-away areas of the site more easily.</p>
+        <div id="location-box" class="disclosure__panel location-box" data-disclosure-label="View" hidden>
+          <div id="location-field" class="location-field" data-prefix="williamella.com/" data-go="Go →"></div>
+        </div>
         <p
           id="location-status"
           class="debug__status"
           role="status"
-          data-words="Filler standing in for one sentence on why that address was refused."
+          data-words="Hey! No funny business. Only reasonable site inputs please."
         ></p>
       </section>
       <section>
-        <h2 id="source-heading"><span id="source-name">Source</span></h2>
-        <p>Filler standing in for one sentence about the source below.</p>
-        <p
-          id="source-status"
-          class="debug__status"
-          role="status"
-          data-words="Filler standing in for one sentence on why the source did not load."
-        ></p>
-        <div id="page-source" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
-          <pre class="debug-box__text" tabindex="0" role="group" aria-labelledby="source-name" translate="no"></pre>
-        </div>
-      </section>
-      <section>
-        <h2 id="visits-heading"><span id="visits-name">&lt;placeholder-debug-visits-heading&gt;</span></h2>
-        <p>Filler standing in for one sentence about this list.</p>
-        <p id="visit-blocked">Filler standing in for one sentence saying this browser keeps no list.</p>
+        <h2 id="visits-heading"><span id="visits-name">History</span></h2>
+        <p>View all the pages you've visited and understand where you can try browsing.</p>
+        <p id="visit-blocked">Error: this browser cannot keep a list of visited pages.</p>
         <p
           id="visit-empty"
           class="debug__status"
           role="status"
-          data-words="Filler standing in for one sentence saying nothing has been visited yet."
+          data-words="No pages have been visited yet. Try again later."
         ></p>
         <div id="visit-box" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
           <p id="visit-site" class="visit-site" data-words="williamella.com/" translate="no"></p>
           <ol id="visit-list" class="debug-box__text visit-list" aria-labelledby="visits-name" translate="no"></ol>
         </div>
       </section>
+      <section>
+        <h2 id="source-heading"><span id="source-name">Source</span></h2>
+        <p>View the current home page source and take a look around.</p>
+        <p
+          id="source-status"
+          class="debug__status"
+          role="status"
+          data-words="Error: source didn't load. Try again later."
+        ></p>
+        <div id="page-source" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
+          <pre class="debug-box__text" tabindex="0" role="group" aria-labelledby="source-name" translate="no"></pre>
+        </div>
+      </section>
       
     </main>
     
     <footer class="colophon">
-      <p class="reader-note">&lt;placeholder-reader-note&gt;</p>
       <p
         class="mode-note"
         data-action-lead="Switch to"

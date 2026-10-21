@@ -11,7 +11,7 @@ autocorrect:"off",
 spellcheck:"false",
 inputmode:"url",
 enterkeyhint:"go",
-"aria-labelledby":"location-heading",
+"aria-labelledby":"location-name",
 });
 function resolvesToAnotherHost(path){
 return new URL(path,PLACEHOLDER_BASE).pathname.startsWith(ANOTHER_HOST);
