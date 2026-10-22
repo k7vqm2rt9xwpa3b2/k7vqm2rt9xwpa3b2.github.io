@@ -433,6 +433,7 @@
         [7, 6],
         [8, 0]
       ],
+      "circled_clue": "Kind of punk show anyone can get into",
       "theme": "Rock Music: [placeholder-theme-1]",
       "linked": "ALT"
     },
@@ -879,6 +880,7 @@
         [7, 8],
         [8, 4]
       ],
+      "circled_clue": "Single-___ coffee",
       "theme": "Specialty Coffee: [placeholder-theme-2]",
       "linked": "GREENBEAN"
     },
@@ -1314,6 +1316,7 @@
         [5, 7],
         [6, 4]
       ],
+      "circled_clue": "Name on many a Jeep part box",
       "theme": "Jeeps: [placeholder-theme-3]",
       "linked": "SKIDPLATE"
     },
@@ -1723,6 +1726,7 @@
         [4, 2],
         [5, 3]
       ],
+      "circled_clue": "Save a drain with a well-timed shove",
       "theme": "Pinball: [placeholder-theme-4]",
       "linked": "SKILLSHOT"
     },
@@ -2176,6 +2180,7 @@
         [7, 7],
         [8, 1]
       ],
+      "circled_clue": "Safe place for keys and tokens",
       "theme": "Programming and Math: [placeholder-theme-5]",
       "linked": "RSA"
     },
@@ -2607,6 +2612,7 @@
         [4, 1],
         [5, 8]
       ],
+      "circled_clue": "Juggling trick with a downward swipe",
       "theme": "Juggling: [placeholder-theme-6]",
       "linked": "CASCADE"
     },
@@ -3035,6 +3041,7 @@
         [7, 2],
         [8, 8]
       ],
+      "circled_clue": "Clip-on gadget before a gig",
       "theme": "Guitar: [placeholder-theme-7]",
       "linked": "SIXSTRING"
     },
@@ -3448,6 +3455,7 @@
         [5, 8],
         [6, 3]
       ],
+      "circled_clue": "Diff that turns both wheels as one",
       "theme": "Off-Roading: [placeholder-theme-8]",
       "linked": "BOG"
     },
@@ -3873,6 +3881,7 @@
         [4, 3],
         [6, 0]
       ],
+      "circled_clue": "Strapped on before sparring",
       "theme": "Kickboxing and Striking: [placeholder-theme-9]",
       "linked": "STANCE"
     },
@@ -4271,6 +4280,7 @@
         [6, 6],
         [8, 6]
       ],
+      "circled_clue": "Swing dance born in Harlem",
       "theme": "Swing Dancing: [placeholder-theme-10]",
       "linked": "TWIRL"
     },
@@ -4632,6 +4642,7 @@
         [3, 7],
         [4, 0]
       ],
+      "circled_clue": "Novelist's medium",
       "theme": "Books: [placeholder-theme-11]",
       "linked": "PAPERBACK"
     },
@@ -5063,6 +5074,7 @@
         [6, 2],
         [8, 5]
       ],
+      "circled_clue": "Square holding more than one letter",
       "theme": "Crossword Puzzles: [placeholder-theme-12]",
       "linked": "APP"
     },
@@ -5484,6 +5496,7 @@
         [5, 6],
         [7, 2]
       ],
+      "circled_clue": "Kind of watch worn with a suit",
       "theme": "Watch Collecting: [placeholder-theme-13]",
       "linked": "AUTOMATIC"
     },
@@ -5871,6 +5884,7 @@
         [6, 4],
         [7, 0]
       ],
+      "circled_clue": "Can't see it for the trees",
       "theme": "Zero-Drop and Barefoot Shoes: [placeholder-theme-14]",
       "linked": "FOOTSHAPE"
     }

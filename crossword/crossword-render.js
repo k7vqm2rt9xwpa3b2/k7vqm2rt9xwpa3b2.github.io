@@ -191,7 +191,11 @@ svg.appendChild(anchor);
 });
 }
 function renderCircleHits(doc,svg,data){
-(data.circled||[]).forEach(function(cell){
+const clue=data.circled_clue;
+const cells=data.circled||[];
+const[first]=[...cells].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+const stop={tabindex:0,role:"button","aria-pressed":"false"};
+cells.forEach(function(cell){
 const[row,col]=cell;
 const square=svgEl(doc,"rect",{
 class:"cw-circle-hit",
@@ -199,9 +203,11 @@ x:col*CELL,
 y:row*CELL,
 width:CELL,
 height:CELL,
-"aria-hidden":"true",
+...(clue&&cell===first
+?{...stop,"aria-label":clue}
+:{"aria-hidden":"true"}),
 });
-wireCircleHit(doc,square,svg);
+wireCircleHit(doc,square,svg,clue);
 svg.appendChild(square);
 });
 }

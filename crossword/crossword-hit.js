@@ -1,16 +1,14 @@
 import{
 deselect,
+dimSpotlight,
 gridHeld,
+lightSpotlight,
 lockEntry,
 lockedEntryKey,
 selectEntry,
 selectedEntryKey,
 }from"./crossword-interact.js";
-import{
-hideSpotlight,
-showSpotlight,
-spotlightHeld,
-}from"./crossword-spotlight.js";
+import{spotlightHeld}from"./crossword-spotlight.js";
 function pressEntry(doc,data,key){
 if(lockedEntryKey(doc)===key){
 deselect(doc);
@@ -50,25 +48,50 @@ event.preventDefault();
 pressEntry(doc,data,key);
 });
 }
-export function wireCircleHit(doc,rect,svg){
-rect.addEventListener("pointerenter",function(event){
-if(event.pointerType==="touch"||gridHeld(doc)){
-return;
+function handsOver(svg,event){
+const to=(event.relatedTarget);
+return(
+event.pointerType!=="touch"&&
+to!==null&&
+svg.contains(to)&&
+to.matches(".cw-circle-hit, .cw-hit")
+);
 }
-deselect(doc);
-showSpotlight(svg,false);
-});
-rect.addEventListener("pointerleave",function(){
+export function wireCircleHit(doc,rect,svg,clue){
+function previewWord(){
+if(!gridHeld(doc)){
+lightSpotlight(doc,svg,false,clue);
+}
+}
+function pressWord(){
 if(spotlightHeld(doc)){
+deselect(doc);
 return;
 }
-hideSpotlight(svg);
-});
-rect.addEventListener("click",function(){
-const wasHeld=spotlightHeld(doc);
-deselect(doc);
-if(!wasHeld){
-showSpotlight(svg,true);
+lightSpotlight(doc,svg,true,clue);
 }
+rect.addEventListener("pointerenter",function(event){
+if(event.pointerType!=="touch"){
+previewWord();
+}
+});
+rect.addEventListener("pointerleave",function(event){
+if(!handsOver(svg,event)){
+dimSpotlight(doc,svg);
+}
+});
+rect.addEventListener("click",pressWord);
+if(!clue){
+return;
+}
+rect.addEventListener("focus",previewWord);
+rect.addEventListener("keydown",function(event){
+if(event.key!=="Enter"&&event.key!==" "){
+return;
+}
+if(event.key===" "){
+event.preventDefault();
+}
+pressWord();
 });
 }

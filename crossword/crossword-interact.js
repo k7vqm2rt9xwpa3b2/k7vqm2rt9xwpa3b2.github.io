@@ -1,6 +1,12 @@
 import{entryId,entryIdsIn,squareKey}from"./crossword-anchor.js";
 import{elementFor}from"./crossword-settings.js";
-import{SPOTLIGHT_CLASSES,spotlightHeld}from"./crossword-spotlight.js";
+import{
+SPOTLIGHT_CLASSES,
+hideSpotlight,
+showSpotlight,
+spotlightClued,
+spotlightHeld,
+}from"./crossword-spotlight.js";
 const SELECTION_CLASSES=[
 "is-selected",
 "is-sibling",
@@ -8,7 +14,8 @@ const SELECTION_CLASSES=[
 ...SPOTLIGHT_CLASSES,
 ];
 const LOCKED_RECT=".cw-hit:not(.cw-hit-anchor).is-locked";
-const PRESSED_RECT='.cw-hit[aria-pressed="true"]';
+const PRESSED_RECT=
+'.cw-hit[aria-pressed="true"], .cw-circle-hit[aria-pressed="true"]';
 function clearSelection(doc){
 const selector=SELECTION_CLASSES.map((name)=>"."+name).join(", ");
 doc.querySelectorAll(selector).forEach(function(element){
@@ -54,9 +61,12 @@ text:themeText(entry.theme,data),
 });
 }
 if(entry.clue){
-lines.push({className:"crossword__readout-clue",text:entry.clue});
+lines.push(clueLine(entry.clue));
 }
 return lines;
+}
+function clueLine(text){
+return{className:"crossword__readout-clue",text:text};
 }
 function writeReadout(doc,lines){
 const readout=elementFor(doc,"readout");
@@ -100,9 +110,33 @@ export function gridHeld(doc){
 return lockedEntryKey(doc)!==null||spotlightHeld(doc);
 }
 export function deselect(doc){
-const wasSelected=selectedEntryKey(doc)!==null;
+const wasShowing=selectedEntryKey(doc)!==null||spotlightClued(doc);
 clearSelection(doc);
-if(wasSelected){
+if(wasShowing){
+writeReadout(doc,[]);
+}
+}
+export function lightSpotlight(doc,svg,held,clue){
+if(!clue){
+deselect(doc);
+showSpotlight(svg,held,false);
+return;
+}
+if(spotlightClued(doc)){
+showSpotlight(svg,held,true);
+return;
+}
+clearSelection(doc);
+showSpotlight(svg,held,true);
+writeReadout(doc,[clueLine(clue)]);
+}
+export function dimSpotlight(doc,svg){
+if(spotlightHeld(doc)){
+return;
+}
+const wasClued=spotlightClued(doc);
+hideSpotlight(svg);
+if(wasClued){
 writeReadout(doc,[]);
 }
 }
