@@ -6,7 +6,8 @@
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1a/3b/f4/1a3bf484-1904-015c-6b69-b4e89c382082/artwork.jpg/400x400bb.webp",
     "tracks": 10,
     "favorited": 1,
-    "year": "2024"
+    "year": "2024",
+    "favorite_signal": "music.favorited"
   },
   {
     "artist": "Testament",
@@ -15,7 +16,8 @@
     "artwork": null,
     "tracks": 10,
     "favorited": 1,
-    "year": "1988"
+    "year": "1988",
+    "favorite_signal": "music.favorited"
   },
   {
     "artist": "Angine de Poitrine",
@@ -24,6 +26,7 @@
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/54/91/db/5491db35-84a9-b4e5-83cc-b52fdf678bb2/11115.jpg/400x400bb.webp",
     "tracks": 6,
     "favorited": 0,
-    "year": "2026"
+    "year": "2026",
+    "favorite_signal": "music.favorited"
   }
 ]
