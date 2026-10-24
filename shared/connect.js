@@ -1,5 +1,5 @@
 import{timedFetch}from"./timed-fetch.js";
-export const CONTACT_SOURCE="data/contact.json";
+export const CONNECT_SOURCE="data/connect.json";
 export const MAIL_SUBJECT="Best site ever!";
 const SENTINEL=String.fromCharCode(1);
 const MIN_CODES=4;
@@ -29,16 +29,16 @@ return heading.textContent.trim();
 }
 export function decodePayload(codeString){
 if(!/^\d+(,\d+)*$/.test(codeString)){
-throw new Error("the contact payload is not a list of character codes");
+throw new Error("the connect payload is not a list of character codes");
 }
 const values=codeString.split(",").map(Number);
 if(values.length<MIN_CODES){
 throw new Error(
-`the contact payload needs at least ${MIN_CODES} values, got ${values.length}`,
+`the connect payload needs at least ${MIN_CODES} values, got ${values.length}`,
 );
 }
 if(values.some((value)=>value>MAX_BYTE)){
-throw new Error("the contact payload holds a value wider than one byte");
+throw new Error("the connect payload holds a value wider than one byte");
 }
 const key=values[0];
 const plaintext=values
@@ -50,15 +50,15 @@ String.fromCharCode(value^((key+offset)&BYTE_MASK)),
 const parts=plaintext.split(SENTINEL);
 if(parts.length!==3){
 throw new Error(
-`the contact payload must hold exactly two sentinels, found ${parts.length-1}`,
+`the connect payload must hold exactly two sentinels, found ${parts.length-1}`,
 );
 }
 if(!parts[1].includes("@")){
-throw new Error("the contact payload does not decode to an address");
+throw new Error("the connect payload does not decode to an address");
 }
 if(carriesMailtoSyntax(parts[1])){
 throw new Error(
-"the contact payload decodes to an address carrying mailto syntax",
+"the connect payload decodes to an address carrying mailto syntax",
 );
 }
 return parts[1];
@@ -77,12 +77,12 @@ return link;
 }
 function showStatus(document,button,address){
 const status=document.createElement("span");
-status.className="contact__status";
+status.className="connect__status";
 status.setAttribute("role","status");
 status.textContent=STATUS_TEXT;
 const fallback=document.createElement("button");
 fallback.type="button";
-fallback.className="contact__fallback";
+fallback.className="connect__fallback";
 fallback.textContent=FALLBACK_LABEL;
 fallback.addEventListener("click",function(){
 const link=buildAddressLink(document,address);
@@ -94,19 +94,19 @@ button.replaceWith(status);
 fallback.focus();
 }
 function showFailure(document,button,failureNotice){
-if(document.querySelector("#contact-mail .contact__error")){
+if(document.querySelector("#connect-mail .connect__error")){
 return;
 }
 const notice=document.createElement("span");
-notice.className="contact__error";
+notice.className="connect__error";
 notice.setAttribute("role","status");
 notice.textContent=failureNotice;
 button.insertAdjacentElement("afterend",notice);
 }
 function loadPayload(fetchImpl){
-return fetchImpl(CONTACT_SOURCE).then(function(response){
+return fetchImpl(CONNECT_SOURCE).then(function(response){
 if(!response.ok){
-throw new Error(`${CONTACT_SOURCE} answered ${response.status}`);
+throw new Error(`${CONNECT_SOURCE} answered ${response.status}`);
 }
 return response.json().then(function(data){
 return data.p;
@@ -114,7 +114,7 @@ return data.p;
 });
 }
 export function revealEmail(document,options={},failureNotice){
-const button=document.getElementById("contact-reveal");
+const button=document.getElementById("connect-reveal");
 if(!button||button.disabled){
 return Promise.resolve();
 }
@@ -137,8 +137,8 @@ showFailure(document,button,failureNotice);
 reportOrDefault(error);
 });
 }
-export function initContact(document,options={}){
-const button=document.getElementById("contact-reveal");
+export function initConnect(document,options={}){
+const button=document.getElementById("connect-reveal");
 if(button){
 const failureNotice=failureNoticeNaming(whereaboutsHeading(document));
 button.addEventListener("click",function(){

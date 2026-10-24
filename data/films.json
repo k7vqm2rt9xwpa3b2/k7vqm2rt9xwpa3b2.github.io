@@ -1,5 +1,14 @@
 [
   {
+    "title": "Dawn of the Dead",
+    "year": "1978",
+    "rating": 2.5,
+    "watched": "2026-10-23",
+    "rewatch": false,
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/q9/17/om/9y/8D6WEfNZr6JadQrqJr5OOq1QlV0-0-400-0-600-crop.jpg?v=b65bcfbd46",
+    "director": "George A. Romero"
+  },
+  {
     "title": "Rosemary's Baby",
     "year": "1968",
     "rating": 3.5,
@@ -16,14 +25,5 @@
     "rewatch": false,
     "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/2/2/5/50225-the-bourne-identity-0-400-0-600-crop.jpg?v=84a1e28f00",
     "director": "Doug Liman"
-  },
-  {
-    "title": "Black Panther",
-    "year": "2018",
-    "rating": 3.5,
-    "watched": "2026-10-09",
-    "rewatch": false,
-    "poster": "https://a.ltrbxd.com/resized/film-poster/2/0/9/3/8/3/209383-black-panther-0-400-0-600-crop.jpg?v=d6e7e2c7a4",
-    "director": "Ryan Coogler"
   }
 ]

@@ -1,5 +1,15 @@
 [
   {
+    "artist": "Blood Incantation",
+    "album": "Absolute Elsewhere",
+    "added": "2026-10-23",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bb/4e/2d/bb4e2d8d-4c15-ba91-ecf1-84a0162815ea/196871925433.jpg/400x400bb.webp",
+    "tracks": 6,
+    "favorited": 0,
+    "year": "2024",
+    "favorite_signal": "music.favorited"
+  },
+  {
     "artist": "Jimmy Montague",
     "album": "Tomorrow's Coffee",
     "added": "2026-09-30",
@@ -17,16 +27,6 @@
     "tracks": 10,
     "favorited": 1,
     "year": "1988",
-    "favorite_signal": "music.favorited"
-  },
-  {
-    "artist": "Angine de Poitrine",
-    "album": "Vol.II",
-    "added": "2026-09-03",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/54/91/db/5491db35-84a9-b4e5-83cc-b52fdf678bb2/11115.jpg/400x400bb.webp",
-    "tracks": 6,
-    "favorited": 0,
-    "year": "2026",
     "favorite_signal": "music.favorited"
   }
 ]

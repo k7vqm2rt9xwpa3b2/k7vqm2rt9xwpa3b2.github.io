@@ -93,8 +93,8 @@ onMalformedAddress,
 import("./shared/cards.js").then(({wireCards})=>
 wireCards(document,undefined,window.IntersectionObserver),
 ),
-import("./shared/contact.js").then(({initContact})=>
-initContact(document),
+import("./shared/connect.js").then(({initConnect})=>
+initConnect(document),
 ),
 import("./shared/masthead-menu.js").then(({initMastheadMenu})=>
 initMastheadMenu(document),

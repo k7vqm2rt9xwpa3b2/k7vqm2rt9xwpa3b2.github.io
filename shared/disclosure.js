@@ -11,14 +11,17 @@ throw new Error(
 }
 return node;
 }
-function buildControl(doc,panel){
+function createControl(doc,panel){
 const control=doc.createElement("button");
 control.type="button";
 control.className="reveal__more disclosure__more";
 control.setAttribute("aria-controls",panel.id);
 control.setAttribute("aria-expanded","false");
+return control;
+}
+function buildBesideControl(doc,panel,heading){
+const control=createControl(doc,panel);
 control.textContent=`\n ${panel.dataset.disclosureLabel}\n`;
-const heading=headingOf(panel);
 const link=heading.querySelector(":scope > a");
 for(const node of[
 doc.createTextNode(" "),
@@ -28,6 +31,29 @@ doc.createTextNode(" "),
 heading.insertBefore(node,link);
 }
 return control;
+}
+function buildNameControl(doc,panel,heading){
+if(heading.querySelector("a, button")){
+throw new Error(
+`disclosure.js: the panel #${panel.id} names a heading that holds a link or button`,
+);
+}
+const name=doc.createElement("span");
+name.className="disclosure__name";
+name.append(...heading.childNodes);
+const word=doc.createElement("span");
+word.className="disclosure__word";
+word.textContent=String(panel.dataset.disclosureLabel);
+const control=createControl(doc,panel);
+control.append(name,"\n ",word,"\n");
+heading.append(control);
+return control;
+}
+function buildControl(doc,panel){
+const heading=headingOf(panel);
+return panel.hasAttribute("data-disclosure-name")
+?buildNameControl(doc,panel,heading)
+:buildBesideControl(doc,panel,heading);
 }
 export function initDisclosures(doc){
 for(const panel of(
