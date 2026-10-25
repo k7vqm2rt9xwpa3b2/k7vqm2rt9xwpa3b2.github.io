@@ -17,11 +17,11 @@
       "themes": {
         "biking": {
           "label": "Biking",
-          "summary": "[placeholder-theme-summary-biking]"
+          "summary": "Pedal-powered travel and exercise."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -29,51 +29,51 @@
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "doughnuts": {
           "label": "Doughnuts",
-          "summary": "[placeholder-theme-summary-doughnuts]"
+          "summary": "Fried rings of dough, glazed, filled or frosted."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "juggling": {
           "label": "Juggling",
-          "summary": "[placeholder-theme-summary-juggling]"
+          "summary": "Tossing and catching balls, clubs or rings in rhythm."
         },
         "kickboxing": {
           "label": "Kickboxing and Striking",
-          "summary": "[placeholder-theme-summary-kickboxing]"
+          "summary": "A martial art built on punches, kicks, knees and elbows."
         },
         "matcha": {
           "label": "Matcha",
-          "summary": "[placeholder-theme-summary-matcha]"
+          "summary": "Stone-ground green tea powder, whisked into a bright froth."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "podcasts": {
           "label": "Podcasts",
-          "summary": "[placeholder-theme-summary-podcasts]"
+          "summary": "Episodic audio shows, from interviews to storytelling."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "space": {
           "label": "Space and Astronomy",
-          "summary": "[placeholder-theme-summary-space]"
+          "summary": "Planets, stars and the science of everything beyond the sky."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
@@ -454,11 +454,11 @@
       "themes": {
         "amateur-radio": {
           "label": "Amateur Radio",
-          "summary": "[placeholder-theme-summary-amateur-radio]"
+          "summary": "Licensed hobby radio for talking across town or around the world."
         },
         "barefoot-shoes": {
           "label": "Zero-Drop and Barefoot Shoes",
-          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+          "summary": "Flat, flexible shoes with no raised heel and room for the toes."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -466,47 +466,47 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "dogs": {
           "label": "Dogs",
-          "summary": "[placeholder-theme-summary-dogs]"
+          "summary": "Loyal four-legged companions in every size and breed."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "hiking": {
           "label": "Hiking and Nature",
-          "summary": "[placeholder-theme-summary-hiking]"
+          "summary": "Trails, trees and the outdoors, covered on foot."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -901,11 +901,11 @@
       "themes": {
         "barefoot-shoes": {
           "label": "Zero-Drop and Barefoot Shoes",
-          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+          "summary": "Flat, flexible shoes with no raised heel and room for the toes."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -913,47 +913,47 @@
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "matcha": {
           "label": "Matcha",
-          "summary": "[placeholder-theme-summary-matcha]"
+          "summary": "Stone-ground green tea powder, whisked into a bright froth."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
@@ -1337,11 +1337,11 @@
       "themes": {
         "amateur-radio": {
           "label": "Amateur Radio",
-          "summary": "[placeholder-theme-summary-amateur-radio]"
+          "summary": "Licensed hobby radio for talking across town or around the world."
         },
         "board-games": {
           "label": "Board Games",
-          "summary": "[placeholder-theme-summary-board-games]"
+          "summary": "Boards, cards, dice and pieces shared around a table."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -1349,35 +1349,35 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "dogs": {
           "label": "Dogs",
-          "summary": "[placeholder-theme-summary-dogs]"
+          "summary": "Loyal four-legged companions in every size and breed."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "hiking": {
           "label": "Hiking and Nature",
-          "summary": "[placeholder-theme-summary-hiking]"
+          "summary": "Trails, trees and the outdoors, covered on foot."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "space": {
           "label": "Space and Astronomy",
-          "summary": "[placeholder-theme-summary-space]"
+          "summary": "Planets, stars and the science of everything beyond the sky."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
@@ -1747,7 +1747,7 @@
       "themes": {
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -1755,55 +1755,55 @@
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "kickboxing": {
           "label": "Kickboxing and Striking",
-          "summary": "[placeholder-theme-summary-kickboxing]"
+          "summary": "A martial art built on punches, kicks, knees and elbows."
         },
         "matcha": {
           "label": "Matcha",
-          "summary": "[placeholder-theme-summary-matcha]"
+          "summary": "Stone-ground green tea powder, whisked into a bright froth."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "podcasts": {
           "label": "Podcasts",
-          "summary": "[placeholder-theme-summary-podcasts]"
+          "summary": "Episodic audio shows, from interviews to storytelling."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "reading": {
           "label": "Reading",
-          "summary": "[placeholder-theme-summary-reading]"
+          "summary": "Time spent with a page, a story or an idea."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         }
       },
       "entries": [
@@ -2201,11 +2201,11 @@
       "themes": {
         "amateur-radio": {
           "label": "Amateur Radio",
-          "summary": "[placeholder-theme-summary-amateur-radio]"
+          "summary": "Licensed hobby radio for talking across town or around the world."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -2213,43 +2213,43 @@
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "hiking": {
           "label": "Hiking and Nature",
-          "summary": "[placeholder-theme-summary-hiking]"
+          "summary": "Trails, trees and the outdoors, covered on foot."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "juggling": {
           "label": "Juggling",
-          "summary": "[placeholder-theme-summary-juggling]"
+          "summary": "Tossing and catching balls, clubs or rings in rhythm."
         },
         "kickboxing": {
           "label": "Kickboxing and Striking",
-          "summary": "[placeholder-theme-summary-kickboxing]"
+          "summary": "A martial art built on punches, kicks, knees and elbows."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -2637,43 +2637,43 @@
         },
         "dogs": {
           "label": "Dogs",
-          "summary": "[placeholder-theme-summary-dogs]"
+          "summary": "Loyal four-legged companions in every size and breed."
         },
         "doughnuts": {
           "label": "Doughnuts",
-          "summary": "[placeholder-theme-summary-doughnuts]"
+          "summary": "Fried rings of dough, glazed, filled or frosted."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "juggling": {
           "label": "Juggling",
-          "summary": "[placeholder-theme-summary-juggling]"
+          "summary": "Tossing and catching balls, clubs or rings in rhythm."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "pens-pencils": {
           "label": "Pens and Pencils",
-          "summary": "[placeholder-theme-summary-pens-pencils]"
+          "summary": "Writing tools, from fountain pens to mechanical pencils."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "space": {
           "label": "Space and Astronomy",
-          "summary": "[placeholder-theme-summary-space]"
+          "summary": "Planets, stars and the science of everything beyond the sky."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -3062,7 +3062,7 @@
       "themes": {
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -3070,47 +3070,47 @@
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "reading": {
           "label": "Reading",
-          "summary": "[placeholder-theme-summary-reading]"
+          "summary": "Time spent with a page, a story or an idea."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "space": {
           "label": "Space and Astronomy",
-          "summary": "[placeholder-theme-summary-space]"
+          "summary": "Planets, stars and the science of everything beyond the sky."
         },
         "swing-dancing": {
           "label": "Swing Dancing",
-          "summary": "[placeholder-theme-summary-swing-dancing]"
+          "summary": "Partner dances from the swing era, like Lindy Hop and East Coast Swing."
         },
         "watermelon": {
           "label": "Watermelon",
-          "summary": "[placeholder-theme-summary-watermelon]"
+          "summary": "The big striped summer melon with sweet red flesh."
         }
       },
       "entries": [
@@ -3476,7 +3476,7 @@
       "themes": {
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -3484,51 +3484,51 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "dogs": {
           "label": "Dogs",
-          "summary": "[placeholder-theme-summary-dogs]"
+          "summary": "Loyal four-legged companions in every size and breed."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "kickboxing": {
           "label": "Kickboxing and Striking",
-          "summary": "[placeholder-theme-summary-kickboxing]"
+          "summary": "A martial art built on punches, kicks, knees and elbows."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "pens-pencils": {
           "label": "Pens and Pencils",
-          "summary": "[placeholder-theme-summary-pens-pencils]"
+          "summary": "Writing tools, from fountain pens to mechanical pencils."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -3902,7 +3902,7 @@
       "themes": {
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -3910,51 +3910,51 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "kickboxing": {
           "label": "Kickboxing and Striking",
-          "summary": "[placeholder-theme-summary-kickboxing]"
+          "summary": "A martial art built on punches, kicks, knees and elbows."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "podcasts": {
           "label": "Podcasts",
-          "summary": "[placeholder-theme-summary-podcasts]"
+          "summary": "Episodic audio shows, from interviews to storytelling."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "swing-dancing": {
           "label": "Swing Dancing",
-          "summary": "[placeholder-theme-summary-swing-dancing]"
+          "summary": "Partner dances from the swing era, like Lindy Hop and East Coast Swing."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
@@ -4301,11 +4301,11 @@
       "themes": {
         "barefoot-shoes": {
           "label": "Zero-Drop and Barefoot Shoes",
-          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+          "summary": "Flat, flexible shoes with no raised heel and room for the toes."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -4313,43 +4313,43 @@
         },
         "dogs": {
           "label": "Dogs",
-          "summary": "[placeholder-theme-summary-dogs]"
+          "summary": "Loyal four-legged companions in every size and breed."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "gym-fitness": {
           "label": "Gym & Fitness",
-          "summary": "[placeholder-theme-summary-gym-fitness]"
+          "summary": "Lifting, cardio and the routines that build strength."
         },
         "national-parks": {
           "label": "National Parks",
-          "summary": "[placeholder-theme-summary-national-parks]"
+          "summary": "Public parks preserving landscapes and wildlife."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "podcasts": {
           "label": "Podcasts",
-          "summary": "[placeholder-theme-summary-podcasts]"
+          "summary": "Episodic audio shows, from interviews to storytelling."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -4663,15 +4663,15 @@
       "themes": {
         "barefoot-shoes": {
           "label": "Zero-Drop and Barefoot Shoes",
-          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+          "summary": "Flat, flexible shoes with no raised heel and room for the toes."
         },
         "board-games": {
           "label": "Board Games",
-          "summary": "[placeholder-theme-summary-board-games]"
+          "summary": "Boards, cards, dice and pieces shared around a table."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -4679,39 +4679,39 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "jeeps": {
           "label": "Jeeps",
-          "summary": "[placeholder-theme-summary-jeeps]"
+          "summary": "Boxy four-wheel-drive vehicles built for rough roads and open tops."
         },
         "matcha": {
           "label": "Matcha",
-          "summary": "[placeholder-theme-summary-matcha]"
+          "summary": "Stone-ground green tea powder, whisked into a bright froth."
         },
         "off-roading": {
           "label": "Off-Roading",
-          "summary": "[placeholder-theme-summary-off-roading]"
+          "summary": "Driving where the pavement ends: rocks, mud, sand and trails."
         },
         "pinball": {
           "label": "Pinball",
-          "summary": "[placeholder-theme-summary-pinball]"
+          "summary": "Flipper-and-ball machines full of ramps, bumpers and lights."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
@@ -5095,7 +5095,7 @@
       "themes": {
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -5103,51 +5103,51 @@
         },
         "crosswords": {
           "label": "Crossword Puzzles",
-          "summary": "[placeholder-theme-summary-crosswords]"
+          "summary": "Grids of crossing words, filled in from clues."
         },
         "disc-golf": {
           "label": "Disc Golf",
-          "summary": "[placeholder-theme-summary-disc-golf]"
+          "summary": "Throwing flying discs into chain baskets, hole by hole."
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "hiking": {
           "label": "Hiking and Nature",
-          "summary": "[placeholder-theme-summary-hiking]"
+          "summary": "Trails, trees and the outdoors, covered on foot."
         },
         "pens-pencils": {
           "label": "Pens and Pencils",
-          "summary": "[placeholder-theme-summary-pens-pencils]"
+          "summary": "Writing tools, from fountain pens to mechanical pencils."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "reading": {
           "label": "Reading",
-          "summary": "[placeholder-theme-summary-reading]"
+          "summary": "Time spent with a page, a story or an idea."
         },
         "rock-music": {
           "label": "Rock Music",
-          "summary": "[placeholder-theme-summary-rock-music]"
+          "summary": "Guitar-driven music built on drums, bass and big choruses."
         },
         "space": {
           "label": "Space and Astronomy",
-          "summary": "[placeholder-theme-summary-space]"
+          "summary": "Planets, stars and the science of everything beyond the sky."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "swing-dancing": {
           "label": "Swing Dancing",
-          "summary": "[placeholder-theme-summary-swing-dancing]"
+          "summary": "Partner dances from the swing era, like Lindy Hop and East Coast Swing."
         },
         "watch-collecting": {
           "label": "Watch Collecting",
-          "summary": "[placeholder-theme-summary-watch-collecting]"
+          "summary": "Mechanical movements, dials and straps, worn and admired."
         }
       },
       "entries": [
@@ -5517,19 +5517,19 @@
       "themes": {
         "amateur-radio": {
           "label": "Amateur Radio",
-          "summary": "[placeholder-theme-summary-amateur-radio]"
+          "summary": "Licensed hobby radio for talking across town or around the world."
         },
         "barefoot-shoes": {
           "label": "Zero-Drop and Barefoot Shoes",
-          "summary": "[placeholder-theme-summary-barefoot-shoes]"
+          "summary": "Flat, flexible shoes with no raised heel and room for the toes."
         },
         "board-games": {
           "label": "Board Games",
-          "summary": "[placeholder-theme-summary-board-games]"
+          "summary": "Boards, cards, dice and pieces shared around a table."
         },
         "books": {
           "label": "Books",
-          "summary": "[placeholder-theme-summary-books]"
+          "summary": "Stories and ideas bound between two covers."
         },
         "crossword-construction": {
           "label": "Crossword construction",
@@ -5537,27 +5537,27 @@
         },
         "guitar": {
           "label": "Guitar",
-          "summary": "[placeholder-theme-summary-guitar]"
+          "summary": "Chords, riffs and frets on six strings."
         },
         "podcasts": {
           "label": "Podcasts",
-          "summary": "[placeholder-theme-summary-podcasts]"
+          "summary": "Episodic audio shows, from interviews to storytelling."
         },
         "programming": {
           "label": "Programming and Math",
-          "summary": "[placeholder-theme-summary-programming]"
+          "summary": "Numbers, proofs and the programs built on them."
         },
         "specialty-coffee": {
           "label": "Specialty Coffee",
-          "summary": "[placeholder-theme-summary-specialty-coffee]"
+          "summary": "Carefully sourced beans, roasted and brewed with precision."
         },
         "swing-dancing": {
           "label": "Swing Dancing",
-          "summary": "[placeholder-theme-summary-swing-dancing]"
+          "summary": "Partner dances from the swing era, like Lindy Hop and East Coast Swing."
         },
         "travel": {
           "label": "Traveling",
-          "summary": "[placeholder-theme-summary-travel]"
+          "summary": "Going somewhere new, near or far."
         }
       },
       "entries": [
