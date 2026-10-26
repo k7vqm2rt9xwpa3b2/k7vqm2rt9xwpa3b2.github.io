@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self' https://is1-ssl.mzstatic.com https://is2-ssl.mzstatic.com https://is3-ssl.mzstatic.com https://is4-ssl.mzstatic.com https://is5-ssl.mzstatic.com https://a.ltrbxd.com https://i.gr-assets.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Billy Ella — Projects</title>
     <meta
@@ -153,25 +153,31 @@ addEventListener("load",()=>watch.disconnect());
       >
         <ul class="project-tools">
           <li class="project-tool">
-            <p class="project-tool__label">Album</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/album">Album</a>
+            </p>
             <p class="project-tool__text">
               Finds both synced and untimed lyrics for every track on an album using a variety of sources. It supports
               writing both sidecars and direct embeddings into MP3s.
             </p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Sweep</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/sweep">Sweep</a>
+            </p>
             <p class="project-tool__text">Runs Album across a whole library, one album at a time.</p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Sync</p>
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/lyricsmith/tree/main/sync">Sync</a></p>
             <p class="project-tool__text">
               For songs that only have untimed lyrics available, this matches them to the song's own audio. It works
               offline to separate the vocals and align the words to them.
             </p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Transcribe</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/transcribe">Transcribe</a>
+            </p>
             <p class="project-tool__text">
               For songs with no lyrics available (or genres like stand-up comedy that generally don't have them), this
               generates timed and untimed lyrics offline directly from the audio file.
@@ -182,25 +188,31 @@ addEventListener("load",()=>watch.disconnect());
       <noscript>
         <ul class="project-tools">
           <li class="project-tool">
-            <p class="project-tool__label">Album</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/album">Album</a>
+            </p>
             <p class="project-tool__text">
               Finds both synced and untimed lyrics for every track on an album using a variety of sources. It supports
               writing both sidecars and direct embeddings into MP3s.
             </p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Sweep</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/sweep">Sweep</a>
+            </p>
             <p class="project-tool__text">Runs Album across a whole library, one album at a time.</p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Sync</p>
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/lyricsmith/tree/main/sync">Sync</a></p>
             <p class="project-tool__text">
               For songs that only have untimed lyrics available, this matches them to the song's own audio. It works
               offline to separate the vocals and align the words to them.
             </p>
           </li>
           <li class="project-tool">
-            <p class="project-tool__label">Transcribe</p>
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/lyricsmith/tree/main/transcribe">Transcribe</a>
+            </p>
             <p class="project-tool__text">
               For songs with no lyrics available (or genres like stand-up comedy that generally don't have them), this
               generates timed and untimed lyrics offline directly from the audio file.
@@ -334,8 +346,8 @@ addEventListener("load",()=>watch.disconnect());
       </noscript>
       <h3><a href="https://github.com/blink9cd/apfs-tm-snapfree">APFS TM Snapfree</a></h3>
       <p>
-        Git worktrees can sometimes grow out of control on your hard drive when you have a lot of sessions going on.
-        This is one way of permanently containing them on a Mac.
+        Git worktrees and Time Machine don't play nicely with your APFS hard drive when you have a lot of sessions going
+        on. This is one way of permanently containing them.
       </p>
       <h3>
         <a href="https://github.com/blink9cd/development-tools/tree/main/git_workspace_backup">Git Workspace Backup</a>

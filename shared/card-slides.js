@@ -14,9 +14,13 @@ return null;
 }
 return hosts.includes(parsed.hostname)?parsed.href:null;
 }
-function buildCover(doc,source,record,showing){
+function buildCover(doc,source,record,showing,coverSrc){
 const url=coverUrl(source.cover(record),source.coverHosts);
 if(!url){
+return null;
+}
+const src=coverSrc(url,source,record);
+if(src===null){
 return null;
 }
 const img=doc.createElement("img");
@@ -28,13 +32,13 @@ if(!showing){
 img.setAttribute("loading","lazy");
 }
 img.setAttribute("referrerpolicy","no-referrer");
-img.setAttribute("src",url);
+img.setAttribute("src",src);
 return img;
 }
-function buildSlide(doc,source,record,now,showing){
+function buildSlide(doc,source,record,now,showing,coverSrc){
 const slide=doc.createElement("div");
 slide.className="card__slide";
-const cover=buildCover(doc,source,record,showing);
+const cover=buildCover(doc,source,record,showing,coverSrc);
 if(cover){
 slide.appendChild(cover);
 }
@@ -80,12 +84,19 @@ export function moveAnnouncement(source,slides,index,total){
 const title=slides[index].querySelector(".card__title").textContent;
 return`${source.label} ${index+1} of ${total}: ${title}`;
 }
-export function buildSlides(doc,source,records,now,frame){
+export function buildSlides(doc,source,records,now,frame,coverSrc){
 const slides=[];
 records.forEach(function(record){
 let slide;
 try{
-slide=buildSlide(doc,source,record,now,slides.length===0);
+slide=buildSlide(
+doc,
+source,
+record,
+now,
+slides.length===0,
+coverSrc,
+);
 }catch{
 return;
 }

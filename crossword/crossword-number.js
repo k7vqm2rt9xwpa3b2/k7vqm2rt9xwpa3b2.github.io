@@ -1,8 +1,21 @@
 import{CELL,NUMBER_FONT_SIZE,numberPlace}from"./crossword-ring.js";
 import{elementFor}from"./crossword-settings.js";
 const SVG_NS="http://www.w3.org/2000/svg";
+const HOLDER="crossword__refresh";
+function holderOf(doc,button){
+const parent=button.parentElement;
+if(parent&&parent.classList.contains(HOLDER)){
+return parent;
+}
+const holder=doc.createElement("span");
+holder.className=HOLDER;
+button.replaceWith(holder);
+holder.append(button);
+return holder;
+}
 function cornerText(doc,button){
-const drawn=button.querySelector("svg.crossword__number > text");
+const holder=holderOf(doc,button);
+const drawn=holder.querySelector("svg.crossword__number > text");
 if(drawn){
 return drawn;
 }
@@ -17,7 +30,7 @@ text.setAttribute("x",String(x));
 text.setAttribute("y",String(y));
 text.setAttribute("font-size",String(NUMBER_FONT_SIZE));
 svg.append(text);
-button.append(svg);
+holder.append(svg);
 return text;
 }
 export function settlePuzzleNumber(doc,button,index){

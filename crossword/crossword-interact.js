@@ -54,14 +54,12 @@ return theme.label+": "+theme.summary;
 }
 function readoutLines(entry,data){
 const lines=[];
-if(entry.theme){
-lines.push({
-className:"crossword__readout-summary",
-text:themeText(entry.theme,data),
-});
-}
+const summary=entry.theme?themeText(entry.theme,data):null;
 if(entry.clue){
 lines.push(clueLine(entry.clue));
+}
+if(summary){
+lines.push({className:"crossword__readout-summary",text:summary});
 }
 return lines;
 }

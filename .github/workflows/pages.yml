@@ -1,0 +1,83 @@
+---
+# The site's Pages deploy. Each destination repository receives this file from site_package
+# as .github/workflows/pages.yml, beside .deploy/cover_fetch.py; its source is
+# projects/personal_site/deploy/pages.yml in the workspace, gated there by cover_fetch's
+# suite (tests/test_cf_workflow.py). On every push it downloads the cover images
+# covers.json names -- reusing yesterday's from the Actions cache -- copies the package
+# around them, and deploys the result as a Pages artifact. A cover that will not download
+# fails the job before the deploy, so Pages keeps serving the last good build.
+# Design: docs/superpowers/specs/2026-10-25-site-pages-artifact-design.md, section 2B.
+name: pages
+
+# Quoted so yamllint's truthy rule reads it as the key GitHub means, not YAML 1.1's true.
+"on":
+  # A publish (`build <n>`) or a rebuild (`rebuild <n>`, empty) commit, on `main` only:
+  # every destination site_publish names deploys from `main`, so a push to any other
+  # branch starts nothing. The github-pages environment's branch rule, kept at `main` in
+  # each destination's settings, is the second check on where a deploy may come from.
+  push:
+    branches: [main]
+  # So a deploy can be rerun from GitHub's page.
+  workflow_dispatch:
+
+# The deploy's own token only: read the package, write Pages, and the OIDC token
+# deploy-pages proves its run with. No secret is used anywhere.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and never cut off mid-flight: a rebuild queues behind it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # A day's run takes about a minute; a hung fetch or deploy bills no further than this.
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Check out the published build
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Restore the cover cache
+        id: cache
+        # actions/cache/restore v6.1.0
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/cover-cache
+          # Keyed by the manifest: a day with no new cover is an exact hit and fetches
+          # nothing, and the prefix brings back yesterday's covers on any other day.
+          key: covers-v1-${{ hashFiles('covers.json') }}
+          restore-keys: covers-v1-
+
+      - name: Fetch the covers and assemble the site
+        # -I: nothing beside the script, and no PYTHON* variable, can change what it imports.
+        run: python3 -I .deploy/cover_fetch.py --manifest covers.json --out "$RUNNER_TEMP/site" --cache "$RUNNER_TEMP/cover-cache" --site .
+
+      - name: Save the cover cache
+        # Only on a miss: an exact hit already holds these covers under this key.
+        if: steps.cache.outputs.cache-hit != 'true'
+        # actions/cache/save v6.1.0
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/cover-cache
+          key: ${{ steps.cache.outputs.cache-primary-key }}
+
+      - name: Upload the Pages artifact
+        # actions/upload-pages-artifact v5.0.0
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: ${{ runner.temp }}/site
+
+      - name: Deploy it
+        id: deploy
+        # actions/deploy-pages v5.0.1
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
