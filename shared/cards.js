@@ -32,13 +32,17 @@ const note=committedNote(doc,source);
 if(note===null){
 return;
 }
+const name="Where these "+source.unit+"s come from";
 const state=createReveal(doc,box,frame,null);
 state.panel.classList.add("card__source-panel");
 state.panel.append(...note.childNodes);
+state.panel.tabIndex=0;
+state.panel.setAttribute("role","note");
+state.panel.setAttribute("aria-label",name);
 const more=doc.createElement("button");
 more.type="button";
 more.className="reveal__more card__source-more";
-more.setAttribute("aria-label","Where these "+source.unit+"s come from");
+more.setAttribute("aria-label",name);
 box.insertBefore(more,state.panel);
 bindReveal(state,more);
 }
@@ -56,7 +60,7 @@ glyphs.textContent=favoritedSignal(record,now);
 });
 }
 function guardCovers(card){
-card.querySelectorAll("img").forEach(function(img){
+card.querySelectorAll("img.card__cover").forEach(function(img){
 whenImageFails(img,()=>img.remove());
 });
 }

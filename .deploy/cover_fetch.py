@@ -294,11 +294,12 @@ _LOOPBACK = re.compile(r"http://(127\.0\.0\.1|localhost):[0-9]{1,5}")
 #: What exits 2 with a one-line reason: a refusal, an I/O fault, or git failing.
 _SETUP_FAULTS = (SetupError, OSError, UnicodeDecodeError, subprocess.SubprocessError)
 Runner = Callable[..., "subprocess.CompletedProcess[bytes]"]
+#: TMDB's terms forbid caching longer than six months; 150 days leaves a margin.
+MAX_CACHE_AGE_SECONDS = 150 * 24 * 60 * 60
 
 
 def write_atomic(path: Path, data: bytes) -> None:
-    """Replace `path` with `data` in one step no reader sees half of, mode 0644."""
-    path.parent.mkdir(parents=True, exist_ok=True)
+    """Atomically replace `path`, in a folder `real_folder` made, with `data`, mode 0644."""
     descriptor, staging = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
     try:
         with os.fdopen(descriptor, "wb") as handle:
@@ -320,18 +321,17 @@ def real_folder(path: Path) -> Path:
     return path
 
 
-def cached_body(cache: Path, cover: Cover) -> bytes | None:
-    """The cached copy of `cover` if it is a regular file passing every check, else None."""
+def cached_body(cache: Path, cover: Cover, now: float) -> bytes | None:
+    """`cover`'s cached copy if regular, fresh enough and passing every check, else None."""
     target = cache / cover.path
     try:
         info = target.lstat()
     except FileNotFoundError:
         return None
     if stat.S_ISDIR(info.st_mode):
-        shutil.rmtree(target)  # else no download could ever replace it, every run
-    elif not stat.S_ISREG(info.st_mode):
-        target.unlink()  # a FIFO, a socket or a symlink: never read, never followed
-    if not stat.S_ISREG(info.st_mode) or info.st_size > BODY_LIMIT_BYTES:
+        shutil.rmtree(target)  # a download's os.replace swaps any other kind of entry
+    stale = now - info.st_mtime > MAX_CACHE_AGE_SECONDS  # a future mtime is fresh
+    if not stat.S_ISREG(info.st_mode) or info.st_size > BODY_LIMIT_BYTES or stale:
         return None
     body = target.read_bytes()
     return None if image_fault(cover, body) else body
@@ -349,9 +349,8 @@ def prune_cache(folder: Path, keep: frozenset[str]) -> None:
 
 
 def sums_text(sums: dict[str, dict[str, object]]) -> str:
-    """`sums.json`'s text: schema 1, then the covers keyed by path in sorted order."""
-    ordered = {path: sums[path] for path in sorted(sums)}
-    return json.dumps({"schema": SCHEMA, "covers": ordered}, indent=2) + "\n"
+    """`sums.json`'s text: schema 1, then the covers in the manifest's path order."""
+    return json.dumps({"schema": SCHEMA, "covers": sums}, indent=2) + "\n"
 
 
 def tracked_files(site: Path, run: Runner) -> list[str]:
@@ -395,12 +394,13 @@ def place_covers(
     cache: Path | None,
     fetch: Fetch,
     sleep: Callable[[float], None],
+    now: Callable[[], float] = time.time,
 ) -> tuple[dict[str, dict[str, object]], int, list[str]]:
     """Put each cover at `out`, from the cache or a download: (sums, reused, failures)."""
     sums: dict[str, dict[str, object]] = {}
     reused, failures = 0, []
     for cover in covers:
-        body = cached_body(cache, cover) if cache is not None else None
+        body = cached_body(cache, cover, now()) if cache is not None else None
         reused += body is not None
         if body is None:
             try:

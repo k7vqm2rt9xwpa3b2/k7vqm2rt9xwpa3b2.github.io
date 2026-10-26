@@ -5,10 +5,10 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.15
+                       v0.5.16
 
-  Curious what comes after /then and /now? See /future
-  Or perhaps a <placeholder-zeroth-puzzle-nod>
+  > Curious what comes after /then and /now? See /future
+  > Wanna see where this site started? Try ?puzzle=0
 -->
 <html lang="en">
   <head>
@@ -306,8 +306,8 @@ addEventListener("load",()=>watch.disconnect());
               <a class="archive-link" href="then/">archive →</a>
             </h2>
             <p class="disclosure__panel now-explainer__panel" id="now-explainer" data-disclosure-label="learn" hidden>
-              A now page says what someone is focused on at this point in their life, rather than what they have done.
-              Read about the concept and check out a user directory on
+              A now page says what someone is focused on at this point in their life, rather than what they've done.
+              Read more about the concept and check out a user directory on
               <a href="https://nownownow.com/about">NowNowNow</a>.
             </p>
             <p
@@ -316,14 +316,18 @@ addEventListener("load",()=>watch.disconnect());
               data-disclosure-label="subscribe"
               hidden
             >
-              &lt;placeholder-subscribe-panel&gt; <a href="feed.xml">&lt;placeholder-subscribe-link&gt;</a>
+              For the old school, new Now entries go out by feed. Copy this link to any reader app to get each update
+              (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
             </p>
             <noscript>
               <p class="disclosure__panel now-explainer__notice">
-                This section is a now page — <a href="https://nownownow.com/about">NowNowNow</a> explains the format.
+                A now page says what someone is focused on at this point in their life, rather than what they've done.
+                Read more about the concept and check out a user directory on
+                <a href="https://nownownow.com/about">NowNowNow</a>.
               </p>
               <p class="disclosure__panel now-subscribe__notice">
-                &lt;placeholder-subscribe-noscript&gt; <a href="feed.xml">&lt;placeholder-subscribe-link&gt;</a>
+                For the old school, new Now entries go out by feed. Copy this link to any reader app to get each update
+                (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
               </p>
             </noscript>
             
@@ -565,7 +569,7 @@ addEventListener("load",()=>watch.disconnect());
                         width="600"
                         height="900"
                         referrerpolicy="no-referrer"
-                        src="covers/70b47c23e8285a84.jpg"
+                        src="covers/beda9c0b27fdbdde.jpg"
                       />
                       <div class="reveal__line"><p class="card__title">Dawn of the Dead</p></div>
                       <div class="reveal__line"><p class="card__meta card__meta--maker">George A. Romero</p></div>
@@ -582,7 +586,7 @@ addEventListener("load",()=>watch.disconnect());
                         height="900"
                         loading="lazy"
                         referrerpolicy="no-referrer"
-                        src="covers/9a8914bd9d9b4565.jpg"
+                        src="covers/81f169ca6326cfe0.jpg"
                       />
                       <div class="reveal__line"><p class="card__title">Rosemary's Baby</p></div>
                       <div class="reveal__line"><p class="card__meta card__meta--maker">Roman Polanski</p></div>
@@ -599,7 +603,7 @@ addEventListener("load",()=>watch.disconnect());
                         height="900"
                         loading="lazy"
                         referrerpolicy="no-referrer"
-                        src="covers/d9dd40d7630523d8.jpg"
+                        src="covers/aa44eba10349921c.jpg"
                       />
                       <div class="reveal__line"><p class="card__title">The Bourne Identity</p></div>
                       <div class="reveal__line"><p class="card__meta card__meta--maker">Doug Liman</p></div>
@@ -673,26 +677,38 @@ addEventListener("load",()=>watch.disconnect());
             
             <noscript>
               <p class="media__notice">
-                With scripts off, each card shows only its latest entry; JavaScript is what lets you move back through
-                the ones before it. The note and picture above are plain HTML and are unaffected — though where several
-                photographs exist, scripts are what let you move between them. The full lists are on
-                <a href="https://letterboxd.com/blink9cd/">Letterboxd</a> and
+                With scripts off, each card only shows its latest entry; turn them on to see the rest. The full lists
+                are on <a href="https://letterboxd.com/blink9cd/">Letterboxd</a> and
                 <a href="https://www.goodreads.com/user/show/164526628">Goodreads</a>.
               </p>
               <p class="media__notice">Where those entries come from:</p>
               <ul class="media__sources">
                 <li data-source="album-card">
                   <b>Listened.</b> These are the most recent albums in my personal music library, read by a custom tool
-                  I created for this site. And yes, that means I'm old school and nothing here comes from a streaming
+                  I created for this site. And yes, that means I'm old-fashioned and nothing here comes from a streaming
                   service.
+                  <span class="media__source-credit">Source: Apple Music</span>
                 </li>
                 <li data-source="film-card">
                   <b>Watched.</b> These are the most recent films from my Letterboxd diary, read by a custom tool I
                   created for this site.
+                  <span class="media__source-credit"
+                    >Source:
+                    <img
+                      class="media__source-logo"
+                      src="assets/tmdb-logo.svg"
+                      alt="TMDB"
+                      width="273"
+                      height="36"
+                    /><span class="media__source-notice"
+                      >This product uses the TMDB API but is not endorsed or certified by TMDB.</span
+                    ></span
+                  >
                 </li>
                 <li data-source="book-card">
                   <b>Read.</b> These are the most recent books from my Goodreads shelves, read by a custom tool I
                   created for this site.
+                  <span class="media__source-credit">Source: Goodreads</span>
                 </li>
               </ul>
             </noscript>
@@ -702,32 +718,15 @@ addEventListener("load",()=>watch.disconnect());
         <section id="projects">
           
           <h2>Projects</h2>
-          <p>Filler standing in for one sentence about the projects below.</p>
+          <p>Wondering what I've been working on? Here's a quick overview.</p>
           
           
-          <h3>Music Library Curation</h3>
-          <p>For those of us who still maintain a local music library, upkeep is paramount (and part of the fun!).</p>
           <ul class="projects-teaser">
-            <li>Lyricsmith</li>
-            <li>Apple Music Toolbox</li>
+            <li><strong>Music Library Curation</strong>: Lyricsmith, Apple Music Toolbox</li>
+            <li><strong>Development Refinements</strong>: Claude Tools, APFS TM Snapfree, Git Workspace Backup</li>
+            <li><strong>Website Flourishes</strong>: Decorative Crossword, Media Feeds</li>
           </ul>
-          <h3>Development Refinements</h3>
-          <p>Frictions and risks exist in every development environment and have a way of demanding a fix.</p>
-          <ul class="projects-teaser">
-            <li>Claude Tools</li>
-            <li>APFS TM Snapfree</li>
-            <li>Git Workspace Backup</li>
-          </ul>
-          <h3>Website Flourishes</h3>
-          <p>
-            Of course, we can't leave out this website itself! This section is a collection of tools made as part of
-            creating this site.
-          </p>
-          <ul class="projects-teaser">
-            <li>Decorative Crossword</li>
-            <li>Media Feeds</li>
-          </ul>
-          <p><a href="projects/">&lt;placeholder-projects-more-detail&gt;</a></p>
+          <p><a href="projects/">For more on each project, such as details and source, check them out here →</a></p>
           
         </section>
         
@@ -748,7 +747,10 @@ addEventListener("load",()=>watch.disconnect());
             </li>
           </ul>
           <h3 id="email">Email</h3>
-          <p>The best option for direct connection. Or maybe you're just old school. Either way, click that button.</p>
+          <p>
+            The best option for direct connection. Unfortunately it requires some anti-spam protection, so you'll have
+            to click that button.
+          </p>
           <p id="connect-mail">
             <button type="button" id="connect-reveal">Message me</button>
           </p>

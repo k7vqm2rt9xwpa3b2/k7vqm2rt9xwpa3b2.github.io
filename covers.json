@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "hosts": [
-    "a.ltrbxd.com",
     "i.gr-assets.com",
+    "image.tmdb.org",
     "is1-ssl.mzstatic.com",
     "is2-ssl.mzstatic.com",
     "is3-ssl.mzstatic.com",
@@ -23,28 +23,28 @@
       "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1722944318l/6149._SY475_.jpg"
     },
     {
-      "path": "covers/70b47c23e8285a84.jpg",
-      "url": "https://a.ltrbxd.com/resized/sm/upload/q9/17/om/9y/8D6WEfNZr6JadQrqJr5OOq1QlV0-0-400-0-600-crop.jpg?v=b65bcfbd46"
-    },
-    {
-      "path": "covers/9a8914bd9d9b4565.jpg",
-      "url": "https://a.ltrbxd.com/resized/sm/upload/ea/vc/su/y2/fdLOXB8AysEGRL44I1RvoKiWDcW-0-400-0-600-crop.jpg?v=8e18e4f70c"
+      "path": "covers/81f169ca6326cfe0.jpg",
+      "url": "https://image.tmdb.org/t/p/w500/kKvQ0pyMnJweWVz2Pwbyeivq5Zk.jpg"
     },
     {
       "path": "covers/a3bae746895e2375.webp",
       "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ce/9d/9e/ce9d9eeb-c9eb-b725-0351-7c75569ac1f9/cover.jpg/400x400bb.webp"
     },
     {
+      "path": "covers/aa44eba10349921c.jpg",
+      "url": "https://image.tmdb.org/t/p/w500/aP8swke3gmowbkfZ6lmNidu0y9p.jpg"
+    },
+    {
       "path": "covers/b1390031af62266d.jpg",
       "url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386923108l/81903.jpg"
     },
     {
-      "path": "covers/c09f3ce82a1409ec.webp",
-      "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bb/4e/2d/bb4e2d8d-4c15-ba91-ecf1-84a0162815ea/196871925433.jpg/400x400bb.webp"
+      "path": "covers/beda9c0b27fdbdde.jpg",
+      "url": "https://image.tmdb.org/t/p/w500/70MY8H0bLMvXf8ED2SgVMPhDVVM.jpg"
     },
     {
-      "path": "covers/d9dd40d7630523d8.jpg",
-      "url": "https://a.ltrbxd.com/resized/film-poster/5/0/2/2/5/50225-the-bourne-identity-0-400-0-600-crop.jpg?v=84a1e28f00"
+      "path": "covers/c09f3ce82a1409ec.webp",
+      "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bb/4e/2d/bb4e2d8d-4c15-ba91-ecf1-84a0162815ea/196871925433.jpg/400x400bb.webp"
     }
   ]
 }
