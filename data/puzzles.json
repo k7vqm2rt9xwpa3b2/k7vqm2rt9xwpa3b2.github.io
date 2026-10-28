@@ -434,7 +434,7 @@
         [8, 0]
       ],
       "circled_clue": "Kind of punk show anyone can get into",
-      "theme": "Rock Music: [placeholder-theme-1]",
+      "theme": "Rock Music: One of my first loves and obsessions, especially for punk/indie/alternative. I love going to concerts and still search for new music regularly.",
       "linked": "ALT"
     },
     {
@@ -606,7 +606,7 @@
           "row": 1,
           "col": 0,
           "answer": "TREESAVER",
-          "clue": "Wide strap that protects the trunk you winch from",
+          "clue": "Winching strap that spares the bark",
           "theme": "off-roading"
         },
         {
@@ -881,7 +881,7 @@
         [8, 4]
       ],
       "circled_clue": "Single-___ coffee",
-      "theme": "Specialty Coffee: [placeholder-theme-2]",
+      "theme": "Specialty Coffee: What started with a French press has grown to a collection of scales, kettles, and probably over ten different ways to brew and roast coffee!",
       "linked": "GREENBEAN"
     },
     {
@@ -1317,7 +1317,7 @@
         [6, 4]
       ],
       "circled_clue": "Name on many a Jeep part box",
-      "theme": "Jeeps: [placeholder-theme-3]",
+      "theme": "Jeeps: Ever since I first rented a Jeep in Utah I've been hooked. Throw me a wave or come help wrench in the garage.",
       "linked": "SKIDPLATE"
     },
     {
@@ -1727,7 +1727,7 @@
         [5, 3]
       ],
       "circled_clue": "Save a drain with a well-timed shove",
-      "theme": "Pinball: [placeholder-theme-4]",
+      "theme": "Pinball: A refreshingly tactile hobby with much more to it than what initially meets the eye. Local leagues are full of interesting people and have been a fun experience.",
       "linked": "SKILLSHOT"
     },
     {
@@ -1876,7 +1876,7 @@
           "row": 2,
           "col": 0,
           "answer": "TREESAVER",
-          "clue": "Wide strap that protects the trunk you winch from",
+          "clue": "Winching strap that spares the bark",
           "theme": "off-roading"
         },
         {
@@ -2181,7 +2181,7 @@
         [8, 1]
       ],
       "circled_clue": "Safe place for keys and tokens",
-      "theme": "Programming and Math: [placeholder-theme-5]",
+      "theme": "Programming and Math: What can I say? They underlie a lot of my interests and have been a pivotal part of my education.",
       "linked": "RSA"
     },
     {
@@ -2613,7 +2613,7 @@
         [5, 8]
       ],
       "circled_clue": "Juggling trick with a downward swipe",
-      "theme": "Juggling: [placeholder-theme-6]",
+      "theme": "Juggling: A fun hobby with a niche community and infinite room for both creativity and growth. Just don't ask me to juggle chainsaws (I'll try fire though).",
       "linked": "CASCADE"
     },
     {
@@ -3042,7 +3042,7 @@
         [8, 8]
       ],
       "circled_clue": "Clip-on gadget before a gig",
-      "theme": "Guitar: [placeholder-theme-7]",
+      "theme": "Guitar: I love the feeling of expression that comes with playing music and connecting with other people. The (left-handed) guitar is the instrument that feels the most right to me.",
       "linked": "SIXSTRING"
     },
     {
@@ -3456,7 +3456,7 @@
         [6, 3]
       ],
       "circled_clue": "Diff that turns both wheels as one",
-      "theme": "Off-Roading: [placeholder-theme-8]",
+      "theme": "Off-Roading: Going out on the trails teaches you a new way to evaluate the land and understand your vehicle. Not to mention you get to see a lot of beautiful spots.",
       "linked": "BOG"
     },
     {
@@ -3682,7 +3682,7 @@
           "row": 4,
           "col": 0,
           "answer": "DRIVELINE",
-          "clue": "Everything carrying power from engine to wheels",
+          "clue": "What carries engine power to the wheels",
           "theme": "jeeps"
         },
         {
@@ -3882,7 +3882,7 @@
         [6, 0]
       ],
       "circled_clue": "Strapped on before sparring",
-      "theme": "Kickboxing and Striking: [placeholder-theme-9]",
+      "theme": "Kickboxing and Striking: Beyond fitness you learn much more including humility, grit, and balance. Plus it's pretty satisfying when you land a good hit.",
       "linked": "STANCE"
     },
     {
@@ -4281,7 +4281,7 @@
         [8, 6]
       ],
       "circled_clue": "Swing dance born in Harlem",
-      "theme": "Swing Dancing: [placeholder-theme-10]",
+      "theme": "Swing Dancing: The deep connection between you and a partner through music can be a thrilling feeling. Sometimes it's even your only shared language when you're in a foreign country.",
       "linked": "TWIRL"
     },
     {
@@ -4643,7 +4643,7 @@
         [4, 0]
       ],
       "circled_clue": "Novelist's medium",
-      "theme": "Books: [placeholder-theme-11]",
+      "theme": "Books: Ever since I was young I've been obsessed with reading. You'll truly find all types of books on my shelf from contemporary fiction to pop science to humor, classics, essays, economics, comics, and more.",
       "linked": "PAPERBACK"
     },
     {
@@ -5075,7 +5075,7 @@
         [8, 5]
       ],
       "circled_clue": "Square holding more than one letter",
-      "theme": "Crossword Puzzles: [placeholder-theme-12]",
+      "theme": "Crossword Puzzles: While I enjoy solving puzzles of all types, I really like how these can help you connect disparate ideas and remind you of words you haven't thought about in a while (even years).",
       "linked": "APP"
     },
     {
@@ -5497,7 +5497,7 @@
         [7, 2]
       ],
       "circled_clue": "Kind of watch worn with a suit",
-      "theme": "Watch Collecting: [placeholder-theme-13]",
+      "theme": "Watch Collecting: Watches are the perfect accessory and can express so much with their unique faces and mesmerizing movements.",
       "linked": "AUTOMATIC"
     },
     {
@@ -5885,7 +5885,7 @@
         [7, 0]
       ],
       "circled_clue": "Can't see it for the trees",
-      "theme": "Zero-Drop and Barefoot Shoes: [placeholder-theme-14]",
+      "theme": "Zero-Drop and Barefoot Shoes: It took an adjustment period but now I'm hooked. I can't imagine how I used to stuff my feet into such narrow, elevated shoes before.",
       "linked": "FOOTSHAPE"
     }
   ]

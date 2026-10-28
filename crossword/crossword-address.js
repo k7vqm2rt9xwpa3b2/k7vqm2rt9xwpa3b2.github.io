@@ -3,6 +3,7 @@ const DIGEST_BITS=256;
 const HOST_SALT=/^[0-9a-f]{32}$/;
 const MAX_ITERATIONS=10_000_000;
 const ASCII_LETTERS=/^[A-Za-z]+$/;
+const NO_WORD=-1;
 function addressValue(search,queryKey){
 if(queryKey===null){
 return null;
@@ -40,6 +41,15 @@ throw new TypeError(
 namedValue(digests[misspelled]),
 );
 }
+const repeated=digests.findIndex(
+(digest,index)=>digests.indexOf(digest)!==index,
+);
+if(repeated!==-1){
+throw new TypeError(
+"crossword-address.js: a host's word digests are distinct, not "+
+`${namedValue(digests[repeated])} twice`,
+);
+}
 if(typeof salt!=="string"||!HOST_SALT.test(salt)){
 throw new TypeError(
 "crossword-address.js: a host's word salt is 32 lowercase hex digits, not "+
@@ -64,9 +74,9 @@ bytes[at]=Number.parseInt(hex.slice(2*at,2*at+2),16);
 }
 return bytes;
 }
-async function isHostWord(raw,{digests,salt,iterations},subtle){
+async function hostWordIndex(raw,{digests,salt,iterations},subtle){
 if(!ASCII_LETTERS.test(raw)||digests.length===0||!subtle){
-return false;
+return NO_WORD;
 }
 try{
 const word=await subtle.importKey(
@@ -84,9 +94,9 @@ DIGEST_BITS,
 const hex=Array.from(new Uint8Array(bytes),(byte)=>
 byte.toString(16).padStart(2,"0"),
 ).join("");
-return digests.includes(hex);
+return digests.indexOf(hex);
 }catch{
-return false;
+return NO_WORD;
 }
 }
 export async function addressReaction(
@@ -107,10 +117,9 @@ if(onMagicWord){
 assertHostKey(magicWordDigests,magicWordSalt,magicWordIterations);
 }
 const addressed=addressedPuzzle(count,search,queryKey);
-if(
-onMagicWord&&
-addressed==="not-a-number"&&
-(await isHostWord(
+const index=
+onMagicWord&&addressed==="not-a-number"
+?await hostWordIndex(
 (addressValue(search,queryKey)),
 {
 digests:magicWordDigests,
@@ -118,9 +127,10 @@ salt:(magicWordSalt),
 iterations:(magicWordIterations),
 },
 subtle,
-))
-){
-return onMagicWord;
+)
+:NO_WORD;
+if(onMagicWord&&index!==NO_WORD){
+return(back)=>onMagicWord(back,index);
 }
 if(typeof addressed==="string"&&onMalformedAddress){
 const kind=addressed;

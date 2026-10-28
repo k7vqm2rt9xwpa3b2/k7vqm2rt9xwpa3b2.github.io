@@ -1,5 +1,23 @@
 [
   {
+    "title": "The Fly",
+    "year": "1986",
+    "rating": 4.0,
+    "watched": "2026-10-27",
+    "rewatch": false,
+    "poster": "https://image.tmdb.org/t/p/w500/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg",
+    "director": "David Cronenberg"
+  },
+  {
+    "title": "You Can See Everything",
+    "year": "2026",
+    "rating": 5.0,
+    "watched": "2026-10-25",
+    "rewatch": false,
+    "poster": "https://image.tmdb.org/t/p/w500/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
+    "director": "Lance Oppenheim & Nathan Fielder"
+  },
+  {
     "title": "Dawn of the Dead",
     "year": "1978",
     "rating": 2.5,
@@ -7,23 +25,5 @@
     "rewatch": false,
     "poster": "https://image.tmdb.org/t/p/w500/70MY8H0bLMvXf8ED2SgVMPhDVVM.jpg",
     "director": "George A. Romero"
-  },
-  {
-    "title": "Rosemary's Baby",
-    "year": "1968",
-    "rating": 3.5,
-    "watched": "2026-10-19",
-    "rewatch": false,
-    "poster": "https://image.tmdb.org/t/p/w500/kKvQ0pyMnJweWVz2Pwbyeivq5Zk.jpg",
-    "director": "Roman Polanski"
-  },
-  {
-    "title": "The Bourne Identity",
-    "year": "2002",
-    "rating": 3.5,
-    "watched": "2026-10-14",
-    "rewatch": false,
-    "poster": "https://image.tmdb.org/t/p/w500/aP8swke3gmowbkfZ6lmNidu0y9p.jpg",
-    "director": "Doug Liman"
   }
 ]

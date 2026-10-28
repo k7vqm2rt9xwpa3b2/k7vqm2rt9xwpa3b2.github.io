@@ -1,14 +1,20 @@
 import{wordOn}from"./dom-words.js";
+import{giveWayToWords}from"./magic-word-drawing.js";
+import{
+CARRIER_NAME,
+HINTED,
+heldStill,
+rewardShowing,
+}from"./magic-word-eggs.js";
 import{drawFigure}from"./magic-word-figure.js";
 import{drawLettering}from"./magic-word-lettering.js";
-import{drawOldSite}from"./magic-word-old-site.js";
 import{
 aboveGrid,
 fitsLeftOf,
 leftOfGrid,
 scrollToFitAbove,
 }from"./magic-word-place.js";
-import{PAPER_SRC,buildPaperCopy}from"./magic-word-paper.js";
+import{buildPaperCopy}from"./magic-word-paper.js";
 import{REWARD_GRAPHIC}from"./magic-word-reward-graphic.js";
 import{drawSentence}from"./magic-word-sentence.js";
 import{stillOnPrint}from"./print-still.js";
@@ -18,22 +24,14 @@ close:"data-magic-close",
 sentence:"data-magic-sentence",
 });
 const TRAP_LINE=Object.freeze({says:WORDS.says,sentence:WORDS.sentence});
-const REWARD_LINE=Object.freeze({says:"data-magic-reward-note"});
-const REWARD_WORDS=Object.freeze({
-graphicAlt:"data-magic-reward-graphic-alt",
-oldSiteName:"data-magic-old-site-name",
-oldSiteStatus:"data-magic-old-site-status",
-});
 const CARRIER=Object.values(WORDS)
 .map((name)=>`[${name}]`)
 .join(", ");
 const DIALOG_ID="magic-word";
 const SAYS_ID="magic-word-says";
+const PANEL_ID="magic-word-panel";
 const VISUALLY_HIDDEN="visually-hidden";
 const CLOSE_FACE="×";
-const STILL_ADDRESS="?still#still";
-const REDUCED_MOTION="(prefers-reduced-motion: reduce)";
-const CARRIER_NAME="magic-word.js: the pop-up's carrier";
 function buildClose(doc,name){
 const close=doc.createElement("button");
 close.type="button";
@@ -66,18 +64,24 @@ if(built){
 return(built);
 }
 const carrier=(doc.querySelector(CARRIER));
-const says=buildLine(
-doc,
-wordOn(carrier,line.says,CARRIER_NAME),
-line.sentence&&wordOn(carrier,line.sentence,CARRIER_NAME),
-);
 const close=buildClose(doc,wordOn(carrier,WORDS.close,CARRIER_NAME));
 const dialog=doc.createElement("dialog");
 dialog.id=DIALOG_ID;
 dialog.className="magic-word";
 dialog.tabIndex=-1;
+dialog.append(close);
+if(line===null){
+dialog.setAttribute("aria-labelledby",PANEL_ID);
+}else{
 dialog.setAttribute("aria-labelledby",SAYS_ID);
-dialog.append(close,says);
+dialog.append(
+buildLine(
+doc,
+wordOn(carrier,line.says,CARRIER_NAME),
+line.sentence&&wordOn(carrier,line.sentence,CARRIER_NAME),
+),
+);
+}
 carrier.append(dialog);
 return dialog;
 }
@@ -91,56 +95,33 @@ openBesideGrid(
 win,
 back,
 dialog,
-drawSentence(doc,(says.dataset.grid)),
+heldStill(drawSentence(doc,(says.dataset.grid))),
 drawFigure(doc),
 );
 }
 export function rewardTheMagicWord(win,back,drawing=REWARD_GRAPHIC){
-const doc=win.document;
-const dialog=buildMagicWordDialog(doc,REWARD_LINE);
-dialog.classList.add("magic-word--reward");
+openRewardFrame(win,back,rewardShowing(drawing));
+}
+export function rewardTheHintedWord(win,back){
+openRewardFrame(win,back,HINTED);
+}
+function openRewardFrame(win,back,egg){
+const dialog=buildMagicWordDialog(win.document,egg.line);
+dialog.classList.add(egg.modifier);
 const carrier=(dialog.parentElement);
-const alt=wordOn(carrier,REWARD_WORDS.graphicAlt,CARRIER_NAME);
-const graphic=drawing
-?buildDrawing(doc,drawing,alt,win.matchMedia(REDUCED_MOTION).matches)
-:buildGraphicWords(doc,alt);
-const oldSite=drawOldSite(
-doc,
-wordOn(carrier,REWARD_WORDS.oldSiteName,CARRIER_NAME),
-wordOn(carrier,REWARD_WORDS.oldSiteStatus,CARRIER_NAME),
+const panel=egg.panel(win,carrier);
+const close=openBesideGrid(
+win,
+back,
+dialog,
+egg.square(win,carrier),
+panel,
 );
-openBesideGrid(win,back,dialog,oldSite,graphic);
-}
-function buildGraphicWords(doc,alt){
-const words=doc.createElement("p");
-words.className="magic-word__graphic";
-words.textContent=alt;
-return words;
-}
-function buildDrawing(doc,drawing,alt,still){
-const stillAddress=`${drawing.src}${STILL_ADDRESS}`;
-const image=doc.createElement("img");
-image.setAttribute("class","magic-word__graphic magic-word__drawing");
-image.setAttribute("alt",alt);
-image.setAttribute("width",String(drawing.width));
-image.setAttribute("height",String(drawing.height));
-image.setAttribute(PAPER_SRC,stillAddress);
-giveWayToWords(doc,image);
-image.setAttribute("src",still?stillAddress:drawing.src);
-return image;
-}
-function giveWayToWords(doc,image){
-image.addEventListener(
-"error",
-()=>image.replaceWith(buildGraphicWords(doc,image.alt)),
-{once:true},
-);
+egg.offer(panel,close);
 }
 function openBesideGrid(win,back,dialog,square,panelContent){
 const doc=win.document;
-const says=(
-dialog.querySelector(".magic-word__says")
-);
+const says=dialog.querySelector(".magic-word__says");
 const close=(
 dialog.querySelector(".magic-word__close")
 );
@@ -148,11 +129,16 @@ const grid=(
 doc.getElementById("crossword-mount")
 );
 const drawn=[...grid.childNodes];
-grid.replaceChildren(square);
+grid.replaceChildren(square.drawing);
 const panel=doc.createElement("div");
 panel.className="magic-word__panel";
 panel.append(panelContent);
+if(says){
 says.before(panel);
+}else{
+panel.id=PANEL_ID;
+dialog.append(panel);
+}
 const paper=buildPaperCopy(doc,dialog);
 for(const image of paper.querySelectorAll("img")){
 giveWayToWords(doc,image);
@@ -174,17 +160,22 @@ placedFor=viewport;
 place(win,dialog,grid,viewport);
 };
 win.addEventListener("resize",placeIt);
-const unstill=stillOnPrint(win);
+const unstill=stillOnPrint(win,square.settle);
 let focusOptions;
-close.addEventListener("click",(event)=>{
-focusOptions=event.detail>0?{focusVisible:false}:undefined;
+const closeBy=(event)=>{
+focusOptions=
+(event).detail>0
+?{focusVisible:false}
+:undefined;
 dialog.close();
-});
+};
+close.addEventListener("click",closeBy);
 dialog.addEventListener(
 "close",
 ()=>{
 win.removeEventListener("resize",placeIt);
 unstill();
+square.stop();
 panel.remove();
 paper.remove();
 grid.replaceChildren(...drawn);
@@ -192,6 +183,7 @@ back(focusOptions);
 },
 {once:true},
 );
+return closeBy;
 }
 function place(win,dialog,grid,viewport){
 const popUp=dialog.getBoundingClientRect();

@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.16
+                       v0.5.17
 
   > Curious what comes after /then and /now? See /future
   > Wanna see where this site started? Try ?puzzle=0
@@ -124,12 +124,14 @@ addEventListener("load",()=>watch.disconnect());
     <link rel="stylesheet" href="crossword/crossword-grid.css" />
     <link rel="stylesheet" href="shared/hero-crossword.css" />
     <link rel="stylesheet" href="shared/magic-word.css" />
+    <link rel="stylesheet" href="shared/magic-word-hinted.css" />
     
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/disclosure.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/image-failure.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/mode-state.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/mode.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-carousel.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-layout-stale.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-notes-paging.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-notes.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/now-pager-controls.js" />
@@ -177,9 +179,9 @@ addEventListener("load",()=>watch.disconnect());
       </nav>
       
     </header>
-    <main id="main">
+    <main id="main" class="instapaper_body">
       
-      <pre class="reader-note">
+      <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
 ║ out of reader mode, this ║
@@ -200,6 +202,10 @@ addEventListener("load",()=>watch.disconnect());
         data-magic-reward-graphic-alt="Classic early internet under construction GIF"
         data-magic-old-site-name="William Ella"
         data-magic-old-site-status="under construction"
+        data-magic-hinted-screen="A won game of solitaire, its cards cascading across the screen"
+        data-magic-hinted-dialog-title="Thanks for visiting!"
+        data-magic-hinted-dialog-message="I appreciate your eye for detail and willingness to explore."
+        data-magic-hinted-dialog-button="OK"
       >
         <div class="hero__intro">
           <h2>About</h2>
@@ -237,55 +243,61 @@ addEventListener("load",()=>watch.disconnect());
               role="img"
               aria-label="My personal five-by-five crossword grid"
             >
-              <rect x="0" y="0" width="338" height="338" class="hg-lattice" />
-              <rect x="2" y="2" width="66" height="66" class="hg-soft" />
-              <rect x="69" y="2" width="66" height="66" class="hg-block" />
-              <rect x="136" y="2" width="66" height="66" class="hg-accent" />
-              <rect x="203" y="2" width="66" height="66" class="hg-cell" />
-              <rect x="270" y="2" width="66" height="66" class="hg-cell" />
-              <rect x="2" y="69" width="66" height="66" class="hg-block" />
-              <rect x="69" y="69" width="66" height="66" class="hg-soft" />
-              <rect x="136" y="69" width="66" height="66" class="hg-accent" />
-              <rect x="203" y="69" width="66" height="66" class="hg-soft" />
-              <rect x="270" y="69" width="66" height="66" class="hg-soft" />
-              <rect x="2" y="136" width="66" height="66" class="hg-soft" />
-              <rect x="69" y="136" width="66" height="66" class="hg-cell" />
-              <rect x="136" y="136" width="66" height="66" class="hg-accent" />
-              <rect x="203" y="136" width="66" height="66" class="hg-cell" />
-              <rect x="270" y="136" width="66" height="66" class="hg-cell" />
-              <rect x="2" y="203" width="66" height="66" class="hg-accent" />
-              <rect x="69" y="203" width="66" height="66" class="hg-accent" />
-              <rect x="136" y="203" width="66" height="66" class="hg-accent" />
-              <rect x="203" y="203" width="66" height="66" class="hg-accent" />
-              <rect x="270" y="203" width="66" height="66" class="hg-accent" />
-              <rect x="2" y="270" width="66" height="66" class="hg-soft" />
-              <rect x="69" y="270" width="66" height="66" class="hg-cell" />
-              <rect x="136" y="270" width="66" height="66" class="hg-accent" />
-              <rect x="203" y="270" width="66" height="66" class="hg-block" />
-              <rect x="270" y="270" width="66" height="66" class="hg-cell" />
+              <rect x="0" y="0" width="338" height="338" class="hg-lattice" fill="#918b80" />
+              <rect x="2" y="2" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="69" y="2" width="66" height="66" class="hg-block" fill="#16130f" />
+              <rect x="136" y="2" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="203" y="2" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="270" y="2" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="2" y="69" width="66" height="66" class="hg-block" fill="#16130f" />
+              <rect x="69" y="69" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="136" y="69" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="203" y="69" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="270" y="69" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="2" y="136" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="69" y="136" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="136" y="136" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="203" y="136" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="270" y="136" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="2" y="203" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="69" y="203" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="136" y="203" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="203" y="203" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="270" y="203" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="2" y="270" width="66" height="66" class="hg-soft" fill="#9da19e" />
+              <rect x="69" y="270" width="66" height="66" class="hg-cell" fill="#fffdf7" />
+              <rect x="136" y="270" width="66" height="66" class="hg-accent" fill="#53855f" />
+              <rect x="203" y="270" width="66" height="66" class="hg-block" fill="#16130f" />
+              <rect x="270" y="270" width="66" height="66" class="hg-cell" fill="#fffdf7" />
               <path
                 class="hg-soft-letter"
                 d="M22.05 51.88V50.26L25.38 49.74L33.81 25.15H36.31L44.74 49.9L47.71 50.26V51.88H36.94V50.26L40.82 49.78L38.64 43.29H29.46L27.28 49.74L31.12 50.26V51.88ZM30.09 41.43H38.05L34.09 29.66ZM101.17 119.47Q98.95 119.47 96.89 118.86Q94.83 118.25 93.45 117.38L93.68 111.83H96.14L96.93 116.5Q97.84 117.02 98.81 117.26Q99.78 117.49 101.05 117.49Q103.86 117.49 105.52 116.25Q107.19 115 107.19 112.7Q107.19 110.8 106.02 109.75Q104.85 108.7 102.32 107.71L100.77 107.08Q97.72 105.89 95.84 103.99Q93.96 102.09 93.96 99.08Q93.96 96.78 95.13 95.16Q96.3 93.54 98.32 92.64Q100.34 91.75 102.87 91.75Q104.85 91.75 106.47 92.31Q108.1 92.86 109.37 93.81L109.13 99H106.71L105.88 94.53Q104.42 93.73 102.63 93.73Q100.38 93.73 98.83 94.86Q97.29 95.99 97.29 98.21Q97.29 100.03 98.46 101.24Q99.62 102.45 101.76 103.28L103.35 103.87Q107.23 105.38 108.89 107.26Q110.55 109.14 110.55 111.95Q110.55 114.29 109.35 115.97Q108.14 117.65 106.04 118.56Q103.94 119.47 101.17 119.47ZM224.83 99.4 225.15 92.35H246.85L247.17 99.4H244.87L244 94.33H237.94Q237.9 96.86 237.88 99.46Q237.86 102.05 237.86 104.66V106.6Q237.86 109.14 237.88 111.69Q237.9 114.25 237.94 116.82L241.98 117.26V118.88H230.02V117.26L234.06 116.82Q234.14 114.29 234.14 111.73Q234.14 109.18 234.14 106.6V104.66Q234.14 102.09 234.14 99.5Q234.14 96.9 234.06 94.33H228L227.13 99.4ZM292.8 93.97V92.35H312.52L312.8 99.36H310.54L309.67 94.33H300.37Q300.33 96.86 300.31 99.42Q300.29 101.97 300.29 104.43H306.11L306.66 100.66H308.48V110.01H306.66L306.15 106.29H300.29Q300.29 109.26 300.31 111.85Q300.33 114.44 300.37 116.9H310.46L311.34 111.83H313.59L313.32 118.88H292.8V117.26L296.45 116.82Q296.53 114.33 296.53 111.75Q296.53 109.18 296.53 106.6V104.66Q296.53 102.09 296.53 99.52Q296.53 96.94 296.45 94.41ZM44.7 160.97V159.35H53.69V160.97L50.36 161.45L43.67 186.16H41.97L35.12 165.56L28.66 186.16H26.96L19.83 161.37L16.55 160.97V159.35H27.32V160.97L23.67 161.41L28.55 179.58L34.56 161.45L30.6 160.97V159.35H41.38V160.97L37.38 161.45L43.28 179.82L48.31 161.49ZM33.95 307.09H31.77Q31.77 310.22 31.79 312.85Q31.81 315.48 31.85 318.02H34.27Q38.07 318.02 39.93 316.63Q41.79 315.25 41.79 312.63Q41.79 309.86 39.93 308.48Q38.07 307.09 33.95 307.09ZM34.58 295.17H31.85Q31.81 297.74 31.79 300.34Q31.77 302.93 31.77 305.27H33.83Q37.44 305.27 39.06 304.02Q40.68 302.77 40.68 300.08Q40.68 297.39 39.16 296.28Q37.63 295.17 34.58 295.17ZM24.29 294.97V293.35H35.77Q39.89 293.35 42.15 295.17Q44.41 296.99 44.41 299.8Q44.41 301.9 42.98 303.66Q41.55 305.43 38.27 306.1Q42.23 306.65 43.99 308.44Q45.75 310.22 45.75 312.63Q45.75 314.41 44.7 316.08Q43.65 317.74 41.32 318.81Q38.98 319.88 35.18 319.88H24.29V318.26L27.93 317.82Q28.01 315.33 28.01 312.75Q28.01 310.18 28.01 307.6V305.66Q28.01 303.09 28.01 300.52Q28.01 297.94 27.93 295.41Z"
+                fill="#16130f"
               />
               <path
                 class="hg-accent-letter"
                 d="M167.95 39.09H165.77Q165.77 42.22 165.79 44.85Q165.81 47.48 165.85 50.02H168.27Q172.07 50.02 173.93 48.63Q175.79 47.25 175.79 44.63Q175.79 41.86 173.93 40.48Q172.07 39.09 167.95 39.09ZM168.58 27.17H165.85Q165.81 29.74 165.79 32.34Q165.77 34.93 165.77 37.27H167.83Q171.44 37.27 173.06 36.02Q174.68 34.77 174.68 32.08Q174.68 29.39 173.16 28.28Q171.63 27.17 168.58 27.17ZM158.29 26.97V25.35H169.77Q173.89 25.35 176.15 27.17Q178.4 28.99 178.4 31.8Q178.4 33.9 176.98 35.66Q175.55 37.43 172.27 38.1Q176.23 38.65 177.99 40.44Q179.75 42.22 179.75 44.63Q179.75 46.42 178.7 48.08Q177.65 49.74 175.32 50.81Q172.98 51.88 169.18 51.88H158.29V50.26L161.93 49.82Q162.01 47.33 162.01 44.75Q162.01 42.18 162.01 39.6V37.66Q162.01 35.09 162.01 32.52Q162.01 29.94 161.93 27.41ZM163.4 93.97V92.35H174.6V93.97L170.96 94.41Q170.92 96.94 170.9 99.52Q170.88 102.09 170.88 104.66V106.6Q170.88 109.14 170.9 111.69Q170.92 114.25 170.96 116.82L174.6 117.26V118.88H163.4V117.26L167.04 116.82Q167.12 114.33 167.12 111.75Q167.12 109.18 167.12 106.6V104.66Q167.12 102.09 167.12 99.52Q167.12 96.94 167.04 94.41ZM158.94 160.97V159.35H170.15V160.97L166.51 161.41Q166.47 163.94 166.45 166.52Q166.43 169.09 166.43 171.66V174.4Q166.43 176.49 166.45 178.93Q166.47 181.37 166.51 183.9H175.49L176.64 178.44H179.06L178.66 185.88H158.94V184.26L162.58 183.82Q162.66 181.25 162.66 178.71Q162.66 176.18 162.66 173.64V171.66Q162.66 169.09 162.66 166.52Q162.66 163.94 162.58 161.41ZM24.8 227.97V226.35H44.52L44.8 233.36H42.54L41.67 228.33H32.37Q32.33 230.86 32.31 233.42Q32.29 235.97 32.29 238.43H38.11L38.66 234.66H40.48V244.01H38.66L38.15 240.29H32.29Q32.29 243.26 32.31 245.85Q32.33 248.44 32.37 250.9H42.46L43.34 245.83H45.59L45.32 252.88H24.8V251.26L28.45 250.82Q28.53 248.33 28.53 245.75Q28.53 243.18 28.53 240.6V238.66Q28.53 236.09 28.53 233.52Q28.53 230.94 28.45 228.41ZM91.94 227.97V226.35H103.15V227.97L99.51 228.41Q99.47 230.94 99.45 233.52Q99.43 236.09 99.43 238.66V241.4Q99.43 243.49 99.45 245.93Q99.47 248.37 99.51 250.9H108.49L109.64 245.44H112.06L111.66 252.88H91.94V251.26L95.58 250.82Q95.66 248.25 95.66 245.71Q95.66 243.18 95.66 240.64V238.66Q95.66 236.09 95.66 233.52Q95.66 230.94 95.58 228.41ZM158.94 227.97V226.35H170.15V227.97L166.51 228.41Q166.47 230.94 166.45 233.52Q166.43 236.09 166.43 238.66V241.4Q166.43 243.49 166.45 245.93Q166.47 248.37 166.51 250.9H175.49L176.64 245.44H179.06L178.66 252.88H158.94V251.26L162.58 250.82Q162.66 248.25 162.66 245.71Q162.66 243.18 162.66 240.64V238.66Q162.66 236.09 162.66 233.52Q162.66 230.94 162.58 228.41ZM223.05 252.88V251.26L226.38 250.74L234.81 226.15H237.31L245.74 250.9L248.71 251.26V252.88H237.94V251.26L241.82 250.78L239.64 244.29H230.46L228.28 250.74L232.12 251.26V252.88ZM231.09 242.43H239.05L235.09 230.66ZM302.17 253.47Q299.95 253.47 297.89 252.86Q295.83 252.25 294.45 251.38L294.68 245.83H297.14L297.93 250.5Q298.84 251.02 299.81 251.26Q300.78 251.49 302.05 251.49Q304.86 251.49 306.52 250.25Q308.19 249 308.19 246.7Q308.19 244.8 307.02 243.75Q305.85 242.7 303.32 241.71L301.77 241.08Q298.72 239.89 296.84 237.99Q294.96 236.09 294.96 233.08Q294.96 230.78 296.13 229.16Q297.3 227.54 299.32 226.64Q301.34 225.75 303.87 225.75Q305.85 225.75 307.47 226.31Q309.1 226.86 310.37 227.81L310.13 233H307.71L306.88 228.53Q305.42 227.73 303.63 227.73Q301.38 227.73 299.83 228.86Q298.29 229.99 298.29 232.21Q298.29 234.03 299.46 235.24Q300.62 236.45 302.76 237.28L304.35 237.87Q308.23 239.38 309.89 241.26Q311.55 243.14 311.55 245.95Q311.55 248.29 310.35 249.97Q309.14 251.65 307.04 252.56Q304.94 253.47 302.17 253.47ZM157.46 294.97V293.35H168.23V294.97L164.47 295.41L169.97 307.45L175.63 295.45L172.07 294.97V293.35H181.14V294.97L177.65 295.49L170.92 309.46Q170.92 311.76 170.94 313.84Q170.96 315.92 171 317.82L175.04 318.26V319.88H163.08V318.26L167.12 317.82Q167.2 315.96 167.2 313.94Q167.2 311.92 167.2 309.62L160.15 295.29Z"
+                fill="#f7f5ef"
               />
               <path
                 class="hg-letter"
                 d="M223.05 51.88V50.26L226.38 49.74L234.81 25.15H237.31L245.74 49.9L248.71 50.26V51.88H237.94V50.26L241.82 49.78L239.64 43.29H230.46L228.28 49.74L232.12 50.26V51.88ZM231.09 41.43H239.05L235.09 29.66ZM286.68 51.88V50.26L290.25 49.74V27.41L287.08 26.97V25.35H294.01L302.88 47.17L311.28 25.35H319.08V26.97L315.43 27.41Q315.39 29.94 315.38 32.52Q315.36 35.09 315.36 37.66V39.6Q315.36 42.14 315.38 44.69Q315.39 47.25 315.43 49.82L319.08 50.26V51.88H308.31V50.26L311.63 49.82Q311.71 47.33 311.71 44.75Q311.71 42.18 311.71 39.64V29.59L303.12 51.88H301.14L292.07 29.55L292.31 37.27V49.74L295.56 50.26V51.88ZM96.4 160.97V159.35H107.6V160.97L103.96 161.41Q103.92 163.94 103.9 166.52Q103.88 169.09 103.88 171.66V173.6Q103.88 176.14 103.9 178.69Q103.92 181.25 103.96 183.82L107.6 184.26V185.88H96.4V184.26L100.04 183.82Q100.12 181.33 100.12 178.75Q100.12 176.18 100.12 173.6V171.66Q100.12 169.09 100.12 166.52Q100.12 163.94 100.04 161.41ZM224.83 166.4 225.15 159.35H246.85L247.17 166.4H244.87L244 161.33H237.94Q237.9 163.86 237.88 166.46Q237.86 169.05 237.86 171.66V173.6Q237.86 176.14 237.88 178.69Q237.9 181.25 237.94 183.82L241.98 184.26V185.88H230.02V184.26L234.06 183.82Q234.14 181.29 234.14 178.73Q234.14 176.18 234.14 173.6V171.66Q234.14 169.09 234.14 166.5Q234.14 163.9 234.06 161.33H228L227.13 166.4ZM302.17 186.47Q299.95 186.47 297.89 185.86Q295.83 185.25 294.45 184.38L294.68 178.83H297.14L297.93 183.5Q298.84 184.02 299.81 184.26Q300.78 184.49 302.05 184.49Q304.86 184.49 306.52 183.25Q308.19 182 308.19 179.7Q308.19 177.8 307.02 176.75Q305.85 175.7 303.32 174.71L301.77 174.08Q298.72 172.89 296.84 170.99Q294.96 169.09 294.96 166.08Q294.96 163.78 296.13 162.16Q297.3 160.54 299.32 159.64Q301.34 158.75 303.87 158.75Q305.85 158.75 307.47 159.31Q309.1 159.86 310.37 160.81L310.13 166H307.71L306.88 161.53Q305.42 160.73 303.63 160.73Q301.38 160.73 299.83 161.86Q298.29 162.99 298.29 165.21Q298.29 167.03 299.46 168.24Q300.62 169.45 302.76 170.28L304.35 170.87Q308.23 172.38 309.89 174.26Q311.55 176.14 311.55 178.95Q311.55 181.29 310.35 182.97Q309.14 184.65 307.04 185.56Q304.94 186.47 302.17 186.47ZM102.02 320.47Q99.72 320.47 97.55 319.58Q95.37 318.69 93.62 316.95Q91.88 315.21 90.87 312.61Q89.86 310.02 89.86 306.61Q89.86 303.37 90.89 300.79Q91.92 298.22 93.64 296.44Q95.37 294.65 97.55 293.7Q99.72 292.75 102.02 292.75Q104.32 292.75 106.47 293.64Q108.63 294.54 110.36 296.3Q112.08 298.06 113.11 300.63Q114.14 303.21 114.14 306.61Q114.14 309.86 113.13 312.44Q112.12 315.01 110.4 316.81Q108.67 318.61 106.49 319.54Q104.32 320.47 102.02 320.47ZM102.02 318.49Q104.08 318.49 105.56 317.48Q107.05 316.47 107.98 314.79Q108.91 313.11 109.35 310.99Q109.78 308.87 109.78 306.61Q109.78 304.4 109.35 302.28Q108.91 300.16 107.98 298.46Q107.05 296.75 105.56 295.74Q104.08 294.73 102.02 294.73Q99.96 294.73 98.48 295.74Q96.99 296.75 96.04 298.46Q95.09 300.16 94.63 302.28Q94.18 304.4 94.18 306.61Q94.18 308.87 94.63 310.99Q95.09 313.11 96.04 314.79Q96.99 316.47 98.48 317.48Q99.96 318.49 102.02 318.49ZM291.46 294.97V293.35H302.23V294.97L298.47 295.41L303.97 307.45L309.63 295.45L306.07 294.97V293.35H315.14V294.97L311.65 295.49L304.92 309.46Q304.92 311.76 304.94 313.84Q304.96 315.92 305 317.82L309.04 318.26V319.88H297.08V318.26L301.12 317.82Q301.2 315.96 301.2 313.94Q301.2 311.92 301.2 309.62L294.15 295.29Z"
+                fill="#16130f"
               />
               <path
                 class="hg-soft-number"
                 d="M6.48 18V17.28L9.3 16.8Q9.32 16.04 9.33 15.28Q9.34 14.52 9.34 13.78V6.56L6.7 6.78V5.96L10.82 4.9L11.1 5.1L11.02 7.96V13.78Q11.02 14.52 11.03 15.28Q11.04 16.04 11.06 16.8L13.9 17.28V18ZM76.5 85.26Q73.4 85.26 72.76 82.44Q73.02 81.76 73.78 81.76Q74.24 81.76 74.49 82.04Q74.74 82.32 74.94 83.12L75.22 84.2Q75.52 84.28 75.81 84.32Q76.1 84.36 76.36 84.36Q77.84 84.36 78.6 83.49Q79.36 82.62 79.36 81.18Q79.36 79.68 78.52 78.89Q77.68 78.1 76.24 78.1Q75.38 78.1 74.4 78.32L73.84 78.16L74.26 72.06H80.8V73.7H75.14L74.9 77.16Q75.36 77 75.82 76.94Q76.28 76.88 76.78 76.88Q78.74 76.88 79.95 77.93Q81.16 78.98 81.16 80.98Q81.16 82.26 80.58 83.22Q80 84.18 78.95 84.72Q77.9 85.26 76.5 85.26ZM7.62 147Q7.62 149.28 8.3 150.32Q8.98 151.36 10.08 151.36Q11.08 151.36 11.72 150.49Q12.36 149.62 12.36 148.06Q12.36 146.66 11.73 145.97Q11.1 145.28 10.06 145.28Q9.46 145.28 8.85 145.48Q8.24 145.68 7.66 146.16Q7.64 146.36 7.63 146.57Q7.62 146.78 7.62 147ZM10.12 152.26Q8.12 152.26 6.96 150.79Q5.8 149.32 5.8 146.76Q5.8 144.76 6.69 143.05Q7.58 141.34 9.3 140.21Q11.02 139.08 13.46 138.8L13.58 139.44Q10.86 140.14 9.48 141.66Q8.1 143.18 7.76 145.3Q9.04 144.06 10.66 144.06Q11.76 144.06 12.53 144.58Q13.3 145.1 13.72 145.99Q14.14 146.88 14.14 148.02Q14.14 149.28 13.56 150.24Q12.98 151.2 12.06 151.73Q11.14 152.26 10.12 152.26ZM7.9 275.7Q7.9 276.48 8.4 277.21Q8.9 277.94 10.38 278.7Q11.28 278 11.64 277.37Q12 276.74 12 275.92Q12 275.02 11.48 274.36Q10.96 273.7 10.02 273.7Q9.16 273.7 8.53 274.24Q7.9 274.78 7.9 275.7ZM10.02 286.26Q8.2 286.26 7.04 285.44Q5.88 284.62 5.88 283.02Q5.88 281.94 6.6 281.14Q7.32 280.34 8.7 279.66Q7.44 278.94 6.88 278.06Q6.32 277.18 6.32 276.14Q6.32 275.08 6.82 274.34Q7.32 273.6 8.17 273.2Q9.02 272.8 10.06 272.8Q11.64 272.8 12.57 273.66Q13.5 274.52 13.5 275.88Q13.5 276.58 13 277.42Q12.5 278.26 11.14 279.06Q12.62 279.8 13.36 280.66Q14.1 281.52 14.1 282.84Q14.1 283.84 13.56 284.62Q13.02 285.4 12.1 285.83Q11.18 286.26 10.02 286.26ZM7.54 282.9Q7.54 283.96 8.25 284.67Q8.96 285.38 10.06 285.38Q11.12 285.38 11.77 284.68Q12.42 283.98 12.42 282.98Q12.42 282.1 11.77 281.46Q11.12 280.82 9.44 280.04Q8.5 280.62 8.02 281.26Q7.54 281.9 7.54 282.9Z"
+                fill="#16130f"
               />
               <path
                 class="hg-accent-number"
                 d="M139.98 18V16.7Q140.78 15.92 141.53 15.15Q142.28 14.38 142.92 13.7Q144.42 12.12 145.12 10.83Q145.82 9.54 145.82 8.38Q145.82 7.14 145.17 6.42Q144.52 5.7 143.42 5.7Q143.22 5.7 142.97 5.72Q142.72 5.74 142.44 5.8L142.06 7.18Q141.86 7.92 141.59 8.24Q141.32 8.56 140.9 8.56Q140.58 8.56 140.31 8.38Q140.04 8.2 139.88 7.9Q140 6.84 140.58 6.15Q141.16 5.46 142.04 5.13Q142.92 4.8 143.92 4.8Q145.86 4.8 146.74 5.75Q147.62 6.7 147.62 8.2Q147.62 9.08 147.27 9.91Q146.92 10.74 146.06 11.78Q145.2 12.82 143.66 14.3Q143.26 14.7 142.69 15.24Q142.12 15.78 141.5 16.36H148.2V18ZM7.86 219 7.66 218.8 12.94 207.7H6.02V206.06H14.28V207.08L9.52 219Z"
+                fill="#f7f5ef"
               />
               <path
                 class="hg-number"
                 d="M210.72 18.26Q209.26 18.26 208.21 17.59Q207.16 16.92 206.88 15.42Q207.22 14.76 207.9 14.76Q208.42 14.76 208.65 15.1Q208.88 15.44 209.08 16.2L209.34 17.24Q209.68 17.32 209.96 17.34Q210.24 17.36 210.46 17.36Q211.94 17.36 212.68 16.59Q213.42 15.82 213.42 14.48Q213.42 13.18 212.66 12.44Q211.9 11.7 210.36 11.7H209.4V10.7H210.2Q211.56 10.7 212.31 9.99Q213.06 9.28 213.06 8Q213.06 6.9 212.43 6.3Q211.8 5.7 210.62 5.7Q210.42 5.7 210.2 5.72Q209.98 5.74 209.7 5.78L209.44 6.78Q209.28 7.4 209.04 7.71Q208.8 8.02 208.28 8.02Q207.96 8.02 207.7 7.86Q207.44 7.7 207.32 7.32Q207.58 6.06 208.58 5.43Q209.58 4.8 210.96 4.8Q212.72 4.8 213.76 5.67Q214.8 6.54 214.8 7.94Q214.8 9.02 214.11 9.88Q213.42 10.74 212.18 11.18Q213.72 11.48 214.46 12.34Q215.2 13.2 215.2 14.44Q215.2 15.52 214.64 16.38Q214.08 17.24 213.08 17.75Q212.08 18.26 210.72 18.26ZM278.92 18.3V14.74H273.48V13.68L279.42 4.88H280.58V13.48H282.68V14.74H280.58V18.3ZM274.66 13.48H278.92V7.02Z"
+                fill="#655e50"
               />
             </svg>
             <p class="crossword__notice">
@@ -565,9 +577,45 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
+                        alt="The Fly poster"
+                        width="600"
+                        height="900"
+                        referrerpolicy="no-referrer"
+                        src="covers/261ccbe19964f8d5.jpg"
+                      />
+                      <div class="reveal__line"><p class="card__title">The Fly</p></div>
+                      <div class="reveal__line"><p class="card__meta card__meta--maker">David Cronenberg</p></div>
+                      <p class="card__meta">1986</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 4 of 5" title="Rated 4 of 5">★★★★☆</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
+                        alt="You Can See Everything poster"
+                        width="600"
+                        height="900"
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        src="covers/2e04e3c3c95e8f17.jpg"
+                      />
+                      <div class="reveal__line"><p class="card__title">You Can See Everything</p></div>
+                      <div class="reveal__line">
+                        <p class="card__meta card__meta--maker">Lance Oppenheim &amp; Nathan Fielder</p>
+                      </div>
+                      <p class="card__meta">2026</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 5 of 5" title="Rated 5 of 5">★★★★★</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
                         alt="Dawn of the Dead poster"
                         width="600"
                         height="900"
+                        loading="lazy"
                         referrerpolicy="no-referrer"
                         src="covers/beda9c0b27fdbdde.jpg"
                       />
@@ -576,40 +624,6 @@ addEventListener("load",()=>watch.disconnect());
                       <p class="card__meta">1978</p>
                       <p class="card__signal">
                         <span role="img" aria-label="Rated 2½ of 5" title="Rated 2½ of 5">★★½☆☆</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="Rosemary's Baby poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="covers/81f169ca6326cfe0.jpg"
-                      />
-                      <div class="reveal__line"><p class="card__title">Rosemary's Baby</p></div>
-                      <div class="reveal__line"><p class="card__meta card__meta--maker">Roman Polanski</p></div>
-                      <p class="card__meta">1968</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="The Bourne Identity poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="covers/aa44eba10349921c.jpg"
-                      />
-                      <div class="reveal__line"><p class="card__title">The Bourne Identity</p></div>
-                      <div class="reveal__line"><p class="card__meta card__meta--maker">Doug Liman</p></div>
-                      <p class="card__meta">2002</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
                       </p>
                     </div>
                   </div>
@@ -684,14 +698,12 @@ addEventListener("load",()=>watch.disconnect());
               <p class="media__notice">Where those entries come from:</p>
               <ul class="media__sources">
                 <li data-source="album-card">
-                  <b>Listened.</b> These are the most recent albums in my personal music library, read by a custom tool
-                  I created for this site. And yes, that means I'm old-fashioned and nothing here comes from a streaming
-                  service.
+                  <b>Listened.</b> These are the latest albums in my personal music library, read by a custom tool I
+                  created for this site (yes, I'm old-fashioned: no streaming services).
                   <span class="media__source-credit">Source: Apple Music</span>
                 </li>
                 <li data-source="film-card">
-                  <b>Watched.</b> These are the most recent films from my Letterboxd diary, read by a custom tool I
-                  created for this site.
+                  <b>Watched.</b> These are my latest Letterboxd films, read by a custom tool I created for this site.
                   <span class="media__source-credit"
                     >Source:
                     <img
@@ -706,8 +718,7 @@ addEventListener("load",()=>watch.disconnect());
                   >
                 </li>
                 <li data-source="book-card">
-                  <b>Read.</b> These are the most recent books from my Goodreads shelves, read by a custom tool I
-                  created for this site.
+                  <b>Read.</b> These are my latest Goodreads books, read by a custom tool I created for this site.
                   <span class="media__source-credit">Source: Goodreads</span>
                 </li>
               </ul>
@@ -723,10 +734,11 @@ addEventListener("load",()=>watch.disconnect());
           
           <ul class="projects-teaser">
             <li><strong>Music Library Curation</strong>: Lyricsmith, Apple Music Toolbox</li>
-            <li><strong>Development Refinements</strong>: Claude Tools, APFS TM Snapfree, Git Workspace Backup</li>
+            <li><strong>Environment Remedies</strong>: Claude Tools, Workspace Safeguards</li>
+            <li><strong>Process Guardrails</strong>: Page Proofs, DocTether, OS Schedule Generator</li>
             <li><strong>Website Flourishes</strong>: Decorative Crossword, Media Feeds</li>
           </ul>
-          <p><a href="projects/">For more on each project, such as details and source, check them out here →</a></p>
+          <p>For more on each project, such as details and source, check them out <a href="projects/">here →</a></p>
           
         </section>
         
@@ -850,4 +862,4 @@ addEventListener("load",()=>watch.disconnect());
     
   </body>
 </html>
-<!-- Thanks for visiting! Nice to see you here :) -->
+<!-- ?puzzle=Thanks for visiting! Nice to see you here :) -->

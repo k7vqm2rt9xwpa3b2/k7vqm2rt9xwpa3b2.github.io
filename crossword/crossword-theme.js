@@ -12,6 +12,18 @@ button.setAttribute("aria-controls",PANEL_ID);
 button.parentNode.after(panel);
 return panel;
 }
+const LABEL_END=": ";
+function writeSentence(doc,panel,sentence){
+const end=sentence.indexOf(LABEL_END);
+if(end<=0||end+LABEL_END.length===sentence.length){
+panel.textContent=sentence;
+return;
+}
+const label=doc.createElement("strong");
+label.className="crossword__theme-label";
+label.textContent=sentence.slice(0,end+1);
+panel.replaceChildren(label,sentence.slice(end+1));
+}
 function linkedEntries(block){
 return block.entries.filter((entry)=>entry.answer===block.linked);
 }
@@ -84,7 +96,7 @@ return function(block,offered){
 putOutTheme(doc);
 onScreen=block;
 const sentence=block?block.theme:undefined;
-panel.textContent=sentence||"";
+writeSentence(doc,panel,sentence||"");
 panel.hidden=true;
 button.setAttribute("aria-expanded","false");
 button.hidden=!offered;

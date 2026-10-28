@@ -118,7 +118,7 @@ addEventListener("load",()=>watch.disconnect());
     </header>
     <main class="shell" id="main">
       
-      <pre class="reader-note">
+      <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
 ║ out of reader mode, this ║
@@ -140,7 +140,10 @@ addEventListener("load",()=>watch.disconnect());
       </noscript>
       <section>
         <h2 id="location-heading"><span id="location-name">Location</span></h2>
-        <p>A helper so you can browse to the tucked-away areas of the site more easily.</p>
+        <p>
+          A helper so you can browse to the tucked-away areas of the site more easily. Check history for some
+          inspiration.
+        </p>
         <div id="location-box" class="disclosure__panel location-box" data-disclosure-label="View" hidden>
           <div id="location-field" class="location-field" data-prefix="williamella.com/" data-go="Go →"></div>
         </div>
@@ -153,7 +156,10 @@ addEventListener("load",()=>watch.disconnect());
       </section>
       <section>
         <h2 id="visits-heading"><span id="visits-name">History</span></h2>
-        <p>View all the pages you've visited and understand where you can try browsing.</p>
+        <p>
+          View all the pages you've visited and understand where you can try browsing. If this looks a bit empty, browse
+          around a bit more and come back.
+        </p>
         <p id="visit-blocked">Error: this browser cannot keep a list of visited pages.</p>
         <p
           id="visit-empty"
@@ -168,7 +174,7 @@ addEventListener("load",()=>watch.disconnect());
       </section>
       <section>
         <h2 id="source-heading"><span id="source-name">Source</span></h2>
-        <p>View the current home page source and take a look around.</p>
+        <p>Wanna see where this all started?</p>
         <p
           id="source-status"
           class="debug__status"

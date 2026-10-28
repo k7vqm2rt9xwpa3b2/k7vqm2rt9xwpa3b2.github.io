@@ -1,4 +1,10 @@
 import{buildControlRow,renderControlRow}from"./now-pager-controls.js";
+import{
+RESIZE_SETTLE_MS,
+whenLayoutMayGoStale,
+whenTextMayRewrap,
+}from"./now-layout-stale.js";
+export{RESIZE_SETTLE_MS,whenLayoutMayGoStale,whenTextMayRewrap};
 const CAROUSEL_CLASS="is-carousel";
 export const SHOWING_CLASS="is-showing";
 export const CAROUSEL_ROLE="group";
@@ -11,15 +17,17 @@ return`${noun} from this month`;
 return`${noun} from ${heading.textContent.trim()}`;
 }
 export const MIN_SLIDES=1;
-export const RESIZE_SETTLE_MS=120;
 const VISIBLE_ENOUGH=0.6;
-function travelTo(state,index){
+function travelTo(state,index,behavior){
 const frame=state.frame.getBoundingClientRect();
 const slide=state.slides[index].getBoundingClientRect();
 state.frame.scrollBy({
 left:slide.left+slide.width/2-(frame.left+frame.width/2),
-behavior:state.reducedMotion?"auto":"smooth",
+behavior,
 });
+}
+function motionOf(state){
+return state.reducedMotion?"auto":"smooth";
 }
 function markShowing(slides,index){
 slides.forEach((slide,at)=>
@@ -35,53 +43,57 @@ state.onMove(index,total);
 }
 function wireArrows(state){
 state.prev.addEventListener("click",()=>{
-travelTo(state,Math.max(0,state.index-1));
+travelTo(state,Math.max(0,state.index-1),motionOf(state));
 });
 state.next.addEventListener("click",()=>{
-travelTo(state,Math.min(state.slides.length-1,state.index+1));
+const last=state.slides.length-1;
+travelTo(state,Math.min(last,state.index+1),motionOf(state));
 });
 }
 function followScrolling(state,ObserverCtor){
-const observer=new ObserverCtor(
+state.observer=new ObserverCtor(
 (entries)=>{
 const arrived=entries.find(
 (entry)=>
-entry.isIntersecting&&entry.intersectionRatio>=VISIBLE_ENOUGH,
+entry.isIntersecting&&
+entry.intersectionRatio>=VISIBLE_ENOUGH&&
+state.slides.includes(entry.target),
 );
 if(arrived===undefined){
 return;
 }
-showPosition(state,state.slides.indexOf(arrived.target));
+const index=state.slides.indexOf(arrived.target);
+if(index!==state.index){
+showPosition(state,index);
+}
 },
 {root:state.frame,threshold:VISIBLE_ENOUGH},
 );
-state.slides.forEach((slide)=>observer.observe(slide));
+state.slides.forEach((slide)=>state.observer.observe(slide));
+}
+function reslide(state,slides,index){
+if(slides.length<MIN_SLIDES){
+throw new Error("reslide needs at least one slide to show");
+}
+const at=Math.min(slides.length-1,Math.max(0,index));
+const moved=at!==state.index||slides.length!==state.slides.length;
+state.slides.forEach((slide)=>state.observer.unobserve(slide));
+markShowing(state.slides,-1);
+state.slides=slides;
+state.index=at;
+slides.forEach((slide)=>state.observer.observe(slide));
+travelTo(state,at,"auto");
+renderControlRow(state,at,slides.length);
+markShowing(slides,at);
+if(moved){
+state.onMove(at,slides.length);
+}
 }
 function refit(state){
 renderControlRow(state,state.index,state.slides.length);
 }
 function refitWhenStale(state){
 whenLayoutMayGoStale(state.window,()=>refit(state),{widthOnly:false});
-}
-export function whenLayoutMayGoStale(window,refit,{widthOnly}){
-const root=window.document.documentElement;
-let fittedWidth=root.clientWidth;
-let settle;
-window.addEventListener("resize",()=>{
-window.clearTimeout(settle);
-settle=window.setTimeout(()=>{
-const width=root.clientWidth;
-if(widthOnly&&width===fittedWidth){
-return;
-}
-fittedWidth=width;
-refit();
-},RESIZE_SETTLE_MS);
-});
-window.document.fonts?.ready.then(()=>refit());
-}
-export function whenTextMayRewrap(window,refit){
-whenLayoutMayGoStale(window,refit,{widthOnly:true});
 }
 export function initSlideCarousel({
 doc,
@@ -126,5 +138,8 @@ throw new Error(
 followScrolling(state,observerCtor);
 showPosition(state,0);
 refitWhenStale(state);
-return{controls:row.controls};
+return{
+controls:row.controls,
+reslide:(next,index)=>reslide(state,next,index),
+};
 }

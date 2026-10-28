@@ -1,15 +1,10 @@
 import{
-CAROUSEL_ROLE,
-CAROUSEL_ROLEDESCRIPTION,
 entryLabel,
+initSlideCarousel,
 whenLayoutMayGoStale,
 }from"./now-carousel.js";
-import{paginate,tallestPage}from"./now-notes-paging.js";
-import{
-buildControlRow,
-buildLiveRegion,
-renderControlRow,
-}from"./now-pager-controls.js";
+import{paginateEvenly,tallestPage}from"./now-notes-paging.js";
+import{buildLiveRegion}from"./now-pager-controls.js";
 const PAGED_CLASS="is-paged";
 const MIN_NOTES=1;
 function measureGap(list,notes){
@@ -23,6 +18,7 @@ notes[0].getBoundingClientRect().bottom
 );
 }
 function measure(pager,list,notes){
+pager.replaceChildren(list);
 list.replaceChildren();
 const room=pager.clientHeight;
 const gap=measureGap(list,notes);
@@ -33,12 +29,6 @@ return note.getBoundingClientRect().height;
 list.replaceChildren();
 return{room,gap,heights};
 }
-function show(state){
-const{list,notes,pages,at}=state;
-list.replaceChildren(...pages[at].map((index)=>notes[index]));
-renderControlRow(state,at,pages.length);
-state.live.textContent=`Notes ${at+1} of ${pages.length}`;
-}
 function ceilingOf(window,pager){
 const ceiling=Number.parseFloat(window.getComputedStyle(pager).maxHeight);
 return Number.isFinite(ceiling)?ceiling:null;
@@ -46,74 +36,73 @@ return Number.isFinite(ceiling)?ceiling:null;
 function rebuild(state){
 state.pager.style.height="";
 if(state.pager.clientHeight<=0){
-markUnpaged(state);
 return;
 }
+const reached=state.pages[state.at][0];
 const ceiling=ceilingOf(state.window,state.pager);
 const{room,gap,heights}=measure(state.pager,state.list,state.notes);
-state.pages=paginate(heights,gap,ceiling??room);
+state.pages=paginateEvenly(heights,gap,ceiling??room,{
+boxFromPages:ceiling!==null,
+});
 if(ceiling!==null){
 state.pager.style.height=`${tallestPage(heights,gap,state.pages)}px`;
 }
-state.at=clampPage(state,state.at);
-show(state);
+const lists=buildPageLists(state);
+state.pager.replaceChildren(...lists);
+state.carousel.reslide(
+lists,
+state.pages.findIndex((page)=>page.includes(reached)),
+);
 }
-function markUnpaged(state){
-if(state.pages.length>0){
-return;
+function buildPageLists(state){
+return state.pages.map((page,at)=>{
+const list=at===0?state.list:state.list.cloneNode(false);
+list.replaceChildren(...page.map((index)=>state.notes[index]));
+return list;
+});
 }
-for(const arrow of[state.prev,state.next]){
-arrow.setAttribute("aria-disabled","true");
-}
-}
-function clampPage(state,at){
-return Math.max(0,Math.min(at,state.pages.length-1));
-}
-function step(state,delta){
-state.at=clampPage(state,state.at+delta);
-show(state);
-}
-function wire(state){
-const{window,prev,next}=state;
-prev.addEventListener("click",()=>step(state,-1));
-next.addEventListener("click",()=>step(state,1));
-whenLayoutMayGoStale(window,()=>rebuild(state),{widthOnly:false});
-}
-function initOneCarousel(window,band,list,notes){
+function initOneCarousel(window,band,list,notes,ObserverCtor){
 const doc=window.document;
 const pager=doc.createElement("div");
 pager.className="now-pager";
-pager.setAttribute("role",CAROUSEL_ROLE);
-pager.setAttribute("aria-roledescription",CAROUSEL_ROLEDESCRIPTION);
-pager.setAttribute("aria-label",entryLabel(band,"Notes"));
 list.replaceWith(pager);
 pager.append(list);
-const{controls,prev,next,strip,count}=buildControlRow(doc,{
-previous:"Previous notes",
-next:"Next notes",
-});
 const live=buildLiveRegion(doc);
-pager.after(controls,live);
 band.classList.add(PAGED_CLASS);
 const state={
 window,
-doc,
 pager,
 list,
 notes,
-controls,
-prev,
-next,
-strip,
-count,
-live,
-pages:[],
+pages:[notes.map((note,index)=>index)],
 at:0,
+carousel:((null)),
 };
-wire(state);
+state.carousel=(
+initSlideCarousel({
+doc,
+frame:pager,
+slides:[list],
+labels:{
+carousel:entryLabel(band,"Notes"),
+previous:"Previous notes",
+next:"Next notes",
+},
+observerCtor:ObserverCtor,
+place:(row)=>pager.after(row,live),
+onMove:(index,total)=>{
+state.at=index;
+live.textContent=`Notes ${index+1} of ${total}`;
+},
+})
+);
+whenLayoutMayGoStale(window,()=>rebuild(state),{widthOnly:false});
 rebuild(state);
 }
-export function initNoteCarousel(window){
+export function initNoteCarousel(window,ObserverCtor){
+if(typeof ObserverCtor!=="function"){
+return;
+}
 const bands=[...window.document.querySelectorAll(".now-body")];
 bands.forEach((band)=>{
 const list=band.querySelector(".now-notes");
@@ -122,7 +111,7 @@ return;
 }
 const notes=[...list.querySelectorAll(".now-note")];
 if(notes.length>=MIN_NOTES){
-initOneCarousel(window,band,list,notes);
+initOneCarousel(window,band,list,notes,ObserverCtor);
 }
 });
 }

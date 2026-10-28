@@ -83,6 +83,7 @@ addEventListener("load",()=>watch.disconnect());
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/mode.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-archive-years.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-carousel.js" />
+    <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-layout-stale.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-notes-paging.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-notes.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="../../shared/now-pager-controls.js" />
@@ -135,7 +136,7 @@ addEventListener("load",()=>watch.disconnect());
       <section class="archive__year">
         <h2>2026</h2>
         <div class="now-body">
-          <pre class="reader-note">
+          <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
 ║ out of reader mode, this ║
@@ -238,7 +239,7 @@ addEventListener("load",()=>watch.disconnect());
     </main>
     
     <footer class="colophon">
-      <pre class="reader-note">
+      <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
 ║ out of reader mode, this ║

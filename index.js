@@ -15,7 +15,7 @@ initMode(window);
 initDisclosures(document);
 fitNewestSlides(document);
 initPhotoCarousel(window,window.IntersectionObserver);
-initNoteCarousel(window);
+initNoteCarousel(window,window.IntersectionObserver);
 const crosswordOptions={
 search:window.location.search,
 random:Math.random,

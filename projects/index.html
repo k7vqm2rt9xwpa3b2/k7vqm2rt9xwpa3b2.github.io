@@ -123,7 +123,7 @@ addEventListener("load",()=>watch.disconnect());
     </header>
     <main class="shell" id="main">
       
-      <pre class="reader-note">
+      <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
 ║ out of reader mode, this ║
@@ -133,9 +133,8 @@ addEventListener("load",()=>watch.disconnect());
       
       <h1>Projects</h1>
       <p>
-        On this page you'll find an assortment of what I've been working on. As you can see, it both intersects with my
-        interests and also shows you my development approach. Everything here is on GitHub and licensed so others can
-        use it.
+        Check out an assortment of what I've been working on. As you can see, it both intersects with my interests and
+        shows my development approach. Everything here is on GitHub and licensed so others can use it.
       </p>
       <h2>Music Library Curation</h2>
       <p>For those of us who still maintain a local music library, upkeep is paramount (and part of the fun!).</p>
@@ -157,8 +156,8 @@ addEventListener("load",()=>watch.disconnect());
               <a href="https://github.com/blink9cd/lyricsmith/tree/main/album">Album</a>
             </p>
             <p class="project-tool__text">
-              Finds both synced and untimed lyrics for every track on an album using a variety of sources. It supports
-              writing both sidecars and direct embeddings into MP3s.
+              Finds both synced and untimed lyrics for every track on an album using a variety of sources. It can write
+              LRC/TXT sidecar files or embed SYLT/USLT lyrics directly into MP3s.
             </p>
           </li>
           <li class="project-tool">
@@ -192,8 +191,8 @@ addEventListener("load",()=>watch.disconnect());
               <a href="https://github.com/blink9cd/lyricsmith/tree/main/album">Album</a>
             </p>
             <p class="project-tool__text">
-              Finds both synced and untimed lyrics for every track on an album using a variety of sources. It supports
-              writing both sidecars and direct embeddings into MP3s.
+              Finds both synced and untimed lyrics for every track on an album using a variety of sources. It can write
+              LRC/TXT sidecar files or embed SYLT/USLT lyrics directly into MP3s.
             </p>
           </li>
           <li class="project-tool">
@@ -235,22 +234,22 @@ addEventListener("load",()=>watch.disconnect());
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/album_stats">Album Stats</a>
             </p>
             <p class="project-tool__text">
-              Reports various stats about an album such as track count, favorite tracks, and year.
+              Reports various stats about an album, such as track count, favorite tracks, and year.
             </p>
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/recently_added">Recently Added</a>
             </p>
-            <p class="project-tool__text">Finds the most recently added albums to Apple Music.</p>
+            <p class="project-tool__text">Finds the albums most recently added to Apple Music.</p>
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/tag_refresh">Tag Refresh</a>
             </p>
             <p class="project-tool__text">
-              Makes the Music app reread the tags of MP3s that changed on disk, so the lyrics, titles and album names it
-              shows match the files again.
+              Makes the Music app reread the tags of MP3s that changed on disk, so the lyrics, titles, and album names
+              it shows match the files again.
             </p>
           </li>
         </ul>
@@ -262,33 +261,35 @@ addEventListener("load",()=>watch.disconnect());
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/album_stats">Album Stats</a>
             </p>
             <p class="project-tool__text">
-              Reports various stats about an album such as track count, favorite tracks, and year.
+              Reports various stats about an album, such as track count, favorite tracks, and year.
             </p>
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/recently_added">Recently Added</a>
             </p>
-            <p class="project-tool__text">Finds the most recently added albums to Apple Music.</p>
+            <p class="project-tool__text">Finds the albums most recently added to Apple Music.</p>
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
               <a href="https://github.com/blink9cd/apple-music-toolbox/tree/main/tag_refresh">Tag Refresh</a>
             </p>
             <p class="project-tool__text">
-              Makes the Music app reread the tags of MP3s that changed on disk, so the lyrics, titles and album names it
-              shows match the files again.
+              Makes the Music app reread the tags of MP3s that changed on disk, so the lyrics, titles, and album names
+              it shows match the files again.
             </p>
           </li>
         </ul>
       </noscript>
-      <h2>Development Refinements</h2>
-      <p>Frictions and risks exist in every development environment and have a way of demanding a fix.</p>
+      <h2>Environment Remedies</h2>
+      <p>
+        Frictions exist in every development environment. Here are a few solutions for the ones that got annoying enough
+        to fix.
+      </p>
       <h3>Claude Tools</h3>
       <p>
-        Working with Claude is great, but it definitely has its quirks, especially regarding sessions and token usage.
-        Here are a few tools to improve the experience. Note that these might go out of date one day if Anthropic gets
-        its act together.
+        Claude certainly has its quirks, especially regarding sessions and token usage. Here are a few tools to improve
+        the experience. Note that these might go out of date one day if Anthropic fixes those quirks.
       </p>
       <div
         class="disclosure__panel project-tools__panel"
@@ -344,29 +345,326 @@ addEventListener("load",()=>watch.disconnect());
           </li>
         </ul>
       </noscript>
-      <h3><a href="https://github.com/blink9cd/apfs-tm-snapfree">APFS TM Snapfree</a></h3>
+      <h3>Workspace Safeguards</h3>
+      <p>A busy workspace often introduces issues that aren't immediately apparent.</p>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-workspace-safeguards"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/development-tools/tree/main/git_workspace_backup"
+                >Git Workspace Backup</a
+              >
+            </p>
+            <p class="project-tool__text">
+              Developing on a single computer can be dangerous, even when using remote version control. This tool keeps
+              a daily backup of an entire environment on an external drive.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/apfs-tm-snapfree">APFS TM Snapfree</a>
+            </p>
+            <p class="project-tool__text">
+              Git worktrees and Time Machine don't play nicely with your APFS drive when you have a lot of sessions
+              going on. This is one way of keeping their snapshots permanently in check.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/development-tools/tree/main/git_workspace_backup"
+                >Git Workspace Backup</a
+              >
+            </p>
+            <p class="project-tool__text">
+              Developing on a single computer can be dangerous, even when using remote version control. This tool keeps
+              a daily backup of an entire environment on an external drive.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/apfs-tm-snapfree">APFS TM Snapfree</a>
+            </p>
+            <p class="project-tool__text">
+              Git worktrees and Time Machine don't play nicely with your APFS drive when you have a lot of sessions
+              going on. This is one way of keeping their snapshots permanently in check.
+            </p>
+          </li>
+        </ul>
+      </noscript>
+      <h2>Process Guardrails</h2>
+      <p>Checks that run before anything ships, so pages, docs, and schedules stay right for every branch.</p>
+      <h3>Page Proofs</h3>
       <p>
-        Git worktrees and Time Machine don't play nicely with your APFS hard drive when you have a lot of sessions going
-        on. This is one way of permanently containing them.
+        These tools pull a proof of a website by checking speed, rendering, and printing behavior on your own machine
+        before anything goes live.
       </p>
-      <h3>
-        <a href="https://github.com/blink9cd/development-tools/tree/main/git_workspace_backup">Git Workspace Backup</a>
-      </h3>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-page-proofs"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/lighthouse_run">Lighthouse Run</a>
+            </p>
+            <p class="project-tool__text">
+              Measures each page with a pinned version of Lighthouse, running several passes and keeping the median so
+              one slow run can't skew the score.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/browser_pass">Browser Pass</a>
+            </p>
+            <p class="project-tool__text">
+              Renders every page in Chromium, Firefox, and WebKit, at every screen size, in light and dark, with scripts
+              on and off, and flags where one engine's layout differs from the others.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/print_pass">Print Pass</a>
+            </p>
+            <p class="project-tool__text">
+              Prints every page to PDF in Chrome and Firefox and compares the results, so a printed page comes out as
+              expected.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/lighthouse_run">Lighthouse Run</a>
+            </p>
+            <p class="project-tool__text">
+              Measures each page with a pinned version of Lighthouse, running several passes and keeping the median so
+              one slow run can't skew the score.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/browser_pass">Browser Pass</a>
+            </p>
+            <p class="project-tool__text">
+              Renders every page in Chromium, Firefox, and WebKit, at every screen size, in light and dark, with scripts
+              on and off, and flags where one engine's layout differs from the others.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/page-proofs/tree/main/print_pass">Print Pass</a>
+            </p>
+            <p class="project-tool__text">
+              Prints every page to PDF in Chrome and Firefox and compares the results, so a printed page comes out as
+              expected.
+            </p>
+          </li>
+        </ul>
+      </noscript>
+      <h3>DocTether</h3>
       <p>
-        We all know developing on a single computer can be dangerous, even with remote version control. That doesn't
-        always stop us from doing it though... This tool keeps a daily backup of an entire environment on an external
-        drive.
+        Docs drift the moment the code changes. These checks tie each doc to what it describes and fail the build when
+        the two disagree.
       </p>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-doctether"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/doc-tether/tree/main/shellcheck_md">ShellCheck MD</a>
+            </p>
+            <p class="project-tool__text">
+              Runs ShellCheck over every shell example in your Markdown, so a broken command in a README fails the build
+              instead of reaching your readers.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/doc-tether/tree/main/cli_doc_consistency">CLI Doc Consistency</a>
+            </p>
+            <p class="project-tool__text">
+              Compares a Python tool's documentation with the options its parser actually defines, and fails when one is
+              missing, renamed, or out of date.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/doc-tether/tree/main/shellcheck_md">ShellCheck MD</a>
+            </p>
+            <p class="project-tool__text">
+              Runs ShellCheck over every shell example in your Markdown, so a broken command in a README fails the build
+              instead of reaching your readers.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/doc-tether/tree/main/cli_doc_consistency">CLI Doc Consistency</a>
+            </p>
+            <p class="project-tool__text">
+              Compares a Python tool's documentation with the options its parser actually defines, and fails when one is
+              missing, renamed, or out of date.
+            </p>
+          </li>
+        </ul>
+      </noscript>
+      <h3>OS Schedule Generator</h3>
+      <p>
+        Every OS schedules jobs its own way. Describe a weekly or daily job once and get the right file for Windows,
+        Linux, and macOS.
+      </p>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-os-schedule-generator"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/os-schedule-gen#command-line">Command Line</a>
+            </p>
+            <p class="project-tool__text">
+              Turns one schedule into ready-to-install scheduler files for every platform, written to a folder you
+              choose.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/os-schedule-gen#the-library">Library</a>
+            </p>
+            <p class="project-tool__text">
+              Hands back the same scheduler files as text, for Python code that builds its own scheduled jobs.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/os-schedule-gen#command-line">Command Line</a>
+            </p>
+            <p class="project-tool__text">
+              Turns one schedule into ready-to-install scheduler files for every platform, written to a folder you
+              choose.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/os-schedule-gen#the-library">Library</a>
+            </p>
+            <p class="project-tool__text">
+              Hands back the same scheduler files as text, for Python code that builds its own scheduled jobs.
+            </p>
+          </li>
+        </ul>
+      </noscript>
       <h2>Website Flourishes</h2>
+      <p>A collection of tools made specifically to enhance this site.</p>
+      <h3>Decorative Crossword</h3>
       <p>
-        Of course, we can't leave out this website itself! This section is a collection of tools made as part of
-        creating this site.
+        A fun generator so you can go from a word bank to a puzzle. The emphasis here is on relaxing the game's rules
+        just enough to focus on design and presentation.
       </p>
-      <h3><a href="https://github.com/blink9cd/decorative-crossword">Decorative Crossword</a></h3>
-      <p>
-        A fun generator so you can go from a word bank to a puzzle. The emphasis here is on relaxing the rules just
-        enough to focus on the design.
-      </p>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-decorative-crossword"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/decorative-crossword#fill">Fill</a></p>
+            <p class="project-tool__text">
+              Searches for a grid that fits your word bank, size, and density, and keeps the best one it finds. Pin the
+              answers you want featured and it builds around them.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/decorative-crossword#preview">Preview</a>
+            </p>
+            <p class="project-tool__text">
+              Draws any grid as an SVG, including ones made by hand, so you can see its shape before using it.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/decorative-crossword#shade">Shade</a>
+            </p>
+            <p class="project-tool__text">
+              Finds a hidden word the finished grid can spell in shaded squares, choosing cells that scatter across the
+              grid like a printed crossword's.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/decorative-crossword#gaps">Gaps</a></p>
+            <p class="project-tool__text">
+              Shows which blocked cells could still hold a letter, and what words the bank would need to fill them.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/decorative-crossword#fill">Fill</a></p>
+            <p class="project-tool__text">
+              Searches for a grid that fits your word bank, size, and density, and keeps the best one it finds. Pin the
+              answers you want featured and it builds around them.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/decorative-crossword#preview">Preview</a>
+            </p>
+            <p class="project-tool__text">
+              Draws any grid as an SVG, including ones made by hand, so you can see its shape before using it.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <a href="https://github.com/blink9cd/decorative-crossword#shade">Shade</a>
+            </p>
+            <p class="project-tool__text">
+              Finds a hidden word the finished grid can spell in shaded squares, choosing cells that scatter across the
+              grid like a printed crossword's.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label"><a href="https://github.com/blink9cd/decorative-crossword#gaps">Gaps</a></p>
+            <p class="project-tool__text">
+              Shows which blocked cells could still hold a letter, and what words the bank would need to fill them.
+            </p>
+          </li>
+        </ul>
+      </noscript>
       <h3>Media Feeds</h3>
       <p>
         Various tools for querying both local and network APIs to generate reports on recent media consumption history.
@@ -381,8 +679,10 @@ addEventListener("load",()=>watch.disconnect());
         <ul class="project-tools">
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/album_scan">Album Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/cover_art">Cover Art</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/album_scan">Album Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/cover_art">Cover Art</a></span
+              >
             </p>
             <p class="project-tool__text">
               Finds the most recently added albums and fetches each one's cover art at a chosen size.
@@ -390,8 +690,12 @@ addEventListener("load",()=>watch.disconnect());
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/film_scan">Film Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/wikidata_director">Wikidata Director</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/film_scan">Film Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/wikidata_director"
+                  >Wikidata Director</a
+                ></span
+              >
             </p>
             <p class="project-tool__text">
               Reads a public Letterboxd diary feed for the most recently watched films, then looks up each film's
@@ -400,8 +704,10 @@ addEventListener("load",()=>watch.disconnect());
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/book_scan">Book Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/feed_read">Feed Read</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/book_scan">Book Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/feed_read">Feed Read</a></span
+              >
             </p>
             <p class="project-tool__text">Scans a public Goodreads shelf feed for the most recently read books.</p>
           </li>
@@ -411,8 +717,10 @@ addEventListener("load",()=>watch.disconnect());
         <ul class="project-tools">
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/album_scan">Album Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/cover_art">Cover Art</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/album_scan">Album Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/cover_art">Cover Art</a></span
+              >
             </p>
             <p class="project-tool__text">
               Finds the most recently added albums and fetches each one's cover art at a chosen size.
@@ -420,8 +728,12 @@ addEventListener("load",()=>watch.disconnect());
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/film_scan">Film Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/wikidata_director">Wikidata Director</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/film_scan">Film Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/wikidata_director"
+                  >Wikidata Director</a
+                ></span
+              >
             </p>
             <p class="project-tool__text">
               Reads a public Letterboxd diary feed for the most recently watched films, then looks up each film's
@@ -430,8 +742,10 @@ addEventListener("load",()=>watch.disconnect());
           </li>
           <li class="project-tool">
             <p class="project-tool__label">
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/book_scan">Book Scan</a> ·
-              <a href="https://github.com/blink9cd/media-feeds/tree/main/feed_read">Feed Read</a>
+              <span
+                ><a href="https://github.com/blink9cd/media-feeds/tree/main/book_scan">Book Scan</a> ·
+                <a href="https://github.com/blink9cd/media-feeds/tree/main/feed_read">Feed Read</a></span
+              >
             </p>
             <p class="project-tool__text">Scans a public Goodreads shelf feed for the most recently read books.</p>
           </li>
