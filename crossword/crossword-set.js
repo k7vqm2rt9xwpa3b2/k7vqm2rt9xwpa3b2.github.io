@@ -2,7 +2,7 @@ import{addressReaction,addressedPuzzle}from"./crossword-address.js";
 import{drawRefreshArrow}from"./crossword-arrow.js";
 import{drawFromDeck}from"./crossword-deck.js";
 import{wireDismissal}from"./crossword-dismiss.js";
-import{resetReadout}from"./crossword-interact.js";
+import{resetReadout}from"./crossword-readout.js";
 import{loadPuzzles}from"./crossword-load.js";
 import{settlePuzzleNumber}from"./crossword-number.js";
 import{

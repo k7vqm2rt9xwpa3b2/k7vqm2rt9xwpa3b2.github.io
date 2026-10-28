@@ -1,73 +1,31 @@
-import{entryId,entryIdsIn,squareKey}from"./crossword-anchor.js";
-import{squareOf}from"./crossword-interact.js";
+import{squareKey}from"./crossword-anchor.js";
+import{
+THEME_LIT,
+clearSelection,
+deselect,
+markAsSelected,
+squareOf,
+}from"./crossword-interact.js";
+import{linkedEntries,themeLine,writeReadout}from"./crossword-readout.js";
 import{elementFor}from"./crossword-settings.js";
-const THEME_LIT="is-theme-lit";
-export const PANEL_ID="crossword-theme-panel";
-function buildPanel(doc,button){
-const panel=doc.createElement("p");
-panel.id=PANEL_ID;
-panel.className="crossword__theme-panel";
-panel.hidden=true;
-button.setAttribute("aria-controls",PANEL_ID);
-button.parentNode.after(panel);
-return panel;
-}
-const LABEL_END=": ";
-function writeSentence(doc,panel,sentence){
-const end=sentence.indexOf(LABEL_END);
-if(end<=0||end+LABEL_END.length===sentence.length){
-panel.textContent=sentence;
-return;
-}
-const label=doc.createElement("strong");
-label.className="crossword__theme-label";
-label.textContent=sentence.slice(0,end+1);
-panel.replaceChildren(label,sentence.slice(end+1));
-}
-function linkedEntries(block){
-return block.entries.filter((entry)=>entry.answer===block.linked);
-}
-function squaresOfEntries(mount,entries){
-const ids=entries.map(entryId);
-const squares=new Set();
-mount.querySelectorAll(".cw-cell").forEach(function(cell){
-const tokens=entryIdsIn(cell.getAttribute("data-entries"));
-if(tokens.some((token)=>ids.includes(token))){
-squares.add(squareOf(cell));
-}
-});
-return squares;
-}
-function lightOwnNumbers(mount,entries,squares){
-const numbers=entries.map((entry)=>String(entry.number));
-mount.querySelectorAll(".cw-number").forEach(function(number){
-if(squares.has(squareOf(number))&&numbers.includes(number.textContent)){
-number.classList.add(THEME_LIT);
-}
-});
-}
-function lightSquares(mount,selector,squares){
-mount.querySelectorAll(selector).forEach(function(element){
-if(squares.has(squareOf(element))){
-element.classList.add(THEME_LIT);
-}
-});
-}
-function lightTheme(doc,block){
-const mount=(elementFor(doc,"mount"));
+function showTheme(doc,block,button){
 const circled=new Set(
 (block.circled||[]).map(([row,col])=>squareKey(row,col)),
 );
-lightSquares(mount,".cw-cell, .cw-letter, .cw-circle",circled);
-const entries=linkedEntries(block);
-const linked=squaresOfEntries(mount,entries);
-lightSquares(mount,".cw-cell, .cw-letter",linked);
-lightOwnNumbers(mount,entries,linked);
-}
-function putOutTheme(doc){
-doc.querySelectorAll("."+THEME_LIT).forEach(function(element){
-element.classList.remove(THEME_LIT);
+clearSelection(doc);
+linkedEntries(block).forEach(function(entry){
+markAsSelected(doc,block,entry,circled);
 });
+const mount=(elementFor(doc,"mount"));
+mount
+.querySelectorAll(".cw-cell, .cw-letter, .cw-circle")
+.forEach(function(element){
+if(circled.has(squareOf(element))){
+element.classList.add(THEME_LIT);
+}
+});
+button.setAttribute("aria-pressed","true");
+writeReadout(doc,[themeLine((block.theme))]);
 }
 export function initThemeControl(doc){
 const button=(
@@ -77,29 +35,23 @@ if(!button){
 return function(){};
 }
 button.disabled=true;
-const panel=buildPanel(doc,button);
+button.setAttribute("aria-pressed","false");
 let onScreen=null;
 button.addEventListener("click",function(){
 if(button.disabled){
 return;
 }
-const opening=panel.hidden;
-panel.hidden=!opening;
-button.setAttribute("aria-expanded",String(opening));
-if(opening){
-lightTheme(doc,(onScreen));
+if(button.getAttribute("aria-pressed")==="true"){
+deselect(doc);
 }else{
-putOutTheme(doc);
+showTheme(doc,(onScreen),button);
 }
 });
 return function(block,offered){
-putOutTheme(doc);
+clearSelection(doc);
 onScreen=block;
-const sentence=block?block.theme:undefined;
-writeSentence(doc,panel,sentence||"");
-panel.hidden=true;
-button.setAttribute("aria-expanded","false");
+button.setAttribute("aria-pressed","false");
 button.hidden=!offered;
-button.disabled=!sentence;
+button.disabled=!(block&&block.theme);
 };
 }

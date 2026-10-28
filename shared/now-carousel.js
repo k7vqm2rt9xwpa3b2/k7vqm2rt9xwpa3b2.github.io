@@ -21,8 +21,12 @@ const VISIBLE_ENOUGH=0.6;
 function travelTo(state,index,behavior){
 const frame=state.frame.getBoundingClientRect();
 const slide=state.slides[index].getBoundingClientRect();
-state.frame.scrollBy({
-left:slide.left+slide.width/2-(frame.left+frame.width/2),
+state.frame.scrollTo({
+left:
+state.frame.scrollLeft+
+slide.left+
+slide.width/2-
+(frame.left+frame.width/2),
 behavior,
 });
 }

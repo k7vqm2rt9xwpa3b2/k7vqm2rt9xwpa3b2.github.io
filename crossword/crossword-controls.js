@@ -5,25 +5,25 @@ Object.freeze({
 name:"exit",
 words:"exitLabel",
 face:"×",
-discloses:false,
+toggles:false,
 }),
 Object.freeze({
 name:"start",
 words:"startLabel",
 face:null,
-discloses:false,
+toggles:false,
 }),
 Object.freeze({
 name:"next",
 words:"nextLabel",
 face:"",
-discloses:false,
+toggles:false,
 }),
 Object.freeze({
 name:"theme",
 words:"themeLabel",
 face:null,
-discloses:true,
+toggles:true,
 }),
 ]);
 function buildControl(doc,control,id,words){
@@ -38,8 +38,8 @@ button.textContent=words;
 button.setAttribute("aria-label",words);
 button.textContent=control.face;
 }
-if(control.discloses){
-button.setAttribute("aria-expanded","false");
+if(control.toggles){
+button.setAttribute("aria-pressed","false");
 }
 return button;
 }

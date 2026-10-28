@@ -57,10 +57,10 @@ svg.contains(to)&&
 to.matches(".cw-circle-hit, .cw-hit")
 );
 }
-export function wireCircleHit(doc,rect,svg,clue){
+export function wireCircleHit(doc,rect,svg,data){
 function previewWord(){
 if(!gridHeld(doc)){
-lightSpotlight(doc,svg,false,clue);
+lightSpotlight(doc,svg,false,data);
 }
 }
 function pressWord(){
@@ -68,7 +68,7 @@ if(spotlightHeld(doc)){
 deselect(doc);
 return;
 }
-lightSpotlight(doc,svg,true,clue);
+lightSpotlight(doc,svg,true,data);
 }
 rect.addEventListener("pointerenter",function(event){
 if(event.pointerType!=="touch"){
@@ -81,7 +81,7 @@ dimSpotlight(doc,svg);
 }
 });
 rect.addEventListener("click",pressWord);
-if(!clue){
+if(!data.circled_clue){
 return;
 }
 rect.addEventListener("focus",previewWord);

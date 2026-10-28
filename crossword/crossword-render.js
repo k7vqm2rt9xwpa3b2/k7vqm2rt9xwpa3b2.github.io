@@ -207,7 +207,7 @@ height:CELL,
 ?{...stop,"aria-label":clue}
 :{"aria-hidden":"true"}),
 });
-wireCircleHit(doc,square,svg,clue);
+wireCircleHit(doc,square,svg,data);
 svg.appendChild(square);
 });
 }

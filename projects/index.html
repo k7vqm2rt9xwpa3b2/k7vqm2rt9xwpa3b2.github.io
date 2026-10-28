@@ -92,21 +92,7 @@ addEventListener("load",()=>watch.disconnect());
     <header class="masthead">
       
       <div class="masthead__brand">
-        <a class="masthead__name" href="../index.html" data-name="Billy Ella">Billy Ella</a>
-        <svg class="masthead__filters" width="0" height="0" aria-hidden="true" focusable="false">
-          <filter id="masthead-bevel" x="-5%" y="-20%" width="110%" height="140%" color-interpolation-filters="sRGB">
-            <feOffset in="SourceAlpha" dx="1.1" dy="1.1" result="o" />
-            <feComposite in="SourceAlpha" in2="o" operator="out" result="rim" />
-            <feMorphology in="SourceAlpha" operator="erode" radius="0.5" result="inner" />
-            <feComposite in="rim" in2="inner" operator="in" result="rim2" />
-            <feFlood flood-color="#ffffff" flood-opacity="0.85" />
-            <feComposite in2="rim2" operator="in" result="hi" />
-            <feMerge>
-              <feMergeNode in="SourceGraphic" />
-              <feMergeNode in="hi" />
-            </feMerge>
-          </filter>
-        </svg>
+        <a class="masthead__name" href="../index.html">Billy Ella</a>
       </div>
       <details class="masthead__menu">
         <summary aria-controls="masthead-sections">Menu</summary>
@@ -277,6 +263,88 @@ addEventListener("load",()=>watch.disconnect());
             <p class="project-tool__text">
               Makes the Music app reread the tags of MP3s that changed on disk, so the lyrics, titles, and album names
               it shows match the files again.
+            </p>
+          </li>
+        </ul>
+      </noscript>
+      <h2>&lt;placeholder-retrolog-group&gt;</h2>
+      <p>&lt;placeholder-retrolog-group-sentence&gt;</p>
+      <h3>Retrolog</h3>
+      <p>Turns a folder of old, hand-kept film lists into files Letterboxd can import.</p>
+      <div
+        class="disclosure__panel project-tools__panel"
+        id="tools-retrolog"
+        data-disclosure-label="explore"
+        data-disclosure-name
+        hidden
+      >
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span
+                ><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_survey">Survey</a> ·
+                <a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_parse">Parse</a></span
+              >
+            </p>
+            <p class="project-tool__text">
+              Reports which formats and rating marks each part of the folder uses, then turns every line into a dated,
+              rated row by rules you write from that report.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span
+                ><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_resolve">Resolve</a> ·
+                <a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_review">Review</a></span
+              >
+            </p>
+            <p class="project-tool__text">
+              Matches each title to a TMDb entry, and puts the ones it can't settle alone on a local page for you to
+              pick from.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_export">Export</a></span>
+            </p>
+            <p class="project-tool__text">
+              Writes numbered Letterboxd import files holding only the films your account doesn't have yet.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <noscript>
+        <ul class="project-tools">
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span
+                ><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_survey">Survey</a> ·
+                <a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_parse">Parse</a></span
+              >
+            </p>
+            <p class="project-tool__text">
+              Reports which formats and rating marks each part of the folder uses, then turns every line into a dated,
+              rated row by rules you write from that report.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span
+                ><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_resolve">Resolve</a> ·
+                <a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_review">Review</a></span
+              >
+            </p>
+            <p class="project-tool__text">
+              Matches each title to a TMDb entry, and puts the ones it can't settle alone on a local page for you to
+              pick from.
+            </p>
+          </li>
+          <li class="project-tool">
+            <p class="project-tool__label">
+              <span><a href="https://github.com/blink9cd/retrolog/tree/main/retrolog_export">Export</a></span>
+            </p>
+            <p class="project-tool__text">
+              Writes numbered Letterboxd import files holding only the films your account doesn't have yet.
             </p>
           </li>
         </ul>

@@ -1,4 +1,9 @@
 import{entryId,entryIdsIn,squareKey}from"./crossword-anchor.js";
+import{
+readoutLines,
+spotlightLines,
+writeReadout,
+}from"./crossword-readout.js";
 import{elementFor}from"./crossword-settings.js";
 import{
 SPOTLIGHT_CLASSES,
@@ -7,16 +12,18 @@ showSpotlight,
 spotlightClued,
 spotlightHeld,
 }from"./crossword-spotlight.js";
+export const THEME_LIT="is-theme-lit";
 const SELECTION_CLASSES=[
 "is-selected",
 "is-sibling",
 "is-locked",
 ...SPOTLIGHT_CLASSES,
+THEME_LIT,
 ];
 const LOCKED_RECT=".cw-hit:not(.cw-hit-anchor).is-locked";
 const PRESSED_RECT=
 '.cw-hit[aria-pressed="true"], .cw-circle-hit[aria-pressed="true"]';
-function clearSelection(doc){
+export function clearSelection(doc){
 const selector=SELECTION_CLASSES.map((name)=>"."+name).join(", ");
 doc.querySelectorAll(selector).forEach(function(element){
 SELECTION_CLASSES.forEach(function(name){
@@ -26,6 +33,16 @@ element.classList.remove(name);
 doc.querySelectorAll(PRESSED_RECT).forEach(function(rect){
 rect.setAttribute("aria-pressed","false");
 });
+pressedThemeButton(doc)?.setAttribute("aria-pressed","false");
+}
+function pressedThemeButton(doc){
+const button=elementFor(doc,"theme");
+return button!==null&&button.getAttribute("aria-pressed")==="true"
+?button
+:null;
+}
+function themeShowing(doc){
+return pressedThemeButton(doc)!==null;
 }
 function cellsForEntry(doc,entryKey){
 const cells=doc.querySelectorAll(".cw-cell");
@@ -37,53 +54,6 @@ covering.push(cell);
 }
 });
 return covering;
-}
-function restingText(readout){
-return readout.dataset.resting??"";
-}
-export function themeText(key,data){
-const theme=data.themes[key];
-if(
-!theme||
-typeof theme.label!=="string"||
-typeof theme.summary!=="string"
-){
-throw new Error("crossword-interact.js: unknown entry theme "+key);
-}
-return theme.label+": "+theme.summary;
-}
-function readoutLines(entry,data){
-const lines=[];
-const summary=entry.theme?themeText(entry.theme,data):null;
-if(entry.clue){
-lines.push(clueLine(entry.clue));
-}
-if(summary){
-lines.push({className:"crossword__readout-summary",text:summary});
-}
-return lines;
-}
-function clueLine(text){
-return{className:"crossword__readout-clue",text:text};
-}
-function writeReadout(doc,lines){
-const readout=elementFor(doc,"readout");
-if(!readout){
-return;
-}
-const resting=restingText(readout);
-if(lines.length===0){
-readout.replaceChildren(doc.createTextNode(resting));
-return;
-}
-readout.replaceChildren(
-...lines.map(function(line){
-const span=doc.createElement("span");
-span.className=line.className;
-span.textContent=line.text;
-return span;
-}),
-);
 }
 export function selectedEntryKey(doc){
 const rect=doc.querySelector(".cw-hit:not(.cw-hit-anchor).is-selected");
@@ -105,17 +75,21 @@ rect.setAttribute("aria-pressed","true");
 return entryKey;
 }
 export function gridHeld(doc){
-return lockedEntryKey(doc)!==null||spotlightHeld(doc);
+return(
+lockedEntryKey(doc)!==null||spotlightHeld(doc)||themeShowing(doc)
+);
 }
 export function deselect(doc){
-const wasShowing=selectedEntryKey(doc)!==null||spotlightClued(doc);
+const wasShowing=
+selectedEntryKey(doc)!==null||spotlightClued(doc)||themeShowing(doc);
 clearSelection(doc);
 if(wasShowing){
 writeReadout(doc,[]);
 }
 }
-export function lightSpotlight(doc,svg,held,clue){
-if(!clue){
+export function lightSpotlight(doc,svg,held,data){
+const lines=spotlightLines(data);
+if(lines.length===0){
 deselect(doc);
 showSpotlight(svg,held,false);
 return;
@@ -126,7 +100,7 @@ return;
 }
 clearSelection(doc);
 showSpotlight(svg,held,true);
-writeReadout(doc,[clueLine(clue)]);
+writeReadout(doc,lines);
 }
 export function dimSpotlight(doc,svg){
 if(spotlightHeld(doc)){
@@ -138,9 +112,6 @@ if(wasClued){
 writeReadout(doc,[]);
 }
 }
-export function resetReadout(doc){
-writeReadout(doc,[]);
-}
 export function squareOf(element){
 return squareKey(
 element.getAttribute("data-row"),
@@ -148,7 +119,17 @@ element.getAttribute("data-col"),
 );
 }
 function markEntry(doc,entryKey,className){
-const cells=cellsForEntry(doc,entryKey);
+markSquares(doc,entryKey,className);
+doc.querySelectorAll(".cw-hit:not(.cw-hit-anchor)").forEach(function(hit){
+if(hit.dataset.entry===entryKey){
+hit.classList.add(className);
+}
+});
+}
+function markSquares(doc,entryKey,className,spared=new Set()){
+const cells=cellsForEntry(doc,entryKey).filter(
+(cell)=>!spared.has(squareOf(cell)),
+);
 cells.forEach(function(cell){
 cell.classList.add(className);
 });
@@ -159,10 +140,11 @@ if(squares.has(squareOf(mark))){
 mark.classList.add(className);
 }
 });
-doc.querySelectorAll(".cw-hit:not(.cw-hit-anchor)").forEach(function(hit){
-if(hit.dataset.entry===entryKey){
-hit.classList.add(className);
 }
+export function markAsSelected(doc,data,entry,spared){
+markSquares(doc,entryId(entry),"is-selected");
+themeSiblings(entry,data).forEach(function(sibling){
+markSquares(doc,entryId(sibling),"is-sibling",spared);
 });
 }
 function themeSiblings(entry,data){
