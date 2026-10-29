@@ -24,20 +24,16 @@
       "url": "https://image.tmdb.org/t/p/w500/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg"
     },
     {
-      "path": "covers/30c47967afd28328.jpg",
-      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1180685743i/1065763.jpg"
-    },
-    {
-      "path": "covers/47b092732d87b335.jpg",
-      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1722944318i/6149.jpg"
-    },
-    {
-      "path": "covers/98408a76a488ef61.jpg",
-      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1386923108i/81903.jpg"
+      "path": "covers/6a27fdae4253c31a.jpg",
+      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1386923108i/81903._SX318_.jpg"
     },
     {
       "path": "covers/a3bae746895e2375.webp",
       "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ce/9d/9e/ce9d9eeb-c9eb-b725-0351-7c75569ac1f9/cover.jpg/400x400bb.webp"
+    },
+    {
+      "path": "covers/a854db9b78988087.jpg",
+      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1180685743i/1065763._SX318_.jpg"
     },
     {
       "path": "covers/beda9c0b27fdbdde.jpg",
@@ -46,6 +42,10 @@
     {
       "path": "covers/c09f3ce82a1409ec.webp",
       "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bb/4e/2d/bb4e2d8d-4c15-ba91-ecf1-84a0162815ea/196871925433.jpg/400x400bb.webp"
+    },
+    {
+      "path": "covers/ff7439f62049489a.jpg",
+      "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1722944318i/6149._SX318_.jpg"
     }
   ]
 }

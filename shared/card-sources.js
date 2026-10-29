@@ -89,7 +89,7 @@ file:"data/books.json",
 id:"book-card",
 label:"Read",
 unit:"book",
-required:["title","author","read"],
+required:["title","author"],
 cover:function(r){
 return r.cover;
 },
