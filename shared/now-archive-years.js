@@ -1,9 +1,12 @@
+import{buildChevron}from"./now-pager-controls.js";
 const MIN_YEARS=2;
 const ROW_CLASS="archive__years";
 const PLACEHOLDER_TEXT="Year";
 function buildPicker(doc,links,withPlaceholder){
 const wrapper=doc.createElement("nav");
 wrapper.className=ROW_CLASS;
+const field=doc.createElement("span");
+field.className="archive__year-field";
 const select=doc.createElement("select");
 select.className="archive__year-picker";
 select.setAttribute("aria-label","Year");
@@ -18,7 +21,10 @@ const option=doc.createElement("option");
 option.textContent=link.textContent;
 select.append(option);
 });
-wrapper.append(select);
+const glyph=buildChevron(doc,"prev");
+glyph.classList.add("archive__year-glyph");
+field.append(select,glyph);
+wrapper.append(field);
 return{wrapper,select};
 }
 function currentIndexOf(links){

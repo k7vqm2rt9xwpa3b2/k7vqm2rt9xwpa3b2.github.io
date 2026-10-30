@@ -126,10 +126,8 @@ hit.classList.add(className);
 }
 });
 }
-function markSquares(doc,entryKey,className,spared=new Set()){
-const cells=cellsForEntry(doc,entryKey).filter(
-(cell)=>!spared.has(squareOf(cell)),
-);
+function markSquares(doc,entryKey,className){
+const cells=cellsForEntry(doc,entryKey);
 cells.forEach(function(cell){
 cell.classList.add(className);
 });
@@ -141,10 +139,10 @@ mark.classList.add(className);
 }
 });
 }
-export function markAsSelected(doc,data,entry,spared){
+export function markAsSelected(doc,data,entry){
 markSquares(doc,entryId(entry),"is-selected");
 themeSiblings(entry,data).forEach(function(sibling){
-markSquares(doc,entryId(sibling),"is-sibling",spared);
+markSquares(doc,entryId(sibling),"is-sibling");
 });
 }
 function themeSiblings(entry,data){

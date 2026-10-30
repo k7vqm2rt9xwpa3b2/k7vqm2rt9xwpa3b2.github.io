@@ -4,7 +4,7 @@
     "author": "Toni Morrison",
     "year": "1987",
     "rating": 3,
-    "read": "2026-10-10",
+    "read": null,
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1722944318i/6149._SX318_.jpg"
   },
   {
@@ -12,15 +12,15 @@
     "author": "Philip Toshio Sudo",
     "year": "1999",
     "rating": 3,
-    "read": "2026-08-28",
+    "read": null,
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1180685743i/1065763._SX318_.jpg"
   },
   {
-    "title": "Curtain (Hercule Poirot, #44)",
+    "title": "Curtain",
     "author": "Agatha Christie",
     "year": "1975",
     "rating": 3,
-    "read": "2026-08-01",
+    "read": null,
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1386923108i/81903._SX318_.jpg"
   }
 ]

@@ -14,7 +14,7 @@ const circled=new Set(
 );
 clearSelection(doc);
 linkedEntries(block).forEach(function(entry){
-markAsSelected(doc,block,entry,circled);
+markAsSelected(doc,block,entry);
 });
 const mount=(elementFor(doc,"mount"));
 mount

@@ -1,17 +1,29 @@
 import{dotCapacity,placeDots}from"./now-pager-dots.js";
+import{svgElement}from"./svg.js";
+const CHEVRON_VIEWBOX="0 0 18 18";
+const CHEVRON_PATHS=Object.freeze({
+prev:"M11.25 3.75L6 9L11.25 14.25",
+next:"M6.75 3.75L12 9L6.75 14.25",
+});
 function pixelsOf(value){
 const pixels=parseFloat(value);
 return Number.isFinite(pixels)?pixels:0;
 }
-function buildArrow(doc,direction,glyph,label){
+export function buildChevron(doc,direction){
+const svg=svgElement(doc,"svg",{
+class:"now-pager__glyph",
+"aria-hidden":"true",
+viewBox:CHEVRON_VIEWBOX,
+});
+svg.append(svgElement(doc,"path",{d:CHEVRON_PATHS[direction]}));
+return svg;
+}
+function buildArrow(doc,direction,label){
 const button=doc.createElement("button");
 button.type="button";
 button.className=`now-pager__arrow now-pager__arrow--${direction}`;
 button.setAttribute("aria-label",label);
-const mark=doc.createElement("span");
-mark.className="now-pager__glyph";
-mark.textContent=glyph;
-button.append(mark);
+button.append(buildChevron(doc,direction));
 button.addEventListener("click",(event)=>{
 if(button.getAttribute("aria-disabled")==="true"){
 event.preventDefault();
@@ -35,8 +47,8 @@ return region;
 export function buildControlRow(doc,labels){
 const controls=doc.createElement("div");
 controls.className="now-pager__controls";
-const prev=buildArrow(doc,"prev","‹",labels.previous);
-const next=buildArrow(doc,"next","›",labels.next);
+const prev=buildArrow(doc,"prev",labels.previous);
+const next=buildArrow(doc,"next",labels.next);
 const strip=doc.createElement("span");
 strip.className="now-pager__dots";
 strip.setAttribute("aria-hidden","true");
