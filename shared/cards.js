@@ -1,3 +1,4 @@
+import{buildMark}from"./card-placeholder.js";
 import{favoritedGloss,favoritedSignal}from"./card-signals.js";
 import{moveAnnouncement}from"./card-slides.js";
 import{CARD_SOURCES}from"./card-sources.js";
@@ -59,9 +60,11 @@ glyphs.setAttribute("title",gloss);
 glyphs.textContent=favoritedSignal(record,now);
 });
 }
-function guardCovers(card){
+function guardCovers(card,source){
 card.querySelectorAll("img.card__cover").forEach(function(img){
-whenImageFails(img,()=>img.remove());
+whenImageFails(img,function(){
+img.replaceWith(buildMark(img.ownerDocument,source.mark,img.alt));
+});
 });
 }
 function wireCarousel(doc,li,source,observerCtor){
@@ -107,7 +110,7 @@ wireCarousel(doc,li,source,observerCtor);
 li.replaceWith(asBaked);
 card=asBaked;
 }
-guardCovers(card);
+guardCovers(card,source);
 }
 export function wireCards(root,now=new Date(),observerCtor){
 const list=root.querySelector(".media");

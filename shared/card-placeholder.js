@@ -40,7 +40,7 @@ export const BOOK_MARK=[
 ["line",{x1:55,y1:39,x2:75,y2:39,...hairLine(0.8)}],
 ["line",{x1:55,y1:49,x2:75,y2:49,...hairLine(0.8)}],
 ];
-function buildMark(doc,mark,label){
+export function buildMark(doc,mark,label){
 const svg=svgElement(doc,"svg",{
 viewBox:"0 0 100 100",
 class:"card__cover",

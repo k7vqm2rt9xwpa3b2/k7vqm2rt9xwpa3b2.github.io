@@ -1,3 +1,4 @@
+import{buildMark}from"./card-placeholder.js";
 import{wrapLine}from"./text-reveal.js";
 function coverUrl(raw,hosts){
 let parsed;
@@ -16,12 +17,9 @@ return hosts.includes(parsed.hostname)?parsed.href:null;
 }
 function buildCover(doc,source,record,showing,coverSrc){
 const url=coverUrl(source.cover(record),source.coverHosts);
-if(!url){
-return null;
-}
-const src=coverSrc(url,source,record);
+const src=url?coverSrc(url,source,record):null;
 if(src===null){
-return null;
+return buildMark(doc,source.mark,source.alt(record));
 }
 const img=doc.createElement("img");
 img.setAttribute("class",source.coverClass);
@@ -38,10 +36,7 @@ return img;
 function buildSlide(doc,source,record,now,showing,coverSrc){
 const slide=doc.createElement("div");
 slide.className="card__slide";
-const cover=buildCover(doc,source,record,showing,coverSrc);
-if(cover){
-slide.appendChild(cover);
-}
+slide.appendChild(buildCover(doc,source,record,showing,coverSrc));
 const title=doc.createElement("p");
 title.className="card__title";
 title.textContent=source.title(record);

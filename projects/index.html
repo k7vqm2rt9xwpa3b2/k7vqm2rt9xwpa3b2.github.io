@@ -89,10 +89,11 @@ addEventListener("load",()=>watch.disconnect());
     
     <a class="skip-link" href="#main">Skip to content</a>
     
-    <header class="masthead">
+    <header class="masthead" id="top">
       
       <div class="masthead__brand">
         <a class="masthead__name" href="../index.html">Billy Ella</a>
+        <a class="masthead__paper-name" href="#top" hidden>Billy Ella</a>
       </div>
       <details class="masthead__menu">
         <summary aria-controls="masthead-sections">Menu</summary>
@@ -101,9 +102,13 @@ addEventListener("load",()=>watch.disconnect());
       
       <nav id="masthead-sections" class="masthead__nav" aria-label="Sections">
         <a href="../index.html#about">About</a>
+        <span class="masthead__paper-word" hidden>About</span>
         <a href="../index.html#now">Now</a>
+        <span class="masthead__paper-word" hidden>Now</span>
         <a href="../index.html#projects">Projects</a>
+        <span class="masthead__paper-word" hidden>Projects</span>
         <a href="../index.html#connect">Connect</a>
+        <span class="masthead__paper-word" hidden>Connect</span>
       </nav>
       
     </header>
@@ -846,15 +851,24 @@ addEventListener("load",()=>watch.disconnect());
         data-app-word="save"
         data-app-tail=", pick open in Safari, and then choose your favorite mode"
       ></p>
-      <p class="colophon__debug">
-        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? You don't need this,
-        but here's a start for the curious (or those on a phone): <a href="../debug/">Debug</a>
+      <p class="colophon__debug" id="colophon-debug">
+        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? You could find this
+        other ways, but here's a start for the curious (or those on a phone): <a href="../debug/">Debug</a>
       </p>
+      <div class="colophon__top">
+        <a class="colophon__top-link" href="#top" title="Back to the top"
+          ><svg class="colophon__top-glyph" aria-hidden="true" viewBox="0 0 18 18">
+            <path d="M11.25 3.75L6 9L11.25 14.25"></path></svg
+          ><span class="visually-hidden">Back to the top</span></a
+        >
+      </div>
       <div class="colophon__close">
         <p class="colophon__tagline">
-          <span class="colophon__sentence">Obsessively tweaked, tested, and tuned for every screen.</span>
-          <span class="colophon__sentence">No third-party templates, telemetry, or tags found here.</span>
-          <span class="colophon__sentence">Enjoy.</span>
+          <span class="colophon__line"
+            >Obsessively tweaked, tested, and tuned for every screen. And definitely no third‑party templates, tags, or
+            telemetry found here.</span
+          >
+          <span class="colophon__line">Enjoy.</span>
         </p>
         <p class="colophon__rights">Copyright © 2026. All rights reserved.</p>
         <div class="colophon__sign">
@@ -900,6 +914,49 @@ addEventListener("load",()=>watch.disconnect());
               </g>
             </svg>
             <span class="visually-hidden">Home</span>
+          </a>
+          <a class="colophon__paper-sign" href="#top" hidden>
+            <svg class="site-mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <rect class="site-mark__ring" width="16" height="16" />
+              <rect class="site-mark__lines" x="1" y="1" width="14" height="14" />
+              <g class="site-mark__block">
+                <rect x="1" y="1" width="4" height="4" />
+                <rect x="11" y="1" width="4" height="4" />
+                <rect x="11" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__name">
+                <rect x="6" y="1" width="4" height="4" />
+                <rect x="6" y="6" width="4" height="4" />
+                <rect x="6" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__second">
+                <rect x="1" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__rest">
+                <rect x="1" y="6" width="4" height="4" />
+                <rect x="11" y="6" width="4" height="4" />
+              </g>
+              <g
+                font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="4"
+                text-anchor="middle"
+              >
+                <g class="site-mark__name-letter">
+                  <text x="8" y="4.48">W</text>
+                  <text x="8" y="9.48">M</text>
+                  <text x="8" y="14.48">E</text>
+                </g>
+                <g class="site-mark__second-letter">
+                  <text x="3" y="14.48">B</text>
+                </g>
+                <g class="site-mark__rest-letter">
+                  <text x="3" y="9.48">A</text>
+                  <text x="13" y="9.48">P</text>
+                </g>
+              </g>
+            </svg>
+            <span class="visually-hidden">Back to the top</span>
           </a>
         </div>
       </div>

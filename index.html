@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.20
+                       v0.5.21
 
   > Curious what comes after /then and /now? See /future
   > Wanna see where this all started? Try ?puzzle=0
@@ -147,10 +147,11 @@ addEventListener("load",()=>watch.disconnect());
     
     <a class="skip-link" href="#main">Skip to content</a>
     
-    <header class="masthead">
+    <header class="masthead" id="top">
       
       <div class="masthead__brand">
         <a class="masthead__name" href="">Billy Ella</a>
+        <a class="masthead__paper-name" href="#top" hidden>Billy Ella</a>
       </div>
       <details class="masthead__menu">
         <summary aria-controls="masthead-sections">Menu</summary>
@@ -159,9 +160,13 @@ addEventListener("load",()=>watch.disconnect());
       
       <nav id="masthead-sections" class="masthead__nav" aria-label="Sections">
         <a href="#about">About</a>
+        <span class="masthead__paper-word" hidden>About</span>
         <a href="#now">Now</a>
+        <span class="masthead__paper-word" hidden>Now</span>
         <a href="#projects">Projects</a>
+        <span class="masthead__paper-word" hidden>Projects</span>
         <a href="#connect">Connect</a>
+        <span class="masthead__paper-word" hidden>Connect</span>
       </nav>
       
     </header>
@@ -196,8 +201,20 @@ addEventListener("load",()=>watch.disconnect());
         <div class="hero__intro">
           <h2>About</h2>
           <p>
-            This is filler copy standing in for a real introduction, kept to roughly the length two finished sentences
-            would run. It is here so the layout can be judged before the words are written.
+            Welcome, and thanks for stopping by! Consider this my homage to an internet era with more character. Rather
+            than just tell you about me, I thought it'd be more fun to make it interactive. Might I suggest first
+            checking out the crosswords to learn about my interests? Afterward, keep scrolling to see what I'm currently
+            up to.
+          </p>
+          <p>
+            Also, I encourage you to poke around this site, as it is meant to be explored. So change the size or
+            orientation of your screen, switch to dark mode, or see what happens in reader view. From there, mess with
+            URL parameters or link names, and when you're done, you can even save a PDF to print for later. And for
+            inquisitive readers, there might just be a little more to find under the hood.&nbsp;<a
+              href="#colophon-debug"
+              aria-label="Jump to the debug link"
+              >&darr;</a
+            >
           </p>
         </div>
         <figure
@@ -299,7 +316,8 @@ addEventListener("load",()=>watch.disconnect());
         <section id="now">
           <div class="now-lead">
             
-            <h2>
+            
+            <h2 aria-label="Now">
               Now
               <a class="archive-link" href="then/">archive →</a>
             </h2>
@@ -563,9 +581,43 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
+                        alt="Obsession poster"
+                        width="600"
+                        height="900"
+                        referrerpolicy="no-referrer"
+                        src="covers/57d9dd2e51e3e186.jpg"
+                      />
+                      <div class="reveal__line"><p class="card__title">Obsession</p></div>
+                      <div class="reveal__line"><p class="card__meta card__meta--maker">Curry Barker</p></div>
+                      <p class="card__meta">2025</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 4 of 5" title="Rated 4 of 5">★★★★☆</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
+                        alt="Poltergeist poster"
+                        width="600"
+                        height="900"
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        src="covers/e18f4b33866e820a.jpg"
+                      />
+                      <div class="reveal__line"><p class="card__title">Poltergeist</p></div>
+                      <div class="reveal__line"><p class="card__meta card__meta--maker">Tobe Hooper</p></div>
+                      <p class="card__meta">1982</p>
+                      <p class="card__signal">
+                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
+                      </p>
+                    </div>
+                    <div class="card__slide">
+                      <img
+                        class="card__cover card__cover--poster"
                         alt="The Fly poster"
                         width="600"
                         height="900"
+                        loading="lazy"
                         referrerpolicy="no-referrer"
                         src="covers/261ccbe19964f8d5.jpg"
                       />
@@ -574,42 +626,6 @@ addEventListener("load",()=>watch.disconnect());
                       <p class="card__meta">1986</p>
                       <p class="card__signal">
                         <span role="img" aria-label="Rated 4 of 5" title="Rated 4 of 5">★★★★☆</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="You Can See Everything poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="covers/2e04e3c3c95e8f17.jpg"
-                      />
-                      <div class="reveal__line"><p class="card__title">You Can See Everything</p></div>
-                      <div class="reveal__line">
-                        <p class="card__meta card__meta--maker">Lance Oppenheim &amp; Nathan Fielder</p>
-                      </div>
-                      <p class="card__meta">2026</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 5 of 5" title="Rated 5 of 5">★★★★★</span>
-                      </p>
-                    </div>
-                    <div class="card__slide">
-                      <img
-                        class="card__cover card__cover--poster"
-                        alt="Dawn of the Dead poster"
-                        width="600"
-                        height="900"
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                        src="covers/beda9c0b27fdbdde.jpg"
-                      />
-                      <div class="reveal__line"><p class="card__title">Dawn of the Dead</p></div>
-                      <div class="reveal__line"><p class="card__meta card__meta--maker">George A. Romero</p></div>
-                      <p class="card__meta">1978</p>
-                      <p class="card__signal">
-                        <span role="img" aria-label="Rated 2½ of 5" title="Rated 2½ of 5">★★½☆☆</span>
                       </p>
                     </div>
                   </div>
@@ -747,8 +763,8 @@ addEventListener("load",()=>watch.disconnect());
           </ul>
           <h3 id="email">Email</h3>
           <p>
-            The best option for direct connection. Unfortunately it requires some anti-spam protection, so you'll have
-            to click that button.
+            The best option for direct connection. Let me know if you want to talk about a project, swap
+            recommendations, or even just share your favorite puzzle.
           </p>
           <p id="connect-mail">
             <button type="button" id="connect-reveal">Message me</button>
@@ -789,15 +805,24 @@ addEventListener("load",()=>watch.disconnect());
         data-app-word="save"
         data-app-tail=", pick open in Safari, and then choose your favorite mode"
       ></p>
-      <p class="colophon__debug">
-        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? You don't need this,
-        but here's a start for the curious (or those on a phone): <a href="debug/">Debug</a>
+      <p class="colophon__debug" id="colophon-debug">
+        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? You could find this
+        other ways, but here's a start for the curious (or those on a phone): <a href="debug/">Debug</a>
       </p>
+      <div class="colophon__top">
+        <a class="colophon__top-link" href="#top" title="Back to the top"
+          ><svg class="colophon__top-glyph" aria-hidden="true" viewBox="0 0 18 18">
+            <path d="M11.25 3.75L6 9L11.25 14.25"></path></svg
+          ><span class="visually-hidden">Back to the top</span></a
+        >
+      </div>
       <div class="colophon__close">
         <p class="colophon__tagline">
-          <span class="colophon__sentence">Obsessively tweaked, tested, and tuned for every screen.</span>
-          <span class="colophon__sentence">No third-party templates, telemetry, or tags found here.</span>
-          <span class="colophon__sentence">Enjoy.</span>
+          <span class="colophon__line"
+            >Obsessively tweaked, tested, and tuned for every screen. And definitely no third‑party templates, tags, or
+            telemetry found here.</span
+          >
+          <span class="colophon__line">Enjoy.</span>
         </p>
         <p class="colophon__rights">Copyright © 2026. All rights reserved.</p>
         <div class="colophon__sign">
@@ -843,6 +868,49 @@ addEventListener("load",()=>watch.disconnect());
               </g>
             </svg>
             <span class="visually-hidden">Home</span>
+          </a>
+          <a class="colophon__paper-sign" href="#top" hidden>
+            <svg class="site-mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <rect class="site-mark__ring" width="16" height="16" />
+              <rect class="site-mark__lines" x="1" y="1" width="14" height="14" />
+              <g class="site-mark__block">
+                <rect x="1" y="1" width="4" height="4" />
+                <rect x="11" y="1" width="4" height="4" />
+                <rect x="11" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__name">
+                <rect x="6" y="1" width="4" height="4" />
+                <rect x="6" y="6" width="4" height="4" />
+                <rect x="6" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__second">
+                <rect x="1" y="11" width="4" height="4" />
+              </g>
+              <g class="site-mark__rest">
+                <rect x="1" y="6" width="4" height="4" />
+                <rect x="11" y="6" width="4" height="4" />
+              </g>
+              <g
+                font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="4"
+                text-anchor="middle"
+              >
+                <g class="site-mark__name-letter">
+                  <text x="8" y="4.48">W</text>
+                  <text x="8" y="9.48">M</text>
+                  <text x="8" y="14.48">E</text>
+                </g>
+                <g class="site-mark__second-letter">
+                  <text x="3" y="14.48">B</text>
+                </g>
+                <g class="site-mark__rest-letter">
+                  <text x="3" y="9.48">A</text>
+                  <text x="13" y="9.48">P</text>
+                </g>
+              </g>
+            </svg>
+            <span class="visually-hidden">Back to the top</span>
           </a>
         </div>
       </div>
