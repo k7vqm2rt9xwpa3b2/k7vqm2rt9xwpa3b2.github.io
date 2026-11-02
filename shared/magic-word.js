@@ -22,8 +22,16 @@ const WORDS=Object.freeze({
 says:"data-magic-says",
 close:"data-magic-close",
 sentence:"data-magic-sentence",
+zeroNote:"data-magic-zero-note",
+errorNote:"data-magic-error-note",
 });
 const TRAP_LINE=Object.freeze({says:WORDS.says,sentence:WORDS.sentence});
+const TRAP_NOTE=Object.freeze({
+zero:WORDS.zeroNote,
+error:WORDS.errorNote,
+});
+const ZERO_KIND="zero";
+const NOTE_ID="magic-word-note";
 const CARRIER=Object.values(WORDS)
 .map((name)=>`[${name}]`)
 .join(", ");
@@ -85,12 +93,31 @@ line.sentence&&wordOn(carrier,line.sentence,CARRIER_NAME),
 carrier.append(dialog);
 return dialog;
 }
-export function sayTheMagicWord(win,back){
+function addNote(dialog,says,kind){
+const carrier=(dialog.parentElement);
+const name=kind===ZERO_KIND?TRAP_NOTE.zero:TRAP_NOTE.error;
+const note=dialog.ownerDocument.createElement("p");
+note.id=NOTE_ID;
+note.className="magic-word__note";
+note.textContent=wordOn(carrier,name,CARRIER_NAME);
+says.after(note);
+dialog.setAttribute("aria-describedby",NOTE_ID);
+dialog.addEventListener(
+"close",
+()=>{
+note.remove();
+dialog.removeAttribute("aria-describedby");
+},
+{once:true},
+);
+}
+export function sayTheMagicWord(win,back,kind){
 const doc=win.document;
 const dialog=buildMagicWordDialog(doc);
 const says=(
 dialog.querySelector(".magic-word__says")
 );
+addNote(dialog,says,kind);
 openBesideGrid(
 win,
 back,

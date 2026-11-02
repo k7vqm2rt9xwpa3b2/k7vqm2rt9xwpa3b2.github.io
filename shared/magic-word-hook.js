@@ -12,9 +12,9 @@ return{
 magicWordDigests:MAGIC_WORD_DIGESTS,
 magicWordSalt:MAGIC_WORD_SALT,
 magicWordIterations:MAGIC_WORD_ITERATIONS,
-onMalformedAddress:(_kind,back)=>{
+onMalformedAddress:(kind,back)=>{
 opened=import("./magic-word.js").then(({sayTheMagicWord})=>
-sayTheMagicWord(win,back),
+sayTheMagicWord(win,back,kind),
 );
 },
 onMagicWord:(back,index)=>{

@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.23
+                       v0.5.24
 
   > Curious what comes after /then and /now? See /future
   > Wanna see where this all started? Try ?puzzle=0
@@ -189,6 +189,8 @@ addEventListener("load",()=>watch.disconnect());
         data-magic-says="Ah Ah Ah!"
         data-magic-close="Close"
         data-magic-sentence="YOU DIDN'T SAY THE MAGIC WORD!"
+        data-magic-zero-note="You're almost there. Try asking a little nicer."
+        data-magic-error-note="Hey! No funny business. I see what you're doing here."
         data-magic-reward-note="My original site design for over a decade!"
         data-magic-reward-graphic-alt="Classic early internet under construction GIF"
         data-magic-old-site-name="William Ella"
@@ -205,9 +207,11 @@ addEventListener("load",()=>watch.disconnect());
             crosswords to learn about my interests? Afterward, keep scrolling to see what I'm currently up to.
           </p>
           <p>
-            Also, I strongly encourage you to poke around this site: switch to dark mode, see what happens in reader
-            view, mess with URL parameters, or save a PDF for later. And for inquisitive readers, there might just be a
-            little more to find...&nbsp;<a href="#colophon-debug" aria-label="Jump to the debug link">&darr;</a>
+            Also, I encourage you to poke around this site. For a couple examples: switch to dark mode, see what happens
+            in reader view, mess with URL parameters, or save a PDF for later. And for inquisitive readers, there might
+            just be a little more to find...&nbsp;<a href="#colophon-debug" aria-label="Jump to the debug link"
+              >&darr;</a
+            >
           </p>
         </div>
         <figure class="crossword" aria-label="A crossword that fills itself in, built from my interests.">
@@ -714,7 +718,7 @@ addEventListener("load",()=>watch.disconnect());
           <h2>Connect</h2>
           <p>Use the options below to learn more and keep in touch.</p>
           <h3 id="whereabouts">Whereabouts</h3>
-          <p>A few spots around town where you can find me in different contexts.</p>
+          <p>Where else you can find me, depending on the context.</p>
           <ul class="profile-links">
             <li>
               <a href="https://www.linkedin.com/in/williamella/">LinkedIn</a>: Professional information and further
@@ -729,7 +733,7 @@ addEventListener("load",()=>watch.disconnect());
           <h3 id="email">Email</h3>
           <p>
             The best option for direct connection. Let me know if you want to talk about a project, swap
-            recommendations, or even just share your favorite puzzle.
+            recommendations, or even just share your favorite puzzle from the site.
           </p>
           <p id="connect-mail">
             <button type="button" id="connect-reveal">Message me</button>
@@ -771,9 +775,8 @@ addEventListener("load",()=>watch.disconnect());
         data-app-tail=", pick Open in Safari, and then choose your favorite mode"
       ></p>
       <p class="colophon__debug" id="colophon-debug">
-        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? A map might have
-        shown you the way already, but if not, here's a start for the curious (or those on a phone):
-        <a href="debug/">Debug</a>
+        Want to uncover a few easter eggs? Or see some tricks exposing what's under the hood? A map might have shown you
+        the way already, but if not (or on a phone), here's a start for the curious: <a href="debug/">Debug</a>
       </p>
       <div class="colophon__top">
         <a class="colophon__top-link" href="#top" title="Back to the top"
