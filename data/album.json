@@ -5,9 +5,9 @@
     "added": "2026-10-23",
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bb/4e/2d/bb4e2d8d-4c15-ba91-ecf1-84a0162815ea/196871925433.jpg/400x400bb.webp",
     "tracks": 6,
-    "favorited": 0,
+    "favorited": null,
     "year": "2024",
-    "favorite_signal": "music.favorited"
+    "favorite_signal": null
   },
   {
     "artist": "Jimmy Montague",
@@ -15,9 +15,9 @@
     "added": "2026-09-30",
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1a/3b/f4/1a3bf484-1904-015c-6b69-b4e89c382082/artwork.jpg/400x400bb.webp",
     "tracks": 10,
-    "favorited": 1,
+    "favorited": null,
     "year": "2024",
-    "favorite_signal": "music.favorited"
+    "favorite_signal": null
   },
   {
     "artist": "Testament",
@@ -25,8 +25,8 @@
     "added": "2026-09-17",
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ce/9d/9e/ce9d9eeb-c9eb-b725-0351-7c75569ac1f9/cover.jpg/400x400bb.webp",
     "tracks": 10,
-    "favorited": 1,
+    "favorited": null,
     "year": "1988",
-    "favorite_signal": "music.favorited"
+    "favorite_signal": null
   }
 ]
