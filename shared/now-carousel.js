@@ -94,6 +94,7 @@ state.onMove(at,slides.length);
 }
 }
 function refit(state){
+travelTo(state,state.index,"auto");
 renderControlRow(state,state.index,state.slides.length);
 }
 function refitWhenStale(state){

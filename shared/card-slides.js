@@ -77,7 +77,8 @@ return slide;
 }
 export function moveAnnouncement(source,slides,index,total){
 const title=slides[index].querySelector(".card__title").textContent;
-return`${source.label} ${index+1} of ${total}: ${title}`;
+const unit=source.unit.charAt(0).toUpperCase()+source.unit.slice(1);
+return`${unit} ${index+1} of ${total}: ${title}`;
 }
 export function buildSlides(doc,source,records,now,frame,coverSrc){
 const slides=[];

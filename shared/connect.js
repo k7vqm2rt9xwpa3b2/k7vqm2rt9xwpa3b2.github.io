@@ -16,7 +16,7 @@ MAILTO_SYNTAX.includes(character)
 );
 });
 }
-const STATUS_TEXT="Opening your mail app — not working? ";
+const STATUS_TEXT="Opening your mail app… Not working? ";
 const FALLBACK_LABEL="Show the address";
 function failureNoticeNaming(sectionName){
 return`The address could not be loaded. Try the LinkedIn link in ${sectionName} above.`;

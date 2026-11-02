@@ -41,12 +41,14 @@ export const BOOK_MARK=[
 ["line",{x1:55,y1:49,x2:75,y2:49,...hairLine(0.8)}],
 ];
 export function buildMark(doc,mark,label){
-const svg=svgElement(doc,"svg",{
-viewBox:"0 0 100 100",
-class:"card__cover",
-role:"img",
-"aria-label":label,
-});
+const attributes={viewBox:"0 0 100 100",class:"card__cover"};
+if(label===undefined){
+attributes["aria-hidden"]="true";
+}else{
+attributes.role="img";
+attributes["aria-label"]=label;
+}
+const svg=svgElement(doc,"svg",attributes);
 mark.forEach(function([tag,attributes]){
 svg.appendChild(svgElement(doc,tag,attributes));
 });
@@ -63,7 +65,7 @@ const label=doc.createElement("p");
 label.className="card__label";
 label.textContent=source.label;
 box.appendChild(label);
-box.appendChild(buildMark(doc,source.mark,source.markLabel));
+box.appendChild(buildMark(doc,source.mark));
 const title=doc.createElement("p");
 title.className="card__title";
 title.textContent="Coming soon";

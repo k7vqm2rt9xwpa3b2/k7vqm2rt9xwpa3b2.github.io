@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.21
+                       v0.5.22
 
   > Curious what comes after /then and /now? See /future
   > Wanna see where this all started? Try ?puzzle=0
@@ -32,7 +32,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="alternate" type="application/atom+xml" title="Billy Ella — Now" href="feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Billy Ella | Now" href="feed.xml" />
     
     
     <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)" />
@@ -175,7 +175,7 @@ addEventListener("load",()=>watch.disconnect());
       <pre class="reader-note" inert>
 ╔══════════════════════════╗
 ║ HEY YOU! YES YOU! Get    ║
-║ out of reader mode, this ║
+║ out of reader view! This ║
 ║ site isn't designed to   ║
 ║ be used that way.        ║
 ╚══════════════════════════╝</pre>
@@ -201,26 +201,16 @@ addEventListener("load",()=>watch.disconnect());
         <div class="hero__intro">
           <h2>About</h2>
           <p>
-            Welcome, and thanks for stopping by! Consider this my homage to an internet era with more character. Rather
-            than just tell you about me, I thought it'd be more fun to make it interactive. Might I suggest first
-            checking out the crosswords to learn about my interests? Afterward, keep scrolling to see what I'm currently
-            up to.
+            Welcome! Consider this my homage to a more personal internet era. Might I first suggest trying the
+            crosswords to learn about my interests? Afterward, keep scrolling to see what I'm currently up to.
           </p>
           <p>
-            Also, I encourage you to poke around this site, as it is meant to be explored. So change the size or
-            orientation of your screen, switch to dark mode, or see what happens in reader view. From there, mess with
-            URL parameters or link names, and when you're done, you can even save a PDF to print for later. And for
-            inquisitive readers, there might just be a little more to find under the hood.&nbsp;<a
-              href="#colophon-debug"
-              aria-label="Jump to the debug link"
-              >&darr;</a
-            >
+            Also, I strongly encourage you to poke around this site: switch to dark mode, see what happens in reader
+            view, mess with URL parameters, or save a PDF for later. And for inquisitive readers, there might just be a
+            little more to find...&nbsp;<a href="#colophon-debug" aria-label="Jump to the debug link">&darr;</a>
           </p>
         </div>
-        <figure
-          class="crossword"
-          aria-label="A crossword that fills itself in, built from interests rather than solved by a visitor."
-        >
+        <figure class="crossword" aria-label="A crossword that fills itself in, built from my interests.">
           <div id="crossword-mount" class="crossword__mount"></div>
           <div
             class="crossword__controls"
@@ -230,7 +220,7 @@ addEventListener("load",()=>watch.disconnect());
             data-theme-label="Theme?"
           ></div>
           <div class="crossword__slot">
-            <p class="crossword__hint">Have fun exploring my interests!</p>
+            <p class="crossword__hint">Have fun exploring!</p>
             <p
               id="clue-readout"
               class="crossword__readout"
@@ -240,12 +230,7 @@ addEventListener("load",()=>watch.disconnect());
             ></p>
           </div>
           <div class="crossword__fallback">
-            <svg
-              class="crossword__drawn"
-              viewBox="0 0 338 338"
-              role="img"
-              aria-label="My personal five-by-five crossword grid"
-            >
+            <svg class="crossword__drawn" viewBox="0 0 338 338" role="img" aria-label="My five-by-five crossword grid">
               <rect x="0" y="0" width="338" height="338" class="hg-lattice" fill="#918b80" />
               <rect x="2" y="2" width="66" height="66" class="hg-soft" fill="#9da19e" />
               <rect x="69" y="2" width="66" height="66" class="hg-block" fill="#16130f" />
@@ -304,8 +289,8 @@ addEventListener("load",()=>watch.disconnect());
               />
             </svg>
             <p class="crossword__notice">
-              Each visit builds a different small puzzle out of things I like, e.g. specialty coffee, pinball, swing
-              dancing, jeeps, and rock music. Turn scripts on to see more.
+              Each visit builds a different small puzzle out of things I like, e.g., specialty coffee, pinball, swing
+              dancing, Jeeps, and rock music. Turn scripts on to see more.
             </p>
           </div>
         </figure>
@@ -323,7 +308,7 @@ addEventListener("load",()=>watch.disconnect());
             </h2>
             <p class="disclosure__panel now-explainer__panel" id="now-explainer" data-disclosure-label="learn" hidden>
               A now page says what someone is focused on at this point in their life, rather than what they've done.
-              Read more about the concept and check out a user directory on
+              Read more about the concept and browse a user directory on
               <a href="https://nownownow.com/about">NowNowNow</a>.
             </p>
             <p
@@ -332,18 +317,18 @@ addEventListener("load",()=>watch.disconnect());
               data-disclosure-label="subscribe"
               hidden
             >
-              For the old school, new Now entries go out by feed. Copy this link to any reader app to get each update
+              For the old school, new Now entries go out by feed. Copy this link into any reader app to get each update
               (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
             </p>
             <noscript>
               <p class="disclosure__panel now-explainer__notice">
                 A now page says what someone is focused on at this point in their life, rather than what they've done.
-                Read more about the concept and check out a user directory on
+                Read more about the concept and browse a user directory on
                 <a href="https://nownownow.com/about">NowNowNow</a>.
               </p>
               <p class="disclosure__panel now-subscribe__notice">
-                For the old school, new Now entries go out by feed. Copy this link to any reader app to get each update
-                (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
+                For the old school, new Now entries go out by feed. Copy this link into any reader app to get each
+                update (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
               </p>
             </noscript>
             
@@ -370,32 +355,32 @@ addEventListener("load",()=>watch.disconnect());
                   <li class="now-note">
                     <p class="now-note__label">
                       I've been continuing to work with Claude Code. Right now my focus is on improving my engineering
-                      standards/code review pipeline. The goal is to be able to learn to let go of the code and really
-                      embrace the project management/testing side of the development process
+                      standards/code review pipeline. The goal is to learn to let go of the code and embrace the project
+                      management/testing side of the development process
                     </p>
                   </li>
                   <li class="now-note">
                     <p class="now-note__label">
-                      My Framework 13 laptop's battery expanded so much it unplugged the keyboard. While fun to break
-                      out the iFixit set, I would've preferred to not have to go to the fire department again
+                      My Framework 13 laptop's battery expanded so much it unplugged the keyboard. While it was fun to
+                      break out the iFixit set, I would've preferred to not have to go to the fire department again
                     </p>
                   </li>
                   <li class="now-note">
                     <p class="now-note__label">
-                      Took a week long trip to FL to visit my parents. It was wonderful being on the beach and we
+                      Took a weeklong trip to FL to visit my parents. It was wonderful being on the beach, and we
                       created some fun crayon art together
                     </p>
                   </li>
                   <li class="now-note">
                     <p class="now-note__label">
-                      Finally checked off a long-running item from my life experiences list by riding a horse for the
+                      Finally crossed off a long-running item from my life experiences list by riding a horse for the
                       first time. It was fun but a lot weirder than expected
                     </p>
                   </li>
                   <li class="now-note">
                     <p class="now-note__label">
                       For the past few months I've been slowly selling off my old CD collection. The trips to the post
-                      office have finally been slowing down; I think almost everything valuable has been bought
+                      office have been slowing down; I think almost everything valuable has been bought
                     </p>
                   </li>
                   <li class="now-note">
@@ -420,19 +405,19 @@ addEventListener("load",()=>watch.disconnect());
                       class="now-photo__slide"
                       src="assets/now/2/2.jpg"
                       alt=""
-                      data-tag="Saharan dust influenced sunset"
+                      data-tag="Saharan-dust-influenced sunset"
                       loading="lazy"
                   /></noscript>
-                  <p class="now-photo__stacked-tag">Saharan dust influenced sunset</p>
+                  <p class="now-photo__stacked-tag">Saharan-dust-influenced sunset</p>
                   <noscript
                     ><img
                       class="now-photo__slide"
                       src="assets/now/2/3.jpg"
                       alt=""
-                      data-tag="Free-roaming bison in GT NP"
+                      data-tag="Free-roaming bison in Grand Teton"
                       loading="lazy"
                   /></noscript>
-                  <p class="now-photo__stacked-tag">Free-roaming bison in GT NP</p>
+                  <p class="now-photo__stacked-tag">Free-roaming bison in Grand Teton</p>
                   <noscript
                     ><img
                       class="now-photo__slide"
@@ -456,10 +441,10 @@ addEventListener("load",()=>watch.disconnect());
                       class="now-photo__slide"
                       src="assets/now/2/6.jpg"
                       alt=""
-                      data-tag="The otherworldly landscape of CoTM"
+                      data-tag="The otherworldly landscape of Craters of the Moon"
                       loading="lazy"
                   /></noscript>
-                  <p class="now-photo__stacked-tag">The otherworldly landscape of CoTM</p>
+                  <p class="now-photo__stacked-tag">The otherworldly landscape of Craters of the Moon</p>
                   <noscript
                     ><img
                       class="now-photo__slide"
@@ -513,7 +498,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover"
-                        alt="Absolute Elsewhere by Blood Incantation"
+                        alt="Album cover"
                         width="600"
                         height="600"
                         referrerpolicy="no-referrer"
@@ -536,7 +521,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover"
-                        alt="Tomorrow's Coffee by Jimmy Montague"
+                        alt="Album cover"
                         width="600"
                         height="600"
                         loading="lazy"
@@ -555,7 +540,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover"
-                        alt="The New Order by Testament"
+                        alt="Album cover"
                         width="600"
                         height="600"
                         loading="lazy"
@@ -581,7 +566,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="Obsession poster"
+                        alt="Film poster"
                         width="600"
                         height="900"
                         referrerpolicy="no-referrer"
@@ -597,7 +582,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="Poltergeist poster"
+                        alt="Film poster"
                         width="600"
                         height="900"
                         loading="lazy"
@@ -608,13 +593,13 @@ addEventListener("load",()=>watch.disconnect());
                       <div class="reveal__line"><p class="card__meta card__meta--maker">Tobe Hooper</p></div>
                       <p class="card__meta">1982</p>
                       <p class="card__signal">
-                        <span role="img" aria-label="Rated 3½ of 5" title="Rated 3½ of 5">★★★½☆</span>
+                        <span role="img" aria-label="Rated 3.5 of 5" title="Rated 3.5 of 5">★★★½☆</span>
                       </p>
                     </div>
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="The Fly poster"
+                        alt="Film poster"
                         width="600"
                         height="900"
                         loading="lazy"
@@ -638,7 +623,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="Cover of Beloved by Toni Morrison"
+                        alt="Book cover"
                         width="318"
                         height="477"
                         referrerpolicy="no-referrer"
@@ -654,7 +639,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="Cover of Zen Computer by Philip Toshio Sudo"
+                        alt="Book cover"
                         width="318"
                         height="477"
                         loading="lazy"
@@ -671,7 +656,7 @@ addEventListener("load",()=>watch.disconnect());
                     <div class="card__slide">
                       <img
                         class="card__cover card__cover--poster"
-                        alt="Cover of Curtain by Agatha Christie"
+                        alt="Book cover"
                         width="318"
                         height="477"
                         loading="lazy"
@@ -747,7 +732,7 @@ addEventListener("load",()=>watch.disconnect());
         
         <section id="connect">
           <h2>Connect</h2>
-          <p>Consider the options below to learn more and keep in touch.</p>
+          <p>Use the options below to learn more and keep in touch.</p>
           <h3 id="whereabouts">Whereabouts</h3>
           <p>A few spots around town where you can find me in different contexts.</p>
           <ul class="profile-links">
@@ -755,7 +740,7 @@ addEventListener("load",()=>watch.disconnect());
               <a href="https://www.linkedin.com/in/williamella/">LinkedIn</a>: Professional information and further
               networking.
             </li>
-            <li><a href="https://github.com/blink9cd">GitHub</a>: Code I'm working on. Learn more in Projects.</li>
+            <li><a href="https://github.com/blink9cd">GitHub</a>: My open-source code. More in Projects.</li>
             <li>
               <a href="https://www.researchgate.net/profile/William-Ella">ResearchGate</a>: Some of my previous academic
               research.
@@ -771,8 +756,8 @@ addEventListener("load",()=>watch.disconnect());
           </p>
           <noscript>
             <p class="connect__notice">
-              This button needs JavaScript to reveal an address. With scripts off, reach out via the LinkedIn link in
-              Whereabouts above instead.
+              This button needs scripts to reveal an address. With scripts off, reach out via the LinkedIn link in
+              Whereabouts above.
             </p>
           </noscript>
         </section>
@@ -801,13 +786,14 @@ addEventListener("load",()=>watch.disconnect());
         data-save-light="light"
         data-save-dark="dark"
         data-save-joiner=" · "
-        data-app-lead="Like what you see? Click"
+        data-app-lead="Like what you see? Tap"
         data-app-word="save"
-        data-app-tail=", pick open in Safari, and then choose your favorite mode"
+        data-app-tail=", pick Open in Safari, and then choose your favorite mode"
       ></p>
       <p class="colophon__debug" id="colophon-debug">
-        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? You could find this
-        other ways, but here's a start for the curious (or those on a phone): <a href="debug/">Debug</a>
+        Want to uncover a few hidden treasures? Or see some tricks exposing what's under the hood? A map might have
+        shown you the way already, but if not, here's a start for the curious (or those on a phone):
+        <a href="debug/">Debug</a>
       </p>
       <div class="colophon__top">
         <a class="colophon__top-link" href="#top" title="Back to the top"
@@ -819,7 +805,7 @@ addEventListener("load",()=>watch.disconnect());
       <div class="colophon__close">
         <p class="colophon__tagline">
           <span class="colophon__line"
-            >Obsessively tweaked, tested, and tuned for every screen. And definitely no third‑party templates, tags, or
+            >Obsessively tweaked, tested, and tuned for every screen. And definitely no third‑party templates or
             telemetry found here.</span
           >
           <span class="colophon__line">Enjoy.</span>

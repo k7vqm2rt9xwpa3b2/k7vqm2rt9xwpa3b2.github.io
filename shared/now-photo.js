@@ -107,7 +107,7 @@ doc,
 frame,
 slides,
 labels:{
-carousel:entryLabel(frame.closest(".now-body"),"Photographs"),
+carousel:entryLabel(frame.closest(".now-body"),"Photos"),
 previous:"Previous photo",
 next:"Next photo",
 },

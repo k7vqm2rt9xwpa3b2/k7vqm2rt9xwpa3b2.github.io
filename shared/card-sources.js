@@ -26,8 +26,8 @@ required:["artist","album","added"],
 cover:function(r){
 return r.artwork;
 },
-alt:function(r){
-return r.album+" by "+r.artist;
+alt:function(){
+return"Album cover";
 },
 title:function(r){
 return r.album;
@@ -42,7 +42,6 @@ signal:favoritedSignal,
 gloss:favoritedGloss,
 clockInputs:favoritedClockInputs,
 mark:ALBUM_MARK,
-markLabel:"No album yet",
 coverHosts:[
 "is1-ssl.mzstatic.com",
 "is2-ssl.mzstatic.com",
@@ -63,8 +62,8 @@ required:["title","watched","rewatch"],
 cover:function(r){
 return r.poster;
 },
-alt:function(r){
-return r.title+" poster";
+alt:function(){
+return"Film poster";
 },
 title:function(r){
 return r.title;
@@ -78,7 +77,6 @@ return cardLine(r.year);
 signal:filmSignal,
 gloss:filmGloss,
 mark:FILM_MARK,
-markLabel:"No film yet",
 coverHosts:["image.tmdb.org"],
 coverClass:"card__cover card__cover--poster",
 width:600,
@@ -93,8 +91,8 @@ required:["title","author"],
 cover:function(r){
 return r.cover;
 },
-alt:function(r){
-return"Cover of "+r.title+" by "+r.author;
+alt:function(){
+return"Book cover";
 },
 title:function(r){
 return r.title;
@@ -108,7 +106,6 @@ return cardLine(r.year);
 signal:bookSignal,
 gloss:bookGloss,
 mark:BOOK_MARK,
-markLabel:"No book yet",
 coverHosts:["i.gr-assets.com","m.media-amazon.com"],
 coverClass:"card__cover card__cover--poster",
 width:318,

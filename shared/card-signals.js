@@ -57,14 +57,14 @@ if(!present(record.tracks)||!present(record.favorited)){
 return null;
 }
 if(record.favorited===0&&isWithinPendingWindow(record.added,now)){
-return"No tracks favorited yet: added within the last week";
+return"No tracks favorited yet (added this week)";
 }
 return record.favorited+" of "+record.tracks+" tracks favorited";
 }
 function ratedGloss(rating){
 const clamped=clampRating(rating,MAX_RATING);
 const full=Math.trunc(clamped);
-const half=clamped-full===0.5?"½":"";
+const half=clamped-full===0.5?".5":"";
 return"Rated "+full+half+" of "+MAX_RATING;
 }
 export function filmSignal(record){
