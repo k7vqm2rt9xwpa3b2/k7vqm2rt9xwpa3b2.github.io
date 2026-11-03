@@ -99,6 +99,17 @@ return digests.indexOf(hex);
 return NO_WORD;
 }
 }
+export function assertDropOnArrival(dropped){
+if(dropped===undefined){
+return;
+}
+if(typeof dropped!=="string"||!/^#./u.test(dropped)){
+throw new TypeError(
+'crossword-address.js: dropOnArrival is a fragment such as "#top", not '+
+namedValue(dropped),
+);
+}
+}
 export async function addressReaction(
 count,
 search,

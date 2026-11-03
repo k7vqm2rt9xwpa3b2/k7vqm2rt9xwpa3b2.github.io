@@ -25,6 +25,7 @@ window,
 (index)=>rememberPuzzle(window,index),
 ()=>import("./shared/visit-list.js"),
 ),
+dropOnArrival:"#top",
 };
 const LIVE_MARK="data-crossword-live";
 function settleLiveMark(){

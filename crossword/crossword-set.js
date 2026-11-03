@@ -1,4 +1,8 @@
-import{addressReaction,addressedPuzzle}from"./crossword-address.js";
+import{
+addressReaction,
+addressedPuzzle,
+assertDropOnArrival,
+}from"./crossword-address.js";
 import{drawRefreshArrow}from"./crossword-arrow.js";
 import{drawFromDeck}from"./crossword-deck.js";
 import{wireDismissal}from"./crossword-dismiss.js";
@@ -65,7 +69,20 @@ return;
 const view=doc.defaultView;
 const url=new URL(view.location.href);
 url.searchParams.set(queryKey,String(index+1));
+replaceFragmentless(view,url);
+}
+function replaceFragmentless(view,url){
+url.hash="";
 view.history.replaceState(null,"",url.href);
+}
+function dropArrivalFragment(doc,count,search,queryKey,dropped){
+const view=doc.defaultView;
+if(
+typeof addressedPuzzle(count,search,queryKey)==="number"&&
+view.location.hash===dropped
+){
+replaceFragmentless(view,new URL(view.location.href));
+}
 }
 function settleStepButton(hero,data){
 const{doc,puzzles,button,showTheme,remember}=hero;
@@ -124,6 +141,7 @@ button.focus();
 }
 }
 export async function renderCrossword(doc,fetchImpl,options){
+assertDropOnArrival(options.dropOnArrival);
 applySettings(doc,options.settings);
 const{puzzlesUrl,queryKey}=settingsFor(doc);
 const button=(
@@ -170,6 +188,8 @@ reopenedPuzzle(count,arrival.search,arrival.remembered,queryKey)===null
 ){
 showDrawnGrid(hero,start);
 }else{
+const dropped=options.dropOnArrival;
+dropArrivalFragment(doc,count,arrival.search,queryKey,dropped);
 data=drawFirstPuzzle(
 hero,
 openingPuzzle(
