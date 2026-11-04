@@ -1,5 +1,14 @@
 [
   {
+    "title": "Backrooms",
+    "year": "2026",
+    "rating": 4.0,
+    "watched": "2026-11-03",
+    "rewatch": false,
+    "poster": "https://image.tmdb.org/t/p/w500/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+    "director": "Kane Parsons"
+  },
+  {
     "title": "Obsession",
     "year": "2025",
     "rating": 4.0,
@@ -16,14 +25,5 @@
     "rewatch": false,
     "poster": "https://image.tmdb.org/t/p/w500/4eMN3GANH5GG4kXdHkrTZEUuQ9M.jpg",
     "director": "Tobe Hooper"
-  },
-  {
-    "title": "The Fly",
-    "year": "1986",
-    "rating": 4.0,
-    "watched": "2026-10-27",
-    "rewatch": false,
-    "poster": "https://image.tmdb.org/t/p/w500/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg",
-    "director": "David Cronenberg"
   }
 ]
