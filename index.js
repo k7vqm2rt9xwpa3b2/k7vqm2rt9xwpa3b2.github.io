@@ -79,6 +79,7 @@ magicWordIterations,
 onMagicWord,
 onMalformedAddress,
 opened,
+openAddressEgg,
 }=magicWordHook(window);
 return renderCrossword(document,fetchViaWindow(timedFetch),{
 ...crosswordOptions,
@@ -87,7 +88,9 @@ magicWordSalt,
 magicWordIterations,
 onMagicWord,
 onMalformedAddress,
-}).then(opened);
+})
+.then(opened)
+.then(()=>openAddressEgg(crosswordOptions.search));
 },
 )
 .finally(settleLiveMark),

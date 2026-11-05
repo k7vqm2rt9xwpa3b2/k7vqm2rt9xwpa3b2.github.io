@@ -1,3 +1,4 @@
+import{arrivingEgg}from"./puzzle-memory.js";
 export const MAGIC_WORD_DIGESTS=Object.freeze([
 "84e0c390537323c743cb0ed287d88ce35db122f0a113bd02796e9a75cdff4afc",
 "b61e0bf4c8c89cb059807bc1bcdb7b090f049aa4459c97ba9463b30f43f8861c",
@@ -26,5 +27,13 @@ index===HINTED_WORD
 );
 },
 opened:()=>opened,
+openAddressEgg:(search)=>{
+const egg=arrivingEgg(search);
+return egg===null
+?Promise.resolve()
+:import("./matrix-egg.js").then(({openMatrixEgg})=>{
+openMatrixEgg(win,egg);
+});
+},
 };
 }

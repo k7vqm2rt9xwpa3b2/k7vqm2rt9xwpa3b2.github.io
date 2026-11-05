@@ -1,4 +1,5 @@
 import{initDisclosures}from"./shared/disclosure.js";
+import{initFileList}from"./shared/file-list.js";
 import{initLocationField}from"./shared/location-field.js";
 import{initMode}from"./shared/mode.js";
 import{showPageSource}from"./shared/page-source.js";
@@ -11,4 +12,6 @@ export const ready=import("./shared/masthead-menu.js").then(
 initDisclosures(document);
 initLocationField(document);
 initVisitPanel(document,window,Date.now());
-showPageSource(document,(address)=>timedFetch(window,address),"../");
+const fetchFromPage=(address)=>timedFetch(window,address);
+showPageSource(document,fetchFromPage,"../");
+initFileList(document,fetchFromPage);

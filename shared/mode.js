@@ -184,6 +184,7 @@ root.removeAttribute(PRINT_CREAM_ATTRIBUTE);
 root.removeAttribute(PRINT_DARK_ATTRIBUTE);
 };
 let printed=false;
+let wait=0;
 window.addEventListener("beforeprint",function(){
 printed=true;
 });
@@ -200,7 +201,8 @@ window.print();
 clearMarks();
 throw error;
 }
-window.setTimeout(function(){
+window.clearTimeout(wait);
+wait=window.setTimeout(function(){
 return fallBackIfUnanswered(window,()=>printed,clearMarks);
 },PRINT_ANSWER_MS);
 });

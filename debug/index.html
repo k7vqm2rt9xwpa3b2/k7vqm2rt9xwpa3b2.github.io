@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-KefHrFZMYR0f2i9cxBSf4rLm8jeDpmTRTpuXYvpNRAk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Billy Ella | Debug</title>
+    <title>Billy Ella | Debug Menu</title>
     
     
     <meta name="description" content="A page for the curious, especially if you're on a phone." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Debug" />
+    <meta property="og:title" content="Debug Menu" />
     <meta property="og:description" content="A page for the curious, especially if you're on a phone." />
     <meta property="og:image" content="https://williamella.com/assets/og-card.png" />
     <meta property="og:url" content="https://williamella.com/debug/" />
@@ -118,7 +118,7 @@ be used that way.
 ════════════════════════</pre>
       
       
-      <h1>Debug</h1>
+      <h1>Debug Menu</h1>
       <p>
         Welcome to a page made for tinkering and discovering. Make sure to check every area out so you don't miss
         anything!
@@ -171,6 +171,30 @@ be used that way.
           <pre class="debug-box__text" tabindex="0" role="group" aria-labelledby="source-name" translate="no"></pre>
         </div>
       </section>
+      <section>
+        <h2 id="files-heading"><span id="files-name">Files</span></h2>
+        <p>
+          Flip through the files the site leaves out for browsers and crawlers. Despite the cryptic names, they're not
+          all just for robots.
+        </p>
+        <p
+          id="files-status"
+          class="debug__status"
+          role="status"
+          data-words="Error: file didn't load. Try again later."
+        ></p>
+        <div id="file-box" class="disclosure__panel debug-box" data-disclosure-label="View" hidden>
+          <div
+            id="file-list"
+            class="file-list"
+            data-files="404.html feed.xml manifest.webmanifest robots.txt sitemap.xml"
+            data-name="Name"
+            data-type="Type"
+            data-size="Size"
+          ></div>
+          <pre class="debug-box__text" tabindex="0" role="group" aria-labelledby="files-name" translate="no"></pre>
+        </div>
+      </section>
       
     </main>
     
@@ -203,7 +227,7 @@ be used that way.
       ></p>
       <p class="colophon__debug" id="colophon-debug">
         Want to uncover a few easter eggs? Or see some tricks exposing the site's innards? A map might have shown you
-        the way already, but if not (or on a phone), here's a start for the curious: <a href="../debug/">Debug</a>
+        the way already, but if not (or on a phone), here's a start for the curious: <a href="../debug/">Debug Menu</a>
       </p>
       <div class="colophon__top">
         <a class="colophon__top-link" href="#top" title="Back to the top"

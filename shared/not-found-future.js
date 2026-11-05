@@ -1,7 +1,7 @@
 import{wordOn}from"./dom-words.js";
 import{offerReboot}from"./not-found-reboot.js";
 import{drawCrashScreen}from"./not-found-screen.js";
-const FUTURE_ADDRESS=/^\/future\/?$/i;
+const FUTURE=/^\/future\/?$/i;
 const MOTION="(prefers-reduced-motion: no-preference)";
 const FALL="nf-move";
 const LETTERS=".nf-fall, .nf-dangle";
@@ -21,12 +21,13 @@ lines:Object.freeze([
 prompt:"data-future-screen-prompt",
 });
 export function addressClass(pathname){
-return FUTURE_ADDRESS.test(pathname)?"future":"elsewhere";
+return FUTURE.test(pathname)?"future":"elsewhere";
 }
 export function reactToAddress(win,pathname){
 if(addressClass(pathname)==="future"){
 reactToFuture(win);
 }
+return Promise.resolve();
 }
 export function reactToFuture(win){
 const doc=win.document;

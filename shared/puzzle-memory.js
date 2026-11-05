@@ -1,10 +1,15 @@
 const STORAGE_KEY="puzzle";
+export const EGG_KEY="egg";
+const EGGS=Object.freeze((["matrix","red-pill"]));
+export function arrivingEgg(search){
+return EGGS.find((egg)=>search===`?${EGG_KEY}=${egg}`)??null;
+}
 function isReload(view){
 const[entry]=view.performance?.getEntriesByType?.("navigation")??[];
 return entry!==undefined&&entry.type==="reload";
 }
 export function rememberedPuzzle(view){
-if(isReload(view)){
+if(isReload(view)||arrivingEgg(view.location.search)!==null){
 return null;
 }
 try{

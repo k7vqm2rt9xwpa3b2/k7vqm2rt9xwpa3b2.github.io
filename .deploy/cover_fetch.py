@@ -8,9 +8,9 @@ validates the manifest whole before any request, puts each cover at `<out>/<path
 `<out>/covers/sums.json`, from which confirm learns the artifact's bytes. The cache keeps
 each download and is pruned to the manifest; `--site` copies every tracked file, dotpaths
 aside, into `<out>`. Without either it is the local mode, for a working tree's covers.
-Requests are bounded by a COPY of `bounded_fetch`'s rules, which a workspace test holds
-equal. Exit 0 with every cover in place, 1 naming each that failed, 2 for a bad manifest
-or invocation, or any unexpected error.
+Requests keep a COPY of `bounded_fetch`'s rules, which a workspace test holds equal, and
+every redirect stays on the manifest's hosts. Exit 0 with every cover in place, 1 naming
+each that failed, 2 for a bad manifest or invocation, or any unexpected error.
 """
 
 from __future__ import annotations
@@ -110,8 +110,8 @@ def _parse_cover(value: object, hosts: frozenset[str]) -> Cover:
 
 
 # fuzz-target
-def parse_manifest(text: str) -> tuple[Cover, ...]:
-    """The covers `text` lists; `ManifestError`, and nothing else, for any fault in it.
+def parse_manifest(text: str) -> tuple[frozenset[str], tuple[Cover, ...]]:
+    """`text`'s (hosts, covers); `ManifestError`, and nothing else, for any fault in it.
 
     Keys exactly `schema` (1), `hosts` (sorted, unique host names) and `covers`; every url
     https on a listed host; every path the one its url derives; paths strictly increasing.
@@ -131,7 +131,7 @@ def parse_manifest(text: str) -> tuple[Cover, ...]:
     covers = tuple(_parse_cover(entry, frozenset(hosts)) for entry in data["covers"])
     paths = [cover.path for cover in covers]
     _expect(paths == sorted(set(paths)), "cover paths are not sorted and unique")
-    return covers
+    return frozenset(hosts), covers
 
 
 #: bounded_fetch's DEFAULT_TIMEOUT_SECONDS, BODY_LIMIT_BYTES and BODY_DEADLINE_SECONDS.
@@ -143,12 +143,17 @@ _READ_CHUNK_BYTES = 64 * 1024
 #: The wait before each of the four attempts: none, then 5, 20 and 60 s, so a CDN blip of
 #: up to a minute and a half costs one cover's retries rather than the day's deploy.
 ATTEMPT_WAITS_SECONDS = (0.0, 5.0, 20.0, 60.0)
-#: A cover the host says is gone does not come back in a minute, so it is not retried.
+#: A cover the host says is gone does not come back in a minute, so it is not retried; nor
+#: is a `FetchRefusal`, a ValueError still so the redirect guard keeps bounded_fetch's type.
 GONE_STATUSES = frozenset({404, 410})
 
 
 class CoverError(Exception):
     """One cover could not be put in place; the message says why."""
+
+
+class FetchRefusal(ValueError):
+    """A refusal of this tool's own, the same on every attempt, so it is not retried."""
 
 
 @dataclass(frozen=True)
@@ -200,6 +205,8 @@ def fetch_cover(cover: Cover, fetch: Fetch, sleep: Callable[[float], None]) -> b
         sleep(wait)
         try:
             got = fetch(cover.url)
+        except FetchRefusal as error:
+            raise CoverError(f"{error}, so it was not retried") from None
         except (OSError, ValueError, http.client.HTTPException) as error:
             reason = f"{type(error).__name__}: {error}"
             continue
@@ -214,7 +221,7 @@ def fetch_cover(cover: Cover, fetch: Fetch, sleep: Callable[[float], None]) -> b
 def read_body(
     response: io.BufferedIOBase, clock: Callable[[], float] = time.monotonic
 ) -> bytes:
-    """The whole body, bounded_fetch's way: `ValueError` past 4 MiB, `TimeoutError` past 60 s.
+    """The whole body, bounded_fetch's way: `FetchRefusal` past 4 MiB, `TimeoutError` past 60 s.
 
     `read1`, never `read(n)`, so the deadline is checked even against a drip-feed.
     """
@@ -224,15 +231,18 @@ def read_body(
     while chunk := response.read1(_READ_CHUNK_BYTES):
         received += len(chunk)
         if received > BODY_LIMIT_BYTES:
-            raise ValueError(f"response body exceeds {BODY_LIMIT_BYTES} bytes")
+            raise FetchRefusal(f"response body exceeds {BODY_LIMIT_BYTES} bytes")
         chunks.append(chunk)
         if clock() - started > BODY_DEADLINE_SECONDS:
             raise TimeoutError("response body still arriving after the deadline")
     return b"".join(chunks)
 
 
+@dataclass(eq=False)  # eq=False: a handler compares by identity, as urllib's own do
 class HttpsOnlyRedirect(urllib.request.HTTPRedirectHandler):
-    """Follow a redirect only to an https URL with a host, as bounded_fetch does."""
+    """Follow a redirect only as bounded_fetch does, and only to a manifest host."""
+
+    hosts: frozenset[str]
 
     def redirect_request(
         self,
@@ -243,30 +253,30 @@ class HttpsOnlyRedirect(urllib.request.HTTPRedirectHandler):
         headers: http.client.HTTPMessage,
         newurl: str,
     ) -> urllib.request.Request | None:
-        """The next hop; `ValueError`, never naming the target, unless it is followable."""
-        if not followable(newurl):
+        """The next hop; `FetchRefusal`, never naming the target, unless it is followable."""
+        if not followable(newurl, self.hosts):
             fp.close()
-            raise ValueError("refusing a redirect to anything but https")
+            raise FetchRefusal("refusing a redirect off https or the manifest's hosts")
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
-def followable(url: str) -> bool:
-    """bounded_fetch's hop rule: https, a host, no userinfo, a readable port, safe text."""
+def followable(url: str, hosts: frozenset[str]) -> bool:
+    """bounded_fetch's hop rule (https, no userinfo, a readable port, safe text) on `hosts`."""
     try:
         parts = urllib.parse.urlsplit(url)
-        origin = (parts.scheme, bool(parts.hostname), parts.port)  # port: ValueError
+        origin = (parts.scheme, parts.hostname in hosts, parts.port)  # port: ValueError
     except ValueError:
         return False
     return safe_text(url) and origin[:2] == ("https", True) and "@" not in parts.netloc
 
 
-def make_fetch(loopback: str | None) -> Fetch:
-    """The real fetch: https through the redirect guard, or one loopback origin.
+def make_fetch(loopback: str | None, hosts: frozenset[str]) -> Fetch:
+    """The real fetch: https through the redirect guard bound to `hosts`, or loopback.
 
     With `loopback` (tests and samples) each URL keeps its path and query and goes to that
     origin, past any proxy; the manifest's https rule is unchanged.
     """
-    handlers: list[urllib.request.BaseHandler] = [HttpsOnlyRedirect()]
+    handlers: list[urllib.request.BaseHandler] = [HttpsOnlyRedirect(hosts)]
     if loopback is not None:
         handlers.append(urllib.request.ProxyHandler({}))
     opener = urllib.request.build_opener(*handlers)
@@ -274,9 +284,7 @@ def make_fetch(loopback: str | None) -> Fetch:
     def fetch(url: str) -> Fetched:
         if loopback is not None:
             parts = urllib.parse.urlsplit(url)
-            url = loopback + urllib.parse.urlunsplit(
-                ("", "", parts.path, parts.query, "")
-            )
+            url = loopback + parts._replace(scheme="", netloc="", fragment="").geturl()
         try:
             with opener.open(url, timeout=SOCKET_TIMEOUT_SECONDS) as response:
                 kind = response.headers.get_content_type()
@@ -355,12 +363,8 @@ def sums_text(sums: dict[str, dict[str, object]]) -> str:
 
 def tracked_files(site: Path, run: Runner) -> list[str]:
     """Every file git tracks in `site`; `SetupError` for a tracked symlink or submodule."""
-    done = run(
-        ["git", "-C", str(site), "ls-files", "-z", "--stage"],
-        capture_output=True,
-        check=True,
-        timeout=GIT_TIMEOUT_SECONDS,
-    )
+    argv = ["git", "-C", str(site), "ls-files", "-z", "--stage"]
+    done = run(argv, capture_output=True, check=True, timeout=GIT_TIMEOUT_SECONDS)
     paths: list[str] = []
     for record in done.stdout.decode("utf-8").split("\0")[:-1]:
         meta, _, path = record.partition("\t")
@@ -379,9 +383,7 @@ def assemble(site: Path, out: Path, run: Runner) -> int:
     """Copy every tracked non-dotpath of `site` into `out`; the count copied."""
     paths = [path for path in tracked_files(site, run) if not is_dotpath(path)]
     if any(PurePosixPath(path).parts[0] == FOLDER for path in paths):
-        raise SetupError(
-            f"the site tracks files under {FOLDER}/, which only this fills"
-        )
+        raise SetupError(f"the site tracks files under {FOLDER}/: only this fills it")
     for path in paths:
         (out / path).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(site / path, out / path)
@@ -469,10 +471,10 @@ def main(
     args = build_parser().parse_args(argv)
     out, cache = Path(args.out), None if args.cache is None else Path(args.cache)
     try:
-        covers = parse_manifest(Path(args.manifest).read_text(encoding="utf-8"))
+        hosts, covers = parse_manifest(Path(args.manifest).read_text(encoding="utf-8"))
         real_folder(out / FOLDER)
         cache_folder = None if cache is None else real_folder(cache / FOLDER)
-        real_fetch = fetch or make_fetch(args.serve_from_loopback)
+        real_fetch = fetch or make_fetch(args.serve_from_loopback, hosts)
         sums, reused, failures = place_covers(covers, out, cache, real_fetch, sleep)
         if cache_folder is not None:
             prune_cache(cache_folder, frozenset(cover.path for cover in covers))
@@ -489,10 +491,8 @@ def main(
         # Python's own 1, which here means "these covers failed".
         traceback.print_exc(file=sys.stderr)
         return EXIT_SETUP
-    done = (
-        f"{len(sums)} covers in place ({reused} from the cache), {copied} files copied"
-    )
-    print(f"cover_fetch: {done}", file=sys.stdout)
+    done = f"{len(sums)} covers in place ({reused} from the cache)"
+    print(f"cover_fetch: {done}, {copied} files copied", file=sys.stdout)
     return EXIT_OK
 
 

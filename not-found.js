@@ -10,4 +10,4 @@ export const ready=import("./shared/masthead-menu.js").then(
 ({initMastheadMenu})=>initMastheadMenu(window.document),
 );
 offerWayBack(window);
-reactToAddress(window,window.location.pathname);
+export const egg=reactToAddress(window,window.location.pathname);

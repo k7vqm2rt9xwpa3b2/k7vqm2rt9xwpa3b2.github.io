@@ -1,3 +1,5 @@
+# Knock, knock, human there? Follow the white rabbit to the /matrix.
+
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: Google-Extended
