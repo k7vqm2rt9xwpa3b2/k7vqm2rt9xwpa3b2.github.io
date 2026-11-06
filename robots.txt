@@ -1,4 +1,4 @@
-# Knock, knock, human there? Follow the white rabbit to the /matrix.
+# Knock, knock, human there? Follow the white rabbit. Browse to /matrix
 
 User-agent: GPTBot
 User-agent: ClaudeBot

@@ -1,3 +1,12 @@
+import{
+ancestorsOf,
+buildListing,
+buttonOf,
+childrenIn,
+placeRows,
+rowAt,
+}from"./file-list-table.js";
+import{sortTree}from"./file-tree.js";
 const BYTES_PER_KB=1000;
 export function formatSize(bytes){
 if(bytes<BYTES_PER_KB){
@@ -18,48 +27,6 @@ type,
 size:body.byteLength,
 text:new TextDecoder("utf-8",{ignoreBOM:true}).decode(body),
 }));
-}
-function headerCell(doc,words){
-const cell=doc.createElement("th");
-cell.scope="col";
-cell.textContent=words;
-return cell;
-}
-function fileRow(doc,name){
-const button=doc.createElement("button");
-button.type="button";
-button.className="file-list__name";
-button.setAttribute("aria-pressed","false");
-button.textContent=name;
-const row=doc.createElement("tr");
-row.insertCell().append(button);
-row.insertCell().className="file-list__type";
-row.insertCell().className="file-list__size";
-return row;
-}
-function buttonOf(row){
-return(row.cells[0].firstElementChild);
-}
-function buildListing(doc,carrier){
-const{files="",name="",type="",size=""}=carrier.dataset;
-const head=doc.createElement("thead");
-head
-.insertRow()
-.append(
-headerCell(doc,name),
-headerCell(doc,type),
-headerCell(doc,size),
-);
-const names=files.split(/\s+/).filter(Boolean).sort();
-const rows=names.map((file)=>fileRow(doc,file));
-const body=doc.createElement("tbody");
-body.setAttribute("translate","no");
-body.append(...rows);
-const table=doc.createElement("table");
-table.className="file-list__table";
-table.append(head,body);
-carrier.append(table);
-return new Map(rows.map((row,index)=>[row,names[index]]));
 }
 function fillRow(row,fetched){
 row.cells[1].textContent=fetched.type;
@@ -85,6 +52,15 @@ if(status){
 status.textContent=fetched?"":status.getAttribute("data-words");
 }
 }
+function nextSort(sort,column){
+if(sort.column!==column){
+return{column,direction:"ascending"};
+}
+return{
+column,
+direction:sort.direction==="ascending"?"descending":"ascending",
+};
+}
 export function initFileList(doc,fetchImpl){
 const carrier=(
 doc.querySelector("#file-box #file-list")
@@ -96,33 +72,95 @@ if(!carrier||!box){
 return;
 }
 const panel=(doc.getElementById("file-box"));
-const names=buildListing(doc,carrier);
-const rows=[...names.keys()];
+const{body,headings,rows,kinds,tree,children}=buildListing(
+doc,
+carrier,
+);
+const open=new Set();
+const facts=new Map();
+const asked=new Set();
+let sort={column:"name",direction:"ascending"};
+const showOpen=()=>{
+for(const[path,row]of rows){
+row.hidden=ancestorsOf(path).some((folder)=>!open.has(folder));
+}
+};
+const reorder=()=>{
+placeRows(
+doc,
+body,
+sortTree(tree,sort.column,sort.direction,facts).map((entry)=>
+rowAt(rows,entry.path),
+),
+);
+};
 const fetches=new Map();
-const fetchOf=(row)=>{
-let fetched=fetches.get(row);
+const fetchOf=(path)=>{
+let fetched=fetches.get(path);
 if(!fetched){
-fetched=fetchImpl(`../${names.get(row)}`)
+fetched=fetchImpl(`../${path}`)
 .then(fileIn)
 .then(
 (file)=>{
-fillRow(row,file);
+fillRow(rowAt(rows,path),file);
+facts.set(path,{type:file.type,size:file.size});
+if(sort.column!=="name"){
+reorder();
+}
 return file;
 },
 ()=>{
-fetches.delete(row);
+fetches.delete(path);
 return null;
 },
 );
-fetches.set(row,fetched);
+fetches.set(path,fetched);
 }
 return fetched;
 };
+const fetchFilesIn=(folder)=>{
+if(asked.has(folder)){
+return;
+}
+asked.add(folder);
+for(const entry of childrenIn(children,folder)){
+if(entry.kind==="file"){
+fetchOf(entry.path);
+}
+}
+};
+const toggle=(path)=>{
+const opening=!open.has(path);
+if(opening){
+open.add(path);
+}else{
+open.delete(path);
+}
+buttonOf(rowAt(rows,path)).setAttribute("aria-expanded",String(opening));
+showOpen();
+if(opening){
+fetchFilesIn(path);
+}
+};
+const sortBy=(column)=>{
+sort=nextSort(sort,column);
+for(const[each,heading]of headings){
+heading.setAttribute(
+"aria-sort",
+each===sort.column?sort.direction:"none",
+);
+}
+reorder();
+};
+const files=[...rows.keys()].filter((path)=>kinds.get(path)==="file");
 let chosen=null;
-const choose=(row)=>{
-chosen=chosen===row?null:row;
-for(const other of rows){
-buttonOf(other).setAttribute("aria-pressed",String(other===chosen));
+const choose=(path)=>{
+chosen=chosen===path?null:path;
+for(const other of files){
+buttonOf(rowAt(rows,other)).setAttribute(
+"aria-pressed",
+String(other===chosen),
+);
 }
 box.textContent="";
 const status=doc.getElementById("files-status");
@@ -132,18 +170,21 @@ status.textContent="";
 if(!chosen){
 return;
 }
-fetchOf(row).then((fetched)=>{
-if(chosen===row){
+fetchOf(path).then((fetched)=>{
+if(chosen===path){
 showFile(doc,box,fetched);
 }
 });
 };
-for(const row of rows){
-buttonOf(row).addEventListener("click",()=>choose(row));
+for(const path of rows.keys()){
+const act=kinds.get(path)==="folder"?toggle:choose;
+buttonOf(rowAt(rows,path)).addEventListener("click",()=>act(path));
 }
-onFirstOpen(doc,panel,()=>{
-for(const row of rows){
-fetchOf(row);
+for(const[column,heading]of headings){
+(
+heading.firstElementChild
+).addEventListener("click",()=>sortBy(column));
 }
-});
+showOpen();
+onFirstOpen(doc,panel,()=>fetchFilesIn(""));
 }

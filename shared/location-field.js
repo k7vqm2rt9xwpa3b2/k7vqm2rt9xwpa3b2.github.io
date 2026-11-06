@@ -1,4 +1,5 @@
 const REFUSED_ANYWHERE=/[\s\\\p{Cc}\p{Cf}\p{Cs}]/u;
+const TRAILING_WHITESPACE=/[^\S\uFEFF]+$/u;
 const ANOTHER_HOST="//";
 const PLACEHOLDER_BASE="https://invalid.invalid/";
 const PAGE_EXTENSION="html";
@@ -30,6 +31,7 @@ const dot=name.lastIndexOf(".");
 return dot!==-1&&name.slice(dot+1).toLowerCase()!==PAGE_EXTENSION;
 }
 export function sitePathFor(typed,{standalone=false}={}){
+typed=typed.replace(TRAILING_WHITESPACE,"");
 if(typed===""){
 return null;
 }
