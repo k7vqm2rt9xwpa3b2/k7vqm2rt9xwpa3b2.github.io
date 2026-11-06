@@ -1,5 +1,15 @@
 [
   {
+    "artist": "Ramones",
+    "album": "Leave Home",
+    "added": "2026-11-05",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/d3/1d/9c/d31d9c15-dc89-c271-d67b-d874e1fcf6d6/603497909605.jpg/400x400bb.webp",
+    "tracks": 14,
+    "favorited": 0,
+    "year": "1977",
+    "favorite_signal": "music.favorited"
+  },
+  {
     "artist": "Blood Incantation",
     "album": "Absolute Elsewhere",
     "added": "2026-10-23",
@@ -17,16 +27,6 @@
     "tracks": 10,
     "favorited": 1,
     "year": "2024",
-    "favorite_signal": "music.favorited"
-  },
-  {
-    "artist": "Testament",
-    "album": "The New Order",
-    "added": "2026-09-17",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ce/9d/9e/ce9d9eeb-c9eb-b725-0351-7c75569ac1f9/cover.jpg/400x400bb.webp",
-    "tracks": 10,
-    "favorited": 1,
-    "year": "1988",
     "favorite_signal": "music.favorited"
   }
 ]
