@@ -3,7 +3,7 @@
 # as .github/workflows/pages.yml, beside .deploy/cover_fetch.py; its source is
 # projects/personal_site/deploy/pages.yml in the workspace, gated there by cover_fetch's
 # suite (tests/test_cf_workflow.py). On every push it downloads the cover images
-# covers.json names -- reusing yesterday's from the Actions cache -- copies the package
+# data/covers.json names -- reusing yesterday's from the Actions cache -- copies the package
 # around them, and deploys the result as a Pages artifact. A cover that will not download
 # fails the job before the deploy, so Pages keeps serving the last good build.
 # Design: docs/superpowers/specs/2026-10-25-site-pages-artifact-design.md, section 2B.
@@ -55,12 +55,12 @@ jobs:
           path: ${{ runner.temp }}/cover-cache
           # Keyed by the manifest: a day with no new cover is an exact hit and fetches
           # nothing, and the prefix brings back yesterday's covers on any other day.
-          key: covers-v1-${{ hashFiles('covers.json') }}
+          key: covers-v1-${{ hashFiles('data/covers.json') }}
           restore-keys: covers-v1-
 
       - name: Fetch the covers and assemble the site
         # -I: nothing beside the script, and no PYTHON* variable, can change what it imports.
-        run: python3 -I .deploy/cover_fetch.py --manifest covers.json --out "$RUNNER_TEMP/site" --cache "$RUNNER_TEMP/cover-cache" --site .
+        run: python3 -I .deploy/cover_fetch.py --manifest data/covers.json --out "$RUNNER_TEMP/site" --cache "$RUNNER_TEMP/cover-cache" --site .
 
       - name: Save the cover cache
         # Only on a miss: an exact hit already holds these covers under this key.

@@ -1,13 +1,13 @@
-import{fitNewestSlides}from"./shared/text-reveal.js";
-import{initDisclosures}from"./shared/disclosure.js";
-import{initNoteCarousel}from"./shared/now-notes.js";
-import{initPhotoCarousel}from"./shared/now-photo.js";
-import{initMode}from"./shared/mode.js";
+import{fitNewestSlides}from"../shared/text-reveal.js";
+import{initDisclosures}from"../shared/disclosure.js";
+import{initNoteCarousel}from"../shared/now-notes.js";
+import{initPhotoCarousel}from"../shared/now-photo.js";
+import{initMode}from"../shared/mode.js";
 import{
 recordingVisits,
 rememberedPuzzle,
 rememberPuzzle,
-}from"./shared/puzzle-memory.js";
+}from"../shared/puzzle-memory.js";
 export function fetchViaWindow(timedFetch){
 return(url,init)=>timedFetch(window,url,init);
 }
@@ -23,7 +23,7 @@ remembered:rememberedPuzzle(window),
 remember:recordingVisits(
 window,
 (index)=>rememberPuzzle(window,index),
-()=>import("./shared/visit-list.js"),
+()=>import("../shared/visit-list.js"),
 ),
 dropOnArrival:"#top",
 };
@@ -59,10 +59,10 @@ document.documentElement.setAttribute(LIVE_MARK,"");
 armWaiting();
 export const ready=Promise.all([
 Promise.all([
-import("./crossword/crossword-set.js"),
-import("./crossword/crossword-controls.js"),
-import("./shared/magic-word-hook.js"),
-import("./shared/timed-fetch.js"),
+import("../crossword/crossword-set.js"),
+import("../crossword/crossword-controls.js"),
+import("../shared/magic-word-hook.js"),
+import("../shared/timed-fetch.js"),
 ])
 .then(
 ([
@@ -94,13 +94,13 @@ onMalformedAddress,
 },
 )
 .finally(settleLiveMark),
-import("./shared/cards.js").then(({wireCards})=>
+import("../shared/cards.js").then(({wireCards})=>
 wireCards(document,undefined,window.IntersectionObserver),
 ),
-import("./shared/connect.js").then(({initConnect})=>
+import("../shared/connect.js").then(({initConnect})=>
 initConnect(document),
 ),
-import("./shared/masthead-menu.js").then(({initMastheadMenu})=>
+import("../shared/masthead-menu.js").then(({initMastheadMenu})=>
 initMastheadMenu(document),
 ),
 ]);

@@ -95,7 +95,7 @@ return shareAddress(window.navigator,pageAddress(window,note.id));
 export function initHomeApp(window){
 initAppLine(window);
 const feeds=(
-window.document.querySelectorAll('a[href="feed.xml"]')
+window.document.querySelectorAll('a[href="now/feed.xml"]')
 );
 feeds.forEach((link)=>shareOnClick(window,link,()=>link.href));
 }

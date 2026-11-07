@@ -5,7 +5,7 @@
   / __  |/ // /   / /  \  /  / __/ / /   / /   / /| |
  / /_/ // // /___/ /___/ /  / /___/ /___/ /___/ ___ |
 /_____/___/_____/_____/_/  /_____/_____/_____/_/  |_|
-                       v0.5.32
+                       v0.5.33
 
   > Curious what comes after /then and /now? See /future
   > Wanna see where this all started? Try ?puzzle=0
@@ -32,7 +32,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="alternate" type="application/atom+xml" title="Billy Ella | Now" href="feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Billy Ella | Now" href="now/feed.xml" />
     
     
     <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)" />
@@ -141,7 +141,7 @@ addEventListener("load",()=>watch.disconnect());
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/puzzle-memory.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/svg.js" />
     <link rel="modulepreload" media="(scripting: enabled)" href="shared/text-reveal.js" />
-    <script type="module" blocking="render" src="index.js"></script>
+    <script type="module" blocking="render" src="entry/index.js"></script>
   <meta name="robots" content="noindex" /></head>
   <body>
     
@@ -331,7 +331,7 @@ be used that way.
               hidden
             >
               For the old school, new Now entries go out by feed. Copy this link into any reader app to get each update
-              (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
+              (clicking it opens the raw file): <a href="now/feed.xml">RSS feed</a>
             </p>
             <noscript>
               <p class="disclosure__panel now-explainer__notice">
@@ -341,7 +341,7 @@ be used that way.
               </p>
               <p class="disclosure__panel now-subscribe__notice">
                 For the old school, new Now entries go out by feed. Copy this link into any reader app to get each
-                update (clicking it opens the raw file): <a href="feed.xml">RSS feed</a>
+                update (clicking it opens the raw file): <a href="now/feed.xml">RSS feed</a>
               </p>
             </noscript>
             

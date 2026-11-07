@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Billy Ella | Now</title>
   <id>tag:williamella.com,2026:now</id>
-  <link rel="self" href="https://williamella.com/feed.xml"/>
+  <link rel="self" href="https://williamella.com/now/feed.xml"/>
   <link rel="alternate" href="https://williamella.com/"/>
   <updated>2026-09-30T12:00:00Z</updated>
   <author>
